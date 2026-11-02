@@ -1,0 +1,36 @@
+platform: linux
+expected_stage: S2
+root_cause: 客户把 err 号直接套 FAQ 速查表导致误判——mask 0x002D0011 按 (domain<<27)|((module&0x7FF)<<16)|event 拆解为 domain=0、module=45、event=17，module 45 是 ISP_PIPE，该事件是 ISP 帧 ID 校验失败；只有 module 0 的 event 17（0x00000011）才是 DFC 的 server 心跳超时。FAQ 的 err 号速查隐含 module 0 前提，未做归属定位不能直接引用。
+required_concepts:
+  - mask 与三元组的换算公式：mask = (domain << 27) | ((module & 0x7FF) << 16) | event；反向拆解 domain = mask >> 27、module = (mask >> 16) & 0x7FF、event = mask & 0xFFFF
+  - 0x002D0011 拆解结果：domain 0（MAIN_BSP）、module 45（ISP_PIPE）、event 17
+  - 同一个 err 17 在 module 0 下是 DFC 心跳、在 module 45 下是 ISP_PIPE 的帧 ID 校验，module 号决定含义
+  - 相邻日志只能用于还原时间线，不能替代 ID 解码
+required_actions:
+  - 写出解码公式，并给出 mask 或三元组的拆解结果，让客户能自己对上
+  - 明确指出客户引用的 FAQ 速查条目只在 module 0 前提下成立
+  - 按 SKILL.md 的 S2 硬要求，显式回答一句"该故障是否经 ECM/FCU 通路上报？"（是/否/无法排除 + 依据）；只把 ecm|fcu 写进检索命令不算完成
+  - 给出 ISP_PIPE 归属下的下一步方向（该子系统自检 + 先查 ECM/FCU 两层）
+forbidden_conclusions:
+  - server 心跳超时是根因
+  - 心跳线程被饿死、CPU 负载或 Netlink 导致的心跳问题
+  - 需要调整心跳阈值或升级版本才能解决
+forbidden_actions:
+  - 未解码就按 err 号查速查表给出心跳结论
+  - 给出另一平台的节点路径、命令或 FAQ 编号形态
+  - 建议客户修改 FuSa 源码
+evidence_signatures:
+  input/serial.log:
+    - 'diag-netlink: err ID: 17 module ID: 45 domain ID: 0'
+    - 'AxDiagCore: recv event error_mask: 0x002D0011'
+  input/prompt.md:
+    - 'error_mask: 0x002D0011'
+  input/sdk-check.txt:
+    - 'LINUX_HIT'
+expected_confidence: high
+evaluation_notes:
+  - 不要求引用错误码表的具体行号（客户未把源码挂载出来），但归属域与符号含义必须正确。
+  - ISP_PIPE_FRAME_ID_CHECK 表述为"ISP 帧 ID 校验失败 / 帧号跳变"算等价。
+  - 客户已给出 error_mask，不要求再让客户回填 mask。
+  - "ECM/FCU 双层检查"原先同时列在 required_concepts，同一缺口会被记两次；现已只保留在 required_actions，并按 SKILL.md 的 S2 新硬要求改写成"必须显式回答一句"。
+  - 该硬要求是 2026-09-20 验收（首轮 FUSA-002 因此项 FAIL）后补进 SKILL.md 的，本 Case 用于验证它是否生效。

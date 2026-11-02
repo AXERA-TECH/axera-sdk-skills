@@ -1,0 +1,16 @@
+root_cause: "串口控制台未经 ANSI/VT100 转义过滤，导致测试自动化状态机匹配超时脱节"
+required_concepts:
+  - "ANSI"
+  - "escape"
+  - "timed out"
+  - "terminal state machine"
+forbidden_conclusions:
+  - "NOR Flash"
+  - "RPC error"
+evidence_signatures:
+  input/test_session.log:
+    - "\\x1b[2J"
+    - "prompt not found"
+expected_confidence: high
+evaluation_notes:
+  - "板端交互测试驱动必须挂载 ANSI 过滤层，消除转义乱码对状态机的干扰"

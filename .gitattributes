@@ -1,0 +1,2 @@
+# Delivery fingerprints hash exact bytes; never normalize skill line endings.
+skills/** -text

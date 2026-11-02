@@ -1,0 +1,11 @@
+prompt: |
+  使用已安装的 sdk-venc-rc-config-audit 技能读取当前目录的 venc_proc.txt。
+  现场现象：主码流（通道 0，2688x1520@30fps）与子码流（通道 1，720x576@30fps）都是 H.264 CBR，用户反馈两路的实际码率都超出各自目标码率约 20%，请分别分析两路的原因。
+  按技能规定完成码控配置审查，将最终答复完整写入 result.md。
+  不要读取或猜测任何评测答案；只使用当前目录的 venc_proc.txt、已安装技能中的 references 与脚本。
+expect:
+  files:
+    - path: result.md
+      exists: true
+      min_bytes: 200
+  assert: assert.sh

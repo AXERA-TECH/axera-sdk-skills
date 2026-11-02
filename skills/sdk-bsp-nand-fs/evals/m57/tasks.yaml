@@ -1,0 +1,36 @@
+version: 1
+platform: m57
+skill: sdk-bsp-nand-fs
+status: reviewed
+
+cases:
+  - id: m57-linux-flash-scan
+    environment: linux
+    task: 根据完整启动日志、Flash ID、geometry 和配置，定位 NAND scan/识别异常。
+    evidence: [serial_log, dmesg, flash_id, controller_config, sdk_revision]
+    expected: 能区分硬件/时序、Flash 适配、scan 参数和后续镜像解析问题；要求把 scan 频率与目标阶段频率对齐，记录采样窗口并以稳定窗口中值回填，不能仅凭一次 scan 成功下结论。
+  - id: m57-qnx-mtd-filesystem
+    environment: qnx
+    task: 区分 ax_mtd、mtdpart、etfs 与裸分区问题，建立挂载或读写失败的证据链。
+    evidence: [serial_log, slog, device_layout, mount_info, partition_metadata]
+    expected: 能先区分 QNX `ax_mtd`、`mtdpart`、ETFS1/ETFS2 和裸分区设备层，核对 `/proc/ax_proc/mtd`、buildfile 顺序、坏块映射与 page/erase 对齐，再定位挂载或读写失败。
+  - id: m57-linux-partition-consistency
+    environment: linux
+    task: 比对分区源文件、生成包、Bootloader 定义和启动后实际布局。
+    evidence: [partitions_json, generated_package, bootloader_layout, proc_mtd, sdk_revision]
+    expected: 能同时比对分区源、生成元数据、SBL/U-Boot/bootargs 与运行时 `/proc/mtd`，按 label 而非固定 `mtdN` 判断一致性，并指出 DT fixup 或元数据漂移。
+  - id: m57-qnx-flash-adaptation
+    environment: qnx
+    task: 分析 Flash 适配、ECC/坏块或接口模式变更引起的启动和性能问题。
+    evidence: [flash_id, geometry, controller_config, serial_log, performance_baseline]
+    expected: 能核对颗粒 ID、geometry、ECC、坏块预留、接口模式和各启动层适配，区分驱动接口与文件系统 wear leveling，并给出冷/热启动及回读验证。
+  - id: m57-filesystem-mount
+    environment: linux_or_qnx
+    task: 根据文件系统类型、设备层和挂载日志定位挂载失败边界。
+    evidence: [filesystem_image, device_layer, mount_log, partition_layout, image_version]
+    expected: 能根据文件系统类型和设备层区分 raw MTD、UBI volume、UBIFS/JFFS2/只读镜像与 QNX ETFS，结合最早挂载错误、分区边界和镜像类型定位失败边界。
+  - id: m57-flash-programming-failure
+    environment: linux_or_qnx
+    task: 诊断 AXDL/FDL/OTA 烧录失败并确认是否涉及擦除、分区或镜像大小。
+    evidence: [program_log, package_metadata, partition_layout, image_size, persistent_data_policy]
+    expected: 能检查 FDL/AXDL 颗粒适配、PLAT、分区/geometry、镜像大小与擦除策略，保留完整日志并明确全擦、坏块标记和重试操作边界。

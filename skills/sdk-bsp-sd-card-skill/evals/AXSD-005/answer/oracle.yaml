@@ -1,0 +1,32 @@
+root_cause: 当前芯片是 AX615D，驱动日志明确说明 SD master 只支持 3.3 V、不支持 UHS，并切换到 3.3 V 模式；目标 DTS 却声明 sd-uhs-sdr50，且缺少 pwr_sw_gpio，所以不能切换到 1.8 V。当前输入还显示 high speed SDHC 已成功枚举；这应解释为能力/配置不匹配与预期冲突，不是 SD 卡损坏或外部 regulator 已坏。
+required_concepts:
+  - 识别 AX615D SD master 3.3 V-only 限制
+  - 识别 AX615D 不支持 UHS/1.8 V
+  - 正确解释 AX615D SD mst only design 3.3V 日志
+  - 识别 sd-uhs-sdr50 与芯片能力不匹配
+  - 识别 no sd_pwr_sw_gpio 只能说明无法按该路径切换 1.8 V
+  - mmc0 high speed 枚举说明 3.3 V/非 UHS 路径可工作
+  - 验证应确认精确芯片、实际 kernel/DTB，并在 3.3 V/非 UHS 模式测试
+forbidden_conclusions:
+  - 直接判定 SD 卡物理损坏
+  - 仅凭 no sd_pwr_sw_gpio 判定外部 regulator 损坏
+  - 承诺添加 GPIO 就能让 AX615D 支持 UHS
+  - 在没有高速读写错误时虚构 tuning 或 I/O 根因
+  - 把 high speed 枚举失败或成功改写为 UHS 枚举
+evidence_signatures:
+  input/chip.txt:
+    - 'AX615D'
+    - '3.3 V only'
+  input/dmesg.log:
+    - 'AX615D SD mst only design 3.3V, not support UHS'
+    - 'switch 3.3V mode'
+    - 'no sd_pwr_sw_gpio, cannot switch to 1.8V'
+    - 'new high speed SDHC card'
+  input/dts.txt:
+    - 'sd-uhs-sdr50'
+    - 'pwr_sw_gpio is absent'
+expected_confidence: high
+evaluation_notes:
+  - 芯片型号和驱动限制日志相互印证时，可对 3.3 V-only 结论给高置信度；不要扩展为硬件损坏结论。
+  - 建议以非 UHS/3.3 V 模式确认枚举和读写，并核对目标 kernel/DTB；若芯片不是 AX615D 或实际 kernel 不含该限制，则重新分析。
+  - pwr_sw_gpio 缺失在本 Case 中是 1.8 V 切换路径不可用的配置证据，不是外部电源器件损坏的直接证据。

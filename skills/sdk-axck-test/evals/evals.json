@@ -1,0 +1,49 @@
+{
+  "skill_name": "sdk-axck-test",
+  "evals": [
+    {
+      "id": 1,
+      "name": "list_test_suites",
+      "prompt": "List available AXCK test suites for execution",
+      "expected_output": "Outputs available suites including media, system, service, and HTTP RPC single-case/scenario/stress options.",
+      "expectations": [
+        "Shows media suite description",
+        "Shows system suite description",
+        "Explains test menu navigation protocol"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "media_stream_verification",
+      "prompt": "Execute automated media stream on/off and FPS test via serial driver",
+      "expected_output": "Navigates menu tree to media tests, triggers stream on, validates FPS counter >= 25fps, and exits cleanly.",
+      "expectations": [
+        "Demonstrates ANSI escape code stripping",
+        "Verifies stream on/off state machine transitions",
+        "Checks FPS stability and timeout bounds"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "nor_flash_storage_safety",
+      "prompt": "Run storage and SD card test suite while ensuring NOR Flash space is not consumed",
+      "expected_output": "Executes DTCF and Storage test commands, directing temporary recordings to /mnt/sdcard or NAS, ensuring /opt and rootfs remain untouched.",
+      "expectations": [
+        "Checks NOR Flash free space threshold",
+        "Redirects test artifacts to external SD or RAM tmpfs",
+        "Restores board state upon completion"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "http_rpc_driver_verification",
+      "prompt": "Verify HTTP RPC Driver layered architecture and scenario pipeline execution",
+      "expected_output": "Executes single-case and scenario pipeline via HTTP RPC driver with low-latency JSON validation.",
+      "expectations": [
+        "Validates L0 HTTP client with retry and bypass",
+        "Validates L1 domain APIs (media, storage, device, dtcf)",
+        "Validates L2 scenario pipeline builder"
+      ]
+    }
+  ]
+}

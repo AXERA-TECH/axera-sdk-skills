@@ -1,0 +1,27 @@
+# 由 evals.json 自动迁移生成
+{
+  "root_cause": "十进制 -2147251677 还原为 0x80038A23=AX_ERR_VO_QUEUE_FULL；但**指出该码不是公开 API 在本实现下的返回形式**（底层队列满/超时在用户态被包装为 AX_ERR_VO_DEV_OP_FAIL=0x80038A80），要求以实际打印值/版本/dmesg/proc 复核；纠正 s32MS 语义（0=非阻塞、-1=阻塞）；根因=送帧 60fps>显示 30Hz 致 FIFO（默认深度3）写满；修复=VSYNC 节拍送帧/错误码按 hex 打印/结合 dmesg 与 proc 的 InFifoSize·DiscFrames 佐证",
+  "required_concepts": [
+    "正确将十进制 -2147251677 换算为 0x80038A23 并对应 AX_ERR_VO_QUEUE_FULL 这一含义（队列满），而非客户声称的超时码",
+    "指出公开 API 在本版本实现下不直接返回 QUEUE_FULL/TIMED_OUT：队列满/超时会被包装为 AX_ERR_VO_DEV_OP_FAIL（0x80038A80），要求先核实客户实际打印的返回值与 SDK 版本，并结合 dmesg 与 proc 的 InFifoSize/DiscFrames 判断，而不是直接采信\"超时错误码\"的表述",
+    "纠正 s32MS 语义：0=非阻塞、-1=阻塞、正值=超时等待，指出客户代码注释写反",
+    "定位根因：送帧速率（60fps）超过显示刷新率（30Hz）导致输入 FIFO 写满被立即拒绝",
+    "给出修复方案（VSYNC 回调节拍送帧、s32MS=-1 或正值、错误码按 hex 打印）",
+    "报告不出现实现侧源码路径/文件名/内部符号名/源码行号"
+  ],
+  "forbidden_conclusions": [
+    "断言该码就是公开 API 对队列满的原始返回形式"
+  ],
+  "evidence_signatures": {
+    "input/scenario.md": [
+      "-2147251677",
+      "AX_ERR_VO_QUEUE_FULL",
+      "SendFrame2Disp"
+    ]
+  },
+  "expected_confidence": "high",
+  "evaluation_notes": [
+    "由 sdk-vo-analysis-all/evals/evals.json 原用例 id=5 迁移。",
+    "root_cause 字段在本 Case 表示期望分析结论/期望生成结果的核心内容（见 grading.md）。"
+  ]
+}

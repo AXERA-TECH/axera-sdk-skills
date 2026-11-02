@@ -1,0 +1,38 @@
+version: 1
+defaults:
+  timeout_seconds: 420
+  samples: 1
+gates:
+  smoke:
+    - ivd-001
+    - ivd-004
+budget:
+  max_agent_runs: 8
+  # 并发 2 时 llmproxy 网关出现排队，后发 case 轮次为 0 直接超时；降为串行
+  max_wall_seconds: 3600
+  concurrency: 1
+cases:
+  - id: ivd-001
+    path: cases/ivd-001
+    kind: behavior
+    required: true
+  - id: ivd-002
+    path: cases/ivd-002
+    kind: behavior
+    required: true
+  - id: ivd-003
+    path: cases/ivd-003
+    kind: behavior
+    required: true
+  - id: ivd-004
+    path: cases/ivd-004
+    kind: behavior
+    required: true
+  - id: ivd-005
+    path: cases/ivd-005
+    kind: behavior
+    required: true
+  - id: ivd-006
+    path: cases/ivd-006
+    kind: behavior
+    required: true

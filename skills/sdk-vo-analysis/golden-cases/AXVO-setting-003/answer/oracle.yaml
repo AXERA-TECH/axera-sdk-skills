@@ -1,0 +1,26 @@
+# 由 evals.json 自动迁移生成
+{
+  "root_cause": "识别出该参数来自官方 sample 第 18 条（Hbb=588/Hfb=88）与已验证表 1920x1080@50f_bt656_db-edge（Hbb=338/Hfb=338）两种分配：两者 htotal 均为 2640、刷新率均 50Hz，仅水平消隐分配不同，属已知表间差异、不静默合并、不判对错；以客户实际采用的一组为准生成；u32Pclk=148500 精确命中离散档位表（297000÷2），bDlbClk=1；u8DelaySel 按所用表条目取值（不得简化为 DDR=3/非 DDR=0）；引用时带版本标注",
+  "required_concepts": [
+    "说明两种水平 porch 分配（588/88 与 338/338）htotal 与刷新率一致、均有效，不得判其中一组错误、也不得静默合并为一组",
+    "u32Pclk=148500 判定为精确命中离散档位表（297000÷2），并说明无容差、无就近取整",
+    "u8DelaySel 按所用表条目取值（0/3/4 均可能出现），未简化为“DDR=3、非 DDR=0”；缺失时按 unknown 处理",
+    "引用表数据/行为结论时带版本标注（「SDK V3.14.0 实现行为，需按版本核验」或等价声明）",
+    "输出不出现实现侧源码路径/文件名/内部符号名/源码行号"
+  ],
+  "forbidden_conclusions": [
+    "把两组 porch 判为一对一错并只保留一组"
+  ],
+  "evidence_signatures": {
+    "input/scenario.md": [
+      "Hbb=588",
+      "Hbb=338",
+      "50Hz"
+    ]
+  },
+  "expected_confidence": "high",
+  "evaluation_notes": [
+    "由 sdk-vo-analysis-all/evals/evals.json 原用例 id=3 迁移。",
+    "root_cause 字段在本 Case 表示期望分析结论/期望生成结果的核心内容（见 grading.md）。"
+  ]
+}

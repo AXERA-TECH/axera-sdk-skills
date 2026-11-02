@@ -1,0 +1,7 @@
+[    1.204] axera sdhci probe
+[    1.225] phy lock successful
+[    1.260] sdhci-axera 1b40000.sdhci: mmc0: SDHCI controller on platform
+[   12.000] user inserted SD card
+[   18.000] user removed SD card
+[   24.000] user inserted SD card again
+# No later mmc0 card enumeration messages were captured.

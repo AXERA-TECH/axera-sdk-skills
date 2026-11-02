@@ -1,0 +1,20 @@
+root_cause: "启动初始化阶段调用 AX_POOL_CreatePool 申请 CMM 缓冲池时因内存不足失败（错误码 0x80050004 AX_ERR_POOL_NOBUF），导致后续 VIN 和 IVPS 管线初始化级联失败，进程异常退出。"
+required_concepts:
+  - "0x80050004"
+  - "AX_ERR_POOL_NOBUF"
+  - "AX_POOL_CreatePool"
+  - "CMM 内存池耗尽"
+  - "app_config.json"
+  - "调整 pool block_count 或 block_size"
+forbidden_conclusions:
+  - "Sensor I2C 通信失败"
+  - "MIPI 时钟丢失"
+  - "VIN 硬件损坏"
+evidence_signatures:
+  input/serial.log:
+    - "AX_POOL_CreatePool failed"
+    - "0x80050004"
+    - "Pool allocation failed"
+expected_confidence: high
+evaluation_notes:
+  - "首要根因为 CMM 内存池耗尽，VIN 和 IVPS 错误均为缺乏可用 buffer 引发的下游级联反应。"

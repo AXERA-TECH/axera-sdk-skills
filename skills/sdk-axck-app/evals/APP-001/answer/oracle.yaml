@@ -1,0 +1,16 @@
+root_cause: "Makefile 模块编译依赖顺序倒置，apps 依赖 client 生成的动态库，必须遵循 3rd -> com -> service -> client -> apps"
+required_concepts:
+  - "SUBDIRS"
+  - "3rd"
+  - "service"
+  - "client"
+  - "apps"
+forbidden_conclusions:
+  - "opt.filelist"
+  - "nanomsg contract"
+evidence_signatures:
+  input/Makefile:
+    - "SUBDIRS = apps"
+expected_confidence: high
+evaluation_notes:
+  - "编译依赖顺序不可颠倒，apps 依赖 libaxck_client.so，client 依赖 service 导出的 RPC 结构"

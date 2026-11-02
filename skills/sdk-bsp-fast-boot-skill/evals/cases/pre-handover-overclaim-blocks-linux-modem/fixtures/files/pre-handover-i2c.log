@@ -1,0 +1,9 @@
+# Synthetic evaluation fixture. Both cores use the same boot-relative clock.
+[0.020][RTOS] sensor bus: I2C1
+[0.021][RTOS] rtos_i2c_claim_mask=0x7 (channel bitmap: I2C0/1/2)
+[0.022][RTOS] AX_DUMMY_SW6_ADDR I2C status bits[4:2]=0b111
+[0.090][RTOS] sensor first frame ready
+[0.600][Linux] 4G modem bus: I2C0; communication required before handover
+[0.601][Linux] i2c_designware: ax_i2c0 busy, rtos using
+[0.602][Linux] modem transfer returned -16 (-EBUSY)
+[0.603][Linux] handover request has not been sent

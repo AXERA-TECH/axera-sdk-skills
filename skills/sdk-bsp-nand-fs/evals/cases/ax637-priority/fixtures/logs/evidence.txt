@@ -1,0 +1,3 @@
+[    2.041000] UBI error: cannot open volume rootfs on ubi0: volume does not exist
+[    2.045000] UBIFS error: cannot open ubi0:rootfs, error -19
+[    2.051000] mount: mounting ubi0:rootfs on /root failed: No such device

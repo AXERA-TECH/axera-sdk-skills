@@ -1,0 +1,27 @@
+version: 1
+defaults:
+  timeout_seconds: 240
+  samples: 1
+gates:
+  smoke: [provision-m57-ubuntu-host]
+budget:
+  max_agent_runs: 4
+  max_wall_seconds: 900
+  concurrency: 2
+cases:
+  - id: provision-m57-ubuntu-host
+    path: cases/provision-m57-ubuntu-host
+    kind: behavior
+    required: true
+  - id: repair-m57-sdk-sources
+    path: cases/repair-m57-sdk-sources
+    kind: behavior
+    required: true
+  - id: provision-ax637-sdk-host
+    path: cases/provision-ax637-sdk-host
+    kind: behavior
+    required: true
+  - id: repair-ax637-sdk-sources
+    path: cases/repair-ax637-sdk-sources
+    kind: behavior
+    required: true

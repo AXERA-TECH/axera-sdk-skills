@@ -1,0 +1,31 @@
+schema_version: 1
+id: FUSA-002
+title: 归属定位：err 17 module 45 domain 0 属 ISP_PIPE，不是心跳
+category: attribution/mask-decode/module-dispatch
+source: synthetic
+analyzer:
+  skill: sdk-bsp-fusa
+  runtime_name: sdk-bsp-fusa
+platform: linux
+platform_evidence: fusa 目录命中、SDK_VERSION=V2.10.0 无前缀；日志为内核时间戳 + diag-netlink 形态
+expected_stage: S2
+input:
+  type: client_report
+  files:
+    - input/prompt.md
+    - input/sdk-check.txt
+    - input/serial.log
+  capture:
+    notes:
+      - 客户同时给出三元组形态与 mask 形态，两种形态都能解，属于同一事件。
+      - serial.log 里报错行前后各若干行随事件一起提供，用于还原时间线。
+      - 客户自己没有做归属定位，直接按 FAQ 速查表的 err 号下了心跳结论。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/prompt.md
+    - input/sdk-check.txt
+    - input/serial.log
+  evaluator_only:
+    - answer/oracle.yaml
+    - answer/case.yaml

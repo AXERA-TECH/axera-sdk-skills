@@ -1,0 +1,28 @@
+version: 1
+defaults:
+  timeout_seconds: 180
+  samples: 1
+gates:
+  smoke: [can-002-m57-qnx-mcal]
+budget:
+  max_agent_runs: 4
+  max_wall_seconds: 600
+  concurrency: 2
+cases:
+  - id: can-001-m57-linux-mcal
+    path: cases/can-001-m57-linux-mcal
+    kind: behavior
+    required: true
+  - id: can-002-m57-qnx-mcal
+    path: cases/can-002-m57-qnx-mcal
+    kind: behavior
+    required: true
+  - id: can-003-ax637r-reject
+    path: cases/can-003-ax637r-reject
+    kind: behavior
+    required: true
+  - id: can-004-m57-busoff-inconclusive
+    path: cases/can-004-m57-busoff-inconclusive
+    kind: behavior
+    required: true
+

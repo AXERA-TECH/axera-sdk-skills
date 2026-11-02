@@ -1,0 +1,31 @@
+version: 1
+defaults:
+  timeout_seconds: 240
+  samples: 1
+gates:
+  smoke: [av-exit-hang-getframe]
+budget:
+  max_agent_runs: 6
+  max_wall_seconds: 900
+  concurrency: 2
+cases:
+  - id: av-exit-hang-getframe
+    path: cases/av-exit-hang-getframe
+    kind: behavior
+    required: true
+  - id: no-log-callseq
+    path: cases/no-log-callseq
+    kind: behavior
+    required: true
+  - id: npu-double-free
+    path: cases/npu-double-free
+    kind: behavior
+    required: true
+  - id: venc-lowfps-negative
+    path: cases/venc-lowfps-negative
+    kind: behavior
+    required: true
+  - id: cmm-partition-nomem
+    path: cases/cmm-partition-nomem
+    kind: behavior
+    required: true

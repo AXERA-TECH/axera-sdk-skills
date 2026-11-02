@@ -1,0 +1,16 @@
+root_cause: "CMM 内存池与多媒体管线 Cache 输出分辨率脱节，缺少匹配的 common pool"
+required_concepts:
+  - "Pool Mismatch"
+  - "has no matching pool.common entry"
+  - "2688x1520"
+forbidden_conclusions:
+  - "i2c_dev"
+  - "unsupported engine"
+evidence_signatures:
+  input/app_config.json:
+    - "pool"
+    - "common"
+    - "640"
+expected_confidence: high
+evaluation_notes:
+  - "Pipeline front 视频输出分辨率为 2688x1520，但 app_config.json 中只有 640x360 缓冲池"

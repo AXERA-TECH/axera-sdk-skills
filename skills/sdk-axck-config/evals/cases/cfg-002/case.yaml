@@ -1,0 +1,8 @@
+prompt: |
+  使用已安装的 sdk-axck-config 技能，检查当前目录下的配置文件，验证 Sensor 分辨率与 IVPS 通道配置一致性，将结果写入 out/report.md。
+expect:
+  files:
+    - path: out/report.md
+      exists: true
+      min_bytes: 40
+  assert: assert.sh

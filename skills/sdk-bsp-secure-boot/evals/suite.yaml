@@ -1,0 +1,52 @@
+version: 1
+defaults:
+  timeout_seconds: 300
+  samples: 1
+gates:
+  smoke:
+  - acceptance-config-rsa-pss
+budget:
+  max_agent_runs: 10
+  max_wall_seconds: 4200
+  concurrency: 2
+cases:
+- id: acceptance-generate-rsa-keypair
+  path: cases/acceptance-generate-rsa-keypair
+  kind: behavior
+  required: true
+- id: acceptance-ax637-spl-rsa-failure
+  path: cases/acceptance-ax637-spl-rsa-failure
+  kind: behavior
+  required: true
+- id: acceptance-configure-demo-only-nand
+  path: cases/acceptance-configure-demo-only-nand
+  kind: behavior
+  required: true
+- id: acceptance-diagnose-spl-rsa-failure
+  path: cases/acceptance-diagnose-spl-rsa-failure
+  kind: behavior
+  required: true
+- id: acceptance-generate-aes-and-efuse
+  path: cases/acceptance-generate-aes-and-efuse
+  kind: behavior
+  required: true
+- id: acceptance-config-rsa-pss
+  path: cases/acceptance-config-rsa-pss
+  kind: behavior
+  required: true
+- id: acceptance-ax637-config-build
+  path: cases/acceptance-ax637-config-build
+  kind: behavior
+  required: true
+- id: acceptance-ax637-rsa-keypair
+  path: cases/acceptance-ax637-rsa-keypair
+  kind: behavior
+  required: true
+- id: acceptance-ax637-aes-efuse
+  path: cases/acceptance-ax637-aes-efuse
+  kind: behavior
+  required: true
+- id: acceptance-ax637-rsa-pss
+  path: cases/acceptance-ax637-rsa-pss
+  kind: behavior
+  required: true

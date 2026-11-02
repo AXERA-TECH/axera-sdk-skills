@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "defaults": {
+    "timeout_seconds": 180,
+    "samples": 1
+  },
+  "gates": {
+    "smoke": [
+      "pre-handover-overclaim-blocks-linux-modem"
+    ]
+  },
+  "budget": {
+    "max_agent_runs": 1,
+    "max_wall_seconds": 1200,
+    "concurrency": 2
+  },
+  "cases": [
+    {
+      "id": "pre-handover-overclaim-blocks-linux-modem",
+      "path": "cases/pre-handover-overclaim-blocks-linux-modem",
+      "kind": "behavior",
+      "required": true
+    }
+  ]
+}

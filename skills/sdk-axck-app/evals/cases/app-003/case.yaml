@@ -1,0 +1,8 @@
+prompt: |
+  使用已安装的 sdk-axck-app 技能，检查当前目录下的 opt.filelist 打包规格，指出缺失的核心守护进程与库，并将报告写入 out/report.md。
+expect:
+  files:
+    - path: out/report.md
+      exists: true
+      min_bytes: 40
+  assert: assert.sh

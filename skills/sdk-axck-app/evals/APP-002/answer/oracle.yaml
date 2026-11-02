@@ -1,0 +1,16 @@
+root_cause: "Client 与 axck_service 的 RPC 消息头协议版本不匹配或结构体对齐差异，导致 IPC 解析失败"
+required_concepts:
+  - "rpc_msg.h"
+  - "magic"
+  - "version"
+  - "cmd_id"
+forbidden_conclusions:
+  - "opt.filelist"
+  - "SUBDIRS = apps"
+evidence_signatures:
+  input/rpc_msg.h:
+    - "axck_rpc_header_t"
+    - "magic"
+expected_confidence: high
+evaluation_notes:
+  - "nanomsg IPC 传输底层要求客户端与服务端的 RPC 报文头结构体严格对齐"

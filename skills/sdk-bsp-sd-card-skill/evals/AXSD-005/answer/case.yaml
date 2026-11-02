@@ -1,0 +1,32 @@
+schema_version: 1
+id: AXSD-005
+title: AX615D 3.3 V-only 与 UHS/1.8 V 请求冲突
+category: linux-sd/voltage-timing/ax615d-3v3-only
+analyzer:
+  skill: sdk-bsp-sd-card-skill
+platform:
+  soc: AX615D
+  os: linux-4.19.125
+reproducer:
+  patch: answer/reproducer.patch
+input:
+  type: log_set
+  files:
+    - input/chip.txt
+    - input/dmesg.log
+    - input/dts.txt
+  capture:
+    notes:
+      - 合成 Golden Case，覆盖 AX615D SD master 的 3.3 V-only 能力限制与目标 DTS UHS 属性冲突。
+      - 日志同时显示驱动降级到 3.3 V、缺少 pwr_sw_gpio 和最终 high speed 枚举。
+      - 未提供高速读写失败证据；分析阶段不得虚构 tuning、I/O 或外部 regulator 故障。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/chip.txt
+    - input/dmesg.log
+    - input/dts.txt
+  evaluator_only:
+    - answer/oracle.yaml
+    - answer/reproducer.patch
+    - answer/case.yaml

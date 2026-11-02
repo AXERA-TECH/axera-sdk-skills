@@ -1,0 +1,16 @@
+root_cause: "测试用例违反嵌入式存储护栏规则，尝试向板端 NOR Flash 分区写入大容量测试媒体流"
+required_concepts:
+  - "NOR Flash"
+  - "Guardrail"
+  - "/opt"
+  - "/tmp"
+forbidden_conclusions:
+  - "ANSI"
+  - "RPC error"
+evidence_signatures:
+  input/test_session.log:
+    - "NOR Flash Safety Guardrail Triggered"
+    - "exceeds safe write endurance"
+expected_confidence: high
+evaluation_notes:
+  - "嵌入式开发护栏：严禁对板端 NOR Flash 高频写入，大容量录像与抓图必须重定向至 RAMFS (/tmp) 或 SD 卡"

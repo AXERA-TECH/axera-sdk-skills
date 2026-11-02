@@ -1,0 +1,3 @@
+现场尚未测量 GPIO1_29 插卡/拔卡前后的实际电平。
+现场尚未确认 GPIO1_29 pinmux 是否已切到 card-detect 输入。
+没有提供中断计数或 gpio debugfs 状态。

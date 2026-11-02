@@ -1,0 +1,9 @@
+prompt: |
+  使用已安装的 sdk-bsp-sdk-environment 技能，简要列出为 M57 SDK 准备 Ubuntu 主机所需的核心依赖包和交叉工具链版本（ARM64 9.2、Linaro 7.5），并说明 sdk_unpack.sh 的作用。
+  请将内容直接写入当前目录的 answer.md 文件中，无需冗长说明。
+expect:
+  files:
+    - path: answer.md
+      exists: true
+      min_bytes: 30
+  assert: assert.sh

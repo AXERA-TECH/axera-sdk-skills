@@ -1,0 +1,24 @@
+--------------------SDK VERSION-------------------
+[SDK version]: ax_sys V3.13.0 Sep  9 2026 16:44:25
+--------------------Link Table V2----------------------------------------------------
+         Src            |          Dst               |                               |
+(ModId   GrpId   ChnId) | (ModId   GrpId   ChnId)    |     Mode    |        line     |
+-------------------------------------------------------------------------------------
+(IVPS	    0	    0) -> (VENC	    0	    0)   Mode :   SW_Low_Mem    Line :   128
+(IVPS	    0	    2) -> (VENC	    0	    1)   Mode :   SW_Offline    Line :     0
+(ADEC	    0	    0) -> (AO	    0	    0)   Mode :   SW_Offline    Line :     0
+(VIN	    0	    0) -> (IVPS	    0	    0)   Mode :   SW_Offline    Line :     0
+(AI	    0	    0) -> (AENC	    0	    0)   Mode :   SW_Offline    Line :     0
+--------------------SDK VERSION-------------------
+[SDK version]: ax_sys V3.13.0 Sep  9 2026 16:44:25
+--------------------Link Table Kernel V2-------------------------------------------------------------------------
+         Src            |          Dst               |                   Link Attribute                          |
+(ModId   GrpId   ChnId) | (ModId   GrpId   ChnId)    |     Mode    |        line     |      Engine(src->dst)     |
+-----------------------------------------------------------------------------------------------------------------
+(IVPS	    0	    2) -> (VENC	    0	    1)   Mode :   SW_Offline    Line :     0   Engine (0:None --> 0:None)
+(ADEC	    0	    0) -> (AO	    0	    0)   Mode :   SW_Offline    Line :     0   Engine (0:None --> 0:None)
+(VIN	    0	    0) -> (IVPS	    0	    0)   Mode :   SW_Offline    Line :     0   Engine (0:None --> 0:None)
+(AI	    0	    0) -> (AENC	    0	    0)   Mode :   SW_Offline    Line :     0   Engine (0:None --> 0:None)
+(VPP	    0	    0) -> (VENC	    0	    0)   Mode :   SW_Low_Mem    Line :   128   Engine (1:VPP --> 4:VENC)
+--------------------SDK VERSION--------------------
+[SDK version]: ax_sys V3.13.0 Sep  9 2026 16:34:01

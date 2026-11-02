@@ -1,0 +1,34 @@
+schema_version: 1
+id: AXSD-004
+title: exFAT 未正常卸载后重新挂载为 readonly
+category: linux-sd/filesystem/exfat-readonly
+analyzer:
+  skill: sdk-bsp-sd-card-skill
+platform:
+  soc: AX615
+  os: linux-4.19.125
+reproducer:
+  patch: answer/reproducer.patch
+input:
+  type: log_set
+  files:
+    - input/dmesg.log
+    - input/mount.txt
+    - input/sysfs.txt
+    - input/operation-notes.txt
+  capture:
+    notes:
+      - 合成 Golden Case，覆盖写入后未执行 sync/umount 直接拔卡，重新插入后 exFAT 保护性只读的场景。
+      - mount 与块设备 ro 状态同时提供，用于区分文件系统挂载只读和块设备层只读。
+      - 未提供正常卸载后的重复失败或正常使用期 I/O 错误，不能直接扩大为卡或控制器硬件故障。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/dmesg.log
+    - input/mount.txt
+    - input/sysfs.txt
+    - input/operation-notes.txt
+  evaluator_only:
+    - answer/oracle.yaml
+    - answer/reproducer.patch
+    - answer/case.yaml

@@ -1,0 +1,729 @@
+[
+  {
+    "type": "front",
+    "enable": 1,
+    "ivps": [
+      {
+        "group": 0,
+        "link": 1,
+        "filter": [
+          {
+            "row": 0,
+            "col": 0,
+            "engine": "vpp",
+            "width": 2688,
+            "height": 1520
+          }
+        ],
+        "input": {
+          "mod": "camera",
+          "type": 0,
+          "chnl": 0
+        },
+        "output": [
+          {
+            "chnl": 0,
+            "detect": 1,
+            "filter": [
+              {
+                "row": 1,
+                "col": 0,
+                "engine": "tdp",
+                "scl_type": 2,
+                "stream": 0,
+                "rotate": 0,
+                "flip": 0,
+                "mirror": 0,
+                "width": 3840,
+                "height": 2160,
+                "src_fps": 30,
+                "dst_fps": 30,
+                "osd": 1,
+                "compress": 1,
+                "inplace": 0,
+                "vo_osd": 0,
+                "crop": 0,
+                "crop_rect": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 0,
+                  "h": 0
+                }
+              }
+            ]
+          },
+          {
+            "chnl": 1,
+            "detect": 1,
+            "filter": [
+              {
+                "row": 1,
+                "col": 0,
+                "engine": "tdp",
+                "scl_type": 1,
+                "stream": 0,
+                "width": 3840,
+                "height": 2160,
+                "osd": 0,
+                "compress": 1,
+                "inplace": 0,
+                "vo_osd": 0
+              },
+              {
+                "row": 1,
+                "col": 1,
+                "engine": "tdp",
+                "scl_type": 0,
+                "stream": 0,
+                "width": 3840,
+                "height": 2160,
+                "osd": 1,
+                "compress": 1,
+                "inplace": 0,
+                "vo_osd": 0
+              }
+            ]
+          },
+          {
+            "chnl": 2,
+            "detect": 1,
+            "filter": [
+              {
+                "row": 1,
+                "col": 0,
+                "engine": "tdp",
+                "scl_type": 2,
+                "stream": 0,
+                "rotate": 0,
+                "flip": 0,
+                "mirror": 0,
+                "width": 3840,
+                "height": 2160,
+                "src_fps": 30,
+                "dst_fps": 30,
+                "osd": 0,
+                "compress": 0,
+                "inplace": 0,
+                "vo_osd": 0,
+                "crop": 0,
+                "crop_rect": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 0,
+                  "h": 0
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "custom": [
+      {
+        "id": 0,
+        "enable": 0,
+        "name": "algo front",
+        "type_des": "// 0: YUV frame; 1: Audio frame; 2: Video stream; 3: Audio stream",
+        "type": 0,
+        "src_grp": 0,
+        "width": 1024,
+        "height": 576,
+        "rotate": 0,
+        "flip": 0,
+        "mirror": 0,
+        "fps": 10
+      },
+      {
+        "id": 1,
+        "enable": 0,
+        "name": "audio frame",
+        "type_des": "// 0: YUV frame; 1: Audio frame; 2: Video stream; 3: Audio stream",
+        "type": 1,
+        "src": {
+          "mod": "ain",
+          "type": 0,
+          "chnl": 0
+        }
+      },
+      {
+        "id": 2,
+        "enable": 0,
+        "name": "video live",
+        "type_des": "// 0: YUV frame; 1: Audio frame; 2: Video stream; 3: Audio stream",
+        "type": 2,
+        "src": {
+          "mod": "venc",
+          "type": 1,
+          "chnl": 0
+        }
+      },
+      {
+        "id": 3,
+        "enable": 0,
+        "name": "audio live",
+        "type_des": "// 0: YUV frame; 1: Audio frame; 2: Video stream; 3: Audio stream",
+        "type": 3,
+        "src": {
+          "mod": "aenc",
+          "type": 0,
+          "chnl": 0
+        }
+      }
+    ],
+    "cache": [
+      {
+        "id": 0,
+        "enc_chnl": 0,
+        "buf_time": 2,
+        "src_link": 1,
+        "flow_mode": 1,
+        "line_cnt": 128,
+        "vout": {
+          "width": 2688,
+          "height": 1520
+        },
+        "vin": {
+          "mod": "ivps",
+          "type": 0,
+          "chnl": 0,
+          "engine": "vpp"
+        },
+        "ain": [
+          {
+            "mod": "aenc",
+            "type": 0,
+            "chnl": 0
+          }
+        ],
+        "thumb": {
+          "enable": 1,
+          "enc_chnl": 4,
+          "link": 1
+        }
+      },
+      {
+        "id": 1,
+        "enc_chnl": 1,
+        "buf_time": 2,
+        "src_link": 1,
+        "flow_mode": 3,
+        "line_cnt": 0,
+        "vin": {
+          "mod": "ivps",
+          "type": 0,
+          "chnl": 1,
+          "engine": "none"
+        },
+        "ain": [
+          {
+            "mod": "aenc",
+            "type": 0,
+            "chnl": 0
+          }
+        ],
+        "thumb": {
+          "enable": 1,
+          "enc_chnl": 4,
+          "link": 1
+        }
+      }
+    ],
+    "record": [
+      {
+        "cache_id": 0,
+        "stream_idx": 0,
+        "cache_time": 2
+      },
+      {
+        "cache_id": 1,
+        "stream_idx": 1,
+        "cache_time": 2
+      }
+    ],
+    "capture": [
+      {
+        "delay": 0,
+        "link": 1,
+        "enc_chnl": 3,
+        "flow_mode": 1,
+        "line_cnt": 128,
+        "vin": {
+          "mod": "ivps",
+          "type": 0,
+          "chnl": 0,
+          "engine": "vpp"
+        },
+        "sub_jenc": 1,
+        "thumb": {
+          "link": 1,
+          "enc_chnl": 4,
+          "flow_mode": 3,
+          "line_cnt": 0,
+          "vin": {
+            "mod": "ivps",
+            "type": 0,
+            "chnl": 2,
+            "engine": "none"
+          }
+        }
+      }
+    ],
+    "algo": [
+      {
+        "chnl": 0,
+        "enable": 0,
+        "vin": {
+          "mod": "custom",
+          "id": 0
+        },
+        "processor": {
+          "mod": "skel",
+          "id": 0
+        }
+      }
+    ]
+  },
+  {
+    "type": "rear",
+    "enable": 0,
+    "ivps": [
+      {
+        "group": 1,
+        "link": 1,
+        "filter": [
+          {
+            "row": 0,
+            "col": 0,
+            "engine": "vpp",
+            "width": 1920,
+            "height": 1080
+          }
+        ],
+        "input": {
+          "mod": "camera",
+          "type": 1,
+          "chnl": 0
+        },
+        "output": [
+          {
+            "chnl": 0,
+            "detect": 1,
+            "filter": [
+              {
+                "row": 1,
+                "col": 0,
+                "engine": "tdp",
+                "scl_type": 0,
+                "stream": 0,
+                "rotate": 0,
+                "flip": 0,
+                "mirror": 0,
+                "width": 3840,
+                "height": 2160,
+                "src_fps": 0,
+                "dst_fps": 0,
+                "osd": 0,
+                "compress": 1,
+                "inplace": 0,
+                "vo_osd": 0,
+                "crop": 0,
+                "crop_rect": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 0,
+                  "h": 0
+                }
+              },
+              {
+                "row": 1,
+                "col": 1,
+                "engine": "tdp",
+                "scl_type": 0,
+                "stream": 0,
+                "rotate": 0,
+                "flip": 0,
+                "mirror": 0,
+                "width": 3840,
+                "height": 2160,
+                "src_fps": 0,
+                "dst_fps": 0,
+                "osd": 1,
+                "compress": 1,
+                "inplace": 1,
+                "vo_osd": 0,
+                "crop": 0,
+                "crop_rect": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 0,
+                  "h": 0
+                }
+              }
+            ]
+          },
+          {
+            "chnl": 1,
+            "detect": 1,
+            "filter": [
+              {
+                "row": 1,
+                "col": 0,
+                "engine": "tdp",
+                "scl_type": 0,
+                "stream": 0,
+                "rotate": 0,
+                "flip": 0,
+                "mirror": 0,
+                "width": 3840,
+                "height": 2160,
+                "src_fps": 0,
+                "dst_fps": 0,
+                "osd": 0,
+                "compress": 1,
+                "inplace": 0,
+                "vo_osd": 0,
+                "crop": 0,
+                "crop_rect": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 0,
+                  "h": 0
+                }
+              },
+              {
+                "row": 1,
+                "col": 1,
+                "engine": "tdp",
+                "scl_type": 0,
+                "stream": 0,
+                "rotate": 0,
+                "flip": 0,
+                "mirror": 0,
+                "width": 3840,
+                "height": 2160,
+                "src_fps": 0,
+                "dst_fps": 0,
+                "osd": 1,
+                "compress": 1,
+                "inplace": 1,
+                "vo_osd": 0,
+                "crop": 0,
+                "crop_rect": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 0,
+                  "h": 0
+                }
+              }
+            ]
+          },
+          {
+            "chnl": 2,
+            "detect": 1,
+            "default": "disable",
+            "filter": [
+              {
+                "row": 1,
+                "col": 0,
+                "engine": "tdp",
+                "scl_type": 1,
+                "stream": 0,
+                "rotate": 0,
+                "flip": 0,
+                "mirror": 0,
+                "width": 3840,
+                "height": 2160,
+                "src_fps": 0,
+                "dst_fps": 0,
+                "osd": 0,
+                "compress": 1,
+                "inplace": 0,
+                "vo_osd": 0,
+                "crop": 0,
+                "crop_rect": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 0,
+                  "h": 0
+                }
+              },
+              {
+                "row": 1,
+                "col": 1,
+                "engine": "tdp",
+                "scl_type": 0,
+                "stream": 0,
+                "rotate": 0,
+                "flip": 0,
+                "mirror": 0,
+                "width": 3840,
+                "height": 2160,
+                "src_fps": 0,
+                "dst_fps": 0,
+                "osd": 1,
+                "compress": 1,
+                "inplace": 1,
+                "vo_osd": 0,
+                "crop": 0,
+                "crop_rect": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 0,
+                  "h": 0
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "group": 3,
+        "link": 1,
+        "input": {
+          "mod": "ivps",
+          "type": 1,
+          "chnl": 2
+        },
+        "output": [
+          {
+            "chnl": 0,
+            "detect": 0,
+            "default": "disable",
+            "filter": [
+              {
+                "row": 1,
+                "col": 1,
+                "engine": "tdp",
+                "scl_type": 2,
+                "stream": 0,
+                "rotate": 90,
+                "flip": 0,
+                "mirror": 0,
+                "width": 3840,
+                "height": 2160,
+                "src_fps": 25,
+                "dst_fps": 25,
+                "osd": 0,
+                "compress": 0,
+                "inplace": 0,
+                "vo_osd": 0,
+                "crop": 0,
+                "crop_rect": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 0,
+                  "h": 0
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "custom": [
+      {
+        "id": 0,
+        "enable": 0,
+        "name": "algo rear",
+        "type_des": "// 0: YUV frame; 1: Audio frame; 2: Video stream; 3: Audio stream",
+        "type": 0,
+        "src_grp": 1,
+        "width": 1280,
+        "height": 720,
+        "fps": 15
+      },
+      {
+        "id": 1,
+        "enable": 0,
+        "name": "audio frame",
+        "type_des": "// 0: YUV frame; 1: Audio frame; 2: Video stream; 3: Audio stream",
+        "type": 1,
+        "src": {
+          "mod": "ain",
+          "type": 0,
+          "chnl": 0
+        }
+      },
+      {
+        "id": 2,
+        "enable": 0,
+        "name": "video live",
+        "type_des": "// 0: YUV frame; 1: Audio frame; 2: Video stream; 3: Audio stream",
+        "type": 2,
+        "src": {
+          "mod": "venc",
+          "type": 3,
+          "chnl": 0
+        }
+      },
+      {
+        "id": 3,
+        "enable": 0,
+        "name": "audio live",
+        "type_des": "// 0: YUV frame; 1: Audio frame; 2: Video stream; 3: Audio stream",
+        "type": 3,
+        "src": {
+          "mod": "aenc",
+          "type": 0,
+          "chnl": 0
+        }
+      }
+    ],
+    "cache": [
+      {
+        "id": 2,
+        "enc_chnl": 2,
+        "buf_time": 2,
+        "src_link": 1,
+        "vin": {
+          "mod": "ivps",
+          "type": 1,
+          "chnl": 0
+        },
+        "ain": [
+          {
+            "mod": "aenc",
+            "type": 0,
+            "chnl": 0
+          }
+        ],
+        "thumb": {
+          "enable": 0,
+          "width": 200,
+          "height": 110,
+          "max_size": 40000,
+          "qulity": 80
+        }
+      },
+      {
+        "id": 3,
+        "enc_chnl": 3,
+        "buf_time": 2,
+        "src_link": 1,
+        "vin": {
+          "mod": "ivps",
+          "type": 1,
+          "chnl": 1
+        },
+        "ain": [
+          {
+            "mod": "aenc",
+            "type": 0,
+            "chnl": 0
+          }
+        ],
+        "thumb": {
+          "enable": 1,
+          "width": 200,
+          "height": 110,
+          "max_size": 40000,
+          "qulity": 80
+        }
+      }
+    ],
+    "record": [
+      {
+        "cache_id": 2,
+        "stream_idx": 0,
+        "cache_time": 2
+      },
+      {
+        "cache_id": 3,
+        "stream_idx": 1,
+        "cache_time": 2
+      }
+    ],
+    "capture": [
+      {
+        "delay": 0,
+        "vin": {
+          "mod": "ivps",
+          "type": 1,
+          "chnl": 0
+        }
+      }
+    ]
+  },
+  {
+    "type": "audio",
+    "aenc": [
+      {
+        "chnl_id": 0,
+        "bitrate": 32000,
+        "payload_des": "19: G711A; 20: G711U; 21: G726; 23: LPCM; 37: AAC; 1007: OPUS",
+        "payload": 37
+      }
+    ]
+  },
+  {
+    "type": "rtsp",
+    "chnls": [
+      {
+        "chnl": 0,
+        "vin": {
+          "mod": "venc",
+          "type": 0,
+          "chnl": 0
+        },
+        "ain": {
+          "mod": "aenc",
+          "type": 0,
+          "chnl": 0
+        }
+      },
+      {
+        "chnl": 1,
+        "vin": {
+          "mod": "venc",
+          "type": 1,
+          "chnl": 0
+        },
+        "ain": {
+          "mod": "aenc",
+          "type": 0,
+          "chnl": 0
+        }
+      }
+    ]
+  },
+  {
+    "type": "wakeup",
+    "wakeup_cfgs": [
+      {
+        "wakeup_dev_cnt": 0,
+        "wakeup_dev_list": [
+          {
+            "type": 1,
+            "spec": "ACC",
+            "name": "/dev/lp-gpio-1"
+          },
+          {
+            "type": 2,
+            "spec": "4G",
+            "name": "/dev/lp-gpio-2"
+          },
+          {
+            "type": 3,
+            "spec": "GSensor",
+            "name": "/dev/lp-gpio-41"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "preview",
+    "vin": [
+      {
+        "mod": "ivps",
+        "type": 2,
+        "chnl": 0
+      },
+      {
+        "mod": "ivps",
+        "type": 3,
+        "chnl": 0
+      }
+    ]
+  }
+]

@@ -1,0 +1,67 @@
+SDIFUSThe download form usb
+download to NOR
+enter download mode
+ddr init start...
+ddr freq=1333Mbps
+dram type is DDR2
+ddr2 training start
+write deskew training done!
+pass width=0x3f3c, pass center=0x3837
+fdl usb init
+usb handshake success
+enter fw_load_and_exec
+
+
+U-Boot 2020.04 (Sep 22 2026 - 11:07:15 +0800)
+
+U-Boot code: 4F000400 -> 4F07B86C  BSS: -> 4F0A2FE0
+Model: AXERA AX615_nor Board
+DRAM:  Monitor len: 000A2BE0
+Ram size: 04000000
+Ram top: 44000000
+TLB table from 43ff0000 to 43ff4000
+Reserving 650k for U-Boot at: 43f4d000
+Reserving 3136k for malloc() at: 43c3d000
+Reserving 80 Bytes for Board Info at: 43c3cfb0
+Reserving 208 Bytes for Global Data at: 43c3cee0
+Reserving 10272 Bytes for FDT at: 43c3a6c0
+
+RAM Configuration:
+Bank #0: 40000000
+DRAM:  64 MiB
+New Stack Pointer is: 43c3a6a0
+Relocation Offset is: f4f4cc00
+Relocating to 43f4d000, new gd at 43c3cee0, sp at 43c3a6a0
+ax_adc_probe
+No available THERMAL device
+MMC:   mmc@1B50000: 1
+Loading Environment from SPI Flash... SF: Detected w25q128 with page size 256 Bytes, erase size 64 KiB, total 16 MiB
+OK
+In:    serial
+Out:   serial
+Err:   serial
+Current chip type: AX615DV100
+boot_reason:0x0
+boot_mode->magic = 0x12345678
+boot_mode->dl_channel = 3
+boot_mode->storage_sel = 2
+boot_mode->boot_type = 2
+enter usb download mode
+get boot mode in boot func array[1]
+chip_rst_sw_reason_get: 0, 0, 0
+iram_misc_info->bootinfo.mode = 2
+Net:
+Warning: ethernet@0x104C0000 (eth0) using random MAC address - 72:d3:6d:22:5e:60
+eth0: ethernet@0x104C0000
+Hit any key to stop autoboot:  0
+do downlaod
+SF: Detected w25q128 with page size 256 Bytes, erase size 64 KiB, total 16 MiB
+nor capacity_user is 0x1000000
+buf: mem=42M cmmpool=anonymous,0,0x42A00000,86M console=ttyS0,115200n8 loglevel=8 earlycon=uart8250,mmio32,0x4880000 noinitrd root=/dev/mtdblock5 rw rootfstype=jffs2  init=/linuxrc mtdparts=spi3.0:64K(spl),256K(uboot),64K(env),1792K(kernel),3648K(rootfs),512K(customer),10048K(opt)
+Saving Environment to SPI Flash... Erasing SPI flash...Writing to SPI flash...done
+OK
+mtdpart: mtdparts=spi3.0:64K(spl),256K(uboot),64K(env),1792K(kernel),3648K(rootfs),512K(customer),10048K(opt)
+common_get_part_info: part spl, base addr 0x0, part size 0x10000
+download image ok
+partiton spl erased @off = 0x0 size = 0x10000
+partiton spl write @off = 0x0 size = 0x7000

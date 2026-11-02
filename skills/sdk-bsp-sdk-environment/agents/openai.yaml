@@ -1,0 +1,4 @@
+interface:
+  display_name: "Axera SDK Environment"
+  short_description: "指导 Axera SoC SDK Linux 开发主机环境准备、交叉工具链安装与源码释放校验"
+  default_prompt: "指导配置 Axera SoC SDK Linux 开发机环境并安装交叉编译工具链。"

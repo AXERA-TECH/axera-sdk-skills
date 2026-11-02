@@ -1,0 +1,9 @@
+prompt: |
+  使用已安装的 sdk-bsp-rpmsg 技能，仅依据技能资料回答当前目录的 request.md。
+  这是静态资料问答，不修改 SDK 或运行 QNX 命令。将最终回答写入 out/answer.md。
+expect:
+  files:
+    - path: out/answer.md
+      exists: true
+      min_bytes: 40
+  assert: assert.sh

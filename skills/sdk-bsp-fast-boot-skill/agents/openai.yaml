@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fastboot Analysis"
+  short_description: "Diagnose fastboot/AOV dual-core coexistence, handover timeouts, CMM panic, and peripheral conflicts"
+  default_prompt: "Use $sdk-bsp-fast-boot-skill to triage fastboot/AOV startup issues, handover timeouts/aborts, RTOS/Linux peripheral conflicts, RTOS mutex asserts, cross-core CMM crashes, and multi-core resource arbitration problems."

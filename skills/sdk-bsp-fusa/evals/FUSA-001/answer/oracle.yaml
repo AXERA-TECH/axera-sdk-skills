@@ -1,0 +1,44 @@
+platform: linux
+expected_stage: S3
+root_cause: 设计预期，不是故障——heartbeat time:N 是心跳连续 N 轮未收到应答的计数（每轮检查周期 20ms，单轮等待窗口 SERVER_HEARTBEAT_TIMEOUT=5ms），日志里每次 ack 之后计数归零、且全程没有出现 heartbeat timeout.，说明一直停在去抖过程中，诊断框架没有上报任何心跳故障，SDK 不需要升级。
+required_concepts:
+  - heartbeat time:N 不是"已收到 N 次心跳"，而是"已连续 N 轮未收到应答"的计数
+  - 单轮等待窗口是 5ms，检查周期 CYCLE_CHK_PERIOD 是 20ms
+  - 只有计数超过 5（门限是 > 5 而不是 >= 5）且打印 heartbeat timeout. 时才正式上报心跳故障
+  - 本 Case 日志里 ack 后计数立刻归零、且没有 heartbeat timeout.，属于设计预期的去抖过程日志
+  - 命中 Linux FAQ-7 的【设计预期】结论，无需升级、无需改代码
+recommended_concepts:
+  - 计数每 20ms 最多递增 1（由"5ms 窗口 + 20ms 周期"推出的量化结论；缺了只降级为 WARN，不影响总 verdict）
+required_actions:
+  - 先复述平台判定结果与判据（fusa 目录命中 + 版本号无前缀），再给结论
+  - 引用 FAQ 时照抄所读 FAQ 文件里的原始编号，不换算、不补零
+  - 给客户可自查的判据：看有没有 heartbeat timeout. 行、计数是否连续增长到 6
+  - 告诉客户这条日志可忽略、不要去改代码
+recommended_actions:
+  - 顺带给出"嫌刷屏可以调日志级别"的操作建议（缺了只降级为 WARN，不影响总 verdict）
+forbidden_conclusions:
+  - 芯片硬件故障或诊断框架已异常
+  - 心跳故障已经上报，需要按上报路径排查
+  - 必须升级 SDK 才能解决
+  - CPU 高负载是本次刷屏的根因
+forbidden_actions:
+  - 在硬判据单边命中 Linux 的情况下仍弹平台多选让客户确认
+  - 要求客户先执行 S4 取证命令清单才肯给结论
+  - 给出另一平台的节点路径、命令或 FAQ 编号形态
+  - 建议客户修改 FuSa 源码
+evidence_signatures:
+  input/serial.log:
+    - 'diag_stl: heartbeat time:1'
+    - 'NetlinkHeartBeatHandle: ack'
+    - 'diag_stl: cycle check handler registered, period 20ms'
+  input/sdk-check.txt:
+    - 'LINUX_HIT'
+    - 'SDK_VERSION=V2.10.0'
+  input/prompt.md:
+    - '/workspace/sdk/m57-linux'
+expected_confidence: high
+evaluation_notes:
+  - 不要求给出 4ms/8ms jiffies 换算这类细节，指出 5ms 是标称单轮窗口、20ms 是检查周期即可。
+  - 客户没提供 error_mask，本 Case 不涉及 S2 归属定位，不得因缺 mask 而拒答或改判。
+  - 日志里没有 heartbeat timeout.，这是本 Case 的核心判据；把它读成"已超时"即失败。
+  - "计数每 20ms 最多递增 1"与"嫌刷屏可调日志级别"已降级为 recommended_*（缺了只 WARN）：2026-09-20 首轮验收把这两项按 required 判成 FAIL，属判分粒度问题，非 skill 缺口。

@@ -1,0 +1,27 @@
+# 由 evals.json 自动迁移生成
+{
+  "root_cause": "结合 proc 判定 FIFO 积压；指出 60fps 超过 30Hz 且同一 block 被提前覆写；EnumMode/QueryChnStatus 在内化版本不支持，改用 proc；给出 VSYNC 节拍和双/三缓冲建议。",
+  "required_concepts": [
+    "结合 dmesg/proc 判断 DEV_OP_FAIL 的真实原因",
+    "判定送帧速率超过显示刷新率导致 FIFO 写满",
+    "指出池内存同一 block 也不能在显示读完前立即覆写",
+    "指出两个接口在内化版本返回 NOT_SUPPORT，改用 proc",
+    "不泄露实现侧源码信息"
+  ],
+  "forbidden_conclusions": [
+    "断言 EnumMode/QueryChnStatus 可用于该版本排查"
+  ],
+  "evidence_signatures": {
+    "input/scenario.md": [
+      "60fps",
+      "30Hz",
+      "FIFO",
+      "display_status"
+    ]
+  },
+  "expected_confidence": "high",
+  "evaluation_notes": [
+    "由 sdk-vo-analysis-all/evals/evals.json 原用例 id=9 迁移。",
+    "root_cause 字段在本 Case 表示期望分析结论/期望生成结果的核心内容（见 grading.md）。"
+  ]
+}

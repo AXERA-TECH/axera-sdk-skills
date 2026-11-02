@@ -1,0 +1,24 @@
+tasks:
+  - name: full-axp-build-m57
+    prompt: "编译 demo_nor_nand 的完整 M57 SDK 并生成 AXDL 可用包。"
+    expect: "识别平台为 M57，在 build 目录执行 make PLAT=demo_nor_nand clean all install axp，并核验 build/out 产物及 axera_demo_nor_nand_<SDK_VERSION>_<timestamp>.axp。"
+
+  - name: list-supported-platforms-m57
+    prompt: "在 M57 SDK 工作区中，如何查看支持的所有硬件单板工程列表？"
+    expect: "进入 build/ 目录执行 make plist，解释 BOARDNAME_FLASHTYPE 命名规则（如 demo_nor_nand, demo_nor_emmc, demo_only_nand, demo_only_emmc）。"
+
+  - name: standalone-uboot-build-m57
+    prompt: "在 M57 平台上修改了 U-Boot 代码，如何单独编译 U-Boot 并指出生成的镜像文件？"
+    expect: "进入 boot/uboot 目录执行 make PLAT=demo_nor_nand clean all install，输出产物为 build/out/demo_nor_nand/images/u-boot.img，指出配置文件为 boot/uboot/u-boot-2022.10/configs/m57-demo-nor-nand_defconfig。"
+
+  - name: standalone-kernel-build-m57
+    prompt: "为 M57 平台单独编译 Linux Kernel，指出工作目录、构建命令、对应的 defconfig 和最终输出产物。"
+    expect: "进入 kernel/linux 目录执行 make PLAT=demo_nor_nand clean all install，输出为 build/out/demo_nor_nand/images/kernel.img，配置文件为 kernel/linux/linux-6.1.83/arch/arm64/configs/m57-tiny_defconfig。"
+
+  - name: disable-optee-build-m57
+    prompt: "如果 M57 某工程不需要 OP-TEE，应如何配置构建选项并在打包时不包含 optee.img？"
+    expect: "在 build/platforms/<vendor>/<PLAT>/config.mk 中设置 SUPPORT_OPTEE := FALSE，在 build 目录重新编译打包确认无 optee.img。"
+
+  - name: inspect-build-outputs-m57
+    prompt: "M57 全版本编译打包完成后，在哪个目录下能找到所有分立镜像以及供烧录的打包文件？"
+    expect: "指出镜像目录为 build/out/<PLAT>/images/（含 fdl1, fdl2, u-boot, kernel 等；bl31/optee 仅在对应 SUPPORT_ATF/SUPPORT_OPTEE 启用时存在），打包文件为 build/out/axera_<PLAT>_<SDK_VERSION>_<timestamp>.axp。"

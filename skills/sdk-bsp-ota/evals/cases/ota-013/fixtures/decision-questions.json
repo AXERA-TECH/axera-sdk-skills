@@ -1,0 +1,14 @@
+{
+  "extension_file": {
+    "question": "新增 type handler 的主要文件名",
+    "type": "string"
+  },
+  "decode_in_lifecycle_hook": {
+    "question": "是否将镜像解码主体放 ota.sh",
+    "type": "boolean"
+  },
+  "error_propagation_required": {
+    "question": "是否需验证错误传播",
+    "type": "boolean"
+  }
+}

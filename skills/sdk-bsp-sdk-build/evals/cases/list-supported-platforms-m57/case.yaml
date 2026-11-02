@@ -1,0 +1,9 @@
+prompt: |
+  使用已安装的 sdk-bsp-sdk-build 技能回答：在 M57 SDK 工作区中，如何查看支持的所有硬件单板工程列表？工程的命名规则是什么？
+  请将完整解答写入当前目录的 answer.md 文件中。
+expect:
+  files:
+    - path: answer.md
+      exists: true
+      min_bytes: 50
+  assert: assert.sh

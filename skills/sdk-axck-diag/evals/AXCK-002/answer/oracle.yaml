@@ -1,0 +1,20 @@
+root_cause: "启动初始化阶段调用 AX_VENC_CreateChn 创建编码通道 0 时返回 0x80070216 (AX_ERR_VENC_EXIST)，表示该通道已存在或通道号在硬件通道分配表中冲突，导致媒体管线构建终止。"
+required_concepts:
+  - "0x80070216"
+  - "AX_ERR_VENC_EXIST"
+  - "AX_VENC_CreateChn"
+  - "VENC 通道冲突"
+  - "ppl_config.json"
+  - "检查 enc_chnl 映射与 JENC 通道划分"
+forbidden_conclusions:
+  - "CMM 内存池不足"
+  - "Sensor 曝光参数错误"
+  - "RTSP 端口冲突"
+evidence_signatures:
+  input/serial.log:
+    - "AX_VENC_CreateChn failed"
+    - "0x80070216"
+    - "Pipeline setup aborted"
+expected_confidence: high
+evaluation_notes:
+  - "错误码 0x80070216 直接由 VENC/JENC 通道重复或冲突引发，需检查配置文件的通道规划。"

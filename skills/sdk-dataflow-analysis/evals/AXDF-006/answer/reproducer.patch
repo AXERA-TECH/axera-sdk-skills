@@ -1,0 +1,38 @@
+diff --git a/demo/FRTDemo/bin/config/ipc/ppl.json b/demo/FRTDemo/bin/config/ipc/ppl.json
+--- a/demo/FRTDemo/bin/config/ipc/ppl.json
++++ b/demo/FRTDemo/bin/config/ipc/ppl.json
+@@ -12,7 +12,7 @@
+             "dst_mod"   : "IVPS",
+             "dst_grp"   : 0,
+             "dst_chn"   : 0,
+-            "link_attr" : {"mode": 3, "line_cnt": 0},
++            "link_attr" : {"mode": 1, "line_cnt": 0,"src_engine":"NONE","dst_engine":"GDC"},
+             "link": 1
+         },
+         {
+diff --git a/demo/FRTDemo/bin/config/ipc/testsuite.json b/demo/FRTDemo/bin/config/ipc/testsuite.json
+--- a/demo/FRTDemo/bin/config/ipc/testsuite.json
++++ b/demo/FRTDemo/bin/config/ipc/testsuite.json
+@@ -172,9 +172,9 @@
+     },
+     "//": "PPL1",
+     "scenario_1": {
+-        "LoopNum": -1,
+-        "DefIntervalMs": 5000,
+-        "RandomEnable": 1,
++        "LoopNum": 1,
++        "DefIntervalMs": 1000,
++        "RandomEnable": 0,
+         "VIN": {
+             "snsMode":[{
+                 "description": "Work Mode",
+@@ -226,7 +226,7 @@
+             "ldc":[{
+                 "description": "LDC",
+                 "sns_id_option": [0],
+                 "enable_option_desc": ["0:disable, 1:enable"],
+-                "enable_option": [0,1],
++                "enable_option": [1],
+                 "distor_ratio": 2000,
+                 "x_ratio": 50,
+                 "y_ratio": 50

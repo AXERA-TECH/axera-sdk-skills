@@ -1,0 +1,23 @@
+diff --git a/demo/FRTDemo/bin/config/ipc/encoder.json b/demo/FRTDemo/bin/config/ipc/encoder.json
+--- a/demo/FRTDemo/bin/config/ipc/encoder.json
++++ b/demo/FRTDemo/bin/config/ipc/encoder.json
+@@ -309,7 +309,7 @@
+             {
+                 "//": "0: H264, 1: MJPEG, 2:H265, 3: JENC",
+-                "encoder_type": 0,
++                "encoder_type": 1,
+                 "channel": 0,
+                 "record_permit": 1,
+                 "pipe_src": 0,
+                 "in_fifo_depth": 1,
+diff --git a/demo/FRTDemo/bin/config/ipc/ppl.json b/demo/FRTDemo/bin/config/ipc/ppl.json
+--- a/demo/FRTDemo/bin/config/ipc/ppl.json
++++ b/demo/FRTDemo/bin/config/ipc/ppl.json
+@@ -549,6 +549,6 @@
+             "dst_grp": 0,
+             "dst_chn": 0,
+-            "link_attr" : {"mode": 1, "line_cnt": 128,"src_engine":"VPP","dst_engine":"VENC"},
++            "link_attr" : {"mode": 1, "line_cnt": 128,"src_engine":"VPP","dst_engine":"JENC"},
+             "link": 1
+         },
+         {

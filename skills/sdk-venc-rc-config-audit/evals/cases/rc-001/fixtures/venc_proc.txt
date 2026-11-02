@@ -1,0 +1,49 @@
+[SDK version]: ax_venc V3.15.0_20260929153144 Sep 29 2026 15:50:46 JK
+-------- VENC CHN ATTR 1 -----------------------------------------------------------
+ID    Pid     Type    Profile Level wSrc    hSrc    Strd0   Strd1   maxW    maxH    [CropEn StartX  StartY  CropW   CropH]  PixFmt  link  Range BufMode StrmBufSize(KB)
+0     3293    H264    High    52     2688    1520    2688    2688    2688    1520    N       0       0       0       0       NV12    Y     FULL  Ring    1500
+1     3293    H264    High    52     720     576     768     768     720     576     N       0       0       0       0       NV12    Y     FULL  Ring    200
+-------- VENC CHN RC ATTR 1 -----------------------------------------------------------
+ID    RcMode SrcFr DstFr TargetBitRate MaxBitRate MinQp   MaxQp   MinIQp  MaxIQp  IQpDelta  IpropMax   IpropMin   StartQp    QpDltRng SvcEn   ChgPos  StillPercent MaxStillQp
+0     CBR    30    30    4096          -          10      48      10      30      0         100        1          -1          10       N       -       -            -
+1     CBR    30    30    400           -          10      48      10      48      0         100        1          -1          10       N       -       -            -
+-------- VENC CHN RC ATTR 3  -----------------------------------------------------------
+ID    BlkRcSize SliceIQp  SlicePQp  CbQPOffset CrQPOffset MotionSen MotionAlpha StaticIPer CtbRc CtbRcQpDelRng UpperLimit Alpha  Beta   WeightSum
+0     2         [10,51]   [10,51]   -6         -6         8         128         0          N     3             10         -      -      -
+1     2         [10,51]   [10,51]   -6         -6         8         128         0          N     3             10         -      -      -
+-------- VENC CHN GOP ATTR  -----------------------------------------------------------
+ID    GopMode   Gop   LtrGop LtrRefType SpGop  SpRefType
+0     NormalP   30    -      -          -      -
+1     NormalP   60    -      -          -      -
+-------- VENC CHN ATTR 2 -----------------------------------------------------------
+ID    RefRing RefComp EncW    EncH    FrmSize      SeqNum       CompMode     CompLevel    BlkId        PhyAddr0     PhyAddr1     PhyAddr2     PTS
+0     Y       N       2688   1520   6128640       1046         LOSSY        10          0x5e000000   0x42a8b000   0x42aca000   0x0          0x373cd19fd
+1     Y       N       720    576    622080        1046         LOSSY        10          0x5e000000   0x42a8b000   0x42aca000   0x0          0x373cd19fd
+-------- VENC CHN RC ATTR 2  -----------------------------------------------------------
+ID    QMapQpType  QMapUnit    QMapBlkType IQp   PQp   MinQpDelta MaxQpDelta shtStaTime ltStaTime  ltMinBr  ltMaxBr
+0     -           -           -           -     -     -          -          -          -          -        -
+1     -           -           -           -     -     -          -          -          -          -        -
+-------- VENC CHN HSK STATUS -----------------------------------------------------------
+VeChn bHsk maxH EncH EncHPre srcNum fMode ringLCnt sliceNum minhskLin saSize  conId waitId upId initVal syncVal bFrmDrop hskCnt      errDropCnt
+0     Y    1520 1520 1520    1      1     128      95       16        380     8     34     70   9216    10752   0        1031        0
+VeChn cntWa douWa waChn0  waChn1  opWaChn0  opWaChn1  opUpChn0  opUpChn1  waWaPhy0  waUpPhy0  waReInfo0 waReInfo1 upReInfo  se_id
+0     0     0     34      255     26        255       62        255       43d17000  43d17800  1 :10752  0 :10752  0 :10752  0
+-------- VENC STREAM BUF STATUS -----------------------------------------------------------
+ChnId BufMod  PhyAddr     VirtAddr    BuffSize  ReadPtr   WritePtr  ReadCycle  WriteCycle AvalRSize AvalWSize RollbackWr RollbackCycle HwUsed
+0     Ring    0x434a3000  e41fcdca    1536000   0x3686    0x3686    1031       1031       0         1522042   0x0        0             N
+1     Ring    0x434a3000  e41fcdca    204800    0x3686    0x3686    1031       1031       0         1522042   0x0        0             N
+-------- VENC CHN STATUS 0 -----------------------------------------------------------
+ChnId interChn AutoFps RatDrpCnt   NoFreeCnt DiscardCnt NoNeedEnc Send2EncCnt Send2EncFail EncSucCnt   ReEncCnt  DropBsCnt ErrorCnt StopCnt  BufFullCnt TimeOutCnt
+0     0        N       0           0         0          0         1031        0            1031        0         0         0        0        0          0
+1     1        N       0           0         0          0         1031        0            1031        0         0         0        0        0          0
+-------- VENC CHN STATUS 1 -----------------------------------------------------------
+ChnId ToEncNum NoStrmBufCnt SupFrmRe SupFrmDrop OtherDisCnt Send2FwFps  TimeStatis HwCycle   WrBw RdBw EncCost  MaxEncCost EncCostAve HwCycleAve MaxHwCycle MaxWrBw WrBwAve MaxRdBw RdBwAve
+0     -1       0            0        0          0           29.8        0          5912400   100  301  -        -          -          -          -          -       -       -       -
+1     -1       0            0        0          0           29.8        0          5912400   100  301  -        -          -          -          -          -       -       -       -
+-------- VENC CHN STATUS 2 -----------------------------------------------------------
+VeChn bRecv FrmRecv       RecvFps DiscardedNum  SubMitCnt     SubMitFail    RecvBsCnt     BsFrmCnt      OutFps  BitRate(kbps)  WaitEncFail  SeqDiscont
+0     Y     1031          29.8    0             1031          0             1031          1031          29.8    4118            0            0
+1     Y     1031          29.8    0             1031          0             1031          1031          30.7    404             0            0
+VeChn NodeCnt BusyNod FreeNod UserNod GetFreeFail UserGet     UserRelea   TotalGet    TotalRls    WithCuInfo  YuvAddCnt  YuvSubCnt  YuvAddFail
+0     64      0       64      0       0           1031        1031        1031        1031        0           1031      1031      0
+1     64      0       64      0       0           1031        1031        1031        1031        0           1031      1031      0

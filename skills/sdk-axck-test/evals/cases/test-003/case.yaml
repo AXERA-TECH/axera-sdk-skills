@@ -1,0 +1,8 @@
+prompt: |
+  使用已安装的 sdk-axck-test 技能，检查测试套件对 NOR Flash 的保护机制，验证避免 tmpfs 日志溢出和 Flash 磨损的规范，将结果写入 out/report.md。
+expect:
+  files:
+    - path: out/report.md
+      exists: true
+      min_bytes: 40
+  assert: assert.sh

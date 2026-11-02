@@ -1,0 +1,67 @@
+skill_name: sdk-tx-analyse
+evals:
+  - id: 1
+    prompt: "请参考 msp/sample/vin_ivps_vo_tx 和 header/external 下的 ax_tx_api.h、ax_tx_common.h、ax_vo_api.h，生成一个把 VO BT656 输出接到外部 TX 芯片、输出 HDCVI 1080P25 同轴信号的 AX615 C 示例，给出 VO×TX 映射表、TX 初始化流程、README 和逆序清理。"
+    expected_output: "识别 vin_ivps_vo_tx 基线，生成 VO BT656 SDR 1080P25 属性 + TX CVI 1080P25 映射，使用真实 AX_TX/AX_VO API，含 CLK->VI->VO 初始化、SetVideoEn 断流重锁、逆序清理、README。"
+    files: []
+    expectations:
+      - "明确选择 msp/sample/vin_ivps_vo_tx 作为基线，并给出 VO(BT656 输出) -> TX_VI -> TX_VO(同轴) 的通路说明。"
+      - "引用 ax_tx_api.h/ax_tx_common.h 中真实的 AX_TX_Init/Reset/CLK/VI/VO API 与 VIDEO_FMT_E/VIDEO_OUT_FMT_E 枚举，不虚构函数名或枚举。"
+      - "VO 侧配置 AX_VO_INTF_BT656 + YUV422 + 1080P25，TX 侧映射到 TX_VIDEO_PROTOCAL_CVI + HDCVI_1920x1080_25FPS + VI_MODE_BT656_HD1 + 合适的 BtClk。"
+      - "给出 SAMPLE_TXInit 的 CLK->VI->VO 顺序、SetVideoEn(FALSE)+sleep 断流重锁、SAMPLE_TXDeInit 逆序清理，以及 README 与 /proc/ax_proc 检查项。"
+
+  - id: 2
+    prompt: "我要在现有 vin_ivps_vo_tx 里新增一路 TVI 4M30（2560x1440@30fps）输出。请根据 external 头文件说明需要在 VO×TX 映射表、VO 属性表、命令行选项里改哪些地方，并保证 SDR/DDR 与 BtWorkMode、输出制式前缀与协议一致。"
+    expected_output: "在 gastVideoParamMap、gastPubAttr、VO_INTF_FMT_TYPE_E、命令行帮助里成套新增 TVI 4M30 项，核对边沿/BtClk/前缀一致性。"
+    files: []
+    expectations:
+      - "成套更新：VO_INTF_FMT_TYPE_E 枚举、sample_vo.c 的 gastPubAttr 属性行、sample_tx.c 的 gastVideoParamMap 映射行，并保持数组与枚举一一对应。"
+      - "TX 侧使用 TX_VIDEO_PROTOCAL_TVI + T_2560x1440_30FPS + TX_VIDEO_FORMAT_2560x1440_30FPS，输出制式前缀 T_ 与协议 TVI 一致。"
+      - "说明 DDR/双沿场景对应 VI_MODE_BT656_DUL_HD1 与相应 BtClk（如 148P5M），VO 侧用 USER timing（bDlbClk=1）而非标准 timing。"
+      - "同步更新命令行选项（-o/-t）的解析、PrintHelp 和默认值，并指出板级 data line/pin map 需按 sample 确认、不可臆造。"
+
+  - id: 3
+    prompt: "在 TX CVI 1080P30 通路上增加正向数字音频和 RS485 收发，参考 vin_ivps_vo_tx 的 sample_tx.c 和 sample_audio.c。请说明需要的 AX_TX_VO 音频/RS485 API、依赖边界，以及不需要音频的纯 TX 版本要如何避免链接音频库。"
+    expected_output: "区分 TX 视频、正向数字音频、RS485 的模块边界，引用真实 AX_TX_VO_SetAudio*/SetRs485* API，说明 PnSeq、音频类型分段、依赖隔离。"
+    files: []
+    expectations:
+      - "引用真实的 AX_TX_VO_SetAudioParam/SetAudioPubAttr/SetAudioExtParam 与 AX_TX_VO_SetRs485Param/SendRs485Data/RecvRs485Data，参数结构来自 ax_tx_common.h。"
+      - "说明数字音频制式需开启 VO_VIDEO_EXT_PARAM_S.u8PnSeqEn，正向音频类型按输出制式分段（CVI 段 DIGTAL），并处理 RS485 与音频冲突时的 SwitchRs485Position。"
+      - "音频依赖（sample_audio.c/wave_parser、tinyalsa、libsamplerate）只出现在音频变体的源文件和 Makefile，纯 TX 版本不链接这些库。"
+      - "给出音频/RS485 相对 TX 视频的启动顺序、资源释放，以及需要用户确认的板级/时钟信息（如 MCLK、data line）。"
+
+  - id: 4
+    prompt: "对讲场景下 RS485 通信异常应该如何处理？请区分双讲和单讲，并给出对应的 RS485 位置配置。"
+    expected_output: "识别 RS485 位置配置与对讲模式的对应关系：双讲使用 VO_RS485_POSITION_REDUCE，单讲使用 VO_RS485_POSITION_NORMAL，并引用 AX_TX_VO_SwitchRs485Position。"
+    files: []
+    expectations:
+      - "明确双讲场景配置 VO_RS485_POSITION_REDUCE，单讲场景配置 VO_RS485_POSITION_NORMAL。"
+      - "引用真实的 AX_TX_VO_SwitchRs485Position API 及 VO_RS485_POSITION_E 枚举，不臆造配置项。"
+      - "说明位置配置不匹配可能导致 RS485 通信异常，并建议修改后重新验证。"
+
+  - id: 5
+    prompt: "TVI 1080P25 或 1080P30 对接 DH DVR 时出现异常的哒哒声音，应该如何处理？"
+    expected_output: "给出已验证的处置建议：先更新到最新版本后复测，不臆造具体修复版本号；若仍存在，再收集版本、TVI 制式、音频配置和 DVR 型号。"
+    files: []
+    expectations:
+      - "针对 TVI 1080P25/1080P30 对接 DH DVR 的哒哒声音，优先建议更新到最新版本。"
+      - "明确不得在没有发布说明依据时臆造具体修复版本号。"
+      - "说明升级后仍复现时需要补充当前版本、具体 TVI 制式、音频配置和 DVR 型号。"
+
+  - id: 6
+    prompt: "RS485 接收数据偶尔异常，当前使用中断接收模式，应该如何排查和调整？"
+    expected_output: "识别中断接收模式可能是问题路径，建议改为查询模式，并使用 AX_TX_VO_GetRs485RxbufCnt 查询接收数据量，再用 AX_TX_VO_RecvRs485Data 读取数据。"
+    files: []
+    expectations:
+      - "明确在中断模式下出现偶发接收异常时，建议切换到查询模式验证。"
+      - "引用真实的 AX_TX_VO_GetRs485RxbufCnt 和 AX_TX_VO_RecvRs485Data API。"
+      - "区分查询接收数据量与实际读取数据的步骤，不把查询模式误写成新的虚构 API 或回调机制。"
+
+  - id: 7
+    prompt: "艳丽模式下容易出现错屏，怀疑 VO BT 输出的 0 和 255 没有裁剪，应该如何答复和处理？"
+    expected_output: "识别为 VO 侧已知现象，建议先更新到最新版本后复测；不应在缺少证据时自行修改 BT timing、线序或裁剪参数，也不应臆造修复版本号。"
+    files: []
+    expectations:
+      - "将艳丽模式错屏且怀疑 0/255 未裁剪归类为 VO 侧问题，并建议更新到最新版本。"
+      - "明确升级后需要复测，不能直接断言具体修复版本号或已彻底解决。"
+      - "在未验证前不得自行修改 BT timing、data line/pin map 或裁剪参数；如仍复现，再收集现场版本和配置继续定位。"

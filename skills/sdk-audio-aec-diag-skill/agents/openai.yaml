@@ -1,0 +1,4 @@
+interface:
+  display_name: "AX615 Audio AEC 故障诊断助手"
+  short_description: "根据采集包、配置与音频定位 AEC 问题，给出修正、复测或原厂交接"
+  default_prompt: "使用 $sdk-audio-aec-diag-skill 根据我的现象、日志或采集包逐步排查 AEC 问题，给出证据、最小验证、修正与回归方法；缺信息时先问最关键的一项，需要原厂介入时整理交接材料。"

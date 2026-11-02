@@ -1,0 +1,18 @@
+{
+  "arbitrary_512_raw_writes": {
+    "question": "是否可以直接按任意 512 字节 raw 分笔写 ETFS",
+    "type": "boolean"
+  },
+  "oob_required": {
+    "question": "是否需考虑 spare/OOB",
+    "type": "boolean"
+  },
+  "transaction_granularity_required": {
+    "question": "是否需匹配事务/页粒度",
+    "type": "boolean"
+  },
+  "linux_raw_method_applicable": {
+    "question": "是否可直接照搬 Linux 裸 MTD 写法",
+    "type": "boolean"
+  }
+}

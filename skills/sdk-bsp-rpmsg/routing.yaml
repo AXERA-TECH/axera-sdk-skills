@@ -1,0 +1,34 @@
+version: 1
+
+# Axera IPC/RPMsg/RPZC 路由表：workspace 检测 → 平台身份 → 平台摘要。
+# 参考资料的实际路径统一由 reference/_index.md 声明。
+# 先匹配具体 board/SDK，再匹配通用 M57 MCAL SDK；不要用复用的 m57 目录名区分平台。
+
+platforms:
+  - id: ax637
+    display: AX637 / AX637R SDK (基于 M57 架构，不支持 QNX)
+    detect:
+      any:
+        - path_exists: SafetyIsland/rt-thread/bsp/m57/configs_ax637
+        - path_exists: SafetyIsland/rt-thread/bsp/m57/configs_ax637r
+    load:
+      - platforms/m57.md
+      - platforms/ax637.md
+    reference_root: reference/
+
+  - id: m57
+    display: Axera M57 SDK
+    detect:
+      any:
+        - path_exists: SafetyIsland/mcal
+    load:
+      - platforms/m57.md
+    reference_root: reference/
+
+fallback:
+  id: unknown
+  action: ask
+  message: |
+    未识别到已登记的 Axera IPC/RPMsg/RPZC 平台。请：
+      1) 通过 args 显式指定 platform=<id>，可用 id 为 [m57, ax637]；或
+      2) 在 routing.yaml 中新增平台，并补充 platforms/<id>.md、reference/_index.md 与 evals。

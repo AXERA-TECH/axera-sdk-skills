@@ -1,0 +1,247 @@
+launching frtdemo, md5: 56bb801f3825281feb2b7777fedbc99d ...
+=============== APP(APP Ver: V3.12.0, SDK Ver: V3.12.0) Started Sep  8 2026 15:52:28 ===============
+09-17 10:54:47:007 1888318073   1449 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module LOG OK
+09-17 10:54:47:007 1888318073   1449 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module LOG OK
+[D]AX_GZIPD_Init: [SDK version]: libax_gzipd.so V3.12.0 Sep  8 2026 15:38:54
+09-17 10:54:47:026 1888336298   1449 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc0, mod=7, grp=0, chn=0, type=1, ret=0x800b000a
+09-17 10:54:47:026 1888336532   1449 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc0, mod=7, grp=0, chn=0, type=0, ret=0x800b000a
+09-17 10:54:47:026 1888336716   1449 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc11, mod=7, grp=0, chn=5, type=1, ret=0x800b000a
+09-17 10:54:47:026 1888336889   1449 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc11, mod=7, grp=0, chn=5, type=0, ret=0x800b000a
+09-17 10:54:47:026 1888337056   1449 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc12, mod=7, grp=0, chn=6, type=1, ret=0x800b000a
+09-17 10:54:47:027 1888337222   1449 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc12, mod=7, grp=0, chn=6, type=0, ret=0x800b000a
+09-17 10:54:47:027 1888337385   1449 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc13, mod=7, grp=0, chn=7, type=1, ret=0x800b000a
+09-17 10:54:47:027 1888337555   1449 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc13, mod=7, grp=0, chn=7, type=0, ret=0x800b000a
+09-17 10:54:47:027 1888337723   1449 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=VIN_POOL, mod=17, grp=0, chn=0, type=1, ret=0x800b000a
+09-17 10:54:47:027 1888337892   1449 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=VIN0, mod=17, grp=0, chn=0, type=0, ret=0x800b000a
+09-17 10:54:47:027 1888338055   1449 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=VIN1, mod=17, grp=1, chn=0, type=0, ret=0x800b000a
+09-17 10:54:47:028 1888338221   1449 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=npu, mod=6, grp=0, chn=0, type=0, ret=0x800b000a
+09-17 10:54:47:028 1888338387   1449 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc1, mod=7, grp=0, chn=1, type=1, ret=0x800b000a
+09-17 10:54:47:028 1888338551   1449 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc1, mod=7, grp=0, chn=1, type=0, ret=0x800b000a
+09-17 10:54:47:028 1888338714   1449 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc2, mod=7, grp=0, chn=2, type=1, ret=0x800b000a
+09-17 10:54:47:028 1888338878   1449 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc2, mod=7, grp=0, chn=2, type=0, ret=0x800b000a
+09-17 10:54:47:028 1888339044   1449 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc3, mod=7, grp=0, chn=3, type=1, ret=0x800b000a
+09-17 10:54:47:029 1888339209   1449 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc3, mod=7, grp=0, chn=3, type=0, ret=0x800b000a
+09-17 10:54:47:029 1888339373   1449 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc10, mod=7, grp=0, chn=4, type=1, ret=0x800b000a
+09-17 10:54:47:029 1888339539   1449 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc10, mod=7, grp=0, chn=4, type=0, ret=0x800b000a
+09-17 10:54:47:029 1888339642   1449 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module SYS OK
+09-17 10:54:47:036 1888346348   1449 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module NPU OK
+09-17 10:54:47:045 1888355701   1449 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module VIN OK
+09-17 10:54:47:045 1888355946   1449 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module MIPI_RX OK
+09-17 10:54:47:048 1888358737   1449 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module IVPS OK
+09-17 10:54:47:051 1888361340   1449 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module VENC OK
+09-17 10:54:47:062 1888372870   1449 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module ACAP OK
+09-17 10:54:47:065 1888376212   1449 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module APLAY OK
+09-17 10:54:47:081 1888391632   1449 W SNS_PARSER: Parse sensor config file: ./config/ipc/sensor/mis20s1.json successfully.
+09-17 10:54:47:085 1888395461   1449 W IPC_PPL <InitSysMods>.2689: ---
+09-17 10:54:47:109 1888419722   1449 I BASE_LINK: Linkage setup: (17, 0, 0) => (13, 0, 0)
+09-17 10:54:47:109 1888419851   1449 I BASE_LINK: Linkage setup: (13, 0, 0) => (7, 0, 0)
+09-17 10:54:47:109 1888419934   1449 I BASE_LINK: Linkage setup: (13, 0, 2) => (7, 0, 1)
+09-17 10:54:47:109 1888420059   1449 W IPC_PPL <Construct>.97: Linkage setup.
+09-17 10:54:47:109 1888420172   1449 W IPC_PPL <InitSensor>.243: +++
+09-17 10:54:47:110 1888420335   1449 W SNS_MGR: Create sensor instance 0 ok.
+09-17 10:54:47:110 1888420447   1449 K SENSOR <InitEZoom>: +++
+09-17 10:54:47:113 1888423969   1449 W SNS_MGR: Initailize sensor 0 ok.
+09-17 10:54:47:147 1888457643   1449 W IPC_PPL <InitSensor>.437: ---
+09-17 10:54:47:147 1888457767   1449 W IPC_PPL <InitPoolConfig>.1221: +++
+09-17 10:54:47:158 1888468812   1449 K POOL: Latency Mode:2 vin buffer mode:0
+09-17 10:54:47:159 1888469583   1449 K POOL: Comm Pool[0]: YUV_2688x128_FBC_2_10x1, BlkSize:344064, MetaSize:1024
+09-17 10:54:47:159 1888469701   1449 K POOL: Comm Pool[1]: YUV_768x576_FBC_2_4x2, BlkSize:368640, MetaSize:1024
+09-17 10:54:47:159 1888469793   1449 K POOL: Comm Pool[2]: YUV_1280x720_FBC_0_0x2, BlkSize:1474560, MetaSize:1024
+09-17 10:54:47:159 1888469880   1449 K POOL: Comm Pool[3]: YUV_1920x1080_FBC_2_0x2, BlkSize:2211840, MetaSize:1024
+09-17 10:54:47:160 1888470467   1449 I POOL: AX_POOL_Init success!
+09-17 10:54:47:160 1888470558   1449 K POOL: Priv Pool[0]: RAW0_134_1920x1080_FBC_2_4x7, BlkSize:806400, MetaSize:1024
+09-17 10:54:47:161 1888472037   1449 I POOL <InitPrivatePool>.431: AX_VIN_SetPoolAttr success!
+09-17 10:54:47:161 1888472121   1449 W IPC_PPL <InitPoolConfig>.1242: ---
+09-17 10:54:47:162 1888472227   1449 W IPC_PPL <InitAudio>.228: +++
+09-17 10:54:47:174 1888485021   1449 W IPC_PPL <InitAudio>.236: ---
+09-17 10:54:47:174 1888485143   1449 W IPC_PPL <InitIvps>.442: +++
+09-17 10:54:47:198 1888509009   1449 W IVPS <InitParams>.485: [0] Grp filter 0x01: engine:2, w:1920, h:1080, s:1920, frameRate[0.000000,0.000000], CompressInfo[0, 0]
+09-17 10:54:47:198 1888509145   1449 K IVPS <UpdateCompressInfo>: nChn: 0, CompressLevel: 10
+09-17 10:54:47:199 1888509268   1449 W IVPS <InitParams>.561: [0][0] ChnFilter0 0x11: engine:0, w:2688, h:1520, s:2688, frameRate[30.000000,30.000000], CompressInfo[16777216, 0]
+09-17 10:54:47:199 1888509361   1449 K IVPS <UpdateCompressInfo>: nChn: 1, CompressLevel: 0
+09-17 10:54:47:199 1888509472   1449 W IVPS <InitParams>.561: [0][1] ChnFilter0 0x21: engine:0, w:1280, h:720, s:1280, frameRate[30.000000,10.000000], CompressInfo[16777216, 0]
+09-17 10:54:47:199 1888509558   1449 K IVPS <UpdateCompressInfo>: nChn: 2, CompressLevel: 4
+09-17 10:54:47:199 1888509665   1449 W IVPS <InitParams>.561: [0][2] ChnFilter0 0x31: engine:0, w:720, h:576, s:768, frameRate[30.000000,30.000000], CompressInfo[16777216, 0]
+09-17 10:54:47:199 1888509751   1449 K IVPS <UpdateCompressInfo>: nChn: 2, CompressLevel: 4
+09-17 10:54:47:199 1888509855   1449 W IVPS <InitParams>.622: [0][2] ChnFilter1 0x31: engine:4, w:720, h:576, s:768,frameRate[30.000000,30.000000]
+09-17 10:54:47:199 1888509950   1449 I IPC_PPL: Init ivps group 0 successfully.
+09-17 10:54:47:199 1888510084   1449 W IPC_PPL <InitIvps>.621: ---
+09-17 10:54:47:200 1888510279   1449 W IPC_PPL <InitVenc>.626: +++
+09-17 10:54:47:200 1888510496   1449 I IPC_PPL <InitVenc>.653: IVPS[nGrp:0, nChn:0], VENC[nGrp:0, nChn:0]
+09-17 10:54:47:200 1888510581   1449 I IPC_PPL <InitVenc>.654: nWidth:2688, nHeight:1520, fSrcFrameRate:30.000000
+09-17 10:54:47:200 1888510870   1449 I VENC <InitParams>.831: VENC attr: chn:0, encoder:96, w:2688, h:1520, maxW:2688, maxH:1520, link:1, memSrc:0, in_depth:1, out_depth:2, frameRate:[30.000000 60.000000], bufSize:1536000
+09-17 10:54:47:200 1888510945   1449 I VENC <InitRcParams>.219: [0] +++, nGop=120
+09-17 10:54:47:200 1888511022   1449 I VENC <InitRcParams>.782: [0] ---
+09-17 10:54:47:200 1888511111   1449 W VENC <InitParams>.912: Video attr: chn:0, w:2688, h:1520, bitrate:4096, link:1, memSrc:0, in_depth:1, out_depth:2, frameRate:[30.000000 60.000000]
+09-17 10:54:47:201 1888511434   1449 I IPC_PPL <InitVenc>.653: IVPS[nGrp:0, nChn:2], VENC[nGrp:0, nChn:1]
+09-17 10:54:47:201 1888511516   1449 I IPC_PPL <InitVenc>.654: nWidth:720, nHeight:576, fSrcFrameRate:30.000000
+09-17 10:54:47:201 1888511655   1449 I VENC <InitParams>.831: VENC attr: chn:1, encoder:96, w:720, h:576, maxW:720, maxH:576, link:1, memSrc:0, in_depth:1, out_depth:1, frameRate:[30.000000 30.000000], bufSize:204800
+09-17 10:54:47:201 1888511724   1449 I VENC <InitRcParams>.219: [1] +++, nGop=60
+09-17 10:54:47:201 1888511794   1449 I VENC <InitRcParams>.782: [1] ---
+09-17 10:54:47:201 1888511883   1449 W VENC <InitParams>.912: Video attr: chn:1, w:720, h:576, bitrate:400, link:1, memSrc:0, in_depth:1, out_depth:1, frameRate:[30.000000 -1.000000]
+09-17 10:54:47:202 1888512237   1449 W IPC_PPL <InitVenc>.788: ---
+09-17 10:54:47:202 1888512349   1449 W IPC_PPL <InitCollector>.1047: +++
+09-17 10:54:47:202 1888512463   1449 I COLLECT <RegTargetChannel>.113: RegTargetChannel nGroup:0,nChannel:1
+09-17 10:54:47:202 1888512549   1449 I COMB_OBS <OnRegisterObserver>.50: nGrp:0, nChn:1, width:1280, height:720, sensorSrc:0, frameRate:10.000000
+09-17 10:54:47:202 1888512628   1449 I IPC_PPL <InitCollector>.1091: collect  width:1280, height:720, sensorSrc:0, frameRate:10.000000
+09-17 10:54:47:202 1888512706   1449 I IPC_PPL <InitCollector>.1071: Can not find relation for other module to collect (Module:COLLECT, Grp:1, Chn:0)
+09-17 10:54:47:202 1888512792   1449 I detector_obs <OnRegisterObserver>.59: nGrp: 0, nGrpCount: 1, pParams->nSnsSrc: 0
+09-17 10:54:47:202 1888512875   1449 I COLLECT <RegObserver>.84: m_nGroup:0, tTransAttr.nWidth:1280, height:720, frameRate:10.000000,vec.size():1
+09-17 10:54:47:202 1888512973   1449 I COLLECT <RegObserver>.84: m_nGroup:0, tTransAttr.nWidth:1280, height:720, frameRate:10.000000,vec.size():2
+09-17 10:54:47:202 1888513042   1449 I IPC_PPL <InitCollector>.1106: Can not find relation for collect module: ( Grp:1, Chn:0) to other module
+09-17 10:54:47:202 1888513104   1449 W IPC_PPL <InitCollector>.1144: ---
+09-17 10:54:47:203 1888513190   1449 W IPC_PPL <InitJenc>.793: +++
+09-17 10:54:47:203 1888513272   1449 W IPC_PPL <InitJenc>.852: ---
+09-17 10:54:47:203 1888513351   1449 W IPC_PPL <InitDetector>.857: +++
+09-17 10:54:47:203 1888513445   1449 I DETECTOR <Init>.271: +++
+09-17 10:54:47:203 1888513524   1449 I DETECTOR <Init>.290: m_stAttr.width:1280, height:720, nGrpCount: 1, modelPath:/opt/etc/skelModels
+09-17 10:54:47:406 1888717001   1449 I DETECTOR: roi(enable:0)
+09-17 10:54:47:406 1888717099   1449 I DETECTOR: push strategy(mode:3, interval:2000, count:3)
+09-17 10:54:47:407 1888717196   1449 I DETECTOR: body filter(0 X 0, confidence: 0.00)
+09-17 10:54:47:407 1888717282   1449 I DETECTOR: vehicle filter(0 X 0, confidence: 0.00)
+09-17 10:54:47:407 1888717444   1449 I DETECTOR: cycle filter(0 X 0, confidence: 0.00)
+09-17 10:54:47:407 1888717529   1449 I DETECTOR: face filter(0 X 0, confidence: 0.00)
+09-17 10:54:47:407 1888717608   1449 I DETECTOR: plate filter(0 X 0, confidence: 0.00)
+09-17 10:54:47:407 1888717683   1449 I DETECTOR: Track size(human: 0, vehicle: 0, cycle: 0)
+09-17 10:54:47:407 1888717751   1449 I DETECTOR: Panorama(enable:0)
+09-17 10:54:47:407 1888717816   1449 I DETECTOR: fCropEncoderQpLevel (75)
+09-17 10:54:47:407 1888717900   1449 I DETECTOR: body CropThreshold(0.00, 0.00, 0.00, 0.00)
+09-17 10:54:47:407 1888717980   1449 I DETECTOR: vehicle CropThreshold(0.00, 0.00, 0.00, 0.00)
+09-17 10:54:47:407 1888718058   1449 I DETECTOR: cycle CropThreshold(0.00, 0.00, 0.00, 0.00)
+09-17 10:54:47:407 1888718135   1449 I DETECTOR: face CropThreshold(0.00, 0.00, 0.00, 0.00)
+09-17 10:54:47:408 1888718213   1449 I DETECTOR: plate CropThreshold(0.00, 0.00, 0.00, 0.00)
+09-17 10:54:47:408 1888718376   1449 I DETECTOR: body push filter(Quality: 0.00)
+09-17 10:54:47:408 1888718459   1449 I DETECTOR: vehicle push filter(Quality: 0.00)
+09-17 10:54:47:408 1888718536   1449 I DETECTOR: cycle push filter(Quality: 0.00)
+09-17 10:54:47:408 1888718627   1449 I DETECTOR: face push filter(0 X 0, p: 180.00, y: 180.00, r: 180.00, b: 1.00)
+09-17 10:54:47:408 1888718698   1449 I DETECTOR: plate push filter(Quality: 0.00)
+09-17 10:54:47:408 1888718763   1449 I DETECTOR <Init>.495: ---
+09-17 10:54:47:408 1888718912   1449 W IPC_PPL <InitDetector>.915: ---
+09-17 10:54:47:408 1888719015   1449 W IPC_PPL <InitIves>.948: +++
+09-17 10:54:47:408 1888719129   1449 I IVES <Init>.37: nSnsID:0, width:1280, height:720, frameRate:10.000000, 1, 0, 0
+09-17 10:54:47:409 1888719204   1449 I MD <Startup>.38: +++nSnsID:0, nWidth:1280, nHeight:720
+09-17 10:54:47:409 1888719266   1449 I MD <Startup>.54: ---
+09-17 10:54:47:409 1888719328   1449 I MD <Cleanup>.60: +++
+09-17 10:54:47:409 1888719387   1449 I MD <Cleanup>.67: ---
+09-17 10:54:47:409 1888719451   1449 I MD <Startup>.38: +++nSnsID:0, nWidth:1280, nHeight:720
+09-17 10:54:47:409 1888719509   1449 I MD <Startup>.54: ---
+09-17 10:54:47:409 1888719583   1449 I MD <AddArea>.99: +++ x:320,y:180, w:640,h:360,mnW:32, mbH:32, nWidth:1280, nHeight:720
+09-17 10:54:47:410 1888720642   1449 I MD: MD area [320, 180, 640, 352] is added, id: 0
+09-17 10:54:47:410 1888720737   1449 I OD <Startup>.38: +++nSnsID:0, nFrameRate:10, nWidth:1280, nHeight:720
+09-17 10:54:47:410 1888720847   1449 I OD <Startup>.63: ---
+09-17 10:54:47:410 1888720973   1449 I OD: OD area [320, 180, 640, 360] is added, id: 0
+09-17 10:54:47:410 1888721091   1449 W IPC_PPL <InitIves>.989: ---
+09-17 10:54:47:413 1888723913   1449 I IPC_PPL: Init Rtsp successfully.
+09-17 10:54:47:414 1888724232   1449 K WEB SERVER <check_total_mem>: total mem from cmdline: 128 MB (mem + cmmpool)
+09-17 10:54:47:414 1888724338   1449 I IPC_PPL: Init Webserver successfully.
+09-17 10:54:47:414 1888724400   1449 I IPC_PPL: Init MPEG4 successfully.
+09-17 10:54:47:414 1888724472   1449 W IPC_PPL <Construct>.222: ---
+09-17 10:54:47:414 1888724554   1449 W IPC_PPL <Start>.1247: +++
+09-17 10:54:47:414 1888724633   1449 I WEB SERVER <Start>.1992: +++
+09-17 10:54:47:414 1888724949   1449 I WEB SERVER <Start>.1997: ---
+09-17 10:54:47:414 1888725005   1466 I WEB SERVER <WebServerThreadFunc>.2065: +++
+Play the stream using url: <<<<< rtsp://<board_ip>:8554/axstream0 >>>>>
+Play the stream using url: <<<<< rtsp://<board_ip>:8554/axstream1 >>>>>
+09-17 10:54:47:416 1888727030   1449 I DETECTOR <Start>.524: +++
+09-17 10:54:47:417 1888727953   1449 I DETECTOR <Start>.531: ---
+09-17 10:54:47:418 1888728240   1468 I DETECTOR <RunDetect>.184: +++
+09-17 10:54:47:418 1888728976   1449 I VENC <Start>.51: +++
+09-17 10:54:47:420 1888731094   1449 I VENC <StartRecv>.107: [0] VENC start receive
+09-17 10:54:47:425 1888735961   1449 K VENC <UpdateSvcParamInternal>: [0] +++
+09-17 10:54:47:426 1888736743   1449 K VENC <UpdateSvcParamInternal>: [0] Enable[0] ---
+09-17 10:54:47:426 1888736898   1449 I VENC <Start>.67: ---
+09-17 10:54:47:426 1888736987   1449 I VENC <Start>.51: +++
+09-17 10:54:47:428 1888739100   1449 I VENC <StartRecv>.107: [1] VENC start receive
+09-17 10:54:47:429 1888740178   1449 K VENC <UpdateSvcParamInternal>: [1] +++
+09-17 10:54:47:430 1888740358   1449 K VENC <UpdateSvcParamInternal>: [1] Enable[0] ---
+09-17 10:54:47:430 1888740458   1449 I VENC <Start>.67: ---
+09-17 10:54:47:430 1888740539   1449 I IVPS <Start>.61: [0] +++
+09-17 10:54:47:442 1888780194   1466 W WEB SERVER: Appweb started.
+09-17 10:54:47:470 1888780995   1449 W IVPS: Enable channel (Grp: 0, Chn: 0)
+09-17 10:54:47:470 1888781065   1466 I WEB SERVER <WebServerThreadFunc>.2150: ---
+09-17 10:54:47:470 1888781112   1449 W IVPS: Enable channel (Grp: 0, Chn: 1)
+09-17 10:54:47:471 1888781232   1449 W IVPS: Enable channel (Grp: 0, Chn: 2)
+09-17 10:54:47:471 1888781285   1473 I WEB SERVER <SendDataThreadFunc>.2156: +++
+09-17 10:54:47:476 1888786526   1449 I IVPS <StartWorkThread>.329: [0] +++
+09-17 10:54:47:476 1888787165   1449 I IVPS <StartWorkThread>.350: [0] ---
+09-17 10:54:47:477 1888787273   1449 I IVPS <StartOSD>.1044: [0]StartOSD ...
+09-17 10:54:47:477 1888787339   1475 I IVPS <FrameGetThreadFunc>.199: [0][1] +++ bLink:0 
+09-17 10:54:47:477 1888787395   1449 I OSD <StartOSD>.36: +++
+09-17 10:54:47:478 1888789245   1449 I OSD <UpdateOSDPic>.481: ivpsGrp:0, chn:0, width:2688, height:1520
+09-17 10:54:47:478 1888790136   1476 I IVPS <FrameGetThreadFunc>.199: [0][2] +++ bLink:1 
+09-17 10:54:47:482 1888792252   1449 I OSD <UpdateOSDPic>.530: [0][0] rgn:23 , OSD(PICTURE): nSrcWidth:2688, nSrcHeight:1520, u32BmpWidth: 256, u32BmpHeight: 64, xOffset: 2400, yOffset: 1404, alpha: 50
+09-17 10:54:47:483 1888794127   1449 I OSD <UpdateOSDStr>.743: [0] hRgn: 24, srcWidth: 2688, srcHeight: 1520, u32BmpWidth: 224, u32BmpHeight: 48, xOffset: 2448, yOffset: 20, alpha: 4
+09-17 10:54:47:485 1888795966   1449 I OSD <UpdateOSDStr>.743: [0] hRgn: 25, srcWidth: 2688, srcHeight: 1520, u32BmpWidth: 248, u32BmpHeight: 48, xOffset: 16, yOffset: 1448, alpha: 4
+09-17 10:54:47:486 1888796305   1449 I OSD <UpdateOSDPri>.1067: nGrp:0, nRgn:26, nZindex:4
+09-17 10:54:47:486 1888796943   1449 W OSD <StartOSD>.61: [0][1] Engine not configured. Please check the engine_filter_3 configuration in ivps.json.
+09-17 10:54:47:489 1888799435   1449 I OSD <UpdateOSDPic>.481: ivpsGrp:0, chn:2, width:720, height:576
+09-17 10:54:47:490 1888800549   1449 I OSD <UpdateOSDPic>.530: [0][2] rgn:29 , OSD(PICTURE): nSrcWidth:720, nSrcHeight:576, u32BmpWidth: 96, u32BmpHeight: 28, xOffset: 616, yOffset: 536, alpha: 50
+09-17 10:54:47:490 1888801108   1449 I OSD <UpdateOSDStr>.743: [0] hRgn: 30, srcWidth: 720, srcHeight: 576, u32BmpWidth: 72, u32BmpHeight: 16, xOffset: 640, yOffset: 8, alpha: 4
+09-17 10:54:47:491 1888801722   1449 I OSD <UpdateOSDStr>.743: [0] hRgn: 31, srcWidth: 720, srcHeight: 576, u32BmpWidth: 88, u32BmpHeight: 16, xOffset: 16, yOffset: 536, alpha: 4
+09-17 10:54:47:492 1888802592   1449 I IVPS <Start>.138: [0] ---
+09-17 10:54:47:492 1888802685   1449 K SENSOR <OpenAll>: [Dev:0] +++
+09-17 10:54:47:492 1888802871   1449 W SENSOR <OpenAll>.402: Sensor Attr => w:1920 h:1080 framerate:30.00 sensor mode:1 rawType:12
+09-17 10:54:47:493 1888803563   1449 K SENSOR: AX_ISP_OpenSnsClk[0]
+09-17 10:54:47:492 1888803211   1481 K OSD <PerformUpdateOSD>: +++
+09-17 10:54:47:509 1888820158   1449 K SENSOR: Pipe[0] sensor(0xb5b410b4) reset.
+09-17 10:54:47:540 1888850303   1449 K SENSOR: RxDev[0] AX_MIPI_RX_Start
+09-17 10:54:47:541 1888852122   1449 K SENSOR: [0] AX_VIN_CreateDev
+09-17 10:54:47:544 1888854718   1449 K SENSOR: [0] AX_VIN_CreatePipe
+09-17 10:54:47:545 1888855877   1449 K SENSOR: Pipe[0] nBusType: 0, nDevNode: 1, nI2cAddr: 0.
+09-17 10:54:47:546 1888856723   1449 I SENSOR: set sensor bus idx 1
+09-17 10:54:47:546 1888856797   1449 I SENSOR: set sensor slave addr 0
+09-17 10:54:47:546 1888856860   1449 K SENSOR: Pipe[0] sensor setting index: 5
+09-17 10:54:47:548 1888859038   1449 I SENSOR <SetSnsAttr>.1886: pipe:[0] AX_ISP_SetSnsAttr OK.
+09-17 10:54:47:621 1888931286   1449 K SENSOR: [0] AX_ISP_Create
+09-17 10:54:47:631 1888941273   1449 K SENSOR: [0] AX_ISP_RegisterAutoKitLib
+09-17 10:54:47:631 1888941436   1449 I SENSOR <operator()>.2952: Try loading /opt/etc/mis20s1_sdr_t_aiisp_reduce_fps.bin
+09-17 10:54:47:730 1889040752   1449 K SENSOR <operator()>: pipe[0] (/opt/etc/mis20s1_sdr_t_aiisp_reduce_fps.bin) loaded.
+09-17 10:54:47:979 1889289589   1449 K SENSOR: [0] AX_ISP_Open
+09-17 10:54:47:989 1889299659   1449 K SENSOR: Pipe[0] AX_VIN_EnableChn[0]
+09-17 10:54:47:999 1889309613   1449 K SENSOR: [0] AX_VIN_StartPipe
+09-17 10:54:48:000 1889310344   1449 K SENSOR: [0] AX_ISP_Start
+09-17 10:54:48:000 1889310740   1449 K SENSOR: [0] AX_VIN_EnableDev
+09-17 10:54:48:001 1889311461   1449 K SENSOR: [0] AX_ISP_StreamOn
+09-17 10:54:48:014 1889324670   1449 K SENSOR <OpenAll>: [Dev:0] ---
+09-17 10:54:48:027 1889338174   1494 I AENC <FrameGetThreadFunc>.198: [0] +++
+09-17 10:54:48:066 1889376744   1449 W PRINT: +++
+09-17 10:54:48:066 1889376793   1498 I AFPLAY <ProcessPlayFile>.319: +++
+09-17 10:54:48:067 1889377269   1498 N AFPLAY <ProcessPlayFile>: start play file: ./res/welcome.g711a
+09-17 10:54:48:067 1889377327   1449 W PRINT: ---
+09-17 10:54:48:067 1889377663   1449 I SENSOR <GetIspImageAttr>.1693: autoMode:0, tAttr.nSharpness:0, tAttr.nBrightness:50, tAttr.nContrast:50,tAttr.nSaturation:50
+09-17 10:54:48:067 1889377786   1449 W IPC_PPL <Start>.1374: ---
+Preview the video using URL: <<<<< http://<board_ip>:8080 >>>>>
+09-17 10:54:48:170 1889480447   1449 K MAIN: CMD: ./frtdemo -p 0 -s 16 -n 1
+09-17 10:54:52:006 1893317096   1498 I AFPLAY <ProcessPlayFile>.563: ---
+09-17 10:54:52:007 1893317452   1499 W IPC_PPL <AudioPlayCallback>.64: [0] ./res/welcome.g711a play complete, status: 0
+09-17 10:54:58:819 1900130199   1500 K VENC: [0] fps 61.30, recv 613
+09-17 10:54:58:820 1900130372   1500 K VENC: [1] fps 30.60, recv 306
+09-17 10:55:07:435 1908746135   1468 I DETECTOR: fps 9.44
+09-17 10:55:08:919 1910230214   1500 K VENC: [0] fps 60.60, recv 1219
+09-17 10:55:08:920 1910230338   1500 K VENC: [1] fps 30.30, recv 609
+09-17 10:55:19:019 1920330197   1500 K VENC: [0] fps 60.60, recv 1825
+09-17 10:55:19:020 1920330348   1500 K VENC: [1] fps 30.30, recv 912
+09-17 10:55:27:537 1928848105   1468 I DETECTOR: fps 10.00
+09-17 10:55:29:119 1930430225   1500 K VENC: [0] fps 60.60, recv 2431
+09-17 10:55:29:120 1930430391   1500 K VENC: [1] fps 30.30, recv 1215
+09-17 10:55:39:219 1940530246   1500 K VENC: [0] fps 60.60, recv 3037
+09-17 10:55:39:220 1940531452   1500 K VENC: [1] fps 30.30, recv 1518
+09-17 10:55:47:538 1948849155   1468 I DETECTOR: fps 10.00
+09-17 10:55:49:320 1950630350   1500 K VENC: [0] fps 60.60, recv 3643
+09-17 10:55:49:320 1950630528   1500 K VENC: [1] fps 30.30, recv 1821
+09-17 10:55:59:422 1960733049   1500 K VENC: [0] fps 60.60, recv 4249
+09-17 10:55:59:423 1960733288   1500 K VENC: [1] fps 30.30, recv 2124
+09-17 10:56:07:624 1968935349   1468 I DETECTOR: fps 10.01
+09-17 10:56:09:520 1970831151   1500 K VENC: [0] fps 60.60, recv 4855
+09-17 10:56:09:521 1970831407   1500 K VENC: [1] fps 30.30, recv 2427
+09-17 10:56:19:620 1980930464   1500 K VENC: [0] fps 60.60, recv 5461
+09-17 10:56:19:620 1980930679   1500 K VENC: [1] fps 30.30, recv 2730
+09-17 10:56:27:727 1989037966   1468 I DETECTOR: fps 10.00
+09-17 10:56:29:720 1991030574   1500 K VENC: [0] fps 60.60, recv 6067
+09-17 10:56:29:722 1991032666   1500 K VENC: [1] fps 30.30, recv 3033
+09-17 10:56:39:820 2001130547   1500 K VENC: [0] fps 60.60, recv 6673
+09-17 10:56:39:820 2001130843   1500 K VENC: [1] fps 30.30, recv 3336
+09-17 10:56:47:729 2009040421   1468 I DETECTOR: fps 10.00
+09-17 10:56:49:920 2011230667   1500 K VENC: [0] fps 60.60, recv 7279
+09-17 10:56:49:922 2011232460   1500 K VENC: [1] fps 30.30, recv 3639
+09-17 10:57:00:020 2021330423   1500 K VENC: [0] fps 60.60, recv 7885

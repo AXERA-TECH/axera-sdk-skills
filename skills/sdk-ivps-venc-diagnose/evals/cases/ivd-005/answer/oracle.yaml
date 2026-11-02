@@ -1,0 +1,39 @@
+# IVD-005 拓扑矛盾：link_table/venc 声明 chn0 为 HSK 但 syncagent 无 SessId 0（第 2 节步骤 5）
+# 现场为 derived 构造（基底：ivd-002 正常采样，删除两轮的 sess0 块）。
+root_cause: 拓扑/同步配置不一致（INCONCLUSIVE）。link_table 声明 IVPS 0/0->VENC 0/0
+  为 SW_Low_Mem HSK（line=128），venc chn0 的 HSK STATUS 显示 bHsk=Y、
+  conId=8/waitId=34/upId=70，但 syncagent 中不存在 SessId 0 的 session（只剩
+  sess1/sess2），venc chn0 的 waitId/upId 无法在 syncagent 中交叉映射。按
+  SKILL.md 第 2 节步骤 5，应报告"拓扑/同步配置不一致"，优先排查 link 建立/
+  解除顺序、通道映射与 syncagent 输出完整性（如 priv 开关、SDK 版本匹配）；
+  在矛盾解决前不得按任一侧单独下卡死结论。业务计数（venc chn0 Send2EncCnt
+  1884->2036 推进）可作旁证提示"实际可能正常工作"，但不足以消除矛盾本身。
+required_concepts:
+  - 指出 link_table（与 venc HSK STATUS）与 syncagent 不一致：HSK 链路声明存在
+    但无对应 session/连接
+  - 结论为拓扑/同步配置不一致或 INCONCLUSIVE（或等价表述）
+  - 优先排查 link 建立/解除顺序、通道映射（或核对采集完整性/priv/版本）
+  - 矛盾未解决前不下具体模块卡死结论
+  - 业务计数两轮推进（venc chn0 1884->2036）可作旁证但不消除矛盾
+forbidden_conclusions:
+  - 只按 link_table 一侧断言卡死模块
+  - 只按 syncagent 一侧断言"session 未建立导致链路故障/卡死"
+  - 把矛盾解释为正常现象（无视矛盾继续常规分析并给出确定性根因）
+  - 判 VENC/VPP/JENC 硬件卡死
+evidence_signatures:
+  input/hsk_proc.txt:
+    - '===== SAMPLE 1'
+    - '===== SAMPLE 2'
+    - 'SW_Low_Mem'          # link_table 声明 chn0 为 HSK
+    - 'SessId VirChn State' # syncagent 只剩 sess1/sess2 表头
+    - '8704    10240'       # venc chn0 HSK STATUS（bHsk=Y 侧仍在）
+    - '30.7'                # chn0 RecvFps 正常推进旁证
+expected_confidence: low
+evaluation_notes:
+  - 本例考"防幻觉/防强行归因"：矛盾现场必须停在 INCONCLUSIVE 并给出排查方向。
+    模型可以先给出"若以某侧为准则候选为 X"的受控假设，不算违规；只有把单侧
+    信息当作确定根因才 FAIL。
+  - expected_confidence 为 low：结论本身是不一致/待核实，任何高置信根因断言
+    都与预期不符。
+  - 模型若建议重采（含 echo 'priv on' 后再采 syncagent）或核对 ax_sys/ax_venc
+    版本一致性，属正确排查方向。

@@ -1,0 +1,32 @@
+schema_version: 1
+id: AXSD-001
+title: module 配置下 sdhci-axera.ko 缺失导致未 probe
+category: linux-sd/driver-module/module-missing
+analyzer:
+  skill: sdk-bsp-sd-card-skill
+platform:
+  soc: AX615
+  os: linux-4.19.125
+reproducer:
+  patch: answer/reproducer.patch
+input:
+  type: log_set
+  files:
+    - input/config.txt
+    - input/commands.log
+    - input/dmesg.log
+  capture:
+    notes:
+      - 合成 Golden Case，用于覆盖 CONFIG_MMC_SDHCI_AXERA=m 但 rootfs 缺少 sdhci-axera.ko 的识别不上场景。
+      - 输入只包含 kernel config、模块命令输出和 SD/MMC 相关 dmesg 摘要。
+      - 未提供供电、card detect 或 CMD 交互证据，分析阶段不得跳到硬件根因。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/config.txt
+    - input/commands.log
+    - input/dmesg.log
+  evaluator_only:
+    - answer/oracle.yaml
+    - answer/reproducer.patch
+    - answer/case.yaml

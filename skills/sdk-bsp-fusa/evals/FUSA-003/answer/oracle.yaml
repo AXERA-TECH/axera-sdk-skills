@@ -1,0 +1,37 @@
+platform: qnx
+expected_stage: S3
+root_cause: 命中【已修故障】——老版本在高负载（本例压测 CPU 已到 91%以上）下心跳线程被饿死/线程风暴、ACK 排队阻塞，导致心跳发不出去并被判超时；这两个缺陷自 V0.11.0 起修复，客户当前 QNX_V0.10.0 低于修复版本，升级到 V0.11.0 即解决；升级后若仍报，再按 QNX 侧压测心跳条目把 CPU 占用压到 80% 以下。
+required_concepts:
+  - 判定为 QNX 平台：判据是 QNX 侧 diag_stl.c 命中、版本号 QNX_V0.10.0 带前缀、manifest 为 M57_SDK_QNX_V*.xml
+  - 高负载下心跳超时（心跳线程被饿死/线程风暴、ACK 队头阻塞）属【已修故障】，自 V0.11.0 起修复
+  - 客户版本低于修复版本，结论是升级到含修复的版本，而不是硬件问题
+  - 升级后仍报时按压测心跳条目处理，保证 CPU 占用低于 80%
+  - QNX 侧首个检查项是四个诊断进程是否都在（diag_core_drv、diag_extend、m57_ecm_drv、fcu_drv），任一挂掉都会静默丢失诊断能力
+required_actions:
+  - 先复述平台判定结果与依据，再给结论
+  - 给出可执行的升级结论（明确"升级到含修复的版本即解决"），不停留在"可能是老版本问题"
+  - 确认四个诊断进程是否都在跑，并说明不能把"最近没日志"理解成"没有故障"
+  - 引用 QNX 侧 FAQ 编号时照抄该文件原文，不换算、不跨平台映射
+forbidden_conclusions:
+  - 芯片批量硬件问题或需要换板子
+  - 属于设计预期，可以不管
+  - 需要调整心跳阈值或修改 FuSa 源码才能解决
+forbidden_actions:
+  - 在硬判据单边命中 QNX 时仍弹平台多选让客户确认
+  - 用另一平台的系统节点路径或编译开关（sysfs 节点、内核 Kconfig）排查
+  - 为另一平台编造修复版本号或 Fix Version
+  - 建议客户修改 FuSa 源码
+evidence_signatures:
+  input/sdk-check.txt:
+    - 'QNX_HIT'
+    - 'SDK_VERSION=QNX_V0.10.0'
+    - 'M57_SDK_QNX_V0.10.0.xml'
+  input/serial.log:
+    - 'BSP HeartBeat error !!!'
+    - 'maxpwr: stress round 37, cpu load 91%'
+    - 'pidin ar | grep -E'
+expected_confidence: high
+evaluation_notes:
+  - 版本比对是主判据，代码特征只作旁证；本 Case 客户没给代码，因此不要求 grep 代码特征。
+  - 允许把 V0.11.0 表述为"含该修复的版本"；但不得给出另一平台的版本号。
+  - FAQ 编号按所读 FAQ 文件的原文形态引用即可，编号形态差异不作为失败项。

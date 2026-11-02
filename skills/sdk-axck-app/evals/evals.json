@@ -1,0 +1,38 @@
+{
+  "skill_name": "sdk-axck-app",
+  "evals": [
+    {
+      "id": 1,
+      "name": "inspect_build_env",
+      "prompt": "Inspect the camera-kit build environment for project AX615_dashcam_nor",
+      "expected_output": "Inspection output showing project name, architecture, available modules (3rd, com, service, client, apps), and compiler toolchain information.",
+      "expectations": [
+        "Identifies AX615_dashcam_nor project settings",
+        "Lists core submodules: 3rd, com, service, client, apps",
+        "Checks opt.filelist packaging requirements"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "dry_run_service_build",
+      "prompt": "Dry-run building the service submodule for project AX615_dashcam_nor",
+      "expected_output": "A dry-run command showing the exact make invocation for service module without altering files.",
+      "expectations": [
+        "Displays the resolved make invocation",
+        "Targets the service module",
+        "Verifies no compilation errors in command formulation"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "verify_opt_filelist",
+      "prompt": "Validate that opt.filelist includes required AXCK runtime binaries and libraries",
+      "expected_output": "Verification results ensuring axck_service, libaxck_client.so, and config files are properly declared in opt.filelist.",
+      "expectations": [
+        "Checks presence of axck_service daemon",
+        "Checks libaxck_client.so library link",
+        "Ensures config files are packaged to /opt/bin and /opt/etc"
+      ]
+    }
+  ]
+}

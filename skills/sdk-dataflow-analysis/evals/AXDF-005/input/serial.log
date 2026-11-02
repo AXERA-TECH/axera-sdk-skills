@@ -1,0 +1,78 @@
+launching frtdemo, md5: 56bb801f3825281feb2b7777fedbc99d ...
+=============== APP(APP Ver: V3.12.0, SDK Ver: V3.12.0) Started Sep  8 2026 15:52:28 ===============
+02-11 04:00:55:666 7242976951   3505 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module LOG OK
+02-11 04:00:55:666 7242976951   3505 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module LOG OK
+[D]AX_GZIPD_Init: [SDK version]: libax_gzipd.so V3.12.0 Sep  8 2026 15:38:54
+02-11 04:00:55:686 7242996338   3505 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc0, mod=7, grp=0, chn=0, type=1, ret=0x800b000a
+02-11 04:00:55:686 7242996564   3505 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc0, mod=7, grp=0, chn=0, type=0, ret=0x800b000a
+02-11 04:00:55:686 7242996742   3505 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc11, mod=7, grp=0, chn=5, type=1, ret=0x800b000a
+02-11 04:00:55:686 7242996911   3505 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc11, mod=7, grp=0, chn=5, type=0, ret=0x800b000a
+02-11 04:00:55:687 7242997077   3505 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc12, mod=7, grp=0, chn=6, type=1, ret=0x800b000a
+02-11 04:00:55:687 7242997241   3505 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc12, mod=7, grp=0, chn=6, type=0, ret=0x800b000a
+02-11 04:00:55:687 7242997401   3505 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc13, mod=7, grp=0, chn=7, type=1, ret=0x800b000a
+02-11 04:00:55:687 7242997562   3505 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc13, mod=7, grp=0, chn=7, type=0, ret=0x800b000a
+02-11 04:00:55:687 7242997726   3505 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=VIN_POOL, mod=17, grp=0, chn=0, type=1, ret=0x800b000a
+02-11 04:00:55:687 7242997889   3505 K IPC_PPL <APP_SYS_Init>: AX_SYS_Mem
+02-11 04:00:55:689 7242999500   3505 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc10, mod=7, grp=0, chn=4, type=0, ret=0x800b000a
+02-11 04:00:55:689 7242999602   3505 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module SYS OK
+02-11 04:00:55:696 7243006517   3505 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module NPU OK
+02-11 04:00:55:705 7243016042   3505 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module VIN OK
+02-11 04:00:55:706 7243016286   3505 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module MIPI_RX OK
+02-11 04:00:55:708 7243019003   3505 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module IVPS OK
+02-11 04:00:55:711 7243021655   3505 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module VENC OK
+02-11 04:00:55:722 7243033011   3505 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module ACAP OK
+02-11 04:00:55:726 7243036386   3505 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module APLAY OK
+02-11 04:00:55:741 7243051631   3505 W SNS_PARSER: Parse sensor config file: ./config/ipc/sensor/mis20s1.json successfully.
+02-11 04:00:55:745 7243055364   3505 W IPC_PPL <InitSysMods>.2689: ---
+02-11 04:00:55:769 7243079395   3505 I BASE_LINK: Linkage setup: (17, 0, 0) => (13, 0, 0)
+02-11 04:00:55:770 7243080147   3505 E BASE_LINK: Linkage failed (17, 0, 0) => (13, 0, 0)
+02-11 04:00:55:770 7243080257   3505 I BASE_LINK: Linkage setup: (13, 0, 0) => (7, 0, 0)
+02-11 04:00:55:770 7243080352   3505 I BASE_LINK: Linkage setup: (13, 0, 2) => (7, 0, 1)
+02-11 04:00:55:770 7243080426   3505 W IPC_PPL <Construct>.97: Linkage setup.
+02-11 04:00:55:770 7243080511   3505 W IPC_PPL <InitSensor>.243: +++
+02-11 04:00:55:770 7243080668   3505 W SNS_MGR: Create sensor instance 0 ok.
+02-11 04:00:55:770 7243080773   3505 K SENSOR <InitEZoom>: +++
+02-11 04:00:55:773 7243084068   3505 W SNS_MGR: Initailize sensor 0 ok.
+02-11 04:00:55:806 7243116565   3505 W IPC_PPL <InitSensor>.437: ---
+02-11 04:00:55:806 7243116686   3505 W IPC_PPL <InitPoolConfig>.1221: +++
+02-11 04:00:55:817 7243127537   3505 K POOL: Latency Mode:2 vin buffer mode:0
+02-11 04:00:55:818 7243128318   3505 K POOL: Comm Pool[0]: YUV_2688x128_FBC_2_10x1, BlkSize:344064, MetaSize:1024
+02-11 04:00:55:818 7243128432   3505 K POOL: Comm Pool[1]: YUV_768x576_FBC_2_4x2, BlkSize:368640, MetaSize:1024
+02-11 04:00:55:818 7243128523   3505 K POOL: Comm Pool[2]: YUV_1280x720_FBC_0_0x2, BlkSize:1474560, MetaSize:1024
+02-11 04:00:55:818 7243128611   3505 K POOL: Comm Pool[3]: YUV_1920x1080_FBC_2_0x2, BlkSize:2211840, MetaSize:1024
+02-11 04:00:55:819 7243129168   3505 I POOL: AX_POOL_Init success!
+02-11 04:00:55:819 7243129261   3505 K POOL: Priv Pool[0]: RAW0_134_1920x1080_FBC_2_4x7, BlkSize:806400, MetaSize:1024
+02-11 04:00:55:820 7243130908   3505 I POOL <InitPrivatePool>.431: AX_VIN_SetPoolAttr success!
+02-11 04:00:55:820 7243130992   3505 W IPC_PPL <InitPoolConfig>.1242: ---
+02-11 04:00:55:821 7243131097   3505 W IPC_PPL <InitAudio>.228: +++
+02-11 04:00:55:833 7243143693   3505 W IPC_PPL <InitAudio>.236: ---
+02-11 04:00:55:833 7243143813   3505 W IPC_PPL <InitIvps>.442: +++
+02-11 04:00:55:857 7243167301   3505 W IVPS <InitParams>.485: [0] Grp filter 0x01: engine:2, w:1920, h:1080, s:1920, frameRate[0.000000,0.000000], CompressInfo[0, 0]
+02-11 04:00:55:857 7243167437   3505 K IVPS <UpdateCompressInfo>: nChn: 0, CompressLevel: 10
+02-11 04:00:55:857 7243167554   3505 W IVPS <InitParams>.561: [0][0] ChnFilter0 0x11: engine:0, w:2688, h:1520, s:2688, frameRate[30.000000,30.000000], CompressInfo[16777216, 0]
+02-11 04:00:55:857 7243167642   3505 K
+02-11 04:00:55:859 7243169085   3505 I VENC <InitRcParams>.219: [0] +++, nGop=60
+02-11 04:00:55:859 7243169159   3505 I VENC <InitRcParams>.782: [0] ---
+02-11 04:00:55:859 7243169243   3505 W VENC <InitParams>.912: Video attr: chn:0, w:2688, h:1520, bitrate:4096, link:1, memSrc:0, in_depth:1, out_depth:1, frameRate:[30.000000 -1.000000]
+02-11 04:00:55:859 7243169554   3505 I IPC_PPL <InitVenc>.653: IVPS[nGrp:0, nChn:2], VENC[nGrp:0, nChn:1]
+02-11 04:00:55:859 7243169633   3505 I IPC_PPL <InitVenc>.654: nWidth:720, nHeight:576, fSrcFrameRate:30.000000
+02-11 04:00:55:859 7243169775   3505 I VENC <InitParams>.831: VENC attr: chn:1, encoder:96, w:720, h:576, maxW:720, maxH:576, link:1, memSrc:0, in_depth:1, out_depth:1, frameRate:[30.000000 30.000000], bufSize:204800
+02-11 04:00:55:859 7243169843   3505 I VENC <InitRcParams>.219: [1] +++, nGop=60
+02-11 04:00:55:859 7243169915   3505 I VENC <InitRcParams>.782: [1] ---
+02-11 04:00:55:859 7243169999   3505 W VENC <InitParams>.912: Video attr: chn:1, w:720, h:576, bitrate:400, link:1, memSrc:0, in_depth:1, out_depth:1, frameRate:[30.000000 -1.000000]
+02-11 04:00:55:860 7243170439   3505 W IPC_PPL <InitVenc>.788: ---
+02-11 04:00:55:860 7243170563   3505 W IPC_PPL <InitCollector>.1047: +++
+02-11 04:00:55:860 7243170686   3505 I COLLECT <RegTargetChannel>.113: RegTargetChannel nGroup:0,nChannel:1
+02-11 04:00:55:860 7243170772   3505 I COMB_OBS <OnRegisterObserver>.50: nGrp:0, nChn:1, width:1280, height:720, sensorSrc:0, frameRate:10.000000
+02-11 04:00:55:860 7243170851   3505 I IPC_PPL <InitCollector>.1091: collect  width:1280, height:720, sensorSrc:0, frameRate:10.000000
+02-11 04:00:55:860 7243170921   3505 I IPC_PPL <InitCollector>.1071: Can not find relation for other module to collect (Module:COLLECT, Grp:1, Chn:0)
+02-11 04:00:55:860 7243170995   3505 I detector_obs <OnRegisterObserver>.59: nGrp: 0, nGrpCount: 1, pParams->nSnsSrc: 0
+02-11 04:00:55:861 7243171070   3505 I COLLECT <RegObserver>.84: m_nGroup:0, tTransAttr.nWidth:1280, height:720, frameRate:10.000000,vec.size():1
+02-11 04:00:55:861 7243171163   3505 I COLLECT <RegObserver>.84: m_nGroup:0, tTransAttr.nWidth:1280, height:720, frameRate:10.000000,vec.size():2
+02-11 04:00:55:861 7243171228   3505 I IPC_PPL <InitCollector>.1106: Can not find relation for collect module: ( Grp:1, Chn:0) to other module
+02-11 04:00:55:861 7243171288   3505 W IPC_PPL <InitCollector>.1144: ---
+02-11 04:00:55:861 7243171372   3505 W IPC_PPL <InitJenc>.793: +++
+02-11 04:00:55:861 7243171456   3505 W IPC_PPL <InitJenc>.852: ---
+02-11 04:00:55:861 7243171534   3505 W IPC_PPL <InitDetector>.857: +++
+02-11 04:00:55:861 7243171627   3505 I DETECTOR <Init>.271: +++
+02-11 04:00:55:861 7243171705   3505 I DETECTOR <Init>.290: m_stAttr.width:1280, height:720, nGrpCount: 1, modelPath:/opt/etc/skelModels

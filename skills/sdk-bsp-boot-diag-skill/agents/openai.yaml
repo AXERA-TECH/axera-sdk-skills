@@ -1,0 +1,4 @@
+interface:
+  display_name: "AX615 启动诊断"
+  short_description: "根据 AX615 启动日志和公开代码证据定位启动问题"
+  default_prompt: "请使用 AX615 启动诊断 skill 分析下面的启动现象或日志，证据不足时明确说明并给出下一步取证建议。"

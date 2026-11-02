@@ -1,0 +1,31 @@
+version: 1
+defaults:
+  timeout_seconds: 240
+  samples: 1
+gates:
+  smoke: [axaudioaec-003]
+budget:
+  max_agent_runs: 5
+  max_wall_seconds: 1440
+  concurrency: 1
+cases:
+  - id: axaudioaec-001
+    path: cases/axaudioaec-001
+    kind: behavior
+    required: true
+  - id: axaudioaec-002
+    path: cases/axaudioaec-002
+    kind: behavior
+    required: true
+  - id: axaudioaec-003
+    path: cases/axaudioaec-003
+    kind: behavior
+    required: true
+  - id: axaudioaec-004
+    path: cases/axaudioaec-004
+    kind: behavior
+    required: true
+  - id: axaudioaec-005
+    path: cases/axaudioaec-005
+    kind: behavior
+    required: true

@@ -1,0 +1,10 @@
+prompt: |
+  使用已安装的 sdk-bsp-sys-diag-skill 技能，根据当前目录下的日志文件 npu_exit_doublefree_615.log 分析问题：
+  “AX615，我用 AX_SYS_MemAlloc(token="npu_in") 自己申请了一块 CMM 给 NPU 输入用，退出时偶发崩，日志在 npu_exit_doublefree_615.log。我检查代码发现正常退出分支和一个错误处理分支里都调了 AX_SYS_MemFree(同一个 phyaddr)。是这个原因吗？”
+  请依据技能内置流程和知识库完成诊断，将最终诊断报告生成到 out/diagnosis.md。
+expect:
+  files:
+    - path: out/diagnosis.md
+      exists: true
+      min_bytes: 100
+  assert: assert.sh

@@ -1,0 +1,25 @@
+===== /proc/ax_proc/ivps =====
+---------------------------------------------- IVPS VERSION -------------------------------------------------------
+[SDK version]: ax_ivps V3.12.0 Sep  8 2026 16:03:42
+---------------------------------------------- INPUT FRAME --------------------------------------------------------
+GrpId W    H    StrideY StrideC Format   Fbc   Level Crop[X    Y    W    H]     BlkId       AddrY       AddrC       PTS                SeqNum      PrivData UserData 
+---------------------------------------------- GRP INFO -----------------------------------------------------------
+GrpId Pool[Type Id] FRCMode Frc(src:dst)   InFps  OutFps InFifo DbgFifo ChnNum FilterNum Crop[En Mode  X    Y    W    H] Task UniqueTask
+---------------------------------------------- CHN INFO -----------------------------------------------------------
+GrpId ChnId Priority OutDepth OutSts Pool[Type Id] OutputW OutputH FrcMode Frc(src:dst)   InFps  OutFps Task
+---------------------------------------------- FILTER INFO -------
+---------------------------------------------- VGP INFO --------------------------------------------------------
+GrpId ChnId FltId bMirror bFlip
+---------------------------------------------- GDC INFO --------------------------------------------------------
+GrpId ChnId FltId DewarpType Rotate bMirror bFlip
+
+
+===== /proc/ax_proc/ivps_sched =====
+--------SDK VERSION--------
+[SDK version]: axdrv V3.12.0 Sep  8 2026 16:00:03
+-----IVPS SCHED DEBUG------
+gdc task: count = 85383 
+engine_vpp0 task: count = 0 
+engine_vpp1 task: count = 0 
+vgp task: count = 0 
+vpp1_online task: count = 85383

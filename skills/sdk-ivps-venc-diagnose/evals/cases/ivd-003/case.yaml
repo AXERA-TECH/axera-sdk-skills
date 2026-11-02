@@ -1,0 +1,10 @@
+prompt: |
+  使用已安装的 sdk-ivps-venc-diagnose 技能读取当前目录的 hsk_proc.txt。
+  按技能规定完成 IVPS→VENC/JENC 链路诊断，将最终答复完整写入 result.md。
+  不要读取或猜测任何评测答案；只使用当前目录的 hsk_proc.txt、已安装技能中的 references 与脚本。
+expect:
+  files:
+    - path: result.md
+      exists: true
+      min_bytes: 200
+  assert: assert.sh

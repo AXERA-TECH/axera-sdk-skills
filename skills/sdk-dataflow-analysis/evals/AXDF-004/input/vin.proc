@@ -1,0 +1,111 @@
+--------------------- VIN VERSION ---------------------
+[SDK version]: ax_proton V3.13.0_20260909180121 Sep  9 2026 18:18:46 JK
+
+---------------------- VIN GLB ATTR ---------------------------------
+Profile   low_mem   wakeup    low_ife_itp  latency    size       cnt       
+Hight     0x4       On        Off          Slice      437760     7(3,0)
+
+---------------------- VIN DEV ATTR ---------------------------------
+DevId ImgDataEn NonImgDataEn SnsIntfType PixelFmt PackMode BayerPattern SnsMode SkipFrame  OutputMode DevMode ImgRgn[X  Y  W  H ] FrmRateCtrl
+0     1         0            MIPI_RAW    RAW12    pack     RGGB         Linear  0          0          online  [0   0   1920 1080] 0          
+
+---------------------- VIN DEV PRIVATE DATA ATTR --------------------
+DevId PrivDataEn PrivDataMode PrivDataImgRgn[X  Y  W  H ]
+0     0          BOTTOM       [0   0   0    0   ]
+
+---------------------- VIN MIPI ATTR --------------------------------
+DevId chn ImgVc ImgDt InfoVc InfoDt
+0     0   0x0   0x2c  0x0    0xff  
+
+---------------------- VIN DEV BIND PIPE INFO -----------------------
+DevId PipeNum PipeId    HdrSel 
+0     1       0  	1  
+
+---------------------- VIN DEV DUMP INFO ----------------------------
+DevId DumpEn     Depth [Dev Ext Find]
+0     [0  0  0 ] [0  0  0 ]          
+
+---------------------- VIN PIPE ATTR --------------------------------
+Pipe WorkMode ImgRgn[X  Y  W  H ] Stride PixelFmt PackMode BayerPattern SnsMode AiIspEn FrmRateCtrl IsCompress CompressMode 3dnrCompressMode AinrCompressMode Mirror CombMode
+0    mode1    [0   0   1920 1080] 1920   RAW12    pack     RGGB         Linear  1       30000:30000 1          LOSSY        LOSSLESS         LOSSY            0      NONE    
+
+---------------------- VIN PIPE SCENE ATTR --------------------------
+Pipe AIISP AiWorkMode
+0    1     ON        
+
+---------------------- VIN PIPE Motion ATTR -------------------------
+Pipe MotionEst MotionComp MotionShare
+0    0         0          0          
+
+---------------------- VIN PIPE FRAME SOURCE ATTR -------------------
+[PIPE 0]
+SourceId   SourceType Depth
+IFE        DEV        0    
+ITP        DEV        0    
+YUV        DEV        0    
+
+---------------------- VIN PIPE DUMP ATTR ---------------------------
+[PIPE 0]
+DumpNode   DumpEn     Depth [Dev Ext Find]
+IFE        [0  0  0 ] [0  0  0 ]
+ITP        [0  0  0 ] [0  0  0 ]
+YUV        [0  0  0 ] [0  0  0 ]
+
+---------------------- VIN PIPE EXT RAW DUMP ATTR -------------------
+Pipe DumpEn Depth
+0    0      0    
+
+---------------------- VIN PIPE EXT RAW SCALER ATTR -------------------
+Pipe En     ScaleRatio
+0    0      INVALID   
+
+---------------------- VIN PIPE WARP ATTR --------------------------
+Pipe Engine   Mode     Dispatch
+0    GDC      Core0    Out     
+
+---------------------- VIN PIPE WARP STATUS --------------------------
+Pipe LDC DIS Crop Rotation Mirror Flip
+0    0   0   0    -        -      -   
+
+---------------------- VIN PIPE SCHED ATTR --------------------------
+Pipe Policy           Priority
+0    FIFO             0       
+
+---------------------- VIN CHN ATTR ---------------------------------
+[PIPE 0]
+Chn  Enable Width Height Stride ImgFmt  Depth FrmRateCtrl IsCompress CompressMode CompressLevel DiscardFrmNum Flip Rotation FrameMode CropEn CropMode CropRect[X    Y    W    H   ]
+0    1      1920  1080   1920   NV12    0     30000:30000 1          LOSSY        4             0             0    0        0         0      ABS      [0      0      0      0     ]
+
+--------------------- VIN VERSION ---------------------
+[SDK version]: ax_proton V3.13.0_20260909180121 Sep  9 2026 18:18:46 JK
+
+---------------------- VIN DEV STATISTICS ---------------------------
+Dev OutFrmCnt OutFrmDrop OutSeqNum OutFps OutBufCnt OutBlkId   LostCnt
+0   6468      0          6467      0      0         0x0        0      
+Dev DelayCur  DelayAve  DelayMin  DelayMax 
+0   32558     218217    31969     1198951639
+
+---------------------- VIN PIPE STATISTICS --------------------------
+[PIPE]
+Pipe HwTimeCur HwTimeAve HwTimeMin HwTimeMax
+0    31099     31171     24442     61917    
+Pipe DelayCur  DelayAve  DelayMin  DelayMax 
+0    0         0         0         0        
+
+[IFE]
+Pipe ChnId InFrmCnt InFrmDrop InSeqNum InFps InBufCnt InBlkId    OutFrmCnt OutFrmDrop OutSeqNum OutFps OutBufCnt OutBlkId   LostCnt
+0    0     -        -         -        -     -        -          6467      0          6467      30.00  0         0x5e008000 0      
+
+[ITP]
+Pipe ChnId InFrmCnt InFrmDrop InSeqNum InFps InBufCnt InBlkId   
+0    0     6467     0         6467     30.00 0        0x0       
+
+[CHN]
+Pipe ChnId OutFrmCnt OutFrmDrop OutSeqNum OutFps OutBufCnt OutBlkId   LostCnt 
+0    0     6453      0          6467      30.00  0         0x5e015001 0        
+
+--------------------- VIN VERSION ---------------------
+[SDK version]: ax_proton V3.13.0_20260909180121 Sep  9 2026 18:18:46 JK
+
+--------------------- VIN VERSION ---------------------
+[SDK version]: ax_proton V3.13.0_20260909180121 Sep  9 2026 18:18:46 JK

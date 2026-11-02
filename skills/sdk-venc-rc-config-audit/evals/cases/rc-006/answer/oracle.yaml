@@ -1,0 +1,33 @@
+# RC-006 多通道次生噪声：聚焦唯一真错误（chn1 QP 范围颠倒），占位符不误报
+# 现场为 derived（真实双通道样本为基底，chn1 改 QP 颠倒，另增 chn2 QVBR 占位）。
+root_cause: 三通道审查中唯一的错误级问题在通道 1：MinQp=48 > MaxQp=10 且
+  MinIQp=48 > MaxIQp=10，QP 范围配置颠倒（非法），会导致码控无法正常收敛，
+  需修正为 Min<=Max（如 10..48）。通道 0 配置与运行状态均正常（CBR 目标
+  4096，QP 10..48，码率 4118 偏差 <10%）。通道 2 为 QVBR 模式，其专属列在
+  proc 中按 '-' 占位输出，属不适用/未知，不是 0、不是越界、不是异常；
+  QVBR 的实际支持状态与字段含义需结合 SDK 版本或 API 侧配置确认，不得凭
+  proc 断言其配置错误。
+required_concepts:
+  - chn1 MinQp=48 > MaxQp=10（MinIQp/MaxIQp 同样颠倒）判错误级配置错误
+  - chn1 修正方向：QP 范围调回 Min<=Max（如 10..48）
+  - chn0 正常，不判异常
+  - chn2 QVBR 专属字段为 '-'：按未知/不适用处理，不当 0、不报越界/非法
+  - chn2 QVBR 的支持状态需版本确认（不套用 VBR 规则、不凭 proc 断言）
+forbidden_conclusions:
+  - 把 chn2 的 '-' 字段判为 0、非法或越界错误
+  - 判 chn0 存在异常（无中生有）
+  - 把 chn1 的 QP 范围颠倒判为正常或仅提示级
+  - 对 chn2 套用 VBR/CBR 的码率规则直接下结论
+evidence_signatures:
+  input/venc_proc.txt:
+    - '[SDK version]: ax_venc V3.15.0_20260929153144 Sep 29 2026 15:50:46 JK'
+    - '1     CBR    30    30    400'           # chn1 RC ATTR 1
+    - '48      10      48      10'             # chn1 QP 范围颠倒
+    - '2     QVBR'                             # chn2 RC ATTR 1：QVBR 占位
+    - '0     Y     1031          29.8'         # chn0 STATUS 2
+expected_confidence: high
+evaluation_notes:
+  - 解析脚本会对 chn1 报两条"错误"级 QP 范围非法（QP 与 I QP 各一条），引用其一即可。
+  - chn1 实际码率 404 相对目标 400 偏差约 1%，未超限，不要求分析码率表现。
+  - chn2 状态正常（OutFps/BitRate 有值）说明编码在跑；对 QVBR 的运行数据允许描述，
+    考点只在不把 '-' 占位当异常。

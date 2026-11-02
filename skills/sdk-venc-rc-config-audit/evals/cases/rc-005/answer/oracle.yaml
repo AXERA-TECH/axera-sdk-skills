@@ -1,0 +1,32 @@
+# RC-005 矛盾数据：配置输出帧率与实测输出帧率矛盾（DstFr=30 vs OutFps=15）
+# 现场为 derived（真实双通道样本为基底，chn0 STATUS 2 的 OutFps/BsFrmCnt/BitRate 减半派生）。
+root_cause: 配置与实测矛盾：通道 0 的 DstFr=30 而实测 OutFps=15.0，偏差 -50%（超过
+  10% 阈值，提示级矛盾）；RecvFps=29.8 与 SrcFr=30 一致，说明输入侧供帧正常，
+  矛盾定位在编码输出侧。BsFrmCnt=515 恰为 FrmRecv=1031 的一半，佐证输出确实
+  减半而非统计口径误差；实际码率 2060 也约为目标 4096 的一半。通道 1 配置与
+  运行正常。当前证据不足以唯一确定根因，候选方向为编码器丢帧/负载过高、输出
+  帧率配置未真正生效、统计口径差异；需码流 ffprobe（实际帧数/时间戳）或编码
+  日志确认，不得只看 RecvFps 下结论，也不得在无码流证据时断言播放器/显示问题。
+required_concepts:
+  - 指出 chn0 DstFr=30 与 OutFps=15 偏差约 50%（超过 10% 阈值）的矛盾
+  - RecvFps=29.8 正常（与 SrcFr 偏差 <10%），输入侧无异常
+  - BsFrmCnt=515 约为 FrmRecv=1031 的一半，佐证输出减半
+  - 结论为输出侧候选方向（编码丢帧/配置未生效/统计口径），证据不足需进一步确认
+  - 下一步要求码流 ffprobe 分析或编码日志（不得只看 RecvFps）
+forbidden_conclusions:
+  - 断言输入/VIN 供帧不足为首因（RecvFps 正常）
+  - 只凭 RecvFps 正常就断定一切正常/无异常
+  - 断言播放器或显示问题为根因（无码流证据）
+  - 断言唯一根因（当前证据不足）
+evidence_signatures:
+  input/venc_proc.txt:
+    - '[SDK version]: ax_venc V3.15.0_20260929153144 Sep 29 2026 15:50:46 JK'
+    - '0     CBR    30    30    4096'          # chn0 RC ATTR 1
+    - '1031          1031          15.0    2060'  # chn0 STATUS 2：OutFps/BitRate 减半
+    - '1031          515'                      # BsFrmCnt 减半
+expected_confidence: low
+evaluation_notes:
+  - expected_confidence=low 指对具体根因（丢帧/配置未生效/统计口径）的置信度；
+    模型坚定地表述"当前证据不足以定论、需补码流"属正确认知，不算高置信度违规。
+  - 候选方向不要求逐一列出，至少给出输出侧方向并说明需码流/日志确认即可。
+  - 提及 DiscardedNum=0、WaitEncFail=0 等排除性证据属加分项，不作必答。

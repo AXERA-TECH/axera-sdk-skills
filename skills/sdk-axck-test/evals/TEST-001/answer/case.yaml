@@ -1,0 +1,14 @@
+schema_version: 1
+id: TEST-001
+analyzer:
+  skill: sdk-axck-test
+input:
+  files:
+    - input/test_session.log
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/test_session.log
+  evaluator_only:
+    - answer/case.yaml
+    - answer/oracle.yaml

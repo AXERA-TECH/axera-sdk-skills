@@ -1,0 +1,15 @@
+# AXDF-009 reproducer intent (not an applyable FRTDemo patch in this repo)
+#
+# Goal: same IVPS group, partial HSK enable
+# - chn0 main stream: HSK disable (non-HSK / Offline path)
+# - chn1 JPEG: HSK enable (LowMem / HSK to JENC or equivalent)
+#
+# Expected field symptom when bug present:
+# - both-HSK-on or both-HSK-off: stream OK
+# - chn0 HSK off + chn1 HSK on: no stream / IVPS OutFps=0
+#
+# Background (evaluator only): osdrv fix related to
+# merged HSK trigger scan when current ctx is not hsk_src.
+#
+# This file records repro conditions only. There is no checked-in
+# FRTDemo config delta that reproduces on the current workspace tree.

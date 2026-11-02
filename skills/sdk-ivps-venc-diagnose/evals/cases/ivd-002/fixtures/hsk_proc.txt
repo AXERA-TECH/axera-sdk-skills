@@ -1,0 +1,448 @@
+===== SAMPLE 1 Wed Sep 30 10:10:38 CST 2026 =====
+--------------------SDK VERSION-------------------
+[SDK version]: ax_sys V3.15.0_20260929153144 Sep 29 2026 15:49:54 JK
+--------------------Link Table V2----------------------------------------------------
+         Src            |          Dst               |                               |
+(ModId   GrpId   ChnId) | (ModId   GrpId   ChnId)    |     Mode    |        line     |
+-------------------------------------------------------------------------------------
+(IVPS	    0	    0) -> (VENC	    0	    0)   Mode :   SW_Low_Mem    Line :   128
+(IVPS	    0	    1) -> (VENC	    0	    1)   Mode :   SW_Low_Mem    Line :   128
+(IVPS	    0	    2) -> (VENC	    0	    2)   Mode :   SW_Offline    Line :     0
+(ADEC	    0	    0) -> (AO	    0	    0)   Mode :   SW_Offline    Line :     0
+(VIN	    0	    0) -> (IVPS	    0	    0)   Mode :   SW_Offline    Line :     0
+(AI	    0	    0) -> (AENC	    0	    0)   Mode :   SW_Offline    Line :     0
+
+--------------------SDK VERSION-------------------
+[SDK version]: ax_sys V3.15.0_20260929153144 Sep 29 2026 15:49:54 JK
+--------------------Link Table Kernel V2-------------------------------------------------------------------------
+         Src            |          Dst               |                   Link Attribute                          |
+(ModId   GrpId   ChnId) | (ModId   GrpId   ChnId)    |     Mode    |        line     |      Engine(src->dst)     |
+-----------------------------------------------------------------------------------------------------------------
+(IVPS	    0	    2) -> (VENC	    0	    2)   Mode :   SW_Offline    Line :     0   Engine (0:None --> 0:None)
+(ADEC	    0	    0) -> (AO	    0	    0)   Mode :   SW_Offline    Line :     0   Engine (0:None --> 0:None)
+(VIN	    0	    0) -> (IVPS	    0	    0)   Mode :   SW_Offline    Line :     0   Engine (0:None --> 0:None)
+(AI	    0	    0) -> (AENC	    0	    0)   Mode :   SW_Offline    Line :     0   Engine (0:None --> 0:None)
+(VPP	    0	    0) -> (VENC	    0	    0)   Mode :   SW_Low_Mem    Line :   128   Engine (1:VPP --> 4:VENC)
+(VPP	    0	    1) -> (JENC	    0	    1)   Mode :   SW_Low_Mem    Line :   128   Engine (2:VPPVGP --> 3:JENC)
+(VPP	    0	    1) -> (VGP	    0	    1)   Mode :   SW_Low_Mem    Line :   128   Engine (2:VPPVGP --> 3:JENC)
+(VGP	    0	    1) -> (JENC	    0	    1)   Mode :   SW_Low_Mem    Line :   128   Engine (2:VPPVGP --> 3:JENC)
+
+----------------------SESSION---------------------------
+SessId VirChn State ConWait InitVal InitValSetExt CmdValid CmdConsId CmdId   CmdReqIdx
+0      0      2     0       7168    1             0        [-1   -1] [0  0 ] [255 255]
+----------------------CONNECT---------------------------
+ConId State Type   DoubleWait ChnId SetUp Cons    OppUpChn OppWaitChn RegAddr RegVal RegVal0 RegVal1 RegVal2 InitVal0 InitVal1 InitVal2 Step SliceNum SyncType ReqType AutoAdd SyncAddr        
+0     2     update 0          70    1     MM_VENC 0        [26   255] 0       8704   [7168   5632    4096  ] [7168    5632     4096   ] 0    95       0        0       0       0x43bfc800
+0     2     wait   0          26    1     MM_VPP  70       [0    0  ] 0       8704   [7168   5632    4096  ] [7168    5632     4096   ] 0    24       0        0       0       0x43ea2000
+1     2     update 0          62    1     MM_VPP  0        [34   255] 1       8704   [7168   5632    4096  ] [7168    5632     4096   ] 0    24       0        0       0       0x43ea2200
+1     2     wait   0          34    1     MM_VENC 62       [0    0  ] 1       8704   [7168   5632    4096  ] [7168    5632     4096   ] 0    95       0        0       0       0x43bfc000
+----------------------INFO---------------------------
+HoldCnt                 ReleaseCnt             
+[0          0         ] [0          0         ]
+
+----------------------SESSION---------------------------
+SessId VirChn State ConWait InitVal InitValSetExt CmdValid CmdConsId CmdId   CmdReqIdx
+1      0      2     1       29696   1             0        [-1   -1] [0  0 ] [255 255]
+----------------------CONNECT---------------------------
+ConId State Type   DoubleWait ChnId SetUp Cons    OppUpChn OppWaitChn RegAddr RegVal RegVal0 RegVal1 RegVal2 InitVal0 InitVal1 InitVal2 Step SliceNum SyncType ReqType AutoAdd SyncAddr        
+0     2     update 0          71    1     MM_JENC 0        [27   255] 2       31232  [29696  28160   26624 ] [29696   28160    26624  ] 0    95       0        0       0       0x43e9e800
+0     2     wait   0          27    1     MM_VPP  71       [0    0  ] 2       31232  [29696  28160   26624 ] [29696   28160    26624  ] 0    24       0        0       0       0x43ea4000
+1     2     update 1          63    1     MM_VPP  0        [35   31 ] 3       31232  [29696  28160   26624 ] [29696   28160    26624  ] 0    24       0        0       0       0x43ea4200
+1     2     wait   1          35    1     MM_JENC 63       [0    0  ] 3       31232  [29696  28160   26624 ] [29696   28160    26624  ] 0    190      0        0       0       0x43e9e000
+1     2     wait   1          31    1     MM_VGP  63       [0    0  ] 3       31232  [29696  28160   26624 ] [29696   28160    26624  ] 0    4        0        0       0       0x43ea5000
+2     2     update 0          68    1     MM_VGP  0        [35   255] 4       31232  [29696  28160   26624 ] [29696   28160    26624  ] 0    4        0        0       0       0x43ea5200
+2     2     wait   0          35    1     MM_JENC 68       [0    0  ] 4       31232  [29696  28160   26624 ] [29696   28160    26624  ] 0    190      0        0       0       0x43e9e000
+----------------------INFO---------------------------
+HoldCnt                 ReleaseCnt             
+[0          0         ] [0          0         ]
+
+----------------------SESSION---------------------------
+SessId VirChn State ConWait InitVal InitValSetExt CmdValid CmdConsId CmdId   CmdReqIdx
+2      0      2     0       0       0             1        [1     2] [1  0 ] [1   6  ]
+----------------------CONNECT---------------------------
+ConId State Type   DoubleWait ChnId SetUp Cons    OppUpChn OppWaitChn RegAddr RegVal RegVal0 RegVal1 RegVal2 InitVal0 InitVal1 InitVal2 Step SliceNum SyncType ReqType AutoAdd SyncAddr        
+0     2     update 0          36    1     ISP_IFE 0        [6    255] 5       5696   [5694   5691    5688  ] [5698    5695     5692   ] 1    3        2        0       1       0x0       
+0     2     wait   0          6     1     ISP_ITP 36       [0    0  ] 5       5696   [5694   5691    5688  ] [5695    5692     5689   ] 1    3        3        0       1       0x0       
+1     2     update 0          42    1     ISP_ITP 0        [0    255] 6       5698   [5698   5695    5692  ] [5699    5696     5693   ] 1    3        2        0       1       0x0       
+1     2     wait   0          0     1     ISP_IFE 42       [0    0  ] 6       5698   [5698   5695    5692  ] [5698    5695     5692   ] 1    3        3        0       1       0x0       
+----------------------INFO---------------------------
+HoldCnt                 ReleaseCnt             
+[53560      53558     ] [53560      53558     ]
+
+
+[SDK version]: ax_venc V3.15.0_20260929153144 Sep 29 2026 15:50:46 JK
+-------- VENC CHN ATTR 1 -----------------------------------------------------------
+ID    Pid     Type    Profile Level wSrc    hSrc    Strd0   Strd1   maxW    maxH    [CropEn StartX  StartY  CropW   CropH]  PixFmt  link  Range BufMode StrmBufSize(KB)
+0     476     H264    High    52    2688    1520    2688    2688    2688    1520    N       0       0       0       0       NV12    Y     FULL  Ring    1500      
+2     476     H264    High    52    720     576     768     768     720     576     N       0       0       0       0       NV12    Y     FULL  Ring    200       
+-------- VENC CHN ATTR 2 -----------------------------------------------------------
+ID    RefRing RefComp EncW    EncH    FrmSize      SeqNum       CompMode     CompLevel    BlkId        PhyAddr0     PhyAddr1     PhyAddr2     PTS          
+0     Y       N       2688    1520    344064       1899         LOSSY        10           0x5e002000   0x42ad8000   0x42b17000   0x0          0x4350e803   
+2     Y       N       720     576     331776       1898         LOSSY        4            0x5e003000   0x42b2d000   0x42b63000   0x0          0x435065d3   
+-------- VENC CHN RC ATTR 1 -----------------------------------------------------------
+ID    RcMode SrcFr DstFr TargetBitRate MaxBitRate MinQp   MaxQp   MinIQp  MaxIQp  IQpDelta  IpropMax   IpropMin   StartQp    QpDltRng SvcEn   ChgPos  StillPercent MaxStillQp 
+0     CBR    30    30    4096          -          10      48      10      48      0         100        1          -1         10       N       -       -            -          
+2     CBR    30    30    400           -          10      48      10      48      0         100        1          -1         10       N       -       -            -          
+-------- VENC CHN RC ATTR 2  -----------------------------------------------------------
+ID    QMapQpType  QMapUnit    QMapBlkType IQp   PQp   MinQpDelta MaxQpDelta shtStaTime ltStaTime  ltMinBr  ltMaxBr  
+0     -           -           -           -     -     -          -          -          -          -        -        
+2     -           -           -           -     -     -          -          -          -          -        -        
+-------- VENC CHN RC ATTR 3  -----------------------------------------------------------
+ID    BlkRcSize SliceIQp  SlicePQp  CbQPOffset CrQPOffset MotionSen MotionAlpha StaticIPer CtbRc CtbRcQpDelRng UpperLimit Alpha  Beta   WeightSum 
+0     2         [10,51]   [10,51]   -6         -6         8         128         0          N     3             10         -      -      -         
+2     2         [10,51]   [10,51]   -6         -6         8         128         0          N     3             10         -      -      -         
+-------- VENC CHN GOP ATTR  -----------------------------------------------------------
+ID    GopMode   Gop   LtrGop LtrRefType SpGop  SpRefType 
+0     NormalP   60    -      -          -      -         
+2     NormalP   60    -      -          -      -         
+-------- VENC CHN HSK STATUS -----------------------------------------------------------
+VeChn bHsk maxH EncH EncHPre srcNum fMode ringLCnt sliceNum minhskLin saSize  conId waitId upId initVal syncVal bFrmDrop hskCnt      errDropCnt 
+0     Y    1520 1520 1520    1      1     128      95       16        380     8     34     70   8704    10240   0        1884        0          
+VeChn cntWa douWa waChn0  waChn1  opWaChn0  opWaChn1  opUpChn0  opUpChn1  waWaPhy0  waUpPhy0  waReInfo0 waReInfo1 upReInfo  se_id 
+0     0     0     34      255     26        255       62        255       43bfc000  43bfc800  1 :9536   0 :9488   0 :9488   0     
+-------- VENC STREAM BUF STATUS -----------------------------------------------------------
+ChnId BufMod  PhyAddr     VirtAddr    BuffSize  ReadPtr   WritePtr  ReadCycle  WriteCycle AvalRSize AvalWSize RollbackWr RollbackCycle HwUsed 
+0     Ring    0x43388000  6100c786    1536000   0x0       0x0       1884       1884       0         1536000   0x0        0             Y      
+2     Ring    0x43bfd000  a7bcfd36    204800    0x358     0x358     1883       1883       0         203944    0x0        0             N      
+-------- VENC CHN STATUS 0 -----------------------------------------------------------
+ChnId interChn AutoFps RatDrpCnt   NoFreeCnt DiscardCnt NoNeedEnc Send2EncCnt Send2EncFail EncSucCnt   ReEncCnt  DropBsCnt ErrorCnt StopCnt  BufFullCnt TimeOutCnt 
+0     0        N       0           0         0          0         1884        0            1883        0         0         0        0        0          0          
+2     2        N       0           0         0          0         1883        0            1883        0         0         0        0        0          0          
+-------- VENC CHN STATUS 1 -----------------------------------------------------------
+ChnId ToEncNum NoStrmBufCnt SupFrmRe SupFrmDrop OtherDisCnt Send2FwFps  TimeStatis HwCycle   WrBw RdBw EncCost  MaxEncCost EncCostAve HwCycleAve MaxHwCycle MaxWrBw WrBwAve MaxRdBw RdBwAve 
+0     -1       0            0        0          0           30.7        0          5490722   100  299  -        -          -          -          -          -       -       -       -       
+2     -1       0            0        0          0           29.8        0          561715    100  294  -        -          -          -          -          -       -       -       -       
+-------- VENC CHN STATUS 2 -----------------------------------------------------------
+VeChn bRecv FrmRecv       RecvFps DiscardedNum  SubMitCnt     SubMitFail    RecvBsCnt     BsFrmCnt      OutFps  BitRate(kbps)  WaitEncFail  SeqDiscont 
+0     Y     1884          30.7    0             1884          0             1883          1883          29.8    4100           0            0          
+2     Y     1883          29.8    0             1883          0             1883          1883          29.8    395            0            0          
+VeChn NodeCnt BusyNod FreeNod UserNod GetFreeFail UserGet     UserRelea   TotalGet    TotalRls    WithCuInfo  YuvAddCnt  YuvSubCnt  YuvAddFail 
+0     64      0       64      0       0           1883        1883        1883        1883        0           1884       1883       0          
+2     64      0       64      0       0           1883        1883        1883        1883        0           1883       1883       0          
+
+[SDK version]: ax_venc V3.15.0_20260929153144 Sep 29 2026 15:50:46 JK
+-------- JENC CHN ATTR 1 -----------------------------------------------------------
+ID    Pid     Type    Profile Level wSrc    hSrc    Strd0   Strd1   maxW    maxH    [CropEn StartX  StartY  CropW   CropH]  PixFmt  link  Range BufMode StrmBufSize(KB)
+1     476     JPEG    -       -     2688    1520    2688    2688    2688    1520    N       0       0       0       0       NV12    Y     FULL  Ring    1600      
+15    476     JPEG    -       -     1280    720     0       0       8160    8190    N       0       0       0       0       SINGLE  N     NONE  Ring    337       
+-------- JENC CHN ATTR 2 -----------------------------------------------------------
+ID    RefRing RefComp EncW    EncH    FrmSize      SeqNum       CompMode     CompLevel    BlkId        PhyAddr0     PhyAddr1     PhyAddr2     PTS          
+1     N       N       2688    1520    258048       1876         LOSSY        4            0x5e001000   0x42a98000   0x42ac2000   0x0          0x434535c3   
+15    N       N       0       0       0            0            NONE         0            0x0          0x0          0x0          0x0          0x0          
+-------- JENC CHN RC ATTR  ---------------------------
+ID    RcMode    StatTime     SrcFr        DstFr        Br(kbps)     MinQp        MaxQp        FixedQp      Qfactor      
+1     -         -            1            1            -            -            -            -            60           
+15    -         -            30           30           -            -            -            -            75           
+-------- JENC FRAME LIST STATUS -----------------------------------------------------------
+busyCnt freeCnt toHwCnt userCnt HwState ErrFrmStatus  vcmdAddr    CodingCh StrmAddr0   StrmAddr1   StrmSize0 StrmSize1 
+0       10      0       0       IDLE    0             0x43d09800  1        0x43d0a000  0x0         153546   0        
+-------- JENC CHN HSK STATUS -----------------------------------------------------------
+VeChn bHsk maxH EncH EncHPre srcNum fMode ringLCnt sliceNum minhskLin saSize  conId waitId upId initVal syncVal bFrmDrop hskCnt      errDropCnt 
+1     Y    1520 1520 1520    2      1     128      95       16        380     9     35     71   29696   31232   0        63          0          
+15    N    0    0    0       0      0     0        0        0         0       0     0      0    0       0       0        0           0          
+VeChn cntWa douWa waChn0  waChn1  opWaChn0  opWaChn1  opUpChn0  opUpChn1  waWaPhy0  waUpPhy0  waReInfo0 waReInfo1 upReInfo  se_id 
+1     1     1     35      35      27        255       63        68        43e9e000  43e9e800  3 :31232  4 :31232  2 :31232  1     
+15    0     0     0       0       0         0         0         0         0         0         0 :0      0 :0      0 :0      0     
+-------- JENC CHN STREAM BUF STATUS -----------------------------------------------------------
+VeChn BufMod  PhyAddr     VirtAddr    BuffSize  ReadPtr   WritePtr  ReadCycle  WriteCycle AvalRSize AvalWSize BufBusy 
+1     Ring    0x43d0a000  c4780000    1638400   0x257d0   0x257d0   53         53         0         1484848   N       
+15    Ring    0x4332f000  c3d00000    345600    0x0       0x0       0          0          0         345600    N       
+-------- JENC CHN STATUS 1 -----------------------------------------------------------
+VeChn interChn ToEncNum SubmitCnt RatDrpCnt NoNeedEnc EncFail  SucCnt    BufOver NoFree  AbortCnt TimeOutCnt BusyCnt FreeGetCnt ToHwCnt RencCnt HwCycle   HwUsed 
+1     1        -1       63        0         0         0        58        0       0       0        0          0       0          0       0       10911259  N      
+15    15       -1       0         0         0         0        0         0       0       0        0          0       0          0       0       0         N      
+-------- JENC CHN STATUS 2 -----------------------------------------------------------
+VeChn bRecv FrmRecv       RecvFps DiscardedNum  SubMitCnt     SubMitFail    RecvBsCnt     BsFrmCnt      OutFps  BitRate(kbps)  WaitEncFail  SeqDiscont 
+1     Y     63            0.9     0             63            0             58            58            0.9     1226           0            62         
+15    Y     0             0.0     0             0             0             0             0             0.0     0              0            0          
+VeChn NodeCnt BusyNod FreeNod UserNod GetFreeFail UserGet     UserRelea   TotalGet    TotalRls    WithCuInfo  YuvAddCnt  YuvSubCnt  YuvAddFail 
+1     32      0       32      0       0           58          58          58          58          0           63         63         0          
+15    32      0       32      0       0           0           0           0           0           0           0          0          0          
+
+
+---------------------------------------------- IVPS VERSION -------------------------------------------------------
+[SDK version]: ax_ivps V3.15.0_20260929153144 Sep 29 2026 15:50:06 JK
+---------------------------------------------- INPUT FRAME --------------------------------------------------------
+GrpId W    H    StrideY StrideC Format   Fbc   Level Crop[X    Y    W    H]     BlkId       AddrY       AddrC       PTS                SeqNum      PrivData UserData 
+0     1920 1080 1920    1920    NV12     LOSSY 10         0    0    1920 1080   0x5e005001  0x42f67000  0x430e2b00  0x4350e803         1899        0        0        
+
+---------------------------------------------- GRP INFO -----------------------------------------------------------
+
+GrpId Pool[Type Id] FRCMode Frc(src:dst)   InFps  OutFps InFifo DbgFifo ChnNum FilterNum Crop[En Mode  X    Y    W    H] Task UniqueTask
+0          COM  -1  RATIO     0.0 :  0.0   30.0   30.0   2      0       5      1              0  ABS   0    0    0    0  0    0         
+
+---------------------------------------------- CHN INFO -----------------------------------------------------------
+GrpId ChnId Priority OutDepth OutSts Pool[Type Id] OutputW OutputH FrcMode Frc(src:dst)   InFps  OutFps Task
+0     0     10       0        0           COM  -1  2688    1520    RATIO    30.0 : 30.0   30.0   30.0   0   
+0     1     10       0        0           COM  -1  2688    1520    RATIO    30.0 :  1.0   30.0    1.0   0   
+0     2     10       0        0           COM  -1  720     576     RATIO    30.0 : 30.0   30.0   30.0   0   
+0     3     10       1        0           COM  -1  1280    720     RATIO    30.0 : 10.0   30.0   10.0   0   
+0     4     10       1        0           COM  -1  256     128     RATIO    30.0 :  5.0   30.0    5.0   0   
+
+---------------------------------------------- FILTER INFO --------------------------------------------------------
+GrpId ChnId FltId Engine DstW DstH Stride Format   Fbc   Level Crop[En Mode  X    Y    W    H]    bInplace
+0     -1    0     GDC    1920 1080 1920   NV12     NONE  0          0  ABS   0    0    0    0     N       
+0     0     1     SCL    2688 1520 2688   NV12     LOSSY 10         0  ABS   0    0    0    0     N       
+0     1     2     SCL    2688 1520 2688   NV12     LOSSY 4          0  ABS   0    0    0    0     N       
+0     1     3     VGP    2688 1520 2688   NV12     LOSSY 4          0  ABS   0    0    0    0     Y       
+0     2     4     SCL    720  576  768    NV12     LOSSY 4          0  ABS   0    0    0    0     N       
+0     2     5     VGP    720  576  768    NV12     LOSSY 4          0  ABS   0    0    0    0     Y       
+0     3     6     SCL    1280 720  1280   NV12     LOSSY 4          0  ABS   0    0    0    0     N       
+0     4     7     SCL    256  128  256    NV12     NONE  0          0  ABS   0    0    0    0     N       
+
+---------------------------------------------- FILTER STATE -------------------------------------------------------
+GrpId ChnId FltId En Engine TotalCnt   Fail1 Fail2 InCnt      OutCnt     TimeCur TimeAve TimeMin TimeMax Frc(Mode En   Src :  Dst)
+0     -1    0     1  GDC    1884       0     0     1884       1884       13791   13698   13082   16994      RATIO  0   0.0 :  0.0 
+0     0     1     1  SCL    1884       0     0     1884       1884       14133   14422   13468   17334      RATIO  0  30.0 : 30.0 
+0     1     2     1  SCL    1884       0     0     1884       63         14133   14422   13468   17334      RATIO  1  30.0 :  1.0 
+0     1     3     1  VGP    63         0     0     63         63         16420   0       14145   17070      RATIO  0   0.0 :  0.0 
+0     2     4     1  SCL    1884       0     0     1884       1884       14133   14422   13468   17334      RATIO  0  30.0 : 30.0 
+0     2     5     1  VGP    1884       0     0     1884       1884       440     461     358     813        RATIO  0   0.0 :  0.0 
+0     3     6     1  SCL    1884       0     0     1884       628        14133   14422   13468   17334      RATIO  1  30.0 : 10.0 
+0     4     7     1  SCL    1884       0     0     1884       314        14133   14422   13468   17334      RATIO  1  30.0 :  5.0 
+
+---------------------------------------------- SCALE RANGE INFO ---------------------------------------------------
+Range[ < 8/64  >=8/64 >=12/64 >=16/64 >=20/64 >=24/64 >=28/64 >=32/64 >=36/64 >=40/64 >=44/64 >=48/64 >=52/64 >=56/64 >=60/64 >=64/64]
+Level     0       0       0       0       0       4       4       4       4       4       4       4       4       4       4       4       
+
+---------------------------------------------- VPP INFO --------------------------------------------------------
+GrpId ChnId FltId bMirror bFlip bCasc CascNum
+0     0     1     N       N     N     0      
+0     1     2     N       N     Y     0      
+0     2     4     N       N     N     0      
+0     3     6     N       N     N     0      
+0     4     7     N       N     Y     0      
+
+---------------------------------------------- VGP INFO --------------------------------------------------------
+GrpId ChnId FltId bMirror bFlip
+0     1     3     N       N    
+0     2     5     N       N    
+
+---------------------------------------------- GDC INFO --------------------------------------------------------
+GrpId ChnId FltId DewarpType Rotate bMirror bFlip
+0     -1    0     BYPASS     0      N       N    
+
+===== SAMPLE 2 Wed Sep 30 10:10:43 CST 2026 =====
+--------------------SDK VERSION-------------------
+[SDK version]: ax_sys V3.15.0_20260929153144 Sep 29 2026 15:49:54 JK
+--------------------Link Table V2----------------------------------------------------
+         Src            |          Dst               |                               |
+(ModId   GrpId   ChnId) | (ModId   GrpId   ChnId)    |     Mode    |        line     |
+-------------------------------------------------------------------------------------
+(IVPS	    0	    0) -> (VENC	    0	    0)   Mode :   SW_Low_Mem    Line :   128
+(IVPS	    0	    1) -> (VENC	    0	    1)   Mode :   SW_Low_Mem    Line :   128
+(IVPS	    0	    2) -> (VENC	    0	    2)   Mode :   SW_Offline    Line :     0
+(ADEC	    0	    0) -> (AO	    0	    0)   Mode :   SW_Offline    Line :     0
+(VIN	    0	    0) -> (IVPS	    0	    0)   Mode :   SW_Offline    Line :     0
+(AI	    0	    0) -> (AENC	    0	    0)   Mode :   SW_Offline    Line :     0
+
+--------------------SDK VERSION-------------------
+[SDK version]: ax_sys V3.15.0_20260929153144 Sep 29 2026 15:49:54 JK
+--------------------Link Table Kernel V2-------------------------------------------------------------------------
+         Src            |          Dst               |                   Link Attribute                          |
+(ModId   GrpId   ChnId) | (ModId   GrpId   ChnId)    |     Mode    |        line     |      Engine(src->dst)     |
+-----------------------------------------------------------------------------------------------------------------
+(IVPS	    0	    2) -> (VENC	    0	    2)   Mode :   SW_Offline    Line :     0   Engine (0:None --> 0:None)
+(ADEC	    0	    0) -> (AO	    0	    0)   Mode :   SW_Offline    Line :     0   Engine (0:None --> 0:None)
+(VIN	    0	    0) -> (IVPS	    0	    0)   Mode :   SW_Offline    Line :     0   Engine (0:None --> 0:None)
+(AI	    0	    0) -> (AENC	    0	    0)   Mode :   SW_Offline    Line :     0   Engine (0:None --> 0:None)
+(VPP	    0	    0) -> (VENC	    0	    0)   Mode :   SW_Low_Mem    Line :   128   Engine (1:VPP --> 4:VENC)
+(VPP	    0	    1) -> (JENC	    0	    1)   Mode :   SW_Low_Mem    Line :   128   Engine (2:VPPVGP --> 3:JENC)
+(VPP	    0	    1) -> (VGP	    0	    1)   Mode :   SW_Low_Mem    Line :   128   Engine (2:VPPVGP --> 3:JENC)
+(VGP	    0	    1) -> (JENC	    0	    1)   Mode :   SW_Low_Mem    Line :   128   Engine (2:VPPVGP --> 3:JENC)
+
+----------------------SESSION---------------------------
+SessId VirChn State ConWait InitVal InitValSetExt CmdValid CmdConsId CmdId   CmdReqIdx
+0      0      2     0       45568   1             0        [-1   -1] [0  0 ] [255 255]
+----------------------CONNECT---------------------------
+ConId State Type   DoubleWait ChnId SetUp Cons    OppUpChn OppWaitChn RegAddr RegVal RegVal0 RegVal1 RegVal2 InitVal0 InitVal1 InitVal2 Step SliceNum SyncType ReqType AutoAdd SyncAddr        
+0     2     update 0          70    1     MM_VENC 0        [26   255] 0       45632  [45568  44032   42496 ] [45568   44032    42496  ] 0    95       0        0       0       0x43bfc800
+0     2     wait   0          26    1     MM_VPP  70       [0    0  ] 0       45632  [45568  44032   42496 ] [45568   44032    42496  ] 0    24       0        0       0       0x43ea2000
+1     2     update 0          62    1     MM_VPP  0        [34   255] 1       45696  [45568  44032   42496 ] [45568   44032    42496  ] 0    24       0        0       0       0x43ea2200
+1     2     wait   0          34    1     MM_VENC 62       [0    0  ] 1       45696  [45568  44032   42496 ] [45568   44032    42496  ] 0    95       0        0       0       0x43bfc000
+----------------------INFO---------------------------
+HoldCnt                 ReleaseCnt             
+[0          0         ] [0          0         ]
+
+----------------------SESSION---------------------------
+SessId VirChn State ConWait InitVal InitValSetExt CmdValid CmdConsId CmdId   CmdReqIdx
+1      0      2     1       37376   1             0        [-1   -1] [0  0 ] [255 255]
+----------------------CONNECT---------------------------
+ConId State Type   DoubleWait ChnId SetUp Cons    OppUpChn OppWaitChn RegAddr RegVal RegVal0 RegVal1 RegVal2 InitVal0 InitVal1 InitVal2 Step SliceNum SyncType ReqType AutoAdd SyncAddr        
+0     2     update 0          71    1     MM_JENC 0        [27   255] 2       38912  [37376  35840   34304 ] [37376   35840    34304  ] 0    95       0        0       0       0x43e9e800
+0     2     wait   0          27    1     MM_VPP  71       [0    0  ] 2       38912  [37376  35840   34304 ] [37376   35840    34304  ] 0    24       0        0       0       0x43ea4000
+1     2     update 1          63    1     MM_VPP  0        [35   31 ] 3       38912  [37376  35840   34304 ] [37376   35840    34304  ] 0    24       0        0       0       0x43ea4200
+1     2     wait   1          35    1     MM_JENC 63       [0    0  ] 3       38912  [37376  35840   34304 ] [37376   35840    34304  ] 0    190      0        0       0       0x43e9e000
+1     2     wait   1          31    1     MM_VGP  63       [0    0  ] 3       38912  [37376  35840   34304 ] [37376   35840    34304  ] 0    4        0        0       0       0x43ea5000
+2     2     update 0          68    1     MM_VGP  0        [35   255] 4       38912  [37376  35840   34304 ] [37376   35840    34304  ] 0    4        0        0       0       0x43ea5200
+2     2     wait   0          35    1     MM_JENC 68       [0    0  ] 4       38912  [37376  35840   34304 ] [37376   35840    34304  ] 0    190      0        0       0       0x43e9e000
+----------------------INFO---------------------------
+HoldCnt                 ReleaseCnt             
+[0          0         ] [0          0         ]
+
+----------------------SESSION---------------------------
+SessId VirChn State ConWait InitVal InitValSetExt CmdValid CmdConsId CmdId   CmdReqIdx
+2      0      2     0       0       0             1        [1     2] [1  0 ] [1   6  ]
+----------------------CONNECT---------------------------
+ConId State Type   DoubleWait ChnId SetUp Cons    OppUpChn OppWaitChn RegAddr RegVal RegVal0 RegVal1 RegVal2 InitVal0 InitVal1 InitVal2 Step SliceNum SyncType ReqType AutoAdd SyncAddr        
+0     2     update 0          36    1     ISP_IFE 0        [6    255] 5       6153   [6153   6150    6147  ] [6157    6154     6151   ] 1    3        2        0       1       0x0       
+0     2     wait   0          6     1     ISP_ITP 36       [0    0  ] 5       6153   [6153   6150    6147  ] [6154    6151     6148   ] 1    3        3        0       1       0x0       
+1     2     update 0          42    1     ISP_ITP 0        [0    255] 6       6157   [6157   6154    6151  ] [6158    6155     6152   ] 1    3        2        0       1       0x0       
+1     2     wait   0          0     1     ISP_IFE 42       [0    0  ] 6       6157   [6157   6154    6151  ] [6157    6154     6151   ] 1    3        3        0       1       0x0       
+----------------------INFO---------------------------
+HoldCnt                 ReleaseCnt             
+[57888      57886     ] [57888      57886     ]
+
+
+[SDK version]: ax_venc V3.15.0_20260929153144 Sep 29 2026 15:50:46 JK
+-------- VENC CHN ATTR 1 -----------------------------------------------------------
+ID    Pid     Type    Profile Level wSrc    hSrc    Strd0   Strd1   maxW    maxH    [CropEn StartX  StartY  CropW   CropH]  PixFmt  link  Range BufMode StrmBufSize(KB)
+0     476     H264    High    52    2688    1520    2688    2688    2688    1520    N       0       0       0       0       NV12    Y     FULL  Ring    1500      
+2     476     H264    High    52    720     576     768     768     720     576     N       0       0       0       0       NV12    Y     FULL  Ring    200       
+-------- VENC CHN ATTR 2 -----------------------------------------------------------
+ID    RefRing RefComp EncW    EncH    FrmSize      SeqNum       CompMode     CompLevel    BlkId        PhyAddr0     PhyAddr1     PhyAddr2     PTS          
+0     Y       N       2688    1520    344064       2051         LOSSY        10           0x5e002000   0x42ad8000   0x42b17000   0x0          0x439e3414   
+2     Y       N       720     576     331776       2051         LOSSY        4            0x5e003000   0x42b2d000   0x42b63000   0x0          0x439e3414   
+-------- VENC CHN RC ATTR 1 -----------------------------------------------------------
+ID    RcMode SrcFr DstFr TargetBitRate MaxBitRate MinQp   MaxQp   MinIQp  MaxIQp  IQpDelta  IpropMax   IpropMin   StartQp    QpDltRng SvcEn   ChgPos  StillPercent MaxStillQp 
+0     CBR    30    30    4096          -          10      48      10      48      0         100        1          -1         10       N       -       -            -          
+2     CBR    30    30    400           -          10      48      10      48      0         100        1          -1         10       N       -       -            -          
+-------- VENC CHN RC ATTR 2  -----------------------------------------------------------
+ID    QMapQpType  QMapUnit    QMapBlkType IQp   PQp   MinQpDelta MaxQpDelta shtStaTime ltStaTime  ltMinBr  ltMaxBr  
+0     -           -           -           -     -     -          -          -          -          -        -        
+2     -           -           -           -     -     -          -          -          -          -        -        
+-------- VENC CHN RC ATTR 3  -----------------------------------------------------------
+ID    BlkRcSize SliceIQp  SlicePQp  CbQPOffset CrQPOffset MotionSen MotionAlpha StaticIPer CtbRc CtbRcQpDelRng UpperLimit Alpha  Beta   WeightSum 
+0     2         [10,51]   [10,51]   -6         -6         8         128         0          N     3             10         -      -      -         
+2     2         [10,51]   [10,51]   -6         -6         8         128         0          N     3             10         -      -      -         
+-------- VENC CHN GOP ATTR  -----------------------------------------------------------
+ID    GopMode   Gop   LtrGop LtrRefType SpGop  SpRefType 
+0     NormalP   60    -      -          -      -         
+2     NormalP   60    -      -          -      -         
+-------- VENC CHN HSK STATUS -----------------------------------------------------------
+VeChn bHsk maxH EncH EncHPre srcNum fMode ringLCnt sliceNum minhskLin saSize  conId waitId upId initVal syncVal bFrmDrop hskCnt      errDropCnt 
+0     Y    1520 1520 1520    1      1     128      95       16        380     8     34     70   45568   47104   0        2036        0          
+VeChn cntWa douWa waChn0  waChn1  opWaChn0  opWaChn1  opUpChn0  opUpChn1  waWaPhy0  waUpPhy0  waReInfo0 waReInfo1 upReInfo  se_id 
+0     0     0     34      255     26        255       62        255       43bfc000  43bfc800  1 :47104  0 :47104  0 :47104  0     
+-------- VENC STREAM BUF STATUS -----------------------------------------------------------
+ChnId BufMod  PhyAddr     VirtAddr    BuffSize  ReadPtr   WritePtr  ReadCycle  WriteCycle AvalRSize AvalWSize RollbackWr RollbackCycle HwUsed 
+0     Ring    0x43388000  6100c786    1536000   0x355c    0x355c    2036       2036       0         1522340   0x0        0             N      
+2     Ring    0x43bfd000  a7bcfd36    204800    0x47f     0x47f     2036       2036       0         203649    0x0        0             N      
+-------- VENC CHN STATUS 0 -----------------------------------------------------------
+ChnId interChn AutoFps RatDrpCnt   NoFreeCnt DiscardCnt NoNeedEnc Send2EncCnt Send2EncFail EncSucCnt   ReEncCnt  DropBsCnt ErrorCnt StopCnt  BufFullCnt TimeOutCnt 
+0     0        N       0           0         0          0         2036        0            2036        0         0         0        0        0          0          
+2     2        N       0           0         0          0         2036        0            2036        0         0         0        0        0          0          
+-------- VENC CHN STATUS 1 -----------------------------------------------------------
+ChnId ToEncNum NoStrmBufCnt SupFrmRe SupFrmDrop OtherDisCnt Send2FwFps  TimeStatis HwCycle   WrBw RdBw EncCost  MaxEncCost EncCostAve HwCycleAve MaxHwCycle MaxWrBw WrBwAve MaxRdBw RdBwAve 
+0     -1       0            0        0          0           30.7        0          6023301   100  299  -        -          -          -          -          -       -       -       -       
+2     -1       0            0        0          0           29.8        0          597998    100  294  -        -          -          -          -          -       -       -       -       
+-------- VENC CHN STATUS 2 -----------------------------------------------------------
+VeChn bRecv FrmRecv       RecvFps DiscardedNum  SubMitCnt     SubMitFail    RecvBsCnt     BsFrmCnt      OutFps  BitRate(kbps)  WaitEncFail  SeqDiscont 
+0     Y     2036          30.7    0             2036          0             2036          2036          29.8    4139           0            0          
+2     Y     2036          29.8    0             2036          0             2036          2036          29.8    396            0            0          
+VeChn NodeCnt BusyNod FreeNod UserNod GetFreeFail UserGet     UserRelea   TotalGet    TotalRls    WithCuInfo  YuvAddCnt  YuvSubCnt  YuvAddFail 
+0     64      0       64      0       0           2036        2036        2036        2036        0           2036       2036       0          
+2     64      0       64      0       0           2036        2036        2036        2036        0           2036       2036       0          
+
+[SDK version]: ax_venc V3.15.0_20260929153144 Sep 29 2026 15:50:46 JK
+-------- JENC CHN ATTR 1 -----------------------------------------------------------
+ID    Pid     Type    Profile Level wSrc    hSrc    Strd0   Strd1   maxW    maxH    [CropEn StartX  StartY  CropW   CropH]  PixFmt  link  Range BufMode StrmBufSize(KB)
+1     476     JPEG    -       -     2688    1520    2688    2688    2688    1520    N       0       0       0       0       NV12    Y     FULL  Ring    1600      
+15    476     JPEG    -       -     1280    720     0       0       8160    8190    N       0       0       0       0       SINGLE  N     NONE  Ring    337       
+-------- JENC CHN ATTR 2 -----------------------------------------------------------
+ID    RefRing RefComp EncW    EncH    FrmSize      SeqNum       CompMode     CompLevel    BlkId        PhyAddr0     PhyAddr1     PhyAddr2     PTS          
+1     N       N       2688    1520    258048       2026         LOSSY        4            0x5e001000   0x42a98000   0x42ac2000   0x0          0x43917d76   
+15    N       N       0       0       0            0            NONE         0            0x0          0x0          0x0          0x0          0x0          
+-------- JENC CHN RC ATTR  ---------------------------
+ID    RcMode    StatTime     SrcFr        DstFr        Br(kbps)     MinQp        MaxQp        FixedQp      Qfactor      
+1     -         -            1            1            -            -            -            -            60           
+15    -         -            30           30           -            -            -            -            75           
+-------- JENC FRAME LIST STATUS -----------------------------------------------------------
+busyCnt freeCnt toHwCnt userCnt HwState ErrFrmStatus  vcmdAddr    CodingCh StrmAddr0   StrmAddr1   StrmSize0 StrmSize1 
+0       10      0       0       IDLE    0             0x43d09000  1        0x43d0a000  0x0         163104   0        
+-------- JENC CHN HSK STATUS -----------------------------------------------------------
+VeChn bHsk maxH EncH EncHPre srcNum fMode ringLCnt sliceNum minhskLin saSize  conId waitId upId initVal syncVal bFrmDrop hskCnt      errDropCnt 
+1     Y    1520 1520 1520    2      1     128      95       16        380     9     35     71   37376   38912   0        68          0          
+15    N    0    0    0       0      0     0        0        0         0       0     0      0    0       0       0        0           0          
+VeChn cntWa douWa waChn0  waChn1  opWaChn0  opWaChn1  opUpChn0  opUpChn1  waWaPhy0  waUpPhy0  waReInfo0 waReInfo1 upReInfo  se_id 
+1     1     1     35      35      27        255       63        68        43e9e000  43e9e800  3 :38912  4 :38912  2 :38912  1     
+15    0     0     0       0       0         0         0         0         0         0         0 :0      0 :0      0 :0      0     
+-------- JENC CHN STREAM BUF STATUS -----------------------------------------------------------
+VeChn BufMod  PhyAddr     VirtAddr    BuffSize  ReadPtr   WritePtr  ReadCycle  WriteCycle AvalRSize AvalWSize BufBusy 
+1     Ring    0x43d0a000  c4780000    1638400   0x27d20   0x27d20   58         58         0         1475296   N       
+15    Ring    0x4332f000  c3d00000    345600    0x0       0x0       0          0          0         345600    N       
+-------- JENC CHN STATUS 1 -----------------------------------------------------------
+VeChn interChn ToEncNum SubmitCnt RatDrpCnt NoNeedEnc EncFail  SucCnt    BufOver NoFree  AbortCnt TimeOutCnt BusyCnt FreeGetCnt ToHwCnt RencCnt HwCycle   HwUsed 
+1     1        -1       68        0         0         0        63        0       0       0        0          0       0          0       0       11118383  N      
+15    15       -1       0         0         0         0        0         0       0       0        0          0       0          0       0       0         N      
+-------- JENC CHN STATUS 2 -----------------------------------------------------------
+VeChn bRecv FrmRecv       RecvFps DiscardedNum  SubMitCnt     SubMitFail    RecvBsCnt     BsFrmCnt      OutFps  BitRate(kbps)  WaitEncFail  SeqDiscont 
+1     Y     68            0.9     0             68            0             63            63            0.9     1303           0            67         
+15    Y     0             0.0     0             0             0             0             0             0.0     0              0            0          
+VeChn NodeCnt BusyNod FreeNod UserNod GetFreeFail UserGet     UserRelea   TotalGet    TotalRls    WithCuInfo  YuvAddCnt  YuvSubCnt  YuvAddFail 
+1     32      0       32      0       0           63          63          63          63          0           68         68         0          
+15    32      0       32      0       0           0           0           0           0           0           0          0          0          
+
+
+---------------------------------------------- IVPS VERSION -------------------------------------------------------
+[SDK version]: ax_ivps V3.15.0_20260929153144 Sep 29 2026 15:50:06 JK
+---------------------------------------------- INPUT FRAME --------------------------------------------------------
+GrpId W    H    StrideY StrideC Format   Fbc   Level Crop[X    Y    W    H]     BlkId       AddrY       AddrC       PTS                SeqNum      PrivData UserData 
+0     1920 1080 1920    1920    NV12     LOSSY 10         0    0    1920 1080   0x5e005000  0x42d4b000  0x42ec6b00  0x439eb643         2052        0        0        
+
+---------------------------------------------- GRP INFO -----------------------------------------------------------
+
+GrpId Pool[Type Id] FRCMode Frc(src:dst)   InFps  OutFps InFifo DbgFifo ChnNum FilterNum Crop[En Mode  X    Y    W    H] Task UniqueTask
+0          COM  -1  RATIO     0.0 :  0.0   30.0   30.0   2      0       5      1              0  ABS   0    0    0    0  2    3         
+
+---------------------------------------------- CHN INFO -----------------------------------------------------------
+GrpId ChnId Priority OutDepth OutSts Pool[Type Id] OutputW OutputH FrcMode Frc(src:dst)   InFps  OutFps Task
+0     0     10       0        0           COM  -1  2688    1520    RATIO    30.0 : 30.0   30.0   30.0   1   
+0     1     10       0        0           COM  -1  2688    1520    RATIO    30.0 :  1.0   30.0    1.0   0   
+0     2     10       0        0           COM  -1  720     576     RATIO    30.0 : 30.0   30.0   30.0   1   
+0     3     10       1        0           COM  -1  1280    720     RATIO    30.0 : 10.0   30.0   10.0   0   
+0     4     10       1        0           COM  -1  256     128     RATIO    30.0 :  5.0   30.0    5.0   0   
+
+---------------------------------------------- FILTER INFO --------------------------------------------------------
+GrpId ChnId FltId Engine DstW DstH Stride Format   Fbc   Level Crop[En Mode  X    Y    W    H]    bInplace
+0     -1    0     GDC    1920 1080 1920   NV12     NONE  0          0  ABS   0    0    0    0     N       
+0     0     1     SCL    2688 1520 2688   NV12     LOSSY 10         0  ABS   0    0    0    0     N       
+0     1     2     SCL    2688 1520 2688   NV12     LOSSY 4          0  ABS   0    0    0    0     N       
+0     1     3     VGP    2688 1520 2688   NV12     LOSSY 4          0  ABS   0    0    0    0     Y       
+0     2     4     SCL    720  576  768    NV12     LOSSY 4          0  ABS   0    0    0    0     N       
+0     2     5     VGP    720  576  768    NV12     LOSSY 4          0  ABS   0    0    0    0     Y       
+0     3     6     SCL    1280 720  1280   NV12     LOSSY 4          0  ABS   0    0    0    0     N       
+0     4     7     SCL    256  128  256    NV12     NONE  0          0  ABS   0    0    0    0     N       
+
+---------------------------------------------- FILTER STATE -------------------------------------------------------
+GrpId ChnId FltId En Engine TotalCnt   Fail1 Fail2 InCnt      OutCnt     TimeCur TimeAve TimeMin TimeMax Frc(Mode En   Src :  Dst)
+0     -1    0     1  GDC    2037       0     0     2037       2036       14485   13414   13082   17924      RATIO  0   0.0 :  0.0 
+0     0     1     1  SCL    2036       0     0     2036       2036       15669   14118   13468   18259      RATIO  0  30.0 : 30.0 
+0     1     2     1  SCL    2037       0     0     2037       68         15669   14118   13468   18259      RATIO  1  30.0 :  1.0 
+0     1     3     1  VGP    68         0     0     68         68         17169   0       14145   17914      RATIO  0   0.0 :  0.0 
+0     2     4     1  SCL    2036       0     0     2036       2036       15669   14118   13468   18259      RATIO  0  30.0 : 30.0 
+0     2     5     1  VGP    2036       0     0     2036       2036       509     491     358     813        RATIO  0   0.0 :  0.0 
+0     3     6     1  SCL    2037       0     0     2037       679        15669   14118   13468   18259      RATIO  1  30.0 : 10.0 
+0     4     7     1  SCL    2037       0     0     2037       340        15669   14118   13468   18259      RATIO  1  30.0 :  5.0 
+
+---------------------------------------------- SCALE RANGE INFO ---------------------------------------------------
+Range[ < 8/64  >=8/64 >=12/64 >=16/64 >=20/64 >=24/64 >=28/64 >=32/64 >=36/64 >=40/64 >=44/64 >=48/64 >=52/64 >=56/64 >=60/64 >=64/64]
+Level     0       0       0       0       0       4       4       4       4       4       4       4       4       4       4       4       
+
+---------------------------------------------- VPP INFO --------------------------------------------------------
+GrpId ChnId FltId bMirror bFlip bCasc CascNum
+0     0     1     N       N     N     0      
+0     1     2     N       N     Y     0      
+0     2     4     N       N     N     0      
+0     3     6     N       N     N     0      
+0     4     7     N       N     Y     0      
+
+---------------------------------------------- VGP INFO --------------------------------------------------------
+GrpId ChnId FltId bMirror bFlip
+0     1     3     N       N    
+0     2     5     N       N    
+
+---------------------------------------------- GDC INFO --------------------------------------------------------
+GrpId ChnId FltId DewarpType Rotate bMirror bFlip
+0     -1    0     BYPASS     0      N       N    
+

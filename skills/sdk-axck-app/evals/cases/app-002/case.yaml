@@ -1,0 +1,8 @@
+prompt: |
+  使用已安装的 sdk-axck-app 技能，分析当前目录下的 rpc_msg.h 和 Makefile，排查 Client 与 axck_service 通信失败根因，并将报告写入 out/report.md。
+expect:
+  files:
+    - path: out/report.md
+      exists: true
+      min_bytes: 40
+  assert: assert.sh

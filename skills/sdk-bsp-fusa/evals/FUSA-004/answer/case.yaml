@@ -1,0 +1,31 @@
+schema_version: 1
+id: FUSA-004
+title: QNX 已修故障的假阴性陷阱：版本 ≥ 修复版本但搜不到代码特征
+category: fixed-defect/detection-uncertain/false-negative-guard
+source: synthetic
+analyzer:
+  skill: sdk-bsp-fusa
+  runtime_name: sdk-bsp-fusa
+platform: qnx
+platform_evidence: QNX 侧 diag_stl.c 命中；SDK_VERSION=QNX_V1.10.0 带前缀；manifest 为 M57_SDK_QNX_V*.xml
+expected_stage: S3
+input:
+  type: client_report
+  files:
+    - input/prompt.md
+    - input/sdk-check.txt
+    - input/grep-result.txt
+  capture:
+    notes:
+      - 客户已自行做过一轮代码特征检测，结果落盘在 grep-result.txt。
+      - 客户只检索了主线 fcu 目录，没有检索其它目录，原话已保留。
+      - 客户想用"0 匹配"反证版本号判据，这是本 Case 的陷阱所在。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/prompt.md
+    - input/sdk-check.txt
+    - input/grep-result.txt
+  evaluator_only:
+    - answer/oracle.yaml
+    - answer/case.yaml

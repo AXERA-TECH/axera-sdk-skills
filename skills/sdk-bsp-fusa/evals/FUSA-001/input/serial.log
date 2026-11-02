@@ -1,0 +1,40 @@
+# FUSA-001 串口摘录（同一轮干净上电，内核时间戳）
+# 客户原始保存，未做裁剪；ANSI 颜色码已去除
+
+[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd083]
+[    0.000000] Linux version 6.1.83 (build@axera) (aarch64-none-linux-gnu-gcc 12.2.0) #1 SMP PREEMPT
+[    3.104512] fusa fusa: axera diag core probe
+[    9.882104] ecm: ecm probe done
+[   11.910042] axdiag: register_axdiag: platform device created
+[   12.120338] diag_stl: cycle check handler registered, period 20ms
+[   12.401233] diag_stl: heartbeat time:1
+[   12.421456] diag_stl: heartbeat time:2
+[   12.441509] diag_stl: heartbeat time:3
+[   12.461612] NetlinkHeartBeatHandle: ack
+[   12.481700] diag_stl: heartbeat time:1
+[   12.501812] NetlinkHeartBeatHandle: ack
+[   12.521930] diag_stl: heartbeat time:1
+[   12.542041] NetlinkHeartBeatHandle: ack
+[   12.562150] diag_stl: heartbeat time:1
+[   12.582263] NetlinkHeartBeatHandle: ack
+[   12.602371] diag_stl: heartbeat time:1
+[   12.622480] NetlinkHeartBeatHandle: ack
+[   12.642592] diag_stl: heartbeat time:1
+[   12.662701] NetlinkHeartBeatHandle: ack
+[   12.682813] diag_stl: heartbeat time:1
+[   12.702921] NetlinkHeartBeatHandle: ack
+[   14.000000] ax_diag_service is up, netlink handshake done
+[   14.020110] diag_stl: heartbeat time:1
+[   14.040229] NetlinkHeartBeatHandle: ack
+[   18.220000] diag_stl: heartbeat time:1
+[   18.240118] NetlinkHeartBeatHandle: ack
+[   25.300000] diag_stl: heartbeat time:1
+[   25.320119] NetlinkHeartBeatHandle: ack
+
+# ---- 客户顺手附上的负载快照 ----
+$ top -bn1 | head -4
+Tasks: 118 total,   1 running, 117 sleeping
+%Cpu(s):  0.7 us,  0.4 sy,  0.0 ni, 98.9 id,  0.0 wa
+MiB Mem :   7923.4 total,   6410.2 free,    611.8 used
+
+# ---- 客户在此之后又等了 10 分钟，串口只是继续刷 heartbeat time:1，没有别的行 ----

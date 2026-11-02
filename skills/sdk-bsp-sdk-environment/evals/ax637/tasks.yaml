@@ -1,0 +1,7 @@
+tasks:
+  - name: provision-ubuntu-sdk-host
+    prompt: "为 AX637 SDK 准备一台 Ubuntu 主机，安装依赖和三套交叉工具链，并展开 SDK 源码。"
+    expect: "识别平台为 AX637（基于 M57 架构），指出其自闭环安装规范（工具链部署至 /usr/local/，完备包含 3 套工具链，解包 Axera_AX637_SDK_Vx.x.x.tgz），列出精确工具链版本与验证命令、RT-Thread（SafetyIsland configs_ax637/configs_ax637r rtconfig.py EXEC_PATH）路径硬性对齐和 sdk_unpack.sh 检查。"
+  - name: repair-sdk-sources
+    prompt: "AX637 编译机上 sdk_unpack.sh 的默认下载源失效时，如何准备 Linux、U-Boot、ATF 和 OP-TEE 源码？"
+    expect: "说明各参数（-k, -u, -a, -o）对应的本地归档及完成后的目录验证，注意区分与保留已打补丁的源码，避免误执行 sdk_clean.sh。"

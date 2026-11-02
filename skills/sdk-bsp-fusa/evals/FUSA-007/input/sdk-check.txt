@@ -1,0 +1,26 @@
+# FUSA-007 客户回填：SDK 判据与板端事实
+
+$ cd /workspace/sdk/m57-qnx
+$ test -f kernel/osdrv/private_drv/diag_core/driver/diag_stl.c && echo QNX_HIT
+QNX_HIT
+$ test -d kernel/linux/linux-6.1.83/drivers/soc/axera/fusa && echo LINUX_HIT
+$ cat build/version/m57_version.mk
+SDK_VERSION=QNX_V1.10.0
+SDK_BRANCH=m57qnx_trunk
+$ ls .repo/manifests/ | tail -2
+M57_SDK_QNX_V1.10.0.xml
+
+# ---- 板端 ----
+$ uname -a
+QNX <hostname> 7.1.0 aarch64le
+$ ls /proc/ax_diag/
+domain0  domain1  domain16
+$ ls /dev | grep -E "ecm|fcu|diag_extend"
+/dev/ecm
+/dev/diag_extend
+$ pidin ar | grep -E "diag_core_drv|diag_extend|m57_ecm_drv|fcu_drv"
+  4194321       1 diag_core_drv       10r   usr/bin/diag_core_drv
+  4194322       1 diag_extend         10r   usr/bin/diag_extend
+  4194323       1 m57_ecm_drv         10r   usr/bin/m57_ecm_drv
+$ echo $?
+0

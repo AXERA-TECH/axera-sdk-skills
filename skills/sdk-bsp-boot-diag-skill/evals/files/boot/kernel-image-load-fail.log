@@ -1,0 +1,4 @@
+The system boot from NAND
+flash:nand init pass
+spl image load pass
+kernel image load failed

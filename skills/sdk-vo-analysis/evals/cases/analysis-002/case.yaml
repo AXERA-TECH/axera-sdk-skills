@@ -1,0 +1,10 @@
+prompt: |
+  使用已安装的 sdk-vo-analysis 技能读取当前目录的 scenario.md。
+  按技能规定完成 AX615 VO 诊断或配置生成，将最终答复完整写入 result.md。
+  不要读取或猜测任何评测答案；只使用 scenario.md、已安装技能中的 references 与脚本。
+expect:
+  files:
+    - path: result.md
+      exists: true
+      min_bytes: 200
+  assert: assert.sh

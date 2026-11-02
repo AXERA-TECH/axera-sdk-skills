@@ -1,0 +1,34 @@
+schema_version: 1
+id: ivd-005
+display_id: IVD-005
+title: 拓扑矛盾：link_table/venc 声明 chn0 为 HSK 但 syncagent 无对应 session
+category: ivps-venc/topology-conflict
+analyzer:
+  skill: sdk-ivps-venc-diagnose
+platform:
+  soc: AX615
+  sdk_version: V3.15.0
+input:
+  type: proc_sampling
+  files:
+    - input/hsk_proc.txt
+  capture:
+    samples: 2
+    sample_interval_seconds: 5
+    source: derived
+    notes:
+      - 以 ivd-002（captured 正常出流双轮采样）为基底做确定性差分派生。
+      - 派生规则：删除两轮采样中 syncagent 的 SessId 0 SESSION 块（VPP 0/0 <->
+        VENC 0/0 的 HSK 会话），其余所有内容（link_table、link_table_kernel、
+        venc、jenc、ivps、sess1、sess2）逐字保留原始推进。
+      - 制造的矛盾：link_table 声明 IVPS 0/0->VENC 0/0 为 SW_Low_Mem（line=128，
+        需 HSK session），venc chn0 的 HSK STATUS 显示 bHsk=Y、conId=8/waitId=34/
+        upId=70，但 syncagent 中不存在对应连接。
+      - 采样前已执行 echo 'priv on' > /proc/ax_proc/syncagent（随基底继承）。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/hsk_proc.txt
+  evaluator_only:
+    - answer/manifest.yaml
+    - answer/oracle.yaml

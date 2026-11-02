@@ -1,0 +1,9 @@
+prompt: |
+  使用已安装的 sdk-bsp-sdk-build 技能回答：在 AX637 SDK 中修改了驱动代码，如何单独编译内核？
+  指出工作目录、构建命令、对应的 defconfig 和生成的镜像位置，并将完整回答内容写入当前目录的 answer.md 文件中。
+expect:
+  files:
+    - path: answer.md
+      exists: true
+      min_bytes: 50
+  assert: assert.sh

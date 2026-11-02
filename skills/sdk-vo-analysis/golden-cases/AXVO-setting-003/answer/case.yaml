@@ -1,0 +1,32 @@
+# 由 evals.json 自动迁移生成，请按需补全平台与复现信息
+{
+  "schema_version": 1,
+  "id": "AXVO-setting-003",
+  "title": "1080p50 BT656 DDR 两表 porch 分配差异",
+  "category": "generation/table/porch-conflict",
+  "analyzer": {
+    "skill": "sdk-vo-analysis"
+  },
+  "platform": {
+    "soc": "AX615",
+    "skill_baseline": "V3.14.0",
+    "interface": "BT656",
+    "resolution": "1920x1080@50"
+  },
+  "input": {
+    "type": "scenario",
+    "files": [
+      "input/scenario.md"
+    ]
+  },
+  "oracle": "answer/oracle.yaml",
+  "separation": {
+    "analyzer_visible": [
+      "input/scenario.md"
+    ],
+    "evaluator_only": [
+      "answer/oracle.yaml",
+      "answer/case.yaml"
+    ]
+  }
+}

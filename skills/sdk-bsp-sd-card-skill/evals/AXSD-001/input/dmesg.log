@@ -1,0 +1,4 @@
+[    2.101] sdhci: Secure Digital Host Controller Interface driver
+[    2.105] mmc_core: loading out-of-tree module taints kernel.
+$ ls -l /dev/mmcblk*
+ls: cannot access '/dev/mmcblk*': No such file or directory

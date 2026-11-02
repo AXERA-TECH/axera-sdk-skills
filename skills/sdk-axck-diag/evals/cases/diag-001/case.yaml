@@ -1,0 +1,8 @@
+prompt: |
+  使用已安装的 sdk-axck-diag 技能，分析当前目录下 serial.log 启动日志中的崩溃报错，定位首个根因并输出修复建议至 out/report.md。
+expect:
+  files:
+    - path: out/report.md
+      exists: true
+      min_bytes: 40
+  assert: assert.sh

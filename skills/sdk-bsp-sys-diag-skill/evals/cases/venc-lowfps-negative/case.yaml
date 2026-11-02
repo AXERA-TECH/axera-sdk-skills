@@ -1,0 +1,10 @@
+prompt: |
+  使用已安装的 sdk-bsp-sys-diag-skill 技能，根据当前目录下的日志文件 venc_lowfps_615.log 分析问题：
+  “AX615 IPC，VENC H.265 编码运行中偶尔帧率掉、画面有块状花屏，程序不崩也不挂，能一直跑。日志在 venc_lowfps_615.log。是不是内存释放有问题？”
+  请依据技能内置流程和知识库完成诊断，将最终诊断报告生成到 out/diagnosis.md。
+expect:
+  files:
+    - path: out/diagnosis.md
+      exists: true
+      min_bytes: 100
+  assert: assert.sh

@@ -1,0 +1,4 @@
+interface:
+  display_name: "AX615 网卡诊断"
+  short_description: "根据 AX615 网卡现象、日志和公开代码证据定位网络问题"
+  default_prompt: "请使用 AX615 网卡诊断 skill 分析下面的 link、IP、吞吐或连接问题；证据不足时明确说明并给出下一步取证建议。"

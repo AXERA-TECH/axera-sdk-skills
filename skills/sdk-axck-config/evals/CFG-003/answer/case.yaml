@@ -1,0 +1,18 @@
+schema_version: 1
+id: CFG-003
+analyzer:
+  skill: sdk-axck-config
+input:
+  files:
+    - input/app_config.json
+    - input/ppl_config.json
+    - input/sns_info.json
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/app_config.json
+    - input/ppl_config.json
+    - input/sns_info.json
+  evaluator_only:
+    - answer/case.yaml
+    - answer/oracle.yaml

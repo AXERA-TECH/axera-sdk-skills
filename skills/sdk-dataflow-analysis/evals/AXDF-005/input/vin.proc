@@ -1,0 +1,61 @@
+===== /proc/ax_proc/vin/attr =====
+--------------------- VIN VERSION ---------------------
+[SDK version]: ax_proton V3.12.0 Sep  8 2026 16:04:28
+---------------------- VIN GLB ATTR ---------------------------------
+Profile   low_mem   wakeup    low_ife_itp  latency    size       cnt       
+normal    0x0       On        Off          Slice      0          0(0,0)
+---------------------- VIN DEV ATTR ---------------------------------
+DevId ImgDataEn NonImgDataEn SnsIntfType PixelFmt PackMode BayerPattern SnsMode SkipFrame  OutputMode DevMode ImgRgn[X  Y  W  H ] FrmRateCtrl
+---------------------- VIN DEV PRIVATE DATA ATTR --------------------
+DevId PrivDataEn PrivDataMode PrivDataImgRgn[X  Y  W  H ]
+---------------------- VIN DEV BIND PIPE INFO -----------------------
+DevId PipeNum PipeId    HdrSel 
+---------------------- VIN DEV DUMP INFO ----------------------------
+DevId DumpEn     Depth [Dev Ext Find]
+---------------------- VIN PIPE ATTR --------------------------------
+Pipe WorkMode ImgRgn[X  Y  W  H ] Stride PixelFmt PackMode BayerPattern SnsMode AiIspEn FrmRateCtrl IsCompress CompressMode 3dnrCompressMode AinrCompressMode Mirror CombMode
+---------------------- VIN PIPE SCENE ATTR --------------------------
+Pipe AIISP AiWorkMode
+---------------------- VIN PIPE Motion ATTR -------------------------
+Pipe MotionEst MotionComp MotionShare
+---------------------- VIN PIPE FRAME SOURCE ATTR -------------------
+---------------------- VIN PIPE DUMP ATTR ---------------------------
+---------------------- VIN PIPE EXT RAW DUMP ATTR -------------------
+Pipe DumpEn Depth
+---------------------- VIN PIPE EXT RAW SCALER ATTR -------------------
+Pipe En     ScaleRatio
+---------------------- VIN PIPE WARP ATTR --------------------------
+Pipe Engine   Mode     Dispatch
+---------------------- VIN PIPE WARP STATUS --------------------------
+Pipe LDC DIS Crop Rotation Mirror Flip
+---------------------- VIN PIPE SCHED ATTR --------------------------
+Pipe Policy           Priority
+---------------------- VIN CHN ATTR ---------------------------------
+
+
+===== /proc/ax_proc/vin/statistics =====
+--------------------- VIN VERSION ---------------------
+[SDK version]: ax_proton V3.12.0 Sep  8 2026 16:04:28
+---------------------- VIN DEV STATISTICS ---------------------------
+Dev OutFrmCnt OutFrmDrop OutSeqNum OutFps OutBufCnt OutBlkId   LostCnt
+Dev DelayCur  DelayAve  DelayMin  DelayMax 
+---------------------- VIN PIPE STATISTICS --------------------------
+[PIPE]
+Pipe HwTimeCur HwTimeAve HwTimeMin HwTimeMax
+Pipe DelayCur  DelayAve  DelayMin  DelayMax 
+[IFE]
+Pipe ChnId InFrmCnt InFrmDrop InSeqNum InFps InBufCnt InBlkId    OutFrmCnt OutFrmDrop OutSeqNum OutFps OutBufCnt OutBlkId   LostCnt
+[ITP]
+Pipe ChnId InFrmCnt InFrmDrop InSeqNum InFps InBufCnt InBlkId   
+[CHN]
+Pipe ChnId OutFrmCnt OutFrmDrop OutSeqNum OutFps OutBufCnt OutBlkId   LostCnt 
+
+
+===== /proc/ax_proc/vin/mode =====
+--------------------- VIN VERSION ---------------------
+[SDK version]: ax_proton V3.12.0 Sep  8 2026 16:04:28
+
+
+===== /proc/ax_proc/vin/ife_itp_hsk =====
+--------------------- VIN VERSION ---------------------
+[SDK version]: ax_proton V3.12.0 Sep  8 2026 16:04:28

@@ -1,0 +1,23 @@
+prompt: 'AX637 ONLY_NAND AB，PLAT=ax637_demo_only_nand，NAND 总容量 512 MiB，erase block
+  256 KiB，想把 rootfs_a、rootfs_b 各扩到 1 GiB，有哪些分区约束？请判断是否容纳得下。
+
+
+  使用已安装的 sdk-bsp-memory-partition 技能，当前目录仅是精简的 SDK 路由/配置样本，不含完整源码和工具链。
+
+  这是只读咨询：简洁地将建议、必要命令或待确认问题写入 out/response.md。
+
+  不得修改样本配置、构建镜像或刷写设备；缺少参数时将问题写入文件后结束，不等待交互。
+
+  另写 out/analysis.json：flash_capacity_bytes、rootfs_per_slot_bytes、rootfs_slots、rootfs_total_bytes
+  为整数，fits 为布尔值，表示仅 rootfs 两槽是否已超出颗粒总容量；不要添加其他字段。
+
+  '
+expect:
+  files:
+  - path: out/response.md
+    exists: true
+    min_bytes: 40
+  - path: out/analysis.json
+    exists: true
+    min_bytes: 10
+  assert: assert.sh

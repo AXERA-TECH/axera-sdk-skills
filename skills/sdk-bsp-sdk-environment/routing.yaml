@@ -1,0 +1,35 @@
+version: 1
+
+# Axera SDK Environment 路由表：workspace 检测 → 平台识别 → 加载对应环境规范
+# ax637 继承 m57 基础系统环境规范，并叠加自身板级差异与工具链要求。
+
+platforms:
+  - id: ax637
+    display: AX637 / AX637R SDK (基于 M57)
+    detect:
+      any:
+        - path_exists: board-AX637
+        - path_exists: SafetyIsland/rt-thread/bsp/m57/configs_ax637
+        - path_exists: SafetyIsland/rt-thread/bsp/m57/configs_ax637r
+    load:
+      - platforms/ax637.md
+    reference_root: reference/ax637/
+    extends: m57               # 继承 m57 环境事实
+
+  - id: m57
+    display: Axera M57 SDK (M57 architecture)
+    detect:
+      any:
+        - path_exists: board-M57
+        - path_exists: SafetyIsland/mcal
+    load:
+      - platforms/m57.md
+    reference_root: reference/m57/
+
+fallback:
+  id: unknown
+  action: ask
+  message: |
+    未识别到已登记的 Axera 平台。请：
+      1) 通过 args 显式指定 platform=<id>，可用 id 为 [m57, ax637]；或
+      2) 确认工作区是否包含 board-* 或 SafetyIsland/ 源码目录。

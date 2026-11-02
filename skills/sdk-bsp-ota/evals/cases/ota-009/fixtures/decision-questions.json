@@ -1,0 +1,18 @@
+{
+  "same_filename_proves_baseline": {
+    "question": "旧包同名是否足以证明差分基线匹配",
+    "type": "boolean"
+  },
+  "repeat_same_package_without_checks": {
+    "question": "是否不核对直接反复重试原包",
+    "type": "boolean"
+  },
+  "rdiffbase_check_required": {
+    "question": "是否需核对 rdiffbase",
+    "type": "boolean"
+  },
+  "handler_buffer_check_required": {
+    "question": "是否需核对 handler 与 buffer 限制",
+    "type": "boolean"
+  }
+}

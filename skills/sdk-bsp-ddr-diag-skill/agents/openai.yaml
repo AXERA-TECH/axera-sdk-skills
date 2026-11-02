@@ -1,0 +1,4 @@
+interface:
+  display_name: "AX615 DDR 自助排查"
+  short_description: "面向 AX615 SDK/BSP 的 DDR 初始化、training、BIST 与稳定性问题诊断，按 S0–S5 流程收敛并给出带出处的结论或交接文档"
+  default_prompt: "使用 $sdk-bsp-ddr-diag-skill 处理 AX615 DDR 问题：收集现象、平台环境、DDR 配置与完整日志，按 S0–S5 流程诊断并给出带出处的结论。"

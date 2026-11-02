@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="1900" viewBox="0 0 1560 1900" role="img" aria-labelledby="title desc" font-family="Noto Sans CJK SC, Microsoft YaHei, Segoe UI, sans-serif">
+<title id="title">AXERA SDK Skills: Skills and Platforms</title>
+<desc id="desc">28 standalone entry points grouped by task with chip labels.</desc>
+<rect x="0" y="0" width="1560" height="1900" rx="6" fill="#ffffff"/>
+<text x="40" y="51" font-size="28" fill="#1d3036" font-weight="700">AXERA SDK Skills</text>
+<text x="40" y="84" font-size="17" fill="#3e4b52" font-weight="400">Find a skill by task and chip</text>
+<text x="344" y="115" font-size="14" fill="#67767d" font-weight="400">Task Domain</text>
+<text x="714" y="115" font-size="14" fill="#67767d" font-weight="400">Skill and Purpose (click to open)</text>
+<path d="M260 992.5 C300 992.5, 295 303.5, 338 303.5" fill="none" stroke="#2b8a78" stroke-width="2"/>
+<rect x="338" y="280.5" width="285" height="46" rx="6" fill="#f6f8fa" stroke="#2b8a78" stroke-opacity=".35"/>
+<text x="353" y="309.5" font-size="15" fill="#2b8a78" font-weight="600">Boot and BSP</text>
+<path d="M623 303.5 H665 M665 166 V441" fill="none" stroke="#2b8a78" stroke-width="1.5"/>
+<path d="M665 166 H700" fill="none" stroke="#2b8a78" stroke-width="1.5"/>
+<rect x="700" y="143" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-bsp-boot-diag-skill/SKILL.md" target="_top">
+<text x="714" y="161" font-size="15" fill="#2b8a78" font-weight="600" font-family="Consolas, monospace">sdk-bsp-boot-diag-skill</text></a>
+<text x="714" y="180" font-size="13" fill="#3e4b52" font-weight="400">BL1 / U-Boot / Linux boot failures</text>
+<text x="1490" y="161" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">AX615</text>
+<path d="M665 221 H700" fill="none" stroke="#2b8a78" stroke-width="1.5"/>
+<rect x="700" y="198" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-bsp-fast-boot-skill/SKILL.md" target="_top">
+<text x="714" y="216" font-size="15" fill="#2b8a78" font-weight="600" font-family="Consolas, monospace">sdk-bsp-fast-boot-skill</text></a>
+<text x="714" y="235" font-size="13" fill="#3e4b52" font-weight="400">Fast boot, dual-core handoff, peripheral arbitration</text>
+<text x="1490" y="216" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">AX615</text>
+<path d="M665 276 H700" fill="none" stroke="#2b8a78" stroke-width="1.5"/>
+<rect x="700" y="253" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-bsp-aov-diag-skill/SKILL.md" target="_top">
+<text x="714" y="271" font-size="15" fill="#2b8a78" font-weight="600" font-family="Consolas, monospace">sdk-bsp-aov-diag-skill</text></a>
+<text x="714" y="290" font-size="13" fill="#3e4b52" font-weight="400">Suspend, low-power GPIO, and wake-up issues</text>
+<text x="1490" y="271" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">AX615</text>
+<path d="M665 331 H700" fill="none" stroke="#2b8a78" stroke-width="1.5"/>
+<rect x="700" y="308" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-bsp-boot/SKILL.md" target="_top">
+<text x="714" y="326" font-size="15" fill="#2b8a78" font-weight="600" font-family="Consolas, monospace">sdk-bsp-boot</text></a>
+<text x="714" y="345" font-size="13" fill="#3e4b52" font-weight="400">Boot chain, SBL / U-Boot, and boot failures</text>
+<text x="1490" y="326" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">M57 / AX637(R)</text>
+<path d="M665 386 H700" fill="none" stroke="#2b8a78" stroke-width="1.5"/>
+<rect x="700" y="363" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-bsp-secure-boot/SKILL.md" target="_top">
+<text x="714" y="381" font-size="15" fill="#2b8a78" font-weight="600" font-family="Consolas, monospace">sdk-bsp-secure-boot</text></a>
+<text x="714" y="400" font-size="13" fill="#3e4b52" font-weight="400">Secure boot, signing, encryption, and eFuse</text>
+<text x="1490" y="381" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">M57 / AX637(R)</text>
+<path d="M665 441 H700" fill="none" stroke="#2b8a78" stroke-width="1.5"/>
+<rect x="700" y="418" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-bsp-ota/SKILL.md" target="_top">
+<text x="714" y="436" font-size="15" fill="#2b8a78" font-weight="600" font-family="Consolas, monospace">sdk-bsp-ota</text></a>
+<text x="714" y="455" font-size="13" fill="#3e4b52" font-weight="400">OTA / SWUpdate, A/B upgrades, and rollback</text>
+<text x="1490" y="436" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">M57 / AX637(R)</text>
+<path d="M260 992.5 C300 992.5, 295 572, 338 572" fill="none" stroke="#64854d" stroke-width="2"/>
+<rect x="338" y="549" width="285" height="46" rx="6" fill="#f6f8fa" stroke="#64854d" stroke-opacity=".35"/>
+<text x="353" y="578" font-size="15" fill="#64854d" font-weight="600">DDR and System</text>
+<path d="M623 572 H665 M665 517 V627" fill="none" stroke="#64854d" stroke-width="1.5"/>
+<path d="M665 517 H700" fill="none" stroke="#64854d" stroke-width="1.5"/>
+<rect x="700" y="494" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-bsp-ddr-diag-skill/SKILL.md" target="_top">
+<text x="714" y="512" font-size="15" fill="#64854d" font-weight="600" font-family="Consolas, monospace">sdk-bsp-ddr-diag-skill</text></a>
+<text x="714" y="531" font-size="13" fill="#3e4b52" font-weight="400">DDR initialization, training, and stability</text>
+<text x="1490" y="512" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">AX615</text>
+<path d="M665 572 H700" fill="none" stroke="#64854d" stroke-width="1.5"/>
+<rect x="700" y="549" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-bsp-sys-diag-skill/SKILL.md" target="_top">
+<text x="714" y="567" font-size="15" fill="#64854d" font-weight="600" font-family="Consolas, monospace">sdk-bsp-sys-diag-skill</text></a>
+<text x="714" y="586" font-size="13" fill="#3e4b52" font-weight="400">Out-of-memory, hangs, and system crashes</text>
+<text x="1490" y="567" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">AX615 / AX620</text>
+<path d="M665 627 H700" fill="none" stroke="#64854d" stroke-width="1.5"/>
+<rect x="700" y="604" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-bsp-memory-partition/SKILL.md" target="_top">
+<text x="714" y="622" font-size="15" fill="#64854d" font-weight="600" font-family="Consolas, monospace">sdk-bsp-memory-partition</text></a>
+<text x="714" y="641" font-size="13" fill="#3e4b52" font-weight="400">DDR / CMM memory and FLASH partition planning</text>
+<text x="1490" y="622" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">M57 / AX637(R)</text>
+<path d="M260 992.5 C300 992.5, 295 758, 338 758" fill="none" stroke="#9b7315" stroke-width="2"/>
+<rect x="338" y="735" width="285" height="46" rx="6" fill="#f6f8fa" stroke="#9b7315" stroke-opacity=".35"/>
+<text x="353" y="764" font-size="15" fill="#9b7315" font-weight="600">Network and Storage</text>
+<path d="M623 758 H665 M665 703 V813" fill="none" stroke="#9b7315" stroke-width="1.5"/>
+<path d="M665 703 H700" fill="none" stroke="#9b7315" stroke-width="1.5"/>
+<rect x="700" y="680" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-bsp-network-card-skill/SKILL.md" target="_top">
+<text x="714" y="698" font-size="15" fill="#9b7315" font-weight="600" font-family="Consolas, monospace">sdk-bsp-network-card-skill</text></a>
+<text x="714" y="717" font-size="13" fill="#3e4b52" font-weight="400">Link, PHY, IP/DHCP, and throughput</text>
+<text x="1490" y="698" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">AX615</text>
+<path d="M665 758 H700" fill="none" stroke="#9b7315" stroke-width="1.5"/>
+<rect x="700" y="735" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-bsp-sd-card-skill/SKILL.md" target="_top">
+<text x="714" y="753" font-size="15" fill="#9b7315" font-weight="600" font-family="Consolas, monospace">sdk-bsp-sd-card-skill</text></a>
+<text x="714" y="772" font-size="13" fill="#3e4b52" font-weight="400">SD card detection, mounting, I/O, and hot-plug</text>
+<text x="1490" y="753" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">AX615</text>
+<path d="M665 813 H700" fill="none" stroke="#9b7315" stroke-width="1.5"/>
+<rect x="700" y="790" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-bsp-nand-fs/SKILL.md" target="_top">
+<text x="714" y="808" font-size="15" fill="#9b7315" font-weight="600" font-family="Consolas, monospace">sdk-bsp-nand-fs</text></a>
+<text x="714" y="827" font-size="13" fill="#3e4b52" font-weight="400">NAND / MTD, filesystems, and ECC troubleshooting</text>
+<text x="1490" y="808" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">M57 / AX637(R)</text>
+<path d="M260 992.5 C300 992.5, 295 944, 338 944" fill="none" stroke="#bd5a31" stroke-width="2"/>
+<rect x="338" y="921" width="285" height="46" rx="6" fill="#f6f8fa" stroke="#bd5a31" stroke-opacity=".35"/>
+<text x="353" y="950" font-size="15" fill="#bd5a31" font-weight="600">SDK Environment and Build</text>
+<path d="M623 944 H665 M665 889 V999" fill="none" stroke="#bd5a31" stroke-width="1.5"/>
+<path d="M665 889 H700" fill="none" stroke="#bd5a31" stroke-width="1.5"/>
+<rect x="700" y="866" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-bsp-build/SKILL.md" target="_top">
+<text x="714" y="884" font-size="15" fill="#bd5a31" font-weight="600" font-family="Consolas, monospace">sdk-bsp-build</text></a>
+<text x="714" y="903" font-size="13" fill="#3e4b52" font-weight="400">BSP/firmware compilation and AXP packaging</text>
+<text x="1490" y="884" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">AX615</text>
+<path d="M665 944 H700" fill="none" stroke="#bd5a31" stroke-width="1.5"/>
+<rect x="700" y="921" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-bsp-sdk-environment/SKILL.md" target="_top">
+<text x="714" y="939" font-size="15" fill="#bd5a31" font-weight="600" font-family="Consolas, monospace">sdk-bsp-sdk-environment</text></a>
+<text x="714" y="958" font-size="13" fill="#3e4b52" font-weight="400">SDK host environment, dependencies, and toolchains</text>
+<text x="1490" y="939" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">M57 / AX637(R)</text>
+<path d="M665 999 H700" fill="none" stroke="#bd5a31" stroke-width="1.5"/>
+<rect x="700" y="976" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-bsp-sdk-build/SKILL.md" target="_top">
+<text x="714" y="994" font-size="15" fill="#bd5a31" font-weight="600" font-family="Consolas, monospace">sdk-bsp-sdk-build</text></a>
+<text x="714" y="1013" font-size="13" fill="#3e4b52" font-weight="400">SDK and component builds, AXP packaging</text>
+<text x="1490" y="994" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">M57 / AX637(R)</text>
+<path d="M260 992.5 C300 992.5, 295 1130, 338 1130" fill="none" stroke="#9a5169" stroke-width="2"/>
+<rect x="338" y="1107" width="285" height="46" rx="6" fill="#f6f8fa" stroke="#9a5169" stroke-opacity=".35"/>
+<text x="353" y="1136" font-size="15" fill="#9a5169" font-weight="600">IPC and Functional Safety</text>
+<path d="M623 1130 H665 M665 1075 V1185" fill="none" stroke="#9a5169" stroke-width="1.5"/>
+<path d="M665 1075 H700" fill="none" stroke="#9a5169" stroke-width="1.5"/>
+<rect x="700" y="1052" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-bsp-rpmsg/SKILL.md" target="_top">
+<text x="714" y="1070" font-size="15" fill="#9a5169" font-weight="600" font-family="Consolas, monospace">sdk-bsp-rpmsg</text></a>
+<text x="714" y="1089" font-size="13" fill="#3e4b52" font-weight="400">IPC, RPMsg / RPZC, and shared memory</text>
+<text x="1490" y="1070" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">M57 / AX637(R)</text>
+<path d="M665 1130 H700" fill="none" stroke="#9a5169" stroke-width="1.5"/>
+<rect x="700" y="1107" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-bsp-fusa/SKILL.md" target="_top">
+<text x="714" y="1125" font-size="15" fill="#9a5169" font-weight="600" font-family="Consolas, monospace">sdk-bsp-fusa</text></a>
+<text x="714" y="1144" font-size="13" fill="#3e4b52" font-weight="400">Functional safety diagnostics and fault injection</text>
+<text x="1490" y="1125" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">M57</text>
+<path d="M665 1185 H700" fill="none" stroke="#9a5169" stroke-width="1.5"/>
+<rect x="700" y="1162" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-bsp-can-safety/SKILL.md" target="_top">
+<text x="714" y="1180" font-size="15" fill="#9a5169" font-weight="600" font-family="Consolas, monospace">sdk-bsp-can-safety</text></a>
+<text x="714" y="1199" font-size="13" fill="#3e4b52" font-weight="400">Safety MCAL CAN / CAN FD troubleshooting</text>
+<text x="1490" y="1180" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">M57</text>
+<path d="M260 992.5 C300 992.5, 295 1343.5, 338 1343.5" fill="none" stroke="#7757aa" stroke-width="2"/>
+<rect x="338" y="1320.5" width="285" height="46" rx="6" fill="#f6f8fa" stroke="#7757aa" stroke-opacity=".35"/>
+<text x="353" y="1349.5" font-size="15" fill="#7757aa" font-weight="600">AXCK Apps and Pipelines</text>
+<path d="M623 1343.5 H665 M665 1261 V1426" fill="none" stroke="#7757aa" stroke-width="1.5"/>
+<path d="M665 1261 H700" fill="none" stroke="#7757aa" stroke-width="1.5"/>
+<rect x="700" y="1238" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-axck-app/SKILL.md" target="_top">
+<text x="714" y="1256" font-size="15" fill="#7757aa" font-weight="600" font-family="Consolas, monospace">sdk-axck-app</text></a>
+<text x="714" y="1275" font-size="13" fill="#3e4b52" font-weight="400">App development, module builds, firmware packaging</text>
+<text x="1490" y="1256" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">AX615</text>
+<path d="M665 1316 H700" fill="none" stroke="#7757aa" stroke-width="1.5"/>
+<rect x="700" y="1293" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-axck-config/SKILL.md" target="_top">
+<text x="714" y="1311" font-size="15" fill="#7757aa" font-weight="600" font-family="Consolas, monospace">sdk-axck-config</text></a>
+<text x="714" y="1330" font-size="13" fill="#3e4b52" font-weight="400">Sensor integration, pipeline setup, memory budgeting</text>
+<text x="1490" y="1311" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">AX615</text>
+<path d="M665 1371 H700" fill="none" stroke="#7757aa" stroke-width="1.5"/>
+<rect x="700" y="1348" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-axck-diag/SKILL.md" target="_top">
+<text x="714" y="1366" font-size="15" fill="#7757aa" font-weight="600" font-family="Consolas, monospace">sdk-axck-diag</text></a>
+<text x="714" y="1385" font-size="13" fill="#3e4b52" font-weight="400">AXCK boot, media, and IPC log diagnostics</text>
+<text x="1490" y="1366" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">AX615</text>
+<path d="M665 1426 H700" fill="none" stroke="#7757aa" stroke-width="1.5"/>
+<rect x="700" y="1403" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-axck-test/SKILL.md" target="_top">
+<text x="714" y="1421" font-size="15" fill="#7757aa" font-weight="600" font-family="Consolas, monospace">sdk-axck-test</text></a>
+<text x="714" y="1440" font-size="13" fill="#3e4b52" font-weight="400">Board functional tests, health checks, link validation</text>
+<text x="1490" y="1421" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">AX615</text>
+<path d="M260 992.5 C300 992.5, 295 1584.5, 338 1584.5" fill="none" stroke="#227fa8" stroke-width="2"/>
+<rect x="338" y="1561.5" width="285" height="46" rx="6" fill="#f6f8fa" stroke="#227fa8" stroke-opacity=".35"/>
+<text x="353" y="1590.5" font-size="15" fill="#227fa8" font-weight="600">Video Encoding and Dataflow</text>
+<path d="M623 1584.5 H665 M665 1502 V1667" fill="none" stroke="#227fa8" stroke-width="1.5"/>
+<path d="M665 1502 H700" fill="none" stroke="#227fa8" stroke-width="1.5"/>
+<rect x="700" y="1479" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-venc-rc-config-audit/SKILL.md" target="_top">
+<text x="714" y="1497" font-size="15" fill="#227fa8" font-weight="600" font-family="Consolas, monospace">sdk-venc-rc-config-audit</text></a>
+<text x="714" y="1516" font-size="13" fill="#3e4b52" font-weight="400">Rate-control configuration, bitrate, GOP, frame rate</text>
+<text x="1490" y="1497" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">AX615</text>
+<path d="M665 1557 H700" fill="none" stroke="#227fa8" stroke-width="1.5"/>
+<rect x="700" y="1534" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-ivps-venc-diagnose/SKILL.md" target="_top">
+<text x="714" y="1552" font-size="15" fill="#227fa8" font-weight="600" font-family="Consolas, monospace">sdk-ivps-venc-diagnose</text></a>
+<text x="714" y="1571" font-size="13" fill="#3e4b52" font-weight="400">IVPS to VENC stalls and handshake blocking</text>
+<text x="1490" y="1552" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">AX615</text>
+<path d="M665 1612 H700" fill="none" stroke="#227fa8" stroke-width="1.5"/>
+<rect x="700" y="1589" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-dataflow-analysis/SKILL.md" target="_top">
+<text x="714" y="1607" font-size="15" fill="#227fa8" font-weight="600" font-family="Consolas, monospace">sdk-dataflow-analysis</text></a>
+<text x="714" y="1626" font-size="13" fill="#3e4b52" font-weight="400">Module binding, HSK handshake, and stream stalls</text>
+<text x="1490" y="1607" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">AX615</text>
+<path d="M665 1667 H700" fill="none" stroke="#227fa8" stroke-width="1.5"/>
+<rect x="700" y="1644" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-tx-analyse/SKILL.md" target="_top">
+<text x="714" y="1662" font-size="15" fill="#227fa8" font-weight="600" font-family="Consolas, monospace">sdk-tx-analyse</text></a>
+<text x="714" y="1681" font-size="13" fill="#3e4b52" font-weight="400">Coaxial TX diagnostics and configuration generation</text>
+<text x="1490" y="1662" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">AX615</text>
+<path d="M260 992.5 C300 992.5, 295 1743, 338 1743" fill="none" stroke="#ba476b" stroke-width="2"/>
+<rect x="338" y="1720" width="285" height="46" rx="6" fill="#f6f8fa" stroke="#ba476b" stroke-opacity=".35"/>
+<text x="353" y="1749" font-size="15" fill="#ba476b" font-weight="600">Video Output</text>
+<path d="M623 1743 H665 M665 1743 V1743" fill="none" stroke="#ba476b" stroke-width="1.5"/>
+<path d="M665 1743 H700" fill="none" stroke="#ba476b" stroke-width="1.5"/>
+<rect x="700" y="1720" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-vo-analysis/SKILL.md" target="_top">
+<text x="714" y="1738" font-size="15" fill="#ba476b" font-weight="600" font-family="Consolas, monospace">sdk-vo-analysis</text></a>
+<text x="714" y="1757" font-size="13" fill="#3e4b52" font-weight="400">VO output diagnostics and display configuration</text>
+<text x="1490" y="1738" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">AX615</text>
+<path d="M260 992.5 C300 992.5, 295 1819, 338 1819" fill="none" stroke="#8b6c37" stroke-width="2"/>
+<rect x="338" y="1796" width="285" height="46" rx="6" fill="#f6f8fa" stroke="#8b6c37" stroke-opacity=".35"/>
+<text x="353" y="1825" font-size="15" fill="#8b6c37" font-weight="600">Audio Echo</text>
+<path d="M623 1819 H665 M665 1819 V1819" fill="none" stroke="#8b6c37" stroke-width="1.5"/>
+<path d="M665 1819 H700" fill="none" stroke="#8b6c37" stroke-width="1.5"/>
+<rect x="700" y="1796" width="805" height="46" rx="6" fill="#f6f8fa" stroke="#cbd5dd" stroke-opacity=".35"/>
+<a href="../../skills/sdk-audio-aec-diag-skill/SKILL.md" target="_top">
+<text x="714" y="1814" font-size="15" fill="#8b6c37" font-weight="600" font-family="Consolas, monospace">sdk-audio-aec-diag-skill</text></a>
+<text x="714" y="1833" font-size="13" fill="#3e4b52" font-weight="400">AEC echo, reference signal, and delay diagnostics</text>
+<text x="1490" y="1814" font-size="12" fill="#67767d" font-weight="400" text-anchor="end">AX615</text>
+<rect x="40" y="947.5" width="220" height="90" rx="6" fill="#1d3036"/>
+<text x="59" y="983.5" font-size="18" fill="#ffffff" font-weight="700">What is your task?</text>
+<text x="59" y="1012.5" font-size="12" fill="#c0d4d9" font-weight="400">Diagnose / Build / Configure</text>
+<text x="40" y="1861" font-size="14" fill="#67767d" font-weight="400">This directory: 28 entries; M57 selects 10, AX637 / AX637R selects 8. Release versions: see Releases.</text>
+<text x="40" y="1883" font-size="13" fill="#79868c" font-weight="400">SDK / OS and dependencies follow each SKILL.md; installation does not prove business validation.</text>
+</svg>

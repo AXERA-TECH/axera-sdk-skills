@@ -1,0 +1,20 @@
+schema_version: 1
+id: AXCK-004
+title: 录像切文件因缩略图解除关键帧等待导致 MP4 Muxer NAL 约束告警
+category: record/mux/wait_key_violation
+analyzer:
+  skill: sdk-axck-diag
+platform:
+  soc: AX615
+  project: AX615_dashcam_nor
+input:
+  type: log_set
+  files:
+    - input/serial.log
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/serial.log
+  evaluator_only:
+    - answer/oracle.yaml
+    - answer/case.yaml

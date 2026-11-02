@@ -1,0 +1,14 @@
+{
+  "newer_version": {
+    "question": "题目两个版本中较新的原始版本字符串",
+    "type": "string"
+  },
+  "lexical_comparison": {
+    "question": "是否按字符串字典序比较数字版本",
+    "type": "boolean"
+  },
+  "universal_suffix_order_known": {
+    "question": "是否存在本题资料已证明的通用 _P1 排序规则",
+    "type": "boolean"
+  }
+}

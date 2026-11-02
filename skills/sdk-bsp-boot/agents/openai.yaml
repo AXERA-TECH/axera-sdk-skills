@@ -1,0 +1,4 @@
+interface:
+  display_name: "Axera Boot"
+  short_description: "指导 Axera SoC 启动链、U-Boot 引导、内存/FLASH 分区与启动类问题定位"
+  default_prompt: "指导完成 Axera SoC 启动链与分区配置的排查与调整。"

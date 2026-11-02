@@ -1,0 +1,32 @@
+# 由 evals.json 自动迁移生成，请按需补全平台与复现信息
+{
+  "schema_version": 1,
+  "id": "AXVO-analysis-001",
+  "title": "BT656 1080p30 Pclk=74250 bDlbClk=0 黑屏无信号",
+  "category": "diagnosis/timing/pclk-dblclk-mismatch",
+  "analyzer": {
+    "skill": "sdk-vo-analysis"
+  },
+  "platform": {
+    "soc": "AX615",
+    "skill_baseline": "V3.14.0",
+    "interface": "BT656",
+    "resolution": "1920x1080@30"
+  },
+  "input": {
+    "type": "scenario",
+    "files": [
+      "input/scenario.md"
+    ]
+  },
+  "oracle": "answer/oracle.yaml",
+  "separation": {
+    "analyzer_visible": [
+      "input/scenario.md"
+    ],
+    "evaluator_only": [
+      "answer/oracle.yaml",
+      "answer/case.yaml"
+    ]
+  }
+}

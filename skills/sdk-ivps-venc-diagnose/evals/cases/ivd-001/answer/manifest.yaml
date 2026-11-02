@@ -1,0 +1,32 @@
+schema_version: 1
+id: ivd-001
+display_id: IVD-001
+title: VENC chn0 编码消费侧停滞：Send2EncCnt 领先 EncSucCnt 一帧且 HSK 编码侧 update 停在 initVal
+category: ivps-venc/hsk/encoder-consumer-stall
+analyzer:
+  skill: sdk-ivps-venc-diagnose
+platform:
+  soc: AX615
+  sdk_version: V3.15.0
+input:
+  type: proc_sampling
+  files:
+    - input/hsk_proc.txt
+  capture:
+    samples: 2
+    sample_interval_seconds: 5
+    source: captured
+    notes:
+      - 板端真实双轮采样，现象为人工构造的编码停滞现场；复现方式不随包发布，不要求分析器回答。
+      - 采样前已执行 echo 'priv on' > /proc/ax_proc/syncagent。
+      - 含 link_table、link_table_kernel、syncagent（3 个 session）、venc、jenc、ivps 六个 proc。
+      - SDK 版本：ax_sys V3.15.0_20260929153144 / ax_venc V3.15.0 / ax_ivps V3.15.0。
+      - 拓扑：IVPS 0/0->VENC 0/0 与 IVPS 0/1->VENC 0/1 为 SW_Low_Mem HSK，
+        IVPS 0/2->VENC 0/2 为 SW_Offline；JENC 经 VPP+VGP 二对一汇入。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/hsk_proc.txt
+  evaluator_only:
+    - answer/manifest.yaml
+    - answer/oracle.yaml

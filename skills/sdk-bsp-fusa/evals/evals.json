@@ -1,0 +1,81 @@
+{
+  "skill_name": "sdk-bsp-fusa",
+  "runtime_skill_name": "sdk-bsp-fusa",
+  "activation": "explicit",
+  "description": "标准 evals：每个条目对应一个必须能答对的现场问题，expectations 是该条目的硬性验收点。语义判定见 evals/README.md，端到端盲测见 evals/FUSA-00x/。",
+  "evals": [
+    {
+      "id": 1,
+      "name": "platform_gate_linux",
+      "prompt": "我们的 M57 Linux SDK，SDK 根目录 /workspace/sdk/m57-linux，串口一直刷 heartbeat time:1 / heartbeat time:2 / heartbeat time:3，是不是诊断框架坏了？",
+      "expected_output": "判定为 Linux 平台（依据 drivers/soc/axera/fusa 存在 + SDK_VERSION=V2.10.0 无 QNX 前缀），结论为【设计预期】：heartbeat time:N 是连续 N 轮未收到心跳应答的计数，只有打印 heartbeat timeout. 并累计超过 5 轮才正式上报故障；给客户自查方法，不需要升级。",
+      "expectations": [
+        "先复述平台判定结果与判据，再给结论",
+        "命中 Linux FAQ-7，且按 Linux 的编号形态引用（不补零、不映射到 QNX 编号）",
+        "解释单轮等待窗口 SERVER_HEARTBEAT_TIMEOUT（5ms）与检查周期 CYCLE_CHK_PERIOD（20ms）的区别",
+        "在 S3 收口，不要求客户先跑 S4 取证，也不建议升级版本",
+        "全部命令与路径均为 Linux 形态（不出现 /proc/ax_diag）"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "mask_attribution_not_heartbeat",
+      "prompt": "日志里有 diag-netlink: err ID: 17 module ID: 45 domain ID: 0，另一处显示 error_mask: 0x002D0011。按 FAQ 里 err 17 是 server 心跳超时，但我们 CPU 负载很低，为什么还报心跳？",
+      "expected_output": "用公式拆解 0x002D0011 得 domain=0、module=45、event=17，查错误码表归属 ISP_PIPE 的帧 ID 校验失败（*_ISP_PIPE_ISP_PIPE_FRAME_ID_CHECK），与心跳无关；FAQ 速查表的 err 号隐含 module 0 前提（module 0 event 17 = 0x00000011 = DFC 心跳）。",
+      "expectations": [
+        "写出 mask 合成/拆解公式并给出解码结果",
+        "指出 module 号决定含义，err 号本身不足以定归属",
+        "纠正客户引用的 FAQ 条目只对 module 0 成立",
+        "给出 ISP_PIPE 归属下的下一步方向（含 ECM/FCU 双层检查意识）"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "qnx_fixed_defect_version_matrix",
+      "prompt": "M57 QNX SDK，版本 QNX_V0.10.0，压测跑满负载时串口刷 BSP HeartBeat error !!!，重启才恢复，这是芯片问题吗？",
+      "expected_output": "判定为 QNX 平台，命中【已修故障】：高负载心跳超时（线程饿死/线程风暴、ACK 队头阻塞）自 V0.11.0 起修复，客户 V0.10.0 低于修复版本 → 建议升级；升级后仍报则按 QNX FAQ-12 保证 CPU 占用 <80%。",
+      "expectations": [
+        "判据是 QNX 硬判据（diag_stl.c 命中）与版本号形态 QNX_V*，不是靠猜",
+        "用 QNX 侧 FAQ 编号原文照抄",
+        "明确给出「升级到 V0.11.0 即解决」的可执行结论，不说「芯片坏了」",
+        "不出现 Linux 侧的路径、命令或修复版本号"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "false_negative_guard",
+      "prompt": "我们的 M57 QNX SDK 是 QNX_V1.10.0，FCU 反复 set_mask 会出现中断风暴，我们按 FAQ 的描述在 private_drv/fcu 下 grep 关中断原语，结果是 0，是不是说明这个修复没进来？",
+      "expected_output": "版本号上应已含该修复（V1.1.0 起），但主线搜不到代码特征 → 判「检测不确定」，不判「未含修复」；下一步检索 fcu_codereview/ 等 review 目录确认补丁是否在 review 中，并按 QNX 侧取证看现场。",
+      "expectations": [
+        "结论落在「检测不确定」，明确不声称未修复",
+        "说明搜不到特征的可能原因：重构搬家、原语不同、补丁在 review",
+        "给出原语对照方向（Linux local_irq_save ↔ QNX InterruptLock/InterruptDisable）",
+        "提醒 QNX 检索范围必须含 fcu_codereview/、code_review/、doc_modify/"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "input_closure_gate",
+      "prompt": "我们的板子一直报 heartbeat timeout，怎么办？",
+      "expected_output": "输入不闭合（缺平台、缺日志上下文、缺复现步骤），停在 S0，一次只追问一个问题（优先要求带时间戳、报错行前后各 20~50 行的完整日志），并说明为什么需要。",
+      "expectations": [
+        "不给出任何根因结论，不要求升级，不产出交接文档",
+        "一次只问一个问题，并解释该信息为什么决定结论",
+        "说明 heartbeat time:N 与 heartbeat timeout 只差一个词但结论相反，以及后续 FuSa 事件多为下游症状",
+        "不一次抛出多个待补项清单，不直接给取证命令清单"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "known_suspicion_config_workaround",
+      "prompt": "Linux SDK，我们改了 Excel 里 happen 最大上报间隔，重跑过 make PLAT=xxx fusa_config，服务也重启了，板端回读 happen_max_snd_ms 还是老值。",
+      "expected_output": "命中已知可疑点①：用户态把属性名写成 resume_happen_max_snd_ms（netlink_monitor.cpp:103），kernel 侧实际是 happen_max_snd_ms（diag_sysfs.c:242），fopen 失败被静默跳过，配置下发从未生效；给配置层规避（直接写 sysfs 并回读验证），同时声明缺陷性质需原厂确认。",
+      "expectations": [
+        "给出代码依据（文件:行号 + 属性名差异）与推理链",
+        "给出配置层可立即生效的规避方法与验证方法（回读值）",
+        "明确声明「这是静态代码事实，缺陷性质需原厂确认」",
+        "不替客户改源码，不建议在未与原厂确认前用于量产"
+      ]
+    }
+  ]
+}

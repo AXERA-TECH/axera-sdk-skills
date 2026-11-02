@@ -1,0 +1,26 @@
+schema_version: 1
+id: rc-004
+display_id: RC-004
+title: 缺关键证据：proc 无 SDK 版本行且未描述现象，须克制不虚构
+category: venc-rc/common/missing-evidence
+analyzer:
+  skill: sdk-venc-rc-config-audit
+platform:
+  soc: AX615
+  sdk_version: unknown
+input:
+  type: proc_snapshot
+  files:
+    - input/venc_proc.txt
+  capture:
+    source: derived
+    notes:
+      - 真实双通道样本为基底，故意去掉 [SDK version] 头行。
+      - 任务提示词不提供任何现象描述。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/venc_proc.txt
+  evaluator_only:
+    - answer/manifest.yaml
+    - answer/oracle.yaml

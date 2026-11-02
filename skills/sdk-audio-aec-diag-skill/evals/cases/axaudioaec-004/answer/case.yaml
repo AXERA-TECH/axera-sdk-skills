@@ -1,0 +1,90 @@
+schema_version: 1
+id: axaudioaec-004
+display_id: AXAUDIOAEC-004
+title: MIC 输入削顶伴随残留回声
+category: audio-aec/signal-quality
+analyzer:
+  skill: sdk-audio-aec-diag-skill
+platform:
+  soc: AX615
+  board: unknown
+  sdk_version: unknown
+  notes: 目标诊断平台为 AX615，现有材料不证明具体板型或固件版本。
+  project: unknown
+  flash: unknown
+  ddr_mb: null
+  sensor: unknown
+provenance:
+  format_basis: AX 对外文档中的 AI/AO proc 结构与公开采集点说明。
+  limitations: 未完成硬件验证。
+input:
+  type: audio_capture_set
+  main_round: fixtures
+  control_rounds: []
+  files:
+  - fixtures/AiCard0_Dev0_vqeIn.pcm
+  - fixtures/AiCard0_Dev0_vqeOut.pcm
+  - fixtures/AiCard0_Dev0_vqeRef.pcm
+  - fixtures/capture.txt
+  - fixtures/proc.txt
+  session_integrity:
+    statement: 同轮三路音频的时间关系按 capture.txt 声明使用；尚未独立验证硬件时序。
+    proc_scope: 本轮录音结束状态。
+    raw_capture: null
+    log_level_proof: null
+    missing_evidence:
+    - 未提供原始板端采集起止记录和原始日志 SHA256，不能声称已校验真实采集链。
+    - 未提供日志等级快照，不能仅凭未出现错误日志认定没有错误。
+  sha256:
+    fixtures/AiCard0_Dev0_vqeIn.pcm: cf1551c0436d7efa2e6b5f19c56d884e5938f59af494e42c17f72e9c2ec396e5
+    fixtures/AiCard0_Dev0_vqeOut.pcm: 08a94d9e3931b2e6d58a09ecc1b63205a1beb70100f774759033e4c729f9e49f
+    fixtures/AiCard0_Dev0_vqeRef.pcm: 91fceea239eb74faaae2768639fbce4cc6d75758a2c9f04821de31f192ec4621
+    fixtures/capture.txt: 2036134092571ad019aabcd979ec7ee99428a44da39473eea58e4430c2f6db74
+    fixtures/proc.txt: de28f5e16c78a4c40ce70fc7bd520b9280e96e333d96f1fd77045977c250d6de
+evaluation:
+  report_validator: scripts/validate_report.py
+  policy: 所有关键断言逐项通过；多次运行保存全部结果，不采用多数票。
+  archive: 评测记录关联输入版本，保留平台 Harness 生成的报告、样本结果及已生成的分析输出；失败结果也应保留。
+  deterministic_checks: answer/assert.sh
+  semantic_review: 按 answer/oracle.yaml 多维审阅；现有文本正则仅为 smoke 检查，不代表完整语义通过。
+separation:
+  analyzer_visible:
+  - fixtures/AiCard0_Dev0_vqeIn.pcm
+  - fixtures/AiCard0_Dev0_vqeOut.pcm
+  - fixtures/AiCard0_Dev0_vqeRef.pcm
+  - fixtures/capture.txt
+  - fixtures/proc.txt
+  - SKILL.md
+  - agents/openai.yaml
+  - references/contract.md
+  - references/diagnosis.md
+  - references/collection.md
+  - references/delay.md
+  - references/signal-quality.md
+  - references/response-template.md
+  - scripts/validate_report.py
+  - scripts/render_report.py
+  - scripts/measure_segments.py
+  - scripts/requirements-delay.txt
+  - scripts/analyze.py
+  - scripts/proc_audio.py
+  - scripts/delay.py
+  evaluator_only:
+  - case.yaml
+  - assert.sh
+  - answer/case.yaml
+  - answer/oracle.yaml
+  - answer/reproducer.patch
+  - answer/assert.sh
+  path_resolution: fixtures/ 相对用例目录；SKILL.md、agents/、references/、scripts/ 相对已安装技能根；evaluator_only 相对用例目录。
+  prompt: 根 case.yaml 只提取 prompt 给分析器；平台信息在 prompt 公开，不交付 expect 或 answer。
+reproducer:
+  patch: answer/reproducer.patch
+  status: unavailable
+  application: null
+  command: null
+  preconditions: 录音格式、播放条件、区间与轮次关系以 fixtures/capture.txt 为准。
+  sequence: 分析产品目标播放档位下的 MIC、REF 和输出录音，后续增益对照待执行。
+  hardware_status: not_run
+  notes: reproducer.patch 仅记录缺失原因，不含可执行 diff；无基线工程，不编造复现命令或物理根因。
+oracle: answer/oracle.yaml

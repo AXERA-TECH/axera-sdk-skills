@@ -1,0 +1,9 @@
+$ cd /workspace/sdk/m57-linux
+$ test -d kernel/linux/linux-6.1.83/drivers/soc/axera/fusa && echo LINUX_HIT
+LINUX_HIT
+$ test -f kernel/osdrv/private_drv/diag_core/driver/diag_stl.c && echo QNX_HIT
+$ cat build/version/m57_version.mk
+SDK_VERSION=V2.10.0
+SDK_BRANCH=m57h_trunk
+$ rg -n "0x002D0011" header/external/ax_diag_type_ex.h | head -2
+(LINUX 侧错误码表存在，条目由排查者自行查证)

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Camera-Kit App Developer & Build"
+  short_description: "AX615 camera-kit 应用开发、子模块编译构建、Client-Service RPC 架构与固件打包"
+  default_prompt: "使用 $sdk-axck-app 检查 camera-kit 编译构建环境与 opt.filelist 固件打包规格。"

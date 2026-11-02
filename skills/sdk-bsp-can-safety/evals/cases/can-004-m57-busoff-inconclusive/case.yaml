@@ -1,0 +1,10 @@
+prompt: |
+  使用已安装的 sdk-bsp-can-safety 技能，读取当前目录的 prompt.md 和 evidence.txt，
+  按技能的诊断流程和输出格式，将排查结论生成到 out/result.md。
+  依据技能内置知识库完成任务；输入不完整时按技能流程处理，无需交互补问。
+expect:
+  files:
+    - path: out/result.md
+      exists: true
+      min_bytes: 20
+  assert: assert.sh

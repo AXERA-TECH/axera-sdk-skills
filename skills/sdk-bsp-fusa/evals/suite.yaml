@@ -1,0 +1,24 @@
+version: 1
+tool_error_policy: warn
+defaults:
+  timeout_seconds: 180
+  samples: 1
+gates:
+  smoke: [fusa-input-gate]
+budget:
+  max_agent_runs: 3
+  max_wall_seconds: 600
+  concurrency: 2
+cases:
+  - id: fusa-linux-mask
+    path: cases/fusa-linux-mask
+    kind: behavior
+    required: true
+  - id: fusa-qnx-services
+    path: cases/fusa-qnx-services
+    kind: behavior
+    required: true
+  - id: fusa-input-gate
+    path: cases/fusa-input-gate
+    kind: behavior
+    required: true

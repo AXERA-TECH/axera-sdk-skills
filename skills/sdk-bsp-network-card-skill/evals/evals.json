@@ -1,0 +1,58 @@
+{
+  "skill_name": "sdk-bsp-network-card-skill",
+  "note": "匿名评测集，覆盖链路、地址、TCP 服务和吞吐诊断，强调分层与反证。",
+  "evals": [
+    {
+      "id": 1,
+      "name": "no-carrier-link-layer",
+      "prompt": "AX615 的 eth0 没有 IP，`ip link` 显示 NO-CARRIER。请判断原因，日志见 <日志文件>。",
+      "expected_output": "先定位到链路层并收集 PHY 探测、MDIO、复位、时钟、pinmux、对端和线缆证据；不能把没有 IP 直接归因于 DHCP。",
+      "files": ["files/network/no-carrier.log"],
+      "assertions": [
+        "把 NO-CARRIER 归入 PHY/MAC 链路层",
+        "优先检查 PHY 探测、MDIO、复位、时钟、pinmux 和对端",
+        "不先分析 DHCP 或静态 IP",
+        "不直接断言 PHY 芯片损坏"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "carrier-without-ip",
+      "prompt": "eth0 已经 Link is Up，但一直没有 IPv4 地址，应该调 PHY 寄存器吗？",
+      "expected_output": "识别为地址配置/DHCP 层问题，先检查 DHCP、静态配置、路由和抓包，不建议写 PHY 寄存器。",
+      "files": [],
+      "assertions": [
+        "明确区分 carrier 正常与 IP 地址缺失",
+        "要求检查 DHCP 客户端、静态配置、路由和 DHCP 抓包",
+        "拒绝把无 IP 直接归因于 PHY",
+        "不建议写 PHY 寄存器"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "tcp-throughput-bbr-ab",
+      "prompt": "链路是 100M，ping 正常，但 iperf 只有约 10M；使用 BBR。怎么定位？",
+      "expected_output": "定位到吞吐层，要求固定 iperf 参数并做 BBR/CUBIC 与 CONFIG_HZ 对照，同时观察 CPU、窗口和错误计数；单次结果不能证明硬件故障。",
+      "files": [],
+      "assertions": [
+        "将问题定位到 TCP 吞吐而非 link 层",
+        "要求记录 iperf 方向、并发、窗口和 CPU",
+        "要求做 BBR/CUBIC 与 CONFIG_HZ 对照",
+        "说明 CUBIC 对照仍低速时会推翻单纯 BBR 方向"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "low-temperature-link-flap",
+      "prompt": "常温网络正常，低温连接固定交换机时概率性 Link Down。能否直接提高 PHY 驱动能力？日志见 <日志文件>。",
+      "expected_output": "将 PHY 模拟裕量列为待验证候选，要求温度、对端、线缆、寄存器原值、眼图和错误计数的单变量 A/B；不能给出通用寄存器值。",
+      "files": ["files/network/low-temperature-link-flap.log"],
+      "assertions": [
+        "保留概率和温度条件，不宣称已确认根因",
+        "要求固定对端和线缆并记录寄存器原值",
+        "将在线寄存器写入限定为可恢复的受控 A/B",
+        "温度和驱动能力 A/B 无差异时推翻 TX 驱动方向"
+      ]
+    }
+  ]
+}

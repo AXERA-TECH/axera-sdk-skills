@@ -1,0 +1,92 @@
+version: 1
+
+# M57 IPC/RPMsg/RPZC 平台验收测试任务
+platform: m57
+
+tasks:
+
+  - id: acceptance-routing-m57
+    description: 未指定平台时识别 M57，并确认主域、对端和通信能力
+    fixture: evals/fixtures/m57
+    input: |
+      使用 sdk-bsp-rpmsg skill 回答问题：帮我配置 M57 的 IPC/RPMsg 和 RPZC？
+    assertions:
+      - contains: "M57"
+      - contains_any: ["Linux", "QNX"]
+      - contains: "MCU"
+      - contains: "RPMsg"
+      - contains: "RPZC"
+      - contains_any: ["主域", "对端"]
+      - contains_any: ["shared memory", "共享内存"]
+
+  - id: acceptance-linux-rpmsg-rpzc
+    description: Linux 端核对 kernel config、DTS 资源和用户态设备
+    fixture: evals/fixtures/m57
+    input: |
+      使用 sdk-bsp-rpmsg skill 回答问题：Linux 6.1.83 上启用 rpmsg0 和 rpzc_ctrl0，需要检查哪些配置？
+    assertions:
+      - contains: "CONFIG_AXERA_MBOX"
+      - contains: "CONFIG_RPMSG_AXERA"
+      - contains: "CONFIG_RPMSG_CHAR"
+      - contains: "CONFIG_RPMSG_CTRL"
+      - contains: "CONFIG_RPZC_SERVICE_RPMSG"
+      - contains: "CONFIG_RPZC_CONTROLLER"
+      - contains: "memory-region"
+      - contains: "mboxes"
+      - contains: "/dev/rpmsg_ctrlX"
+      - contains: "/dev/rpzc_ctrlN"
+      - contains: "不能只改一端"
+
+  - id: acceptance-rpzc-lifecycle
+    description: 正确说明 RPZC buffer 创建、可用性、传输、ACK 和销毁顺序
+    fixture: evals/fixtures/m57
+    input: |
+      使用 sdk-bsp-rpmsg skill 回答问题：RPZC buffer 如何从创建到接收 ACK？
+    assertions:
+      - contains: "RPZC_CTRL_DEV_IOCTL_CREATE_BUF"
+      - contains: "CHECK_AVAIL"
+      - contains: "TRANSMIT_BUF"
+      - contains: "RECEIVE_BUF"
+      - contains: "REPLY_ACK"
+      - contains: "先消费"
+      - contains: "DESTROY_BUF"
+      - contains: "axera,rpzerocopy"
+
+  - id: acceptance-qnx-ipc-rpzc
+    description: 核对 QNX ax_ipc 驱动结构、EPT/name service、IRAM/DDR、通知方案和测试入口
+    fixture: evals/fixtures/m57
+    input: |
+      使用 sdk-bsp-rpmsg skill 回答问题：QNX 主域如何配置和验证 IPC/RPZC？
+    assertions:
+      - contains: "kernel/osdrv/open_drv/ax_ipc/"
+      - contains: "driver/cfg"
+      - contains: "driver/rpmsg"
+      - contains: "driver/rpzc"
+      - contains: "Ipc_cfg.h"
+      - contains: "Ipc_zc_cfg.h"
+      - contains: "LocalAddr"
+      - contains: "RemoteAddr"
+      - contains: "RL_ADDR_ANY"
+      - contains: "NEED_NS"
+      - contains: "IRAM"
+      - contains: "DDR"
+      - contains: "IPC_ZC_BUFFER_BY_DDR"
+      - contains: "IPC_GPIO_TRIGGER_IRQ_EN"
+      - contains: "sample_ipc_rpmsg"
+      - contains: "不能只改一端"
+
+  - id: acceptance-mcal-rtos-contract
+    description: 核对 MCAL 与 RTOS 的公共 IPC/RPZC 契约及问题复盘入口
+    fixture: evals/fixtures/m57
+    input: |
+      使用 sdk-bsp-rpmsg skill 回答问题：Linux 与 MCAL/RTOS 联调 IPCZC 时，如何确认对端配置和问题来源？
+    assertions:
+      - contains: "SafetyIsland/mcal/mcal_drv/Ipc/"
+      - contains: "SafetyIsland/rt-thread/bsp/m57/drivers/ipc/"
+      - contains: "IpcEptLinkStatusCheck()"
+      - contains: "IpcZcLinkStatusCheck()"
+      - contains: "sample_ipc_test"
+      - contains: "sample_ipczc_test"
+      - contains: "不能只改一端"
+      - contains: "reference/ax_ipc_FAQ.md"
+

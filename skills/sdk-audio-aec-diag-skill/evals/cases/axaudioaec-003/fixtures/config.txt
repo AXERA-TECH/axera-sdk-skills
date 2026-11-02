@@ -1,0 +1,11 @@
+[audio]
+sample_rate=16000
+sample_format=S16_LE
+layout=MIC_REF
+frame_samples=160
+[uplink]
+aec=on
+ns=on
+vad=off
+agc=off
+ref_delay_ms=20

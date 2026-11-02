@@ -1,0 +1,31 @@
+schema_version: 1
+id: FUSA-003
+title: QNX 压测心跳超时：命中已修故障，版本低于修复版本应升级
+category: platform-gate/fixed-defect/version-matrix/heartbeat
+source: synthetic
+analyzer:
+  skill: sdk-bsp-fusa
+  runtime_name: sdk-bsp-fusa
+platform: qnx
+platform_evidence: QNX 侧 diag_core/driver/diag_stl.c 命中；SDK_VERSION=QNX_V0.10.0 带前缀；manifest 为 M57_SDK_QNX_V*.xml
+expected_stage: S3
+input:
+  type: client_report
+  files:
+    - input/prompt.md
+    - input/sdk-check.txt
+    - input/serial.log
+  capture:
+    notes:
+      - 客户自报 QNX 且硬判据同向命中，属于单边命中，不需要再弹勾选。
+      - serial.log 覆盖压测期间的现象，含进程表与负载，客户主动提供。
+      - 客户未提供任何代码或配置快照，结论只能落在版本比对 + QNX 侧 FAQ。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/prompt.md
+    - input/sdk-check.txt
+    - input/serial.log
+  evaluator_only:
+    - answer/oracle.yaml
+    - answer/case.yaml

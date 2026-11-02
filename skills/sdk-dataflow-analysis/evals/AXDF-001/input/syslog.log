@@ -1,0 +1,912 @@
+2026-09-08 17:31:02 Kernel: [  128.397382]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1417
+2026-09-08 17:31:02 Kernel: [  128.397395]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1417
+2026-09-08 17:31:02 Kernel: [  128.397421]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.397435]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 Kernel: [  128.431101]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1418
+2026-09-08 17:31:02 Kernel: [  128.431259]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.431287]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.431301]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 Kernel: [  128.463616]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  128.463631]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  128.463639]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  128.463654]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1419
+2026-09-08 17:31:02 Kernel: [  128.463662]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1419
+2026-09-08 17:31:02 Kernel: [  128.463702]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.463782]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1419
+2026-09-08 17:31:02 Kernel: [  128.463795]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1419
+2026-09-08 17:31:02 Kernel: [  128.463857]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.463873]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 Kernel: [  128.496906]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  128.496921]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  128.496930]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  128.496944]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1420
+2026-09-08 17:31:02 Kernel: [  128.496953]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1420
+2026-09-08 17:31:02 Kernel: [  128.496983]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.497112]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1420
+2026-09-08 17:31:02 Kernel: [  128.497125]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1420
+2026-09-08 17:31:02 Kernel: [  128.497160]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.497175]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 Kernel: [  128.530323]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  128.530339]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  128.530348]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  128.530419]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1421
+2026-09-08 17:31:02 Kernel: [  128.530429]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1421
+2026-09-08 17:31:02 Kernel: [  128.531022]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1421
+2026-09-08 17:31:02 Kernel: [  128.531038]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1421
+2026-09-08 17:31:02 Kernel: [  128.531169]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.531197]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.531211]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 Kernel: [  128.563592]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  128.563608]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  128.563617]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  128.563631]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1422
+2026-09-08 17:31:02 Kernel: [  128.563639]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1422
+2026-09-08 17:31:02 Kernel: [  128.563681]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.563757]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1422
+2026-09-08 17:31:02 Kernel: [  128.563770]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1422
+2026-09-08 17:31:02 Kernel: [  128.563831]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.563848]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 Kernel: [  128.596893]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  128.596908]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  128.596917]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  128.596930]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1423
+2026-09-08 17:31:02 Kernel: [  128.596949]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1423
+2026-09-08 17:31:02 Kernel: [  128.596983]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.597039]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1423
+2026-09-08 17:31:02 Kernel: [  128.597053]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1423
+2026-09-08 17:31:02 Kernel: [  128.597119]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.597137]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 Kernel: [  128.630250]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  128.630316]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  128.630325]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  128.630339]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1424
+2026-09-08 17:31:02 Kernel: [  128.630348]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1424
+2026-09-08 17:31:02 Kernel: [  128.630400]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1424
+2026-09-08 17:31:02 Kernel: [  128.630413]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1424
+2026-09-08 17:31:02 Kernel: [  128.630982]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.631011]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.631024]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 App: [  128.651465] [IVPS][I][277] ivps_region.c(88) RGN[6] region_update+++
+2026-09-08 17:31:02 App: [  128.651547] [IVPS][I][277] ivps_region.c(95) RGN[6] region_update---
+2026-09-08 17:31:02 Kernel: [  128.663591]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  128.663607]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  128.663626]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  128.663640]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1425
+2026-09-08 17:31:02 Kernel: [  128.663649]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1425
+2026-09-08 17:31:02 Kernel: [  128.663696]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.663710]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1425
+2026-09-08 17:31:02 Kernel: [  128.663722]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1425
+2026-09-08 17:31:02 Kernel: [  128.663796]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.663811]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 Kernel: [  128.696877]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  128.696893]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  128.696902]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  128.696915]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1426
+2026-09-08 17:31:02 Kernel: [  128.696934]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1426
+2026-09-08 17:31:02 Kernel: [  128.696967]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.697031]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1426
+2026-09-08 17:31:02 Kernel: [  128.697046]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1426
+2026-09-08 17:31:02 Kernel: [  128.697115]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.697131]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 Kernel: [  128.730231]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  128.730296]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  128.730305]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  128.730320]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1427
+2026-09-08 17:31:02 Kernel: [  128.730328]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1427
+2026-09-08 17:31:02 Kernel: [  128.730383]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1427
+2026-09-08 17:31:02 Kernel: [  128.730397]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1427
+2026-09-08 17:31:02 Kernel: [  128.730972]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.730999]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.731013]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 Kernel: [  128.763572]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  128.763588]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  128.763608]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  128.763621]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1428
+2026-09-08 17:31:02 Kernel: [  128.763630]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1428
+2026-09-08 17:31:02 Kernel: [  128.763677]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.763690]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1428
+2026-09-08 17:31:02 Kernel: [  128.763702]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1428
+2026-09-08 17:31:02 Kernel: [  128.763761]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.763775]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 Kernel: [  128.796851]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  128.796867]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  128.796876]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  128.796889]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1429
+2026-09-08 17:31:02 Kernel: [  128.796908]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1429
+2026-09-08 17:31:02 Kernel: [  128.796942]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.797004]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1429
+2026-09-08 17:31:02 Kernel: [  128.797017]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1429
+2026-09-08 17:31:02 Kernel: [  128.797084]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.797101]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 Kernel: [  128.830208]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  128.830224]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  128.830233]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  128.830300]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1430
+2026-09-08 17:31:02 Kernel: [  128.830309]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1430
+2026-09-08 17:31:02 Kernel: [  128.830362]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1430
+2026-09-08 17:31:02 Kernel: [  128.830375]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1430
+2026-09-08 17:31:02 Kernel: [  128.830951]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.830979]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.830993]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 Kernel: [  128.863555]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  128.863571]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  128.863590]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  128.863605]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1431
+2026-09-08 17:31:02 Kernel: [  128.863613]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1431
+2026-09-08 17:31:02 Kernel: [  128.863658]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.863674]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1431
+2026-09-08 17:31:02 Kernel: [  128.863687]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1431
+2026-09-08 17:31:02 Kernel: [  128.863765]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.863780]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 App: [  128.888534] [IVPS][I][277] ivps_region.c(88) RGN[0] region_update+++
+2026-09-08 17:31:02 App: [  128.888670] [IVPS][I][277] ivps_region.c(95) RGN[0] region_update---
+2026-09-08 17:31:02 Kernel: [  128.897124]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  128.897139]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  128.897148]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  128.897162]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1432
+2026-09-08 17:31:02 Kernel: [  128.897171]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1432
+2026-09-08 17:31:02 Kernel: [  128.897216]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.897287]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1432
+2026-09-08 17:31:02 Kernel: [  128.897300]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1432
+2026-09-08 17:31:02 Kernel: [  128.897328]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.897344]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 Kernel: [  128.930204]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  128.930221]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  128.930230]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  128.930340]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1433
+2026-09-08 17:31:02 Kernel: [  128.930349]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1433
+2026-09-08 17:31:02 Kernel: [  128.930941]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1433
+2026-09-08 17:31:02 Kernel: [  128.930957]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1433
+2026-09-08 17:31:02 Kernel: [  128.931085]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.931113]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.931126]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 Kernel: [  128.963541]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  128.963556]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  128.963565]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  128.963578]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1434
+2026-09-08 17:31:02 Kernel: [  128.963586]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1434
+2026-09-08 17:31:02 Kernel: [  128.963620]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.963712]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1434
+2026-09-08 17:31:02 Kernel: [  128.963726]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1434
+2026-09-08 17:31:02 Kernel: [  128.963778]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.963795]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 Kernel: [  128.996818]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  128.996833]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  128.996842]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  128.996855]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1435
+2026-09-08 17:31:02 Kernel: [  128.996873]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1435
+2026-09-08 17:31:02 Kernel: [  128.996906]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.996982]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1435
+2026-09-08 17:31:02 Kernel: [  128.996994]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1435
+2026-09-08 17:31:02 Kernel: [  128.997055]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  128.997070]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 Kernel: [  129.030166]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  129.030181]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  129.030190]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  129.030204]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1436
+2026-09-08 17:31:02 Kernel: [  129.030221]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1436
+2026-09-08 17:31:02 Kernel: [  129.030301]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  129.030312]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1436
+2026-09-08 17:31:02 Kernel: [  129.030326]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1436
+2026-09-08 17:31:02 Kernel: [  129.030948]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  129.030966]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 Kernel: [  129.063528]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  129.063554]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  129.063563]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  129.063577]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1437
+2026-09-08 17:31:02 Kernel: [  129.063585]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1437
+2026-09-08 17:31:02 Kernel: [  129.063631]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  129.063639]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1437
+2026-09-08 17:31:02 Kernel: [  129.063652]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1437
+2026-09-08 17:31:02 Kernel: [  129.063726]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  129.063740]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 Kernel: [  129.096800]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  129.096816]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  129.096825]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  129.096838]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1438
+2026-09-08 17:31:02 Kernel: [  129.096857]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1438
+2026-09-08 17:31:02 Kernel: [  129.096889]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  129.096953]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1438
+2026-09-08 17:31:02 Kernel: [  129.096968]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1438
+2026-09-08 17:31:02 Kernel: [  129.097033]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  129.097049]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 Kernel: [  129.130145]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  129.130160]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  129.130169]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  129.130182]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1439
+2026-09-08 17:31:02 Kernel: [  129.130198]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1439
+2026-09-08 17:31:02 Kernel: [  129.130230]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  129.130293]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1439
+2026-09-08 17:31:02 Kernel: [  129.130307]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1439
+2026-09-08 17:31:02 Kernel: [  129.131050]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  129.131069]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 App: [  129.151083] [IVPS][I][277] ivps_region.c(88) RGN[6] region_update+++
+2026-09-08 17:31:02 App: [  129.151165] [IVPS][I][277] ivps_region.c(95) RGN[6] region_update---
+2026-09-08 17:31:02 Kernel: [  129.163508]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  129.163523]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  129.163532]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  129.163546]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1440
+2026-09-08 17:31:02 Kernel: [  129.163555]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1440
+2026-09-08 17:31:02 Kernel: [  129.163587]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  129.163679]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1440
+2026-09-08 17:31:02 Kernel: [  129.163693]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1440
+2026-09-08 17:31:02 Kernel: [  129.163744]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  129.163761]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 Kernel: [  129.196783]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  129.196799]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  129.196807]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  129.196821]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1441
+2026-09-08 17:31:02 Kernel: [  129.196839]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1441
+2026-09-08 17:31:02 Kernel: [  129.196872]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  129.196928]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1441
+2026-09-08 17:31:02 Kernel: [  129.196942]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1441
+2026-09-08 17:31:02 Kernel: [  129.197010]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  129.197025]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 Kernel: [  129.230138]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  129.230153]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  129.230162]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  129.230176]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1442
+2026-09-08 17:31:02 Kernel: [  129.230192]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1442
+2026-09-08 17:31:02 Kernel: [  129.230223]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  129.230291]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1442
+2026-09-08 17:31:02 Kernel: [  129.230305]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1442
+2026-09-08 17:31:02 Kernel: [  129.231052]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  129.231071]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 Kernel: [  129.263478]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  129.263493]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  129.263502]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  129.263516]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1443
+2026-09-08 17:31:02 Kernel: [  129.263524]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1443
+2026-09-08 17:31:02 Kernel: [  129.263558]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  129.263651]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1443
+2026-09-08 17:31:02 Kernel: [  129.263665]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1443
+2026-09-08 17:31:02 Kernel: [  129.263711]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  129.263726]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 Kernel: [  129.296770]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  129.296786]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  129.296795]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  129.296809]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1444
+2026-09-08 17:31:02 Kernel: [  129.296828]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1444
+2026-09-08 17:31:02 Kernel: [  129.296862]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  129.296922]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1444
+2026-09-08 17:31:02 Kernel: [  129.296936]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1444
+2026-09-08 17:31:02 Kernel: [  129.296999]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:02 Kernel: [  129.297016]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:02 Kernel: [  129.330111]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:02 Kernel: [  129.330126]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:02 Kernel: [  129.330135]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:02 Kernel: [  129.330148]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1445
+2026-09-08 17:31:03 Kernel: [  129.330165]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1445
+2026-09-08 17:31:03 Kernel: [  129.330196]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.330260]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1445
+2026-09-08 17:31:03 Kernel: [  129.330274]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1445
+2026-09-08 17:31:03 Kernel: [  129.331018]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.331036]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  129.363453]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  129.363468]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  129.363477]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  129.363491]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1446
+2026-09-08 17:31:03 Kernel: [  129.363499]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1446
+2026-09-08 17:31:03 Kernel: [  129.363531]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.363649]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1446
+2026-09-08 17:31:03 Kernel: [  129.363661]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1446
+2026-09-08 17:31:03 Kernel: [  129.363697]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.363711]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 App: [  129.388603] [IVPS][I][277] ivps_region.c(88) RGN[0] region_update+++
+2026-09-08 17:31:03 App: [  129.388735] [IVPS][I][277] ivps_region.c(95) RGN[0] region_update---
+2026-09-08 17:31:03 Kernel: [  129.397086]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  129.397101]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  129.397111]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  129.397125]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1447
+2026-09-08 17:31:03 Kernel: [  129.397133]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1447
+2026-09-08 17:31:03 Kernel: [  129.397189]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.397254]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1447
+2026-09-08 17:31:03 Kernel: [  129.397267]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1447
+2026-09-08 17:31:03 Kernel: [  129.397294]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.397306]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  129.430110]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  129.430125]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  129.430134]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  129.430147]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1448
+2026-09-08 17:31:03 Kernel: [  129.430156]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1448
+2026-09-08 17:31:03 Kernel: [  129.430222]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1448
+2026-09-08 17:31:03 Kernel: [  129.430232]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.430235]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1448
+2026-09-08 17:31:03 Kernel: [  129.430321]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.430332]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  129.463447]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  129.463464]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  129.463483]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  129.463497]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1449
+2026-09-08 17:31:03 Kernel: [  129.463505]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1449
+2026-09-08 17:31:03 Kernel: [  129.463551]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.463563]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1449
+2026-09-08 17:31:03 Kernel: [  129.463576]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1449
+2026-09-08 17:31:03 Kernel: [  129.463634]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.463648]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  129.496732]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  129.496747]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  129.496756]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  129.496769]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1450
+2026-09-08 17:31:03 Kernel: [  129.496787]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1450
+2026-09-08 17:31:03 Kernel: [  129.496819]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.496883]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1450
+2026-09-08 17:31:03 Kernel: [  129.496898]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1450
+2026-09-08 17:31:03 Kernel: [  129.496966]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.496983]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  129.530088]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  129.530103]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  129.530111]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  129.530125]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1451
+2026-09-08 17:31:03 Kernel: [  129.530142]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1451
+2026-09-08 17:31:03 Kernel: [  129.530174]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.530230]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1451
+2026-09-08 17:31:03 Kernel: [  129.530243]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1451
+2026-09-08 17:31:03 Kernel: [  129.530311]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.530327]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  129.563424]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  129.563439]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  129.563448]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  129.563462]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1452
+2026-09-08 17:31:03 Kernel: [  129.563470]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1452
+2026-09-08 17:31:03 Kernel: [  129.563502]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.563625]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1452
+2026-09-08 17:31:03 Kernel: [  129.563639]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1452
+2026-09-08 17:31:03 Kernel: [  129.563675]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.563690]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  129.596729]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  129.596745]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  129.596755]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  129.596769]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1453
+2026-09-08 17:31:03 Kernel: [  129.596777]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1453
+2026-09-08 17:31:03 Kernel: [  129.596845]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1453
+2026-09-08 17:31:03 Kernel: [  129.596858]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1453
+2026-09-08 17:31:03 Kernel: [  129.596862]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.596907]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.596918]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  129.630081]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  129.630097]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  129.630106]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  129.630120]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1454
+2026-09-08 17:31:03 Kernel: [  129.630128]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1454
+2026-09-08 17:31:03 Kernel: [  129.630161]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.630210]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1454
+2026-09-08 17:31:03 Kernel: [  129.630223]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1454
+2026-09-08 17:31:03 Kernel: [  129.630289]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.630304]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 App: [  129.641422] [IVPS][I][277] ivps_region.c(88) RGN[6] region_update+++
+2026-09-08 17:31:03 App: [  129.641506] [IVPS][I][277] ivps_region.c(95) RGN[6] region_update---
+2026-09-08 17:31:03 Kernel: [  129.663409]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  129.663424]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  129.663433]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  129.663446]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1455
+2026-09-08 17:31:03 Kernel: [  129.663465]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1455
+2026-09-08 17:31:03 Kernel: [  129.663498]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.663562]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1455
+2026-09-08 17:31:03 Kernel: [  129.663577]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1455
+2026-09-08 17:31:03 Kernel: [  129.663645]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.663661]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  129.696690]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  129.696706]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  129.696715]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  129.696729]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1456
+2026-09-08 17:31:03 Kernel: [  129.696747]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1456
+2026-09-08 17:31:03 Kernel: [  129.696781]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.696841]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1456
+2026-09-08 17:31:03 Kernel: [  129.696855]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1456
+2026-09-08 17:31:03 Kernel: [  129.696922]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.696938]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  129.730041]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  129.730057]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  129.730065]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  129.730078]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1457
+2026-09-08 17:31:03 Kernel: [  129.730095]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1457
+2026-09-08 17:31:03 Kernel: [  129.730127]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.730186]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1457
+2026-09-08 17:31:03 Kernel: [  129.730201]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1457
+2026-09-08 17:31:03 Kernel: [  129.730252]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.730266]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  129.763381]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  129.763396]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  129.763405]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  129.763418]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1458
+2026-09-08 17:31:03 Kernel: [  129.763427]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1458
+2026-09-08 17:31:03 Kernel: [  129.763459]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.763586]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1458
+2026-09-08 17:31:03 Kernel: [  129.763599]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1458
+2026-09-08 17:31:03 Kernel: [  129.763634]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.763650]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  129.796704]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  129.796720]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  129.796729]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  129.796743]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1459
+2026-09-08 17:31:03 Kernel: [  129.796751]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1459
+2026-09-08 17:31:03 Kernel: [  129.796829]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.796834]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1459
+2026-09-08 17:31:03 Kernel: [  129.796847]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1459
+2026-09-08 17:31:03 Kernel: [  129.796894]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.796906]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  129.830030]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  129.830046]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  129.830055]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  129.830076]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1460
+2026-09-08 17:31:03 Kernel: [  129.830084]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1460
+2026-09-08 17:31:03 Kernel: [  129.830114]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.830152]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1460
+2026-09-08 17:31:03 Kernel: [  129.830166]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1460
+2026-09-08 17:31:03 Kernel: [  129.830234]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.830251]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  129.863367]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  129.863383]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  129.863391]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  129.863405]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1461
+2026-09-08 17:31:03 Kernel: [  129.863423]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1461
+2026-09-08 17:31:03 Kernel: [  129.863456]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.863518]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1461
+2026-09-08 17:31:03 Kernel: [  129.863532]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1461
+2026-09-08 17:31:03 Kernel: [  129.863600]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.863618]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 App: [  129.888710] [IVPS][I][277] ivps_region.c(88) RGN[0] region_update+++
+2026-09-08 17:31:03 App: [  129.888847] [IVPS][I][277] ivps_region.c(95) RGN[0] region_update---
+2026-09-08 17:31:03 Kernel: [  129.896953]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  129.896969]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  129.896977]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  129.896991]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1462
+2026-09-08 17:31:03 Kernel: [  129.897000]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1462
+2026-09-08 17:31:03 Kernel: [  129.897044]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.897114]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1462
+2026-09-08 17:31:03 Kernel: [  129.897127]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1462
+2026-09-08 17:31:03 Kernel: [  129.897153]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.897168]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  129.930030]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  129.930046]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  129.930054]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  129.930068]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1463
+2026-09-08 17:31:03 Kernel: [  129.930077]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1463
+2026-09-08 17:31:03 Kernel: [  129.930145]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1463
+2026-09-08 17:31:03 Kernel: [  129.930158]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1463
+2026-09-08 17:31:03 Kernel: [  129.930162]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.930206]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.930218]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  129.963360]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  129.963376]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  129.963384]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  129.963408]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1464
+2026-09-08 17:31:03 Kernel: [  129.963416]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1464
+2026-09-08 17:31:03 Kernel: [  129.963447]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.963485]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1464
+2026-09-08 17:31:03 Kernel: [  129.963497]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1464
+2026-09-08 17:31:03 Kernel: [  129.963575]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.963590]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  129.996639]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  129.996655]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  129.996664]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  129.996678]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1465
+2026-09-08 17:31:03 Kernel: [  129.996697]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1465
+2026-09-08 17:31:03 Kernel: [  129.996728]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.996804]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1465
+2026-09-08 17:31:03 Kernel: [  129.996817]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1465
+2026-09-08 17:31:03 Kernel: [  129.996843]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  129.996856]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  130.030007]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  130.030023]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  130.030031]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  130.030045]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1466
+2026-09-08 17:31:03 Kernel: [  130.030054]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1466
+2026-09-08 17:31:03 Kernel: [  130.030123]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1466
+2026-09-08 17:31:03 Kernel: [  130.030135]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  130.030139]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1466
+2026-09-08 17:31:03 Kernel: [  130.030181]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  130.030192]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  130.063347]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  130.063362]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  130.063381]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  130.063395]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1467
+2026-09-08 17:31:03 Kernel: [  130.063403]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1467
+2026-09-08 17:31:03 Kernel: [  130.063449]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  130.063460]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1467
+2026-09-08 17:31:03 Kernel: [  130.063474]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1467
+2026-09-08 17:31:03 Kernel: [  130.063531]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  130.063546]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  130.096621]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  130.096636]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  130.096645]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  130.096659]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1468
+2026-09-08 17:31:03 Kernel: [  130.096668]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1468
+2026-09-08 17:31:03 Kernel: [  130.096699]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  130.096823]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1468
+2026-09-08 17:31:03 Kernel: [  130.096836]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1468
+2026-09-08 17:31:03 Kernel: [  130.096872]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  130.096885]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  130.129993]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  130.130009]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  130.130018]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  130.130031]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1469
+2026-09-08 17:31:03 Kernel: [  130.130040]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1469
+2026-09-08 17:31:03 Kernel: [  130.130103]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1469
+2026-09-08 17:31:03 Kernel: [  130.130117]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1469
+2026-09-08 17:31:03 Kernel: [  130.130121]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  130.130164]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  130.130176]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 App: [  130.141488] [IVPS][I][277] ivps_region.c(88) RGN[6] region_update+++
+2026-09-08 17:31:03 App: [  130.141571] [IVPS][I][277] ivps_region.c(95) RGN[6] region_update---
+2026-09-08 17:31:03 Kernel: [  130.163324]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  130.163339]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  130.163358]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  130.163373]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1470
+2026-09-08 17:31:03 Kernel: [  130.163381]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1470
+2026-09-08 17:31:03 Kernel: [  130.163427]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  130.163444]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1470
+2026-09-08 17:31:03 Kernel: [  130.163457]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1470
+2026-09-08 17:31:03 Kernel: [  130.163562]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  130.163579]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  130.196599]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  130.196614]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  130.196623]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  130.196637]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1471
+2026-09-08 17:31:03 Kernel: [  130.196646]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1471
+2026-09-08 17:31:03 Kernel: [  130.196689]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  130.196771]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1471
+2026-09-08 17:31:03 Kernel: [  130.196784]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1471
+2026-09-08 17:31:03 Kernel: [  130.196845]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  130.196860]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  130.229969]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  130.229984]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  130.229992]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  130.230006]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1472
+2026-09-08 17:31:03 Kernel: [  130.230023]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1472
+2026-09-08 17:31:03 Kernel: [  130.230055]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  130.230117]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1472
+2026-09-08 17:31:03 Kernel: [  130.230131]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1472
+2026-09-08 17:31:03 Kernel: [  130.230180]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  130.230196]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  130.263298]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  130.263313]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  130.263322]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  130.263335]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1473
+2026-09-08 17:31:03 Kernel: [  130.263343]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1473
+2026-09-08 17:31:03 Kernel: [  130.263375]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  130.263495]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1473
+2026-09-08 17:31:03 Kernel: [  130.263508]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1473
+2026-09-08 17:31:03 Kernel: [  130.263542]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  130.263556]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  130.296604]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  130.296619]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  130.296628]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  130.296642]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1474
+2026-09-08 17:31:03 Kernel: [  130.296650]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1474
+2026-09-08 17:31:03 Kernel: [  130.296720]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1474
+2026-09-08 17:31:03 Kernel: [  130.296728]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  130.296733]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1474
+2026-09-08 17:31:03 Kernel: [  130.296774]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:03 Kernel: [  130.296785]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:03 Kernel: [  130.329954]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:03 Kernel: [  130.329970]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:03 Kernel: [  130.329980]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:03 Kernel: [  130.329994]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1475
+2026-09-08 17:31:04 Kernel: [  130.330002]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1475
+2026-09-08 17:31:04 Kernel: [  130.330032]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.330078]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1475
+2026-09-08 17:31:04 Kernel: [  130.330092]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1475
+2026-09-08 17:31:04 Kernel: [  130.330154]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.330168]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  130.363275]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  130.363290]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  130.363299]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  130.363312]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1476
+2026-09-08 17:31:04 Kernel: [  130.363330]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1476
+2026-09-08 17:31:04 Kernel: [  130.363363]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.363422]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1476
+2026-09-08 17:31:04 Kernel: [  130.363436]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1476
+2026-09-08 17:31:04 Kernel: [  130.363501]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.363518]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 App: [  130.388798] [IVPS][I][277] ivps_region.c(88) RGN[0] region_update+++
+2026-09-08 17:31:04 App: [  130.388933] [IVPS][I][277] ivps_region.c(95) RGN[0] region_update---
+2026-09-08 17:31:04 Kernel: [  130.396863]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  130.396879]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  130.396888]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  130.396901]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1477
+2026-09-08 17:31:04 Kernel: [  130.396910]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1477
+2026-09-08 17:31:04 Kernel: [  130.396955]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.397022]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1477
+2026-09-08 17:31:04 Kernel: [  130.397034]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1477
+2026-09-08 17:31:04 Kernel: [  130.397060]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.397075]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  130.429954]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  130.429970]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  130.429979]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  130.429993]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1478
+2026-09-08 17:31:04 Kernel: [  130.430001]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1478
+2026-09-08 17:31:04 Kernel: [  130.430066]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1478
+2026-09-08 17:31:04 Kernel: [  130.430080]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.430083]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1478
+2026-09-08 17:31:04 Kernel: [  130.430123]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.430134]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  130.463268]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  130.463283]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  130.463302]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  130.463317]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1479
+2026-09-08 17:31:04 Kernel: [  130.463325]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1479
+2026-09-08 17:31:04 Kernel: [  130.463373]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.463390]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1479
+2026-09-08 17:31:04 Kernel: [  130.463404]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1479
+2026-09-08 17:31:04 Kernel: [  130.463482]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.463496]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  130.496545]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  130.496560]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  130.496570]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  130.496584]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1480
+2026-09-08 17:31:04 Kernel: [  130.496603]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1480
+2026-09-08 17:31:04 Kernel: [  130.496638]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.496698]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1480
+2026-09-08 17:31:04 Kernel: [  130.496712]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1480
+2026-09-08 17:31:04 Kernel: [  130.496776]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.496791]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  130.529912]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  130.529927]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  130.529937]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  130.529950]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1481
+2026-09-08 17:31:04 Kernel: [  130.529968]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1481
+2026-09-08 17:31:04 Kernel: [  130.530000]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.530074]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1481
+2026-09-08 17:31:04 Kernel: [  130.530087]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1481
+2026-09-08 17:31:04 Kernel: [  130.530147]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.530164]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  130.563247]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  130.563262]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  130.563271]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  130.563284]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1482
+2026-09-08 17:31:04 Kernel: [  130.563293]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1482
+2026-09-08 17:31:04 Kernel: [  130.563327]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.563436]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1482
+2026-09-08 17:31:04 Kernel: [  130.563449]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1482
+2026-09-08 17:31:04 Kernel: [  130.563499]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.563514]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  130.596526]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  130.596541]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  130.596550]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  130.596564]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1483
+2026-09-08 17:31:04 Kernel: [  130.596582]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1483
+2026-09-08 17:31:04 Kernel: [  130.596612]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.596675]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1483
+2026-09-08 17:31:04 Kernel: [  130.596689]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1483
+2026-09-08 17:31:04 Kernel: [  130.596756]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.596773]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  130.629904]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  130.629918]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  130.629928]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  130.629941]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1484
+2026-09-08 17:31:04 Kernel: [  130.629956]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1484
+2026-09-08 17:31:04 Kernel: [  130.629988]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.630062]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1484
+2026-09-08 17:31:04 Kernel: [  130.630075]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1484
+2026-09-08 17:31:04 Kernel: [  130.630136]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.630153]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 App: [  130.641063] [IVPS][I][277] ivps_region.c(88) RGN[6] region_update+++
+2026-09-08 17:31:04 App: [  130.641147] [IVPS][I][277] ivps_region.c(95) RGN[6] region_update---
+2026-09-08 17:31:04 Kernel: [  130.663225]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  130.663241]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  130.663250]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  130.663263]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1485
+2026-09-08 17:31:04 Kernel: [  130.663272]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1485
+2026-09-08 17:31:04 Kernel: [  130.663304]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.663417]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1485
+2026-09-08 17:31:04 Kernel: [  130.663431]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1485
+2026-09-08 17:31:04 Kernel: [  130.663493]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.663511]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  130.696511]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  130.696527]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  130.696536]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  130.696549]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1486
+2026-09-08 17:31:04 Kernel: [  130.696567]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1486
+2026-09-08 17:31:04 Kernel: [  130.696598]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.696663]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1486
+2026-09-08 17:31:04 Kernel: [  130.696677]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1486
+2026-09-08 17:31:04 Kernel: [  130.696740]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.696756]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  130.729887]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  130.729902]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  130.729911]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  130.729924]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1487
+2026-09-08 17:31:04 Kernel: [  130.729933]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1487
+2026-09-08 17:31:04 Kernel: [  130.729972]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.730051]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1487
+2026-09-08 17:31:04 Kernel: [  130.730064]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1487
+2026-09-08 17:31:04 Kernel: [  130.730105]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.730121]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  130.763206]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  130.763221]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  130.763230]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  130.763244]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1488
+2026-09-08 17:31:04 Kernel: [  130.763252]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1488
+2026-09-08 17:31:04 Kernel: [  130.763281]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.763401]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1488
+2026-09-08 17:31:04 Kernel: [  130.763414]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1488
+2026-09-08 17:31:04 Kernel: [  130.763448]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.763464]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  130.796507]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  130.796522]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  130.796532]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  130.796546]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1489
+2026-09-08 17:31:04 Kernel: [  130.796554]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1489
+2026-09-08 17:31:04 Kernel: [  130.796622]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1489
+2026-09-08 17:31:04 Kernel: [  130.796634]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1489
+2026-09-08 17:31:04 Kernel: [  130.796639]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.796686]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.796697]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  130.829884]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  130.829900]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  130.829909]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  130.829923]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1490
+2026-09-08 17:31:04 Kernel: [  130.829931]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1490
+2026-09-08 17:31:04 Kernel: [  130.829962]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.830012]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1490
+2026-09-08 17:31:04 Kernel: [  130.830026]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1490
+2026-09-08 17:31:04 Kernel: [  130.830090]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.830104]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  130.863184]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  130.863200]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  130.863208]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  130.863222]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1491
+2026-09-08 17:31:04 Kernel: [  130.863242]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1491
+2026-09-08 17:31:04 Kernel: [  130.863273]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.863332]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1491
+2026-09-08 17:31:04 Kernel: [  130.863346]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1491
+2026-09-08 17:31:04 Kernel: [  130.863403]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.863421]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 App: [  130.888865] [IVPS][I][277] ivps_region.c(88) RGN[0] region_update+++
+2026-09-08 17:31:04 App: [  130.889003] [IVPS][I][277] ivps_region.c(95) RGN[0] region_update---
+2026-09-08 17:31:04 Kernel: [  130.896763]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  130.896779]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  130.896788]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  130.896802]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1492
+2026-09-08 17:31:04 Kernel: [  130.896811]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1492
+2026-09-08 17:31:04 Kernel: [  130.896856]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.896927]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1492
+2026-09-08 17:31:04 Kernel: [  130.896941]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1492
+2026-09-08 17:31:04 Kernel: [  130.896971]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.896986]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  130.929871]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  130.929887]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  130.929897]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  130.929910]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1493
+2026-09-08 17:31:04 Kernel: [  130.929919]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1493
+2026-09-08 17:31:04 Kernel: [  130.929982]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1493
+2026-09-08 17:31:04 Kernel: [  130.929995]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1493
+2026-09-08 17:31:04 Kernel: [  130.929999]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.930044]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.930056]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  130.963184]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  130.963200]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  130.963219]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  130.963234]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1494
+2026-09-08 17:31:04 Kernel: [  130.963242]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1494
+2026-09-08 17:31:04 Kernel: [  130.963289]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.963299]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1494
+2026-09-08 17:31:04 Kernel: [  130.963313]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1494
+2026-09-08 17:31:04 Kernel: [  130.963370]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.963385]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  130.996460]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  130.996476]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  130.996485]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  130.996499]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1495
+2026-09-08 17:31:04 Kernel: [  130.996518]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1495
+2026-09-08 17:31:04 Kernel: [  130.996552]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.996608]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1495
+2026-09-08 17:31:04 Kernel: [  130.996622]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1495
+2026-09-08 17:31:04 Kernel: [  130.996687]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  130.996704]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  131.029830]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  131.029846]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  131.029855]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  131.029868]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1496
+2026-09-08 17:31:04 Kernel: [  131.029884]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1496
+2026-09-08 17:31:04 Kernel: [  131.029917]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  131.029981]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1496
+2026-09-08 17:31:04 Kernel: [  131.029995]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1496
+2026-09-08 17:31:04 Kernel: [  131.030043]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  131.030057]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  131.063149]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  131.063164]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  131.063173]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  131.063187]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1497
+2026-09-08 17:31:04 Kernel: [  131.063195]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1497
+2026-09-08 17:31:04 Kernel: [  131.063225]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  131.063343]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1497
+2026-09-08 17:31:04 Kernel: [  131.063355]  [C0][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1497
+2026-09-08 17:31:04 Kernel: [  131.063388]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  131.063402]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  131.096454]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  131.096470]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  131.096479]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  131.096492]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1498
+2026-09-08 17:31:04 Kernel: [  131.096500]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1498
+2026-09-08 17:31:04 Kernel: [  131.096568]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1498
+2026-09-08 17:31:04 Kernel: [  131.096581]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1498
+2026-09-08 17:31:04 Kernel: [  131.096585]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  131.096630]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  131.096641]  [C0][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  131.129808]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  131.129824]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  131.129833]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  131.129846]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1499
+2026-09-08 17:31:04 Kernel: [  131.129854]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1499
+2026-09-08 17:31:04 Kernel: [  131.129884]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  131.129940]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1499
+2026-09-08 17:31:04 Kernel: [  131.129953]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1499
+2026-09-08 17:31:04 Kernel: [  131.130016]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  131.130030]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 App: [  131.141442] [IVPS][I][277] ivps_region.c(88) RGN[6] region_update+++
+2026-09-08 17:31:04 App: [  131.141525] [IVPS][I][277] ivps_region.c(95) RGN[6] region_update---
+2026-09-08 17:31:04 Kernel: [  131.163129]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  131.163145]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  131.163154]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  131.163167]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1500
+2026-09-08 17:31:04 Kernel: [  131.163186]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1500
+2026-09-08 17:31:04 Kernel: [  131.163217]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  131.163275]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1500
+2026-09-08 17:31:04 Kernel: [  131.163289]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1500
+2026-09-08 17:31:04 Kernel: [  131.163349]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  131.163365]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  131.196419]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  131.196434]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  131.196443]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  131.196457]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1501
+2026-09-08 17:31:04 Kernel: [  131.196476]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1501
+2026-09-08 17:31:04 Kernel: [  131.196508]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  131.196573]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1501
+2026-09-08 17:31:04 Kernel: [  131.196586]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1501
+2026-09-08 17:31:04 Kernel: [  131.196653]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  131.196671]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  131.229794]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  131.229810]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  131.229819]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  131.229840]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1502
+2026-09-08 17:31:04 Kernel: [  131.229848]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1502
+2026-09-08 17:31:04 Kernel: [  131.229880]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  131.229937]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1502
+2026-09-08 17:31:04 Kernel: [  131.229951]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1502
+2026-09-08 17:31:04 Kernel: [  131.230015]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  131.230032]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  131.263119]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  131.263134]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  131.263143]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  131.263157]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1503
+2026-09-08 17:31:04 Kernel: [  131.263165]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1503
+2026-09-08 17:31:04 Kernel: [  131.263197]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  131.263286]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1503
+2026-09-08 17:31:04 Kernel: [  131.263300]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1503
+2026-09-08 17:31:04 Kernel: [  131.263354]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  131.263370]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  131.296402]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  131.296418]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  131.296426]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  131.296440]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1504
+2026-09-08 17:31:04 Kernel: [  131.296458]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1504
+2026-09-08 17:31:04 Kernel: [  131.296492]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  131.296547]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1504
+2026-09-08 17:31:04 Kernel: [  131.296561]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1504
+2026-09-08 17:31:04 Kernel: [  131.296626]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  131.296642]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:04 Kernel: [  131.329776]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:04 Kernel: [  131.329792]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:04 Kernel: [  131.329800]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:04 Kernel: [  131.329814]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1505
+2026-09-08 17:31:04 Kernel: [  131.329830]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1505
+2026-09-08 17:31:04 Kernel: [  131.329862]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:04 Kernel: [  131.329920]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1505
+2026-09-08 17:31:04 Kernel: [  131.329935]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1505
+2026-09-08 17:31:05 Kernel: [  131.329983]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:05 Kernel: [  131.329998]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:05 Kernel: [  131.363099]  [C0][SYS][E][162] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 4085760 in 'anonymous' partation
+2026-09-08 17:31:05 Kernel: [  131.363114]  [C0][IVPS][E][162] ax_ivps_sched_task.c(669) get block fail for out frame 0, size 4085760
+2026-09-08 17:31:05 Kernel: [  131.363123]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+2026-09-08 17:31:05 Kernel: [  131.363137]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 1506
+2026-09-08 17:31:05 Kernel: [  131.363156]  [C0][IVPS][E][162] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 1506
+2026-09-08 17:31:05 Kernel: [  131.363188]  [C0][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:05 Kernel: [  131.363244]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 1506
+2026-09-08 17:31:05 Kernel: [  131.363258]  [C1][IVPS][E][150] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 1506
+2026-09-08 17:31:05 Kernel: [  131.363316]  [C1][IVPS][E][128] ax_ivps_sched_task.c(797) task status error
+2026-09-08 17:31:05 Kernel: [  131.363333]  [C1][IVPS][W][128] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+2026-09-08 17:31:05 App: [  131.389306] [IVPS][I][277] ivps_region.c(88) RGN[0] region_update+++
+2026-09-08 17:31:05 App: [  131.389440] [IVPS][I][277] ivps_region.c(95) RGN[0] regio

@@ -1,0 +1,31 @@
+version: 1
+
+# NAND/文件系统路由：具体 SDK/board 优先，架构层兜底。
+platforms:
+  - id: ax637
+    display: AX637 / AX637R NAND and filesystem
+    detect:
+      any:
+        - path_exists: SafetyIsland/rt-thread/bsp/m57/configs_ax637
+        - path_exists: SafetyIsland/rt-thread/bsp/m57/configs_ax637r
+        - path_exists_glob: build/platforms/axera/ax637*/partitions*.json
+    load:
+      - platforms/ax637.md
+    reference_root: reference/ax637/
+
+  - id: m57
+    display: M57 NAND and filesystem
+    detect:
+      any:
+        - path_exists: SafetyIsland/mcal
+        - path_exists_glob: build/platforms/axera/demo*/partitions*.json
+    load:
+      - platforms/m57.md
+    reference_root: reference/m57/
+
+fallback:
+  id: unknown
+  action: ask
+  message: |
+    未识别到已登记的 NAND/文件系统平台。请显式指定 platform=m57 或 platform=ax637（包含 AX637R），
+    并补充 Linux/QNX、Flash 型号、启动介质和目标分区；不要根据共用 kernel 或 SBL 路径猜测平台。

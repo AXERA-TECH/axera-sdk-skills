@@ -1,0 +1,4 @@
+{
+  "task": "SDK 根目录为 /work/sdk/ax615。前提：Case 1 确认 AX615_fastnor 有效，且 Case 2 已在同一 SDK 中对 AX615_fastnor 完整构建成功。进入 build/projects/$PROJECT，执行 make p=\"$PROJECT\" clean all install axp，不带 -j。说明未完成该前置构建时应先执行 Case 2。 本次仅输出执行方案，不运行构建。",
+  "attachments": []
+}

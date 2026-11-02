@@ -1,0 +1,13 @@
+root_cause: "Sensor 硬件契约违规，配置了 AX615 不支持的 I2C 设备号 (i2c_dev=9)"
+required_concepts:
+  - "i2c_dev=9 is invalid"
+  - "valid: [0, 1, 2, 5]"
+forbidden_conclusions:
+  - "unsupported engine 'tdp'"
+  - "Pool Mismatch"
+evidence_signatures:
+  input/sns_info.json:
+    - "i2c_dev"
+expected_confidence: high
+evaluation_notes:
+  - "AX615D 硬件外设仅开放 I2C0, I2C1, I2C2, I2C5，I2C9 会导致驱动探针失败"

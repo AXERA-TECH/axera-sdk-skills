@@ -1,0 +1,220 @@
+2026-09-09 14:16:28 Kernel: [  537.530882]  [C0][SYS][E][359] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.530897]  [C0][ISP][E][359] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.530918]  [C0][ISP][E][359] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6565 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.530926]  [C0][ISP][E][359] vin_node_comm.c(207) seq(3300) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.530939]  [C0][ISP][E][359] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3299, trigger_count:3299, yuv_done_count:3299
+2026-09-09 14:16:28 Kernel: [  537.530951]  [C0][ISP][E][359] vin_node_mode_wrapper.c(285) PIPE-0 NODE-[ITP_YUV_PST_NODE_MODE1: YUV_OUT_OFFLINE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.564120]  [C0][SYS][E][359] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.564135]  [C0][ISP][E][359] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.564156]  [C0][ISP][E][359] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6567 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.564165]  [C0][ISP][E][359] vin_node_comm.c(207) seq(3301) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.564177]  [C0][ISP][E][359] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3300, trigger_count:3300, yuv_done_count:3300
+2026-09-09 14:16:28 Kernel: [  537.564189]  [C0][ISP][E][359] vin_node_mode_wrapper.c(285) PIPE-0 NODE-[ITP_YUV_PST_NODE_MODE1: YUV_OUT_OFFLINE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.564198]  [C0][ISP][E][359] vin_node_wrapper.c(621) PIPE-0 NODE-[ITP_YUV_PST_NODE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.565219]  [C1][SYS][E][360] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.565233]  [C1][ISP][E][360] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.565257]  [C1][ISP][E][360] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6568 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.565268]  [C1][ISP][E][360] vin_node_comm.c(207) seq(3301) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.565280]  [C1][ISP][E][360] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3301, trigger_count:3300, yuv_done_count:3300
+2026-09-09 14:16:28 Kernel: [  537.597419]  [C1][SYS][E][359] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.597434]  [C1][ISP][E][359] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.597455]  [C1][ISP][E][359] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6569 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.597464]  [C1][ISP][E][359] vin_node_comm.c(207) seq(3302) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.597476]  [C1][ISP][E][359] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3301, trigger_count:3301, yuv_done_count:3301
+2026-09-09 14:16:28 Kernel: [  537.597489]  [C1][ISP][E][359] vin_node_mode_wrapper.c(285) PIPE-0 NODE-[ITP_YUV_PST_NODE_MODE1: YUV_OUT_OFFLINE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.597498]  [C1][ISP][E][359] vin_node_wrapper.c(621) PIPE-0 NODE-[ITP_YUV_PST_NODE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.598548]  [C0][SYS][E][360] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.598563]  [C0][ISP][E][360] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.598584]  [C0][ISP][E][360] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6570 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.598592]  [C0][ISP][E][360] vin_node_comm.c(207) seq(3302) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.598604]  [C0][ISP][E][360] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3302, trigger_count:3301, yuv_done_count:3301
+2026-09-09 14:16:28 App: [  537.629531] [IVPS][I][350] ivps_region.c(88) RGN[0] region_update+++
+2026-09-09 14:16:28 App: [  537.629989] [IVPS][I][350] ivps_region.c(95) RGN[0] region_update---
+2026-09-09 14:16:28 Kernel: [  537.630878]  [C0][SYS][E][359] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.630892]  [C0][ISP][E][359] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.630926]  [C0][ISP][E][359] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6571 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.630934]  [C0][ISP][E][359] vin_node_comm.c(207) seq(3303) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.630947]  [C0][ISP][E][359] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3302, trigger_count:3302, yuv_done_count:3302
+2026-09-09 14:16:28 Kernel: [  537.630959]  [C0][ISP][E][359] vin_node_mode_wrapper.c(285) PIPE-0 NODE-[ITP_YUV_PST_NODE_MODE1: YUV_OUT_OFFLINE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.630968]  [C0][ISP][E][359] vin_node_wrapper.c(621) PIPE-0 NODE-[ITP_YUV_PST_NODE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.632105]  [C1][SYS][E][360] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.632120]  [C1][ISP][E][360] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.632141]  [C1][ISP][E][360] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6572 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.632149]  [C1][ISP][E][360] vin_node_comm.c(207) seq(3303) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.632162]  [C1][ISP][E][360] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3303, trigger_count:3302, yuv_done_count:3302
+2026-09-09 14:16:28 Kernel: [  537.664088]  [C1][SYS][E][359] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.664103]  [C1][ISP][E][359] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.664125]  [C1][ISP][E][359] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6573 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.664133]  [C1][ISP][E][359] vin_node_comm.c(207) seq(3304) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.664145]  [C1][ISP][E][359] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3303, trigger_count:3303, yuv_done_count:3303
+2026-09-09 14:16:28 Kernel: [  537.664157]  [C1][ISP][E][359] vin_node_mode_wrapper.c(285) PIPE-0 NODE-[ITP_YUV_PST_NODE_MODE1: YUV_OUT_OFFLINE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.664166]  [C1][ISP][E][359] vin_node_wrapper.c(621) PIPE-0 NODE-[ITP_YUV_PST_NODE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.665183]  [C0][SYS][E][360] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.665199]  [C0][ISP][E][360] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.665222]  [C0][ISP][E][360] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6574 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.665232]  [C0][ISP][E][360] vin_node_comm.c(207) seq(3304) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.665245]  [C0][ISP][E][360] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3304, trigger_count:3303, yuv_done_count:3303
+2026-09-09 14:16:28 Kernel: [  537.697373]  [C1][SYS][E][359] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.697387]  [C1][ISP][E][359] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.697408]  [C1][ISP][E][359] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6575 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.697416]  [C1][ISP][E][359] vin_node_comm.c(207) seq(3305) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.697429]  [C1][ISP][E][359] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3304, trigger_count:3304, yuv_done_count:3304
+2026-09-09 14:16:28 Kernel: [  537.697441]  [C1][ISP][E][359] vin_node_mode_wrapper.c(285) PIPE-0 NODE-[ITP_YUV_PST_NODE_MODE1: YUV_OUT_OFFLINE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.697450]  [C1][ISP][E][359] vin_node_wrapper.c(621) PIPE-0 NODE-[ITP_YUV_PST_NODE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.698467]  [C0][SYS][E][360] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.698483]  [C0][ISP][E][360] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.698507]  [C0][ISP][E][360] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6576 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.698517]  [C0][ISP][E][360] vin_node_comm.c(207) seq(3305) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.698529]  [C0][ISP][E][360] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3305, trigger_count:3304, yuv_done_count:3304
+2026-09-09 14:16:28 Kernel: [  537.730826]  [C0][SYS][E][359] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.730841]  [C0][ISP][E][359] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.730878]  [C0][ISP][E][359] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6577 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.730887]  [C0][ISP][E][359] vin_node_comm.c(207) seq(3306) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.730900]  [C0][ISP][E][359] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3305, trigger_count:3305, yuv_done_count:3305
+2026-09-09 14:16:28 Kernel: [  537.730913]  [C0][ISP][E][359] vin_node_mode_wrapper.c(285) PIPE-0 NODE-[ITP_YUV_PST_NODE_MODE1: YUV_OUT_OFFLINE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.730922]  [C0][ISP][E][359] vin_node_wrapper.c(621) PIPE-0 NODE-[ITP_YUV_PST_NODE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.732067]  [C1][SYS][E][360] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.732081]  [C1][ISP][E][360] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.732101]  [C1][ISP][E][360] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6578 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.732109]  [C1][ISP][E][360] vin_node_comm.c(207) seq(3306) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.732122]  [C1][ISP][E][360] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3306, trigger_count:3305, yuv_done_count:3305
+2026-09-09 14:16:28 Kernel: [  537.764096]  [C1][SYS][E][359] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.764111]  [C1][ISP][E][359] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.764132]  [C1][ISP][E][359] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6579 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.764141]  [C1][ISP][E][359] vin_node_comm.c(207) seq(3307) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.764153]  [C1][ISP][E][359] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3306, trigger_count:3306, yuv_done_count:3306
+2026-09-09 14:16:28 Kernel: [  537.764165]  [C1][ISP][E][359] vin_node_mode_wrapper.c(285) PIPE-0 NODE-[ITP_YUV_PST_NODE_MODE1: YUV_OUT_OFFLINE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.764174]  [C1][ISP][E][359] vin_node_wrapper.c(621) PIPE-0 NODE-[ITP_YUV_PST_NODE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.765189]  [C0][SYS][E][360] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.765205]  [C0][ISP][E][360] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.765228]  [C0][ISP][E][360] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6580 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.765238]  [C0][ISP][E][360] vin_node_comm.c(207) seq(3307) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.765251]  [C0][ISP][E][360] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3307, trigger_count:3306, yuv_done_count:3306
+2026-09-09 14:16:28 App: [  537.779681] [IVPS][I][350] ivps_region.c(88) RGN[6] region_update+++
+2026-09-09 14:16:28 App: [  537.779850] [IVPS][I][350] ivps_region.c(95) RGN[6] region_update---
+2026-09-09 14:16:28 Kernel: [  537.797364]  [C1][SYS][E][359] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.797381]  [C1][ISP][E][359] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.797403]  [C1][ISP][E][359] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6581 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.797412]  [C1][ISP][E][359] vin_node_comm.c(207) seq(3308) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.797424]  [C1][ISP][E][359] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3307, trigger_count:3307, yuv_done_count:3307
+2026-09-09 14:16:28 Kernel: [  537.797437]  [C1][ISP][E][359] vin_node_mode_wrapper.c(285) PIPE-0 NODE-[ITP_YUV_PST_NODE_MODE1: YUV_OUT_OFFLINE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.797446]  [C1][ISP][E][359] vin_node_wrapper.c(621) PIPE-0 NODE-[ITP_YUV_PST_NODE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.798488]  [C0][SYS][E][360] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.798503]  [C0][ISP][E][360] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.798523]  [C0][ISP][E][360] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6582 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.798531]  [C0][ISP][E][360] vin_node_comm.c(207) seq(3308) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.798544]  [C0][ISP][E][360] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3308, trigger_count:3307, yuv_done_count:3307
+2026-09-09 14:16:28 Kernel: [  537.830812]  [C0][SYS][E][359] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.830828]  [C0][ISP][E][359] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.830864]  [C0][ISP][E][359] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6583 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.830874]  [C0][ISP][E][359] vin_node_comm.c(207) seq(3309) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.830886]  [C0][ISP][E][359] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3308, trigger_count:3308, yuv_done_count:3308
+2026-09-09 14:16:28 Kernel: [  537.830900]  [C0][ISP][E][359] vin_node_mode_wrapper.c(285) PIPE-0 NODE-[ITP_YUV_PST_NODE_MODE1: YUV_OUT_OFFLINE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.830909]  [C0][ISP][E][359] vin_node_wrapper.c(621) PIPE-0 NODE-[ITP_YUV_PST_NODE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.832052]  [C1][SYS][E][360] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.832068]  [C1][ISP][E][360] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.832089]  [C1][ISP][E][360] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6584 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.832097]  [C1][ISP][E][360] vin_node_comm.c(207) seq(3309) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.832110]  [C1][ISP][E][360] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3309, trigger_count:3308, yuv_done_count:3308
+2026-09-09 14:16:28 Kernel: [  537.864051]  [C1][SYS][E][359] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.864066]  [C1][ISP][E][359] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.864088]  [C1][ISP][E][359] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6585 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.864096]  [C1][ISP][E][359] vin_node_comm.c(207) seq(3310) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.864108]  [C1][ISP][E][359] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3309, trigger_count:3309, yuv_done_count:3309
+2026-09-09 14:16:28 Kernel: [  537.864120]  [C1][ISP][E][359] vin_node_mode_wrapper.c(285) PIPE-0 NODE-[ITP_YUV_PST_NODE_MODE1: YUV_OUT_OFFLINE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.864129]  [C1][ISP][E][359] vin_node_wrapper.c(621) PIPE-0 NODE-[ITP_YUV_PST_NODE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.865151]  [C0][SYS][E][360] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.865168]  [C0][ISP][E][360] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.865190]  [C0][ISP][E][360] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6586 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.865201]  [C0][ISP][E][360] vin_node_comm.c(207) seq(3310) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.865213]  [C0][ISP][E][360] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3310, trigger_count:3309, yuv_done_count:3309
+2026-09-09 14:16:28 Kernel: [  537.897339]  [C1][SYS][E][359] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.897354]  [C1][ISP][E][359] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.897375]  [C1][ISP][E][359] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6587 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.897383]  [C1][ISP][E][359] vin_node_comm.c(207) seq(3311) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.897396]  [C1][ISP][E][359] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3310, trigger_count:3310, yuv_done_count:3310
+2026-09-09 14:16:28 Kernel: [  537.897408]  [C1][ISP][E][359] vin_node_mode_wrapper.c(285) PIPE-0 NODE-[ITP_YUV_PST_NODE_MODE1: YUV_OUT_OFFLINE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.897417]  [C1][ISP][E][359] vin_node_wrapper.c(621) PIPE-0 NODE-[ITP_YUV_PST_NODE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.898430]  [C0][SYS][E][360] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.898446]  [C0][ISP][E][360] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.898469]  [C0][ISP][E][360] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6588 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.898479]  [C0][ISP][E][360] vin_node_comm.c(207) seq(3311) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.898492]  [C0][ISP][E][360] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3311, trigger_count:3310, yuv_done_count:3310
+2026-09-09 14:16:28 Kernel: [  537.930787]  [C0][SYS][E][359] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.930802]  [C0][ISP][E][359] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.930824]  [C0][ISP][E][359] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6589 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.930848]  [C0][ISP][E][359] vin_node_comm.c(207) seq(3312) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.930862]  [C0][ISP][E][359] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3311, trigger_count:3311, yuv_done_count:3311
+2026-09-09 14:16:28 Kernel: [  537.930874]  [C0][ISP][E][359] vin_node_mode_wrapper.c(285) PIPE-0 NODE-[ITP_YUV_PST_NODE_MODE1: YUV_OUT_OFFLINE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.930883]  [C0][ISP][E][359] vin_node_wrapper.c(621) PIPE-0 NODE-[ITP_YUV_PST_NODE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.932006]  [C1][SYS][E][360] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.932024]  [C1][ISP][E][360] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.932057]  [C1][ISP][E][360] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6590 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.932066]  [C1][ISP][E][360] vin_node_comm.c(207) seq(3312) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.932078]  [C1][ISP][E][360] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3312, trigger_count:3311, yuv_done_count:3311
+2026-09-09 14:16:28 Kernel: [  537.964043]  [C1][SYS][E][359] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.964057]  [C1][ISP][E][359] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.964080]  [C1][ISP][E][359] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6591 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.964088]  [C1][ISP][E][359] vin_node_comm.c(207) seq(3313) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.964100]  [C1][ISP][E][359] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3312, trigger_count:3312, yuv_done_count:3312
+2026-09-09 14:16:28 Kernel: [  537.964111]  [C1][ISP][E][359] vin_node_mode_wrapper.c(285) PIPE-0 NODE-[ITP_YUV_PST_NODE_MODE1: YUV_OUT_OFFLINE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.964120]  [C1][ISP][E][359] vin_node_wrapper.c(621) PIPE-0 NODE-[ITP_YUV_PST_NODE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.965142]  [C0][SYS][E][360] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.965158]  [C0][ISP][E][360] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.965182]  [C0][ISP][E][360] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6592 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.965192]  [C0][ISP][E][360] vin_node_comm.c(207) seq(3313) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.965204]  [C0][ISP][E][360] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3313, trigger_count:3312, yuv_done_count:3312
+2026-09-09 14:16:28 App: [  537.991006] [IVPS][I][350] ivps_region.c(88) RGN[12] region_update+++
+2026-09-09 14:16:28 App: [  537.991094] [IVPS][I][350] ivps_region.c(95) RGN[12] region_update---
+2026-09-09 14:16:28 Kernel: [  537.997316]  [C1][SYS][E][359] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.997331]  [C1][ISP][E][359] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.997352]  [C1][ISP][E][359] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6593 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.997361]  [C1][ISP][E][359] vin_node_comm.c(207) seq(3314) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.997373]  [C1][ISP][E][359] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3313, trigger_count:3313, yuv_done_count:3313
+2026-09-09 14:16:28 Kernel: [  537.997385]  [C1][ISP][E][359] vin_node_mode_wrapper.c(285) PIPE-0 NODE-[ITP_YUV_PST_NODE_MODE1: YUV_OUT_OFFLINE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.997394]  [C1][ISP][E][359] vin_node_wrapper.c(621) PIPE-0 NODE-[ITP_YUV_PST_NODE] forward failed!
+2026-09-09 14:16:28 Kernel: [  537.998416]  [C0][SYS][E][360] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  537.998431]  [C0][ISP][E][360] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  537.998455]  [C0][ISP][E][360] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6594 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  537.998464]  [C0][ISP][E][360] vin_node_comm.c(207) seq(3314) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  537.998477]  [C0][ISP][E][360] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3314, trigger_count:3313, yuv_done_count:3313
+2026-09-09 14:16:28 Kernel: [  538.030771]  [C0][SYS][E][359] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  538.030786]  [C0][ISP][E][359] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  538.030807]  [C0][ISP][E][359] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6595 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  538.030833]  [C0][ISP][E][359] vin_node_comm.c(207) seq(3315) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  538.030846]  [C0][ISP][E][359] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3314, trigger_count:3314, yuv_done_count:3314
+2026-09-09 14:16:28 Kernel: [  538.030859]  [C0][ISP][E][359] vin_node_mode_wrapper.c(285) PIPE-0 NODE-[ITP_YUV_PST_NODE_MODE1: YUV_OUT_OFFLINE] forward failed!
+2026-09-09 14:16:28 Kernel: [  538.030868]  [C0][ISP][E][359] vin_node_wrapper.c(621) PIPE-0 NODE-[ITP_YUV_PST_NODE] forward failed!
+2026-09-09 14:16:28 Kernel: [  538.032011]  [C1][SYS][E][360] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  538.032025]  [C1][ISP][E][360] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  538.032045]  [C1][ISP][E][360] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6596 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  538.032053]  [C1][ISP][E][360] vin_node_comm.c(207) seq(3315) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  538.032066]  [C1][ISP][E][360] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3315, trigger_count:3314, yuv_done_count:3314
+2026-09-09 14:16:28 Kernel: [  538.064012]  [C1][SYS][E][359] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  538.064028]  [C1][ISP][E][359] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  538.064049]  [C1][ISP][E][359] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6597 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  538.064057]  [C1][ISP][E][359] vin_node_comm.c(207) seq(3316) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  538.064069]  [C1][ISP][E][359] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3315, trigger_count:3315, yuv_done_count:3315
+2026-09-09 14:16:28 Kernel: [  538.064081]  [C1][ISP][E][359] vin_node_mode_wrapper.c(285) PIPE-0 NODE-[ITP_YUV_PST_NODE_MODE1: YUV_OUT_OFFLINE] forward failed!
+2026-09-09 14:16:28 Kernel: [  538.064090]  [C1][ISP][E][359] vin_node_wrapper.c(621) PIPE-0 NODE-[ITP_YUV_PST_NODE] forward failed!
+2026-09-09 14:16:28 Kernel: [  538.065106]  [C0][SYS][E][360] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  538.065122]  [C0][ISP][E][360] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  538.065145]  [C0][ISP][E][360] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6598 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  538.065155]  [C0][ISP][E][360] vin_node_comm.c(207) seq(3316) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  538.065168]  [C0][ISP][E][360] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3316, trigger_count:3315, yuv_done_count:3315
+2026-09-09 14:16:28 Kernel: [  538.097305]  [C1][SYS][E][359] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  538.097322]  [C1][ISP][E][359] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  538.097344]  [C1][ISP][E][359] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6599 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  538.097353]  [C1][ISP][E][359] vin_node_comm.c(207) seq(3317) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  538.097366]  [C1][ISP][E][359] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3316, trigger_count:3316, yuv_done_count:3316
+2026-09-09 14:16:28 Kernel: [  538.097379]  [C1][ISP][E][359] vin_node_mode_wrapper.c(285) PIPE-0 NODE-[ITP_YUV_PST_NODE_MODE1: YUV_OUT_OFFLINE] forward failed!
+2026-09-09 14:16:28 Kernel: [  538.097388]  [C1][ISP][E][359] vin_node_wrapper.c(621) PIPE-0 NODE-[ITP_YUV_PST_NODE] forward failed!
+2026-09-09 14:16:28 Kernel: [  538.098439]  [C0][SYS][E][360] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  538.098454]  [C0][ISP][E][360] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  538.098474]  [C0][ISP][E][360] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6600 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  538.098482]  [C0][ISP][E][360] vin_node_comm.c(207) seq(3317) get block(2073600) from BufferPool failed
+2026-09-09 14:16:28 Kernel: [  538.098495]  [C0][ISP][E][360] vin_node_comm.c(1339) pipe(0) idx 0 retval 0x80110180, process_count:3317, trigger_count:3316, yuv_done_count:3316
+2026-09-09 14:16:28 Kernel: [  538.130791]  [C0][SYS][E][359] ax_pool_drv.c(1558) [ModId:17]Get block fail!Can't find a block with size 2073600 in 'anonymous' partation
+2026-09-09 14:16:28 Kernel: [  538.130806]  [C0][ISP][E][359] privpool_ops.c(270) ax_pool_getblock fail, pool(-1) size(2073600)
+2026-09-09 14:16:28 Kernel: [  538.130826]  [C0][ISP][E][359] privpool.c(2322) get block failed, id=0 mod=16 type=2 blk_size=2073600 flags=0x0 fail_cnt=6601 err_code=0x18
+2026-09-09 14:16:28 Kernel: [  538.130849]  [C0][ISP][E][359] vin_node_comm.c(207) seq(3318) get block(2073600) from BufferPool failed

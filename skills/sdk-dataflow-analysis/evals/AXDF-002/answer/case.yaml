@@ -1,0 +1,55 @@
+schema_version: 1
+id: AXDF-002
+title: 二对二 HSK 场景同时配置两路 JENC
+category: module-dataflow/hsk/hardware-resource-conflict
+analyzer:
+  skill: sdk-dataflow-analysis
+platform:
+  soc: AX615
+  project: AX615_nor
+  flash: spi_nor
+  ddr_mb: 128
+  sensor: mis20s1
+reproducer:
+  patch: answer/reproducer.patch
+  application: /opt/bin/FRTDemo/frtdemo
+  command: cd /opt/bin/FRTDemo && ./run.sh -p 0 -s 16 -n 8 -l 6 -t 5
+input:
+  type: log_set
+  files:
+    - input/serial.log
+    - input/syslog.log
+    - input/logctl.proc
+    - input/vin.proc
+    - input/ivps.proc
+    - input/venc.proc
+    - input/link.proc
+  capture:
+    userlog_level: info
+    userlog_level_value: 6
+    userlog_modules:
+      VIN: 17
+      IVPS: 13
+      VENC: 7
+    syslog_source:
+      - /tmp/data/AXSyslog/syslog/2026-09-09-14-16-09.log
+      - /tmp/data/AXSyslog/syslog/2026-09-09-14-16-28.log
+    notes:
+      - 全部输入来自同一次干净重启后的复现轮次。
+      - serial.log 从 FRTDemo 启动前开始录制，保留启动、VPP timeout 和 proc 采集窗口，移除 ANSI 颜色码。
+      - proc 在双 JENC HSK 建链后、数据流卡住时采集。
+      - syslog.log 是同轮 logserviced 文件合并后的前 220 行，记录数据流堵塞后的 VIN/CMM 连锁错误；首个 VPP timeout 见 serial.log。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/serial.log
+    - input/syslog.log
+    - input/logctl.proc
+    - input/vin.proc
+    - input/ivps.proc
+    - input/venc.proc
+    - input/link.proc
+  evaluator_only:
+    - answer/oracle.yaml
+    - answer/reproducer.patch
+    - answer/case.yaml

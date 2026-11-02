@@ -1,0 +1,27 @@
+[
+  {
+    "query": "检查当前 AX615 camera-kit 的 sensor 分辨率与 pipeline 拓扑结构",
+    "should_trigger": true,
+    "notes": "Direct trigger for inspecting sensor pipeline topology"
+  },
+  {
+    "query": "把单摄工程从 SC438HAI 迁移适配到 OS04A10 sensor",
+    "should_trigger": true,
+    "notes": "Sensor migration and adaptation task"
+  },
+  {
+    "query": "帮我把主码流插值超分到 3K 分辨率，并计算 CMM pool 内存预算",
+    "should_trigger": true,
+    "notes": "Resolution scaling, interpolation engine constraint, and CMM pool budget calculation"
+  },
+  {
+    "query": "编译 camera-kit 里的 axck_service 模块",
+    "should_trigger": false,
+    "notes": "Build task belongs to sdk-axck-app"
+  },
+  {
+    "query": "分析启动时报 0x80050004 内存池错误",
+    "should_trigger": false,
+    "notes": "Error diagnosis belongs to sdk-axck-diag"
+  }
+]

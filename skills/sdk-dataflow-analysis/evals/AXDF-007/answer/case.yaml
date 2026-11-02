@@ -1,0 +1,53 @@
+schema_version: 1
+id: AXDF-007
+title: IVPS→VENC LowMem H264 帧率放大
+category: module-dataflow/ax-sys-link-v2/runtime-constraint
+analyzer:
+  skill: sdk-dataflow-analysis
+platform:
+  soc: AX615
+  project: AX615_nor
+  flash: spi_nor
+  ddr_mb: 128
+  sensor: mis20s1
+reproducer:
+  patch: answer/reproducer.patch
+  application: /opt/bin/FRTDemo/frtdemo
+  command: cd /opt/bin/FRTDemo && ./run.sh -p 0 -s 16 -n 1 -l 6 -t 5 -u 0
+input:
+  type: log_set
+  files:
+    - input/serial.log
+    - input/syslog.log
+    - input/logctl.proc
+    - input/vin.proc
+    - input/ivps.proc
+    - input/venc.proc
+    - input/link.proc
+  capture:
+    userlog_level: info
+    userlog_level_value: 6
+    userlog_modules:
+      VIN: 17
+      IVPS: 13
+      VENC: 7
+    syslog_source: /tmp/data/AXSyslog/syslog/2026-09-17-10-57-45.log
+    notes:
+      - 全部输入来自同一次复现轮次，AXP 为 AX615_nor_mis20s1_V3.12.0_20260908162155_uclibc.axp，APP/SDK Ver 均为 V3.12.0。
+      - 只改 encoder.json scenario_1 通道 0 的 frame_rate 从 -1 到 60。VIN→IVPS 保持默认 Offline，IVPS→VENC 保持 LowMem line_cnt=128、VPP→VENC，编码类型 H264。
+      - 不启 TestSuite（-u 0）。serial.log 三条 Link 均 setup 成功，无 illegal parameters。syslog.log 是后期 IVPS info 切片，不含启动瞬间。
+      - proc 在应用仍存活且已出流后采集。venc.proc 通道 0 RC 为 SrcFr 30 DstFr 60，bHsk=Y ringLCnt=128，RecvFps 约 30.7，OutFps 约 59.5，EncSucCnt 约为 FrmRecv 的两倍。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/serial.log
+    - input/syslog.log
+    - input/logctl.proc
+    - input/vin.proc
+    - input/ivps.proc
+    - input/venc.proc
+    - input/link.proc
+  evaluator_only:
+    - answer/oracle.yaml
+    - answer/reproducer.patch
+    - answer/case.yaml

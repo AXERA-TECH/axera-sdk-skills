@@ -1,0 +1,36 @@
+version: 1
+
+# Axera OTA 路由表：workspace 检测 → 平台身份 → 加载对应 platforms/*.md 与 reference/<id>/
+# 先匹配更具体的 board/SDK 平台，再按 extends 叠加架构层。不要用通用源码路径
+# （例如 mach-axera/m57、m57-keys.dtsi、SafetyIsland/sbl）区分 SDK：M57 与 AX637 都可能包含它们。
+
+platforms:
+  - id: ax637
+    display: AX637 / AX637R SDK (基于 M57)
+    detect:
+      any:
+        # RTT 是 AX637/AX637R SDK 的 board 层标志；优先使用源码目录，避免命中 build/out。
+        - path_exists: SafetyIsland/rt-thread/bsp/m57/configs_ax637
+        - path_exists: SafetyIsland/rt-thread/bsp/m57/configs_ax637r
+    load:
+      - platforms/ax637.md
+    reference_root: reference/ax637/
+    extends: m57            # AX637 使用 M57 架构，加载 m57 后再叠加 ax637 特化
+
+  - id: m57
+    display: Axera M57 SDK (M57 architecture)
+    detect:
+      any:
+        # MCAL 是 M57 SDK 的 board 层标志。不要退回到通用 M57 BootROM/U-Boot 路径。
+        - path_exists: SafetyIsland/mcal
+    load:
+      - platforms/m57.md
+    reference_root: reference/m57/
+
+fallback:
+  id: unknown
+  action: ask
+  message: |
+    未识别到已登记的 Axera 平台。请：
+      1) 通过 args 显式指定 platform=<id>，可用 id 为 [m57, ax637]；或
+      2) 在 routing.yaml 中新增平台条目并补充 platforms/<id>.md 与 reference/<id>/。

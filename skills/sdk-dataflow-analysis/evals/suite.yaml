@@ -1,0 +1,50 @@
+version: 1
+defaults:
+  timeout_seconds: 420
+  samples: 1
+gates:
+  smoke:
+  - axdf-001
+  - axdf-007
+  - axdf-009
+budget:
+  max_agent_runs: 9
+  max_wall_seconds: 4200
+  concurrency: 1
+cases:
+- id: axdf-001
+  path: AXDF-001
+  kind: behavior
+  required: true
+- id: axdf-002
+  path: AXDF-002
+  kind: behavior
+  required: true
+- id: axdf-003
+  path: AXDF-003
+  kind: behavior
+  required: true
+- id: axdf-004
+  path: AXDF-004
+  kind: behavior
+  required: true
+- id: axdf-005
+  path: AXDF-005
+  kind: behavior
+  required: true
+- id: axdf-006
+  path: AXDF-006
+  kind: behavior
+  required: true
+- id: axdf-007
+  path: AXDF-007
+  kind: behavior
+  required: true
+- id: axdf-008
+  path: AXDF-008
+  kind: behavior
+  required: true
+- id: axdf-009
+  path: AXDF-009
+  kind: behavior
+  required: true

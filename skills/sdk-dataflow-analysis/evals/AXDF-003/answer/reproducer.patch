@@ -1,0 +1,68 @@
+diff --git a/demo/FRTDemo/src/main.cpp b/demo/FRTDemo/src/main.cpp
+index 3ceb61663b..e6a41eeb63 100644
+--- a/demo/FRTDemo/src/main.cpp
++++ b/demo/FRTDemo/src/main.cpp
+@@ -12,6 +12,8 @@
+ #include <signal.h>
+ #include <sys/prctl.h>
+ 
++#include "ax_ivps_api.h"
++
+ #include "CmdLineParser.h"
+ #include "CommonUtils.hpp"
+ #include "ElapsedTimer.hpp"
+@@ -225,6 +227,7 @@ int main(int argc, const char* argv[]) {
+ 
+     g_Running = AX_TRUE;
+     AX_U32 nRunTimes = 0;
++    AX_BOOL bHskSwitchDone = AX_FALSE;
+ 
+     while (g_Running) {
+         CElapsedTimer::GetInstance()->mSleep(100);
+@@ -235,6 +238,46 @@ int main(int argc, const char* argv[]) {
+             nRunTimes = 0;
+         }
+ 
++        /* AXDF-003 reproducer: drive the IVPS half of a resolution switch to
++         * completion (disable -> set pipeline attr -> enable, matching
++         * CIVPSGrpStage::UpdateChnResolution) while skipping every VENC-side
++         * step that CIPCBuilder performs around it: no AX_VENC_StopRecvFrame,
++         * no VENC resolution update, no AX_VENC_StartRecvFrame, no
++         * UnLink/Link_V2. IVPS geometry therefore changes underneath a VENC
++         * channel still holding the old HSK line-sync parameters. */
++        if (!bHskSwitchDone && nRunTimes == 100) {
++            bHskSwitchDone = AX_TRUE;
++
++            const AX_U32 nNewW = 1280;
++            const AX_U32 nNewH = 720;
++            const AX_U32 nStride =
++                (nNewW + AX_IVPS_NONE_FBC_STRIDE_ALIGN_VAL - 1) & ~(AX_U32)(AX_IVPS_NONE_FBC_STRIDE_ALIGN_VAL - 1);
++
++            AX_IVPS_PIPELINE_ATTR_T tAttr = {0};
++            AX_S32 nRet = AX_IVPS_GetPipelineAttr(0, &tAttr);
++            if (AX_SUCCESS != nRet) {
++                LOG_M_C(MAIN, "AX_IVPS_GetPipelineAttr failed, ret=0x%x", nRet);
++            } else {
++                LOG_M_C(MAIN, "ChnFilter reset resolution for ivps (Grp: 0, Chn: 0): %dx%d -> %dx%d, s: %d",
++                        tAttr.tFilter[1][0].nDstPicWidth, tAttr.tFilter[1][0].nDstPicHeight, nNewW, nNewH, nStride);
++
++                nRet = AX_IVPS_DisableChn(0, 0);
++                LOG_M_C(MAIN, "AX_IVPS_DisableChn(0, 0) ret=0x%x", nRet);
++
++                for (AX_U32 nFlt = 0; nFlt < AX_IVPS_MAX_FILTER_NUM_PER_OUTCHN; ++nFlt) {
++                    tAttr.tFilter[1][nFlt].nDstPicWidth = nNewW;
++                    tAttr.tFilter[1][nFlt].nDstPicHeight = nNewH;
++                    tAttr.tFilter[1][nFlt].nDstPicStride = nStride;
++                }
++
++                nRet = AX_IVPS_SetPipelineAttr(0, &tAttr);
++                LOG_M_C(MAIN, "AX_IVPS_SetPipelineAttr(0) ret=0x%x", nRet);
++
++                nRet = AX_IVPS_EnableChn(0, 0);
++                LOG_M_C(MAIN, "AX_IVPS_EnableChn(0, 0) ret=0x%x", nRet);
++            }
++        }
++
+ #ifdef SLT
+         AX_S32 nSLTRet = CPrintHelper::GetInstance()->GetSLTResult();
+         if (nSLTRet == 1 || nSLTRet == 0) {

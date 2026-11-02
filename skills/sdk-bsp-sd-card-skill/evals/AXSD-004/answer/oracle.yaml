@@ -1,0 +1,33 @@
+root_cause: exFAT 明确报告 Volume was not properly unmounted 并将文件系统设为 read-only；结合用户写入后未执行 sync/umount 即拔卡，当前最强解释是异常移除导致文件系统保护性只读。mount 显示 (ro) 而 /sys/block/mmcblk0/ro 为 0，支持文件系统挂载层只读，不支持块设备被内核永久置为只读或 SDHCI 硬件损坏。
+required_concepts:
+  - 识别 exFAT Volume was not properly unmounted
+  - 识别 Filesystem has been set read-only
+  - 区分 mount 的 (ro) 与 /sys/block/mmcblk0/ro=0
+  - 将未执行 sync/umount 直接拔卡作为当前最强解释
+  - 给出 sync、umount、确认 mount 消失后再拔卡的安全流程
+  - umount 报 device is busy 时使用 fuser/lsof 查找占用
+  - 只有正常卸载后仍复现并伴随 I/O 错误，才转向 block I/O、供电、信号和文件系统检查
+forbidden_conclusions:
+  - 仅凭 read-only 判定 SD 卡物理损坏
+  - 将 mount (ro) 与块设备 ro=1 混为一谈
+  - 建议仍挂载时拔卡
+  - 直接执行 mkfs 或 fsck -y 覆盖数据
+  - 仅凭本次输入判定 SDHCI、PHY 或供电硬件损坏
+evidence_signatures:
+  input/dmesg.log:
+    - 'Volume was not properly unmounted'
+    - 'Filesystem has been set read-only'
+    - 'mmcblk0p1'
+  input/mount.txt:
+    - 'type exfat (ro,relatime)'
+  input/sysfs.txt:
+    - 'cat /sys/block/mmcblk0/ro'
+    - '0'
+  input/operation-notes.txt:
+    - '没有执行 sync，也没有执行 umount'
+    - '没有记录到 CRC、timeout 或 I/O error'
+expected_confidence: high
+evaluation_notes:
+  - 结论可对直接拔卡方向给高置信度，但应保留“如果按规范卸载后仍复现，则升级到 I/O/供电/信号”的边界。
+  - 安全验证顺序是写入后 sync，再 umount /mnt/sdcard，确认 mount | grep mmcblk 不再显示目标挂载点；不能用破坏性修复替代取证。
+  - 若 umount 报 device is busy，先使用 fuser -vm 或 lsof 找占用进程。

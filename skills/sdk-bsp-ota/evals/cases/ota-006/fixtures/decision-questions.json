@@ -1,0 +1,18 @@
+{
+  "failed_target_slot": {
+    "question": "失败目标槽大写字母",
+    "type": "string"
+  },
+  "preserve_slot": {
+    "question": "应保护的旧成功槽大写字母",
+    "type": "string"
+  },
+  "mark_current_slot_unbootable": {
+    "question": "是否应把当前旧成功槽标 unbootable",
+    "type": "boolean"
+  },
+  "clear_bcb_before_evidence": {
+    "question": "是否先清空 BCB 再取证",
+    "type": "boolean"
+  }
+}

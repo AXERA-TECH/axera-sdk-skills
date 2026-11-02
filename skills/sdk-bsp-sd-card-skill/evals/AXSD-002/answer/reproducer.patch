@@ -1,0 +1,6 @@
+--- /dev/null
++++ b/evals/AXSD-002/fixture.txt
+@@
++Build the AXERA SDHCI driver into the kernel.
++Configure card detect through GPIO1_29 with cd-inverted and debounce.
++Leave the insertion/removal electrical level and pinmux unverified.

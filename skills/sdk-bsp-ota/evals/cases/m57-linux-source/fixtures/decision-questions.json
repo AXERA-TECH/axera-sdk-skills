@@ -1,0 +1,14 @@
+{
+  "qnx_shared_design_reusable": {
+    "question": "QNX 文档公共设计是否可用于 Linux",
+    "type": "boolean"
+  },
+  "linux_primary_file": {
+    "question": "当前 Linux 实现应优先使用的 skill 知识库文件名",
+    "type": "string"
+  },
+  "copy_qnx_deployment_paths": {
+    "question": "是否直接套用 QNX 部署路径",
+    "type": "boolean"
+  }
+}

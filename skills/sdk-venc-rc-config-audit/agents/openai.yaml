@@ -1,0 +1,4 @@
+interface:
+  display_name: "AX615 RC Config Audit"
+  short_description: "审查 AX615 码控配置与码流异常"
+  default_prompt: "使用 $sdk-venc-rc-config-audit 审查 AX615 VENC proc、码流和问题描述，给出证据、原因、修改建议并生成 HTML 报告。"

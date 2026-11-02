@@ -1,0 +1,35 @@
+platform: qnx
+expected_stage: S1
+root_cause: 两件事——① 客户拿的是另一个平台的排查资料：那份手册里的 sysfs 步骤属于 Linux 侧路径，本平台节点根是 /proc/ax_diag/，ECM/FCU 走 /dev/ecm、/dev/fcu 与命令行工具，没有 sysfs 这一层，所以"节点不存在"推不出"FuSa 没编译"；② 真正的问题是 FCU 进程缺失：进程表里只有 diag_core_drv、diag_extend、m57_ecm_drv，fcu_drv 不在，/dev/fcu 也不存在——本平台的四个诊断进程任一缺失都会静默丢掉对应类别的诊断能力，这正是客户"收不到 FCU 故障日志"的原因。
+required_concepts:
+  - 本平台节点根是 /proc/ax_diag/，按名字分层，没有 sysfs 那一套；另一平台才是 /sys/devices/platform/axdiag/ 与 /sys/class/fusa
+  - 本平台的诊断由四个独立用户态进程承担（diag_core_drv、diag_extend、m57_ecm_drv、fcu_drv），任一缺失系统照常运行但诊断能力静默丢失
+  - "以前有诊断日志、最近没有了" 的第一件事是确认四个进程都在，不能理解成"没有故障所以没日志"
+  - 按类别分派：ECM 类查 m57_ecm_drv、FCU 类查 fcu_drv、MID 87 扩展类查 diag_extend，其余查 diag_core_drv
+  - diag-netlink 这个名字在本平台只是沿用，实际是 QNX 消息传递，没有端口、抓不到包
+required_actions:
+  - 明确指出手册里的 sysfs 步骤属于另一个平台，并给出本平台正确的节点与工具（/proc/ax_diag/、pidin、ecm_fault / fcu_fault）
+  - 纠正"FuSa 没编译进去"的推断，说明判断编译开关必须按本平台的构建机制来，不能套另一个平台的方式
+  - 把 fcu_drv 缺失作为首要问题提出，并解释它为何导致 FCU 类故障收不到
+  - 给出恢复与验证方向（重启该进程、确认 /dev/fcu 回来、再看 FCU 故障是否上报）
+forbidden_conclusions:
+  - FuSa 没有编译进系统，需要重新编译 SDK
+  - 另一个平台的节点路径不存在等于功能缺失
+  - 属于设计预期，无需处理
+forbidden_actions:
+  - 让客户按另一个平台的方式去查内核 Kconfig、.config 或板级 DTS
+  - 让客户查 /proc/net/netlink、抓包或检查网络配置
+  - 建议客户修改 FuSa 源码
+evidence_signatures:
+  input/prompt.md:
+    - 'ls: /sys/devices/platform/axdiag/: No such file or directory'
+    - 'pidin ar | grep diag'
+  input/sdk-check.txt:
+    - 'QNX_HIT'
+    - '/proc/ax_diag/'
+    - 'm57_ecm_drv'
+expected_confidence: high
+evaluation_notes:
+  - 本 Case 的输入里同时出现两个平台的路径，这是客户原文造成的；评分看的是有没有把平台与路径纠正过来，而不是输入里出现了什么。
+  - 不要求说出编译开关的具体宏名，但必须说明不能用另一个平台的 Kconfig 方式判断。
+  - 只指出"节点路径用错"而漏掉 fcu_drv 缺失，Required concepts 判 missing。

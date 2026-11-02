@@ -1,0 +1,48 @@
+root_cause: FRTDemo 将 VIN(0,0) 到 IVPS(0,0) 的 AX_SYS_Link_V2 配成 LowMem，但 eDstEngine 为 VENC。VIN→IVPS LowMem 只允许 dst engine 为 GDC 或 VPP。内核 ax_sys_link.c(863) 拒绝该参数并返回 AX_ERR_LINK_NOT_SUPPORT。FRTDemo 未向上终止构建，继续 Setup 后续 Link 并启动；link_table 因此缺少 VIN→IVPS。
+required_concepts:
+  - AX_SYS_Link_V2
+  - AX_MOD_DATA_FLOW_SW_LOW_MEM
+  - VIN→IVPS LowMem 的 dst engine 只能是 GDC 或 VPP
+  - link failed!Unsupported param
+  - FlowMode=1
+  - "engince[src: 0, dst: 4]"
+  - VIN(0,0) 到 IVPS(0,0) Link 建立失败
+  - FRTDemo 继续启动不代表该 Link 成功
+  - link_table 中缺少 VIN(0,0) 到 IVPS(0,0)，而 IVPS(0,0) 到 VENC(0,0) 与 IVPS(0,2) 到 VENC(0,1) 仍存在
+forbidden_conclusions:
+  - nRingLineCnt 非法
+  - Offline 模式下 eSrcEngine/eDstEngine 必须为 AX_ENG_NONE
+  - DstEngine and Srcengine should be zero when flowmode is sw_offline
+  - sensor 初始化失败
+  - VB/CMM 内存不足
+  - VENC 码控配置错误
+  - 把 IVPS(0,0) 到 VENC(0,0) Link 失败当根因
+  - 用 ppl.json 的 dst_mod=JENC 解释为本 Case
+evidence_signatures:
+  input/serial.log:
+    - 'APP Ver: V3.12.0, SDK Ver: V3.12.0'
+    - 'Linkage failed (17, 0, 0) => (13, 0, 0)'
+    - 'Linkage setup: (13, 0, 0) => (7, 0, 0)'
+  input/syslog.log:
+    - 'link failed!Unsupported param'
+    - 'src(enModId=17,s32GrpId=0,s32ChnId=0),dst(enModId=13,s32GrpId=0,s32ChnId=0)'
+    - 'FlowMode=1,engince[src: 0, dst: 4]'
+    - 'Linkage failed (17, 0, 0) => (13, 0, 0)'
+  input/logctl.proc:
+    - 'VENC     7     6'
+    - 'IVPS    13     6'
+    - 'VIN    17     6'
+  input/link.proc:
+    - 'Link Table V2'
+    - 'Link Table Kernel V2'
+    - 'SW_Low_Mem'
+    - 'SW_Offline'
+  input/venc.proc:
+    - 'VENC CHN ATTR'
+    - 'VENC CHN STATUS'
+expected_confidence: high
+evaluation_notes:
+  - 直接证据是 syslog 的 Unsupported param 行：src VIN(17,0,0)、dst IVPS(13,0,0)、FlowMode=1、dst engine=4(VENC)。分析器应据此判断 engine 矩阵非法，不要写成 Offline engine 非零。
+  - ppl 实际 dst_engine 值若日志未写名称，可以按枚举 4 写成 VENC，或写未知后再结合 FlowMode 与模块对约束。
+  - 本轮 IVPS→VENC LowMem 建链成功，不能把第二条 Link 或 nRingLineCnt token 写成根因。
+  - 修正方式是把 VIN→IVPS LowMem 的 dst_engine 改回 GDC 或 VPP。

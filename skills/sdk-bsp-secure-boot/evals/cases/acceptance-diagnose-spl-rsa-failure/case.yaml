@@ -1,0 +1,26 @@
+prompt: '使用 sdk-bsp-secure-boot skill 回答问题：
+
+  secure cipher rsa verify failed(-9)
+
+  Secure boot: mark spl slot:0 partition as failed
+
+  怎么定位？
+
+
+  请给出只读核对镜像完整性的命令示例。这是只读咨询评测。当前目录是精简的 SDK 路由样本，不含完整工具链。
+
+  使用已安装的 sdk-bsp-secure-boot 技能；本评测的安装根目录是工作区下的 .axap/opencode/skills/marketplace/sdk-bsp-secure-boot/，技能资源从此目录定位，SDK 源码路径相对工作区。
+
+  将咨询正文或待确认的问题写入 out/response.md。完成所要求的输出文件后，最后给出一句文本完成回复再结束；只加载技能或读取文档不算完成。
+
+  不得修改 config.mk、生成密钥、执行构建或烧写 eFuse；用户要求生成/配置时给出命令说明即可。
+
+  如果缺少必要参数，在 response.md 中提出问题后结束，不等待交互。
+
+  '
+expect:
+  files:
+  - path: out/response.md
+    exists: true
+    min_bytes: 40
+  assert: assert.sh

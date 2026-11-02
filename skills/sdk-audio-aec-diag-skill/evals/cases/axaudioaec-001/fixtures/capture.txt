@@ -1,0 +1,9 @@
+录音格式：16000 Hz，S16_LE，无文件头；每帧 160 个采样点。
+AiCard0_Dev0_vqeIn.pcm：单声道，处理前 MIC。
+AiCard0_Dev0_vqeRef.pcm：单声道，VQE_REF 输入。
+AiCard0_Dev0_vqeOut.pcm：单声道，上行处理输出。
+同轮各文件 sample 0 对齐，共用样本时基，未分别裁剪或归一化。
+proc.txt 为录音结束后的 AI/AO 状态；application.log 为本轮应用日志。
+本轮连续录制 12 秒，远端循环播放语音，近端保持安静。
+现场扬声器有声，远端持续听到自己的声音。
+本次提交为一轮录音。

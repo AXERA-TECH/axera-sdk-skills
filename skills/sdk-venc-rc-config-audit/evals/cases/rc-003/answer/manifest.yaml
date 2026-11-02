@@ -1,0 +1,26 @@
+schema_version: 1
+id: rc-003
+display_id: RC-003
+title: 双通道同症状不同根因：chn0 QP 上限过低压缩能力不足 vs chn1 目标码率配置偏低
+category: venc-rc/cbr/bitrate-over-limit
+analyzer:
+  skill: sdk-venc-rc-config-audit
+platform:
+  soc: AX615
+  sdk_version: V3.15.0
+input:
+  type: proc_snapshot
+  files:
+    - input/venc_proc.txt
+  capture:
+    source: derived
+    notes:
+      - 真实双通道样本为基底，chn0 改 MaxQp/MaxIQp=30，chn1 目标码率 400 本身偏低。
+      - 现象（两路码率均超出约 20%）通过 case.yaml 的任务提示词提供。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/venc_proc.txt
+  evaluator_only:
+    - answer/manifest.yaml
+    - answer/oracle.yaml

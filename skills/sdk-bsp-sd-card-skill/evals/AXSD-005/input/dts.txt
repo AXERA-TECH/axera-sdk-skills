@@ -1,0 +1,8 @@
+sd: sdhci@1B40000 {
+    compatible = "axera,sdhc";
+    status = "okay";
+    bus-width = <4>;
+    cap-sd-highspeed;
+    sd-uhs-sdr50;
+    // pwr_sw_gpio is absent in this fixture.
+};

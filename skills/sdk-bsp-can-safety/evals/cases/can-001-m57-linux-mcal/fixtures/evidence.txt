@@ -1,0 +1,5 @@
+Chip: M57
+Main project OS: Linux
+CAN ownership: Safety side
+Safety CAN framework: AUTOSAR MCAL CAN
+Feature in question: CAN FD bit timing / sample point

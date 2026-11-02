@@ -1,0 +1,367 @@
+{
+  "schema_version": 3,
+  "chip_definitions": {
+    "AX615": {
+      "family": "AX615",
+      "aliases": [
+        "AX615",
+        "AX615A",
+        "AX615D",
+        "ax615",
+        "ax615d",
+        "ax615a"
+      ],
+      "description": "AX615 系列视觉 SoC (全子型号与各频点通用)"
+    },
+    "M57": {
+      "family": "M57",
+      "aliases": [
+        "M57",
+        "M57A",
+        "M57B",
+        "M57-Pro",
+        "m57"
+      ],
+      "description": "M57 系列低功耗/车载/工业级芯片"
+    },
+    "AX637": {
+      "family": "AX637",
+      "aliases": [
+        "AX637",
+        "AX637R",
+        "ax637",
+        "ax637r"
+      ],
+      "description": "AX637 / AX637R 系列；具体 SDK 与操作系统范围见技能说明"
+    },
+    "AX620": {
+      "family": "AX620",
+      "aliases": [
+        "AX620",
+        "AX620A",
+        "AX620Q",
+        "ax620"
+      ],
+      "description": "AX620 系列 AI 视觉芯片"
+    }
+  },
+  "skills": [
+    {
+      "name": "sdk-audio-aec-diag-skill",
+      "description": "面向 AX615/AXERA SDK 的 AEC 回声诊断。用于 AEC 无效果、启停后回声、大音量恶化、 双讲吞音、参考异常及长时效果下降。通过问答分析客户采集包、配置、日志和录音， 给出有证据的原因、修正与复测方法；疑似 SDK 问题时整理原厂交接材料。",
+      "version": "1.0.0",
+      "chips": [
+        "AX615"
+      ],
+      "path": "skills/sdk-audio-aec-diag-skill",
+      "sha256": "3b0da53a17a47ab5a155d37df5a6c8d7ca1a0b66b44d24da395fadcb745a243c",
+      "content_sha256": "d4e32077f4bb90cf5465594d3ce7cb25f0ac92a55b529e1044a20353b79218c1"
+    },
+    {
+      "name": "sdk-axck-app",
+      "description": "AX615/AXERA camera-kit (AXCK) 应用开发、编译构建、Client-Service RPC 架构与固件打包。支持子模块编译（3rd/com/service/client/apps）、固件打包（opt.filelist 规格）、axck_service 守护进程配置、libaxck_client.so C API 接口调用与 nanomsg IPC 消息调试。提供确定性构建 CLI (axck-tool build)。",
+      "version": "1.0.0",
+      "chips": [
+        "AX615"
+      ],
+      "path": "skills/sdk-axck-app",
+      "sha256": "284c41b01201a7b2ca2405a241e69c975b0f5087fcb1321cb311dc4db7fa4481",
+      "content_sha256": "4ede01ec396a938451ac9bb93f05c06c42e965e02944917d5f3204dd6f5caed7"
+    },
+    {
+      "name": "sdk-axck-config",
+      "description": "AX615/AXERA camera-kit (AXCK) 图像处理管线配置、Sensor 迁移适配、主辅码流插值超分与拓扑校验。支持前后单双摄配置解析、硬件引脚/电气契约（I2C/GPIO/MIPI PHY Lane）、Sensor 与 VIN/ISP/IVPS/VENC/JENC 分辨率及帧率对齐、IVPS 插值放大(Upscaling)引擎约束、vin_ivps_mode 级联约束与 CMM Pool 内存预算。提供确定性 CLI (axck-tool inspect/validate/migrate)、Unified Diff 预览与自动时间戳安全回滚。",
+      "version": "1.0.0",
+      "chips": [
+        "AX615"
+      ],
+      "path": "skills/sdk-axck-config",
+      "sha256": "1664e8352c37c3c2107c8e4dfd5f8f5e6fcca87dc776f35001656ded144ecd6c",
+      "content_sha256": "55e92e36a25e7f6ac77b2553e40d78cc8182f01be4f1e7b12a372a99b3542c52"
+    },
+    {
+      "name": "sdk-axck-diag",
+      "description": "采集、聚合与智能诊断 AX615/AXERA camera-kit (AXCK) 的真机运行与启动日志。支持直接对接真机或远程板卡平台日志、串口控制台输出或 dmesg 文件，自动还原时间线并定位首个原始根因（而非下游连锁报错），深度解码 AXERA 错误码（如 0x80070216 通道冲突、0x80050004 内存池耗尽、mipi yuv dev_id 硬件约束），并输出包含代码/配置归属与最小排查动作的诊断报告。提供确定性诊断 CLI (axck-tool doctor)。",
+      "version": "1.0.0",
+      "chips": [
+        "AX615"
+      ],
+      "path": "skills/sdk-axck-diag",
+      "sha256": "714782503e92716986c67e465ff5e54f888aba0254dd784ef1d96bb2df608937",
+      "content_sha256": "dd8d5798d5a01745786219a1047dd1c49d6f957200621ba55349b08a41ef3bb7"
+    },
+    {
+      "name": "sdk-axck-test",
+      "description": "AX615/AXERA camera-kit (AXCK) 应用层自动化与交互式功能测试套件。支持新一代 HTTP RPC Driver (L0传输/L1领域API/L2场景流水线/L3压力浸泡) 与经典 UART 菜单驱动双模式。涵盖独立 axck_service 服务端守护进程测试、axck_test 交互式测试、基于带外 Telnet 并发巡检与 /proc 硬件门限断言（IVPS/VENC 分辨率与出流帧率）、板端安全重启与前台中断规程、主子菜单防退出自愈、媒体及系统子系统自动化闭环。",
+      "version": "1.0.0",
+      "chips": [
+        "AX615"
+      ],
+      "path": "skills/sdk-axck-test",
+      "sha256": "90853415e627c555e458f8a23d6e23919bbaba444c5f4cb50a3725155c221404",
+      "content_sha256": "837c03e727ef4e7cbcce02f9814ecf28473a2fe017e5986b3b83981324e91182"
+    },
+    {
+      "name": "sdk-bsp-aov-diag-skill",
+      "description": "诊断 AX615 Linux suspend/resume 中 wakeup_count 与低功耗 GPIO（gpio_lp）唤醒中断相关的问题。 当用户遇到 AX615 在未使用 /sys/power/wakeup_count 时短时 GPIO 唤醒丢中断、使用 `cat /sys/power/wakeup_count > /sys/power/wakeup_count` 后无法进入休眠、GPIO 唤醒延迟变长、 `AX_SYS_Sleep` 返回失败，或日志出现 `PM: suspend entry (deep)` 后立即退出、`Freezing of tasks aborted` 等现象时，优先使用本 Skill。只要现象同时涉及 `wakeup_count`、 `gpio_lp`/低功耗 GPIO 和 suspend/resume，也应使用本 Skill。\n",
+      "version": "1.0.0",
+      "chips": [
+        "AX615"
+      ],
+      "path": "skills/sdk-bsp-aov-diag-skill",
+      "sha256": "b55881948ad74be50facb2c9d15909724e280d0c091b5eadd65ae8d32091aeae",
+      "content_sha256": "43626527e95e36ffd00c74b736c2124df87b6614c81af9081d01a032a2a6df7f"
+    },
+    {
+      "name": "sdk-bsp-boot",
+      "description": "Axera SoC Boot 启动链 — SBL/AB 启动管理、U-Boot 引导内核方式、内存与 FLASH 分区规划、BOOTROM、BootCnt、OTA 升级及启动类问题诊断。通过路由自动适配平台（m57、ax637）。",
+      "version": "1.0.0",
+      "chips": [
+        "M57",
+        "AX637"
+      ],
+      "path": "skills/sdk-bsp-boot",
+      "sha256": "b4001c0bfbbf685bf683ca5c135e5dbd234ccb0bddc6c61e5759424621e2ab4d",
+      "content_sha256": "9ea40e71ed2dc34940a44164e19f7553a60e890358aae3be5ccf35d4ca5d15de"
+    },
+    {
+      "name": "sdk-bsp-boot-diag-skill",
+      "description": "面向 AX615 SDK/BSP 的系统启动诊断 skill。根据 BL1/SPL、DDR、镜像加载、U-Boot、Linux/OP-TEE 启动日志和可核实的代码证据判断启动故障；证据不足时明确标为待验证并给出下一步取证建议。适用于启动卡死、无日志、镜像加载失败、启动介质异常、Linux 启动回退、bootargs/DTB 问题和启动后立即复位，不用于无启动链路依据的泛化硬件猜测。",
+      "version": "1.0.0",
+      "chips": [
+        "AX615"
+      ],
+      "path": "skills/sdk-bsp-boot-diag-skill",
+      "sha256": "cee70857c0a8598667d7c3e9190e1166b11010f16567103cf0b7e7171a0ee68f",
+      "content_sha256": "68b02a948711ca6e2a9681a71d543cef542acf4a1826e0e66d2ef3b9f60947ad"
+    },
+    {
+      "name": "sdk-bsp-build",
+      "description": "Build AX615 BSP and firmware projects, inspect live modules and image dependencies, compile BL1/SPL/FDL, U-Boot, OP-TEE, Linux, RTOS, rootfs and other images, generate full or incremental AXP packages, and verify the exact newly generated artifact. Use this skill whenever a user asks to use ax615-build, ax615-bsp-build, make plist, inspect SUBDIRS, build an AX615 module or image, run clean/all/install, create an AXP, or locate the newest AX615 .axp output.",
+      "version": "1.0.0",
+      "chips": [
+        "AX615"
+      ],
+      "path": "skills/sdk-bsp-build",
+      "sha256": "9cfe37beadccec3479ac2406f784e827f407a16cc9b9022074c7fe4833758fb5",
+      "content_sha256": "1911ce80f012c2b3f5cd501502ba63cb948c53f56b6dd3bbb002cff8c3568424"
+    },
+    {
+      "name": "sdk-bsp-can-safety",
+      "description": "诊断 M57 Linux/QNX 项目 Safety 侧 AUTOSAR MCAL CAN/CAN FD 问题。仅适用于 M57 Safety MCAL；AX637/AX637R Safety 侧 RTT CAN、主 CPU 原生 CAN 和 baremetal CAN 不适用。",
+      "version": "1.0.0",
+      "chips": [
+        "M57"
+      ],
+      "path": "skills/sdk-bsp-can-safety",
+      "sha256": "d35801d6cd217332efc9b3a25cea99f2832904f89faa9ac486a70e7c592ce17f",
+      "content_sha256": "bdcd18a6b67286d7974c1df0ad95bcd721a9a340abab5bc53066d2ecd43b7e5b"
+    },
+    {
+      "name": "sdk-bsp-ddr-diag-skill",
+      "description": "面向 AX615 SDK/BSP 的 DDR 问题自助排查 skill。用于客户报告 DDR 初始化失败、training fail、训练超时、BIST/memtest 失败、读写错误、bit error、数据校验错误、偶发死机、启动不稳定、温度或频率变化后不稳定、眼图/时序边界异常、DDR 参数配置疑问等问题。按现象、平台环境、DDR 类型、频率、板级信息和完整日志逐步收敛，结合指定 DDR 源码、公开规格和客户回填证据给出结论；未覆盖时产出可交回原厂的交接文档。遇到任何 AX615 DDR、ddrmc、ddrphy、training、BIST 或内存稳定性问题，即使用户没有明确说”DDR 诊断”，也应优先考虑使用本 skill。",
+      "version": "1.0.0",
+      "chips": [
+        "AX615"
+      ],
+      "path": "skills/sdk-bsp-ddr-diag-skill",
+      "sha256": "b82805f19ce120009ef14bb4877a89cac265a459629d608037a8de9c7bf20e3e",
+      "content_sha256": "44c7f9821f3beb38325c04f88bc9a697433513ff03b5ed14f704658bbddb8e7c"
+    },
+    {
+      "name": "sdk-bsp-fast-boot-skill",
+      "description": "分析定位快起（Fastboot/AOV/打猎相机）场景下的双核共存、外设资源仲裁冲突、Handover（交接）失败/超时、首帧异常、RTOS POSIX 互斥锁断言死锁、跨核 CMM 内存释放 Panic 及裁剪配置缺失等问题。适用于涉及 RTOS(E907) 与 Linux 双核交接、I2C/SPI/GPIO 外设冲突、RPMSG 通信、ISP 快起出流及双核内存移交的故障分析。",
+      "version": "1.0.0",
+      "chips": [
+        "AX615"
+      ],
+      "path": "skills/sdk-bsp-fast-boot-skill",
+      "sha256": "daee804a71bdb4133be05c99bbde9ea58f5f7d3d36fdbe1737c2bcc9b456b31a",
+      "content_sha256": "f5e377f8d96c7c4af32f7663f6205b991dc96dd3e339f75c05a09b14acc7ab67"
+    },
+    {
+      "name": "sdk-bsp-fusa",
+      "description": "让客户自助排查 M57 FuSa 诊断框架问题，无需联系芯片原厂，同时覆盖 Linux 与 QNX 两种 SDK。用于客户报告 FuSa 诊断相关现象——心跳 heartbeat time/timeout、error_mask 解读、诊断日志刷屏、cyclework/cyclecheck 周期自检、ECM/FCU 故障、故障注入不生效、编译开关不生效、改 Excel/JSON 不生效、模块自检误报、Call trace/RCU stall、压测稳定性。先判定客户是 Linux 还是 QNX 平台（模糊则追问），再按对应平台的 FAQ 与代码特征给出结论，未覆盖时经代码反查定性为设计预期/配置使用方法/已修故障/疑似新缺陷，三轮无果则产出可交回原厂的 AI 交接文档。用户要求跑验收、回归自检、评估排查准确率时，按「验收自检」执行 evals/ 下的盲测与确定性校验。",
+      "version": "1.0.0",
+      "chips": [
+        "M57"
+      ],
+      "path": "skills/sdk-bsp-fusa",
+      "sha256": "185dbf60daa9070d36438c5c1bcb99be989fb391c2f40ab11bb191915da62720",
+      "content_sha256": "d84e07922ec6e65554452b491d3240480973e498a3c36931205c5dcc17d66685"
+    },
+    {
+      "name": "sdk-bsp-memory-partition",
+      "description": "DDR memory and FLASH partition planning and customization for AX637/AX637R (ONLY_NAND/ONLY_eMMC) and M57 (NOR+NAND). Covers Linux/CMM memory sizing, partition tables, AB constraints, alignment, image packaging, and AXDL/OTA verification. Use for partition-layout, memory-reservation, or rootfs-size questions on these platforms.",
+      "version": "1.0.0",
+      "chips": [
+        "M57",
+        "AX637"
+      ],
+      "path": "skills/sdk-bsp-memory-partition",
+      "sha256": "c156df1c05c67cecb9171198c14602c7f789731bd4877f35281d9114259b2ef6",
+      "content_sha256": "4926b3f38bc123087b7f84413eb0100f78bfe8aa53eb2f8ed138d98b91d46fbe"
+    },
+    {
+      "name": "sdk-bsp-nand-fs",
+      "description": "Axera SoC NAND 与文件系统问题分析入口，覆盖 M57 Linux/QNX 以及 AX637/AX637R Linux 主域的 flash scan、NAND/MTD 适配、坏块/ECC、分区、烧录、挂载和性能排障；按工作区路由到 M57 或 AX637。",
+      "version": "1.0.0",
+      "chips": [
+        "M57",
+        "AX637"
+      ],
+      "path": "skills/sdk-bsp-nand-fs",
+      "sha256": "918cde0d9c1e2d75a8f3519dd30e6e559b724bb451b9694d0c9f32c58f8eab2a",
+      "content_sha256": "5c624fb3e01df4493a9befb512ab292b1e56564a68da4650e2f7de55b304935a"
+    },
+    {
+      "name": "sdk-bsp-network-card-skill",
+      "description": "面向 AX615 SDK/BSP 的系统网络与网卡问题诊断 skill。根据 linkup/linkdown、PHY 协商、无 IP、DHCP、telnet 连接、吞吐异常和低温/眼图问题的日志与可核实代码证据给出结论；证据不足时明确标为待验证并给出下一步取证建议，不凭现象猜测硬件根因。",
+      "version": "1.0.0",
+      "chips": [
+        "AX615"
+      ],
+      "path": "skills/sdk-bsp-network-card-skill",
+      "sha256": "4b0e5ed350e9d1f2383e23d764d3abd8b4aa7a221628f4e1dd25323bc1ea536f",
+      "content_sha256": "b4ea8f412c1e5625229509b88026753abae8527c61ac072daf039f31d4217e4e"
+    },
+    {
+      "name": "sdk-bsp-ota",
+      "description": "Axera SoC OTA — SWU 生成与签名、SWUpdate 定制、A/B 升级、首次启动验证、差分升级、失败回退与同步恢复诊断。通过路由适配 M57 Linux/QNX、AX637 Linux。",
+      "version": "0.2.0",
+      "chips": [
+        "M57",
+        "AX637"
+      ],
+      "path": "skills/sdk-bsp-ota",
+      "sha256": "e6dc8fa1211f5135bf07a3fdfbc32da14c7b2a4ffd0d3dc960dba05f578f8613",
+      "content_sha256": "60e944034240096cf09940b0dba094e51b2cc8d37d8a23546f6be05d76e8f189"
+    },
+    {
+      "name": "sdk-bsp-rpmsg",
+      "description": "Axera IPC、RPMsg 与 RPZC — M57 Linux/QNX 主域、AX637/AX637R 非 QNX 场景和 SafetyIsland MCU/RTOS/MCAL 的配置、API、联调与故障定位。",
+      "version": "1.0.0",
+      "chips": [
+        "M57",
+        "AX637"
+      ],
+      "path": "skills/sdk-bsp-rpmsg",
+      "sha256": "7a158d7fa453f289859596059061991d9bd3f214a505a85f278a8ceff07b23a3",
+      "content_sha256": "fc838a772aedba4a4dcdf2ec41b9094c82dcfec0ef09b3608f4bbfee85c13e60"
+    },
+    {
+      "name": "sdk-bsp-sd-card-skill",
+      "description": "面向 AX615 SDK/BSP 的 Linux 启动后 SD 卡问题诊断 skill。根据 Linux SDHCI/MMC、驱动 built-in 或 .ko 加载、card detect、供电、管脚上下拉、block I/O、FAT/VFAT/exFAT、mount、readonly 和热插拔日志定位故障层级；证据明确时直接给出结论，证据不足时明确标为待验证并给出最小化取证建议。用户提到 AX615、SD 卡、sdhci-axera、mmcblk、识别不到、挂载失败、readonly、读写错误、tuning、PHY、电压切换、broken-cd、cd-gpios 或拔卡问题时优先使用；不得仅凭模糊现象猜测硬件根因。",
+      "version": "1.0.0",
+      "chips": [
+        "AX615"
+      ],
+      "path": "skills/sdk-bsp-sd-card-skill",
+      "sha256": "dc02058d09e2dff6e97ba10d4d524ca1f67ff07c45435ccdda956aa2413b57aa",
+      "content_sha256": "868b29ed766ba42fab4df6691bc81a229fe844ad30278316bdb6a9d8bb558c8e"
+    },
+    {
+      "name": "sdk-bsp-sdk-build",
+      "description": "Build Axera SoC SDK images and package AXP download bundles after host environment is prepared. Covers platform discovery (make plist), full AXP builds, standalone component builds, output verification, and build-option configuration across Axera platforms.",
+      "version": "1.0.0",
+      "chips": [
+        "M57",
+        "AX637"
+      ],
+      "path": "skills/sdk-bsp-sdk-build",
+      "sha256": "86616c7f7cfc678f5d07e427d10c3caa703361fa64e06ea8e080739cac01fc6d",
+      "content_sha256": "3664f995f6b95e4732cdef9c0323f2754239a30d5460ed01ba0b26eafea7ea1b"
+    },
+    {
+      "name": "sdk-bsp-sdk-environment",
+      "description": "Prepare an Axera SoC SDK Linux host for development. Covers Ubuntu prerequisites, cross-toolchains installation, SDK archive extraction, sdk_unpack.sh source acquisition, and host readiness verification across Axera platforms.",
+      "version": "1.0.0",
+      "chips": [
+        "M57",
+        "AX637"
+      ],
+      "path": "skills/sdk-bsp-sdk-environment",
+      "sha256": "a92b56e4583fe2b81d86468b1437b4648a850bf0d295c64411580e85c8fdef34",
+      "content_sha256": "a19d4b2418d2d7b25457f94dcaf0d0fd14b291ba926fc495a68b921c9f5dd3e9"
+    },
+    {
+      "name": "sdk-bsp-secure-boot",
+      "description": "Axera SoC Secure Boot — 签名/加密启动链、eFuse PKH/Root Key/FEK 规划、FIT 镜像生产、dm-verity、密钥替换、各阶段失败诊断。通过路由自动适配平台（m57、ax637）。",
+      "version": "1.0.0",
+      "chips": [
+        "M57",
+        "AX637"
+      ],
+      "path": "skills/sdk-bsp-secure-boot",
+      "sha256": "565a9e418b7f098b98b425c2abffa53b0b48f6d50833b5e579c5c2e039639635",
+      "content_sha256": "5969a380112aa01c5fbf552bb0a21d8136c1ecf19e1f66b7de386e2b4ca50fc9"
+    },
+    {
+      "name": "sdk-bsp-sys-diag-skill",
+      "description": "Question-and-answer fault diagnosis for AX-series / Axera SoC (AX615, AX620E, AX650, AX8860 …) SDK/BSP SYS-layer problems, focused on CMM memory management. Use this WHENEVER an Axera SDK app crashes, hangs, or a CPU/CPU1 locks up (especially during exit / stop-stream / DeInit / Destroy), OR logs show `ax_cmm_free failed`, `Block not found`, `BlockId ... invalid`, `giveback_to_pool ... virt get fail`, `blocks are not free`, OR logs show `CMM partition memory isn't enough`, `create pool failed`, `0x80070218`, `0x80110180`, `0x80110118`, `0x80070221`, `FreeCnt: 0`, `BufFull`, OR there is a suspected double-free / wrong-owner free / dangling phyaddr, OR suspected CMM/Pool memory exhaustion / leak / nomem / nobuf, OR misuse of AX_SYS_MemFree / AX_SYS_MemAlloc / AX_SYS_Mmap / AX_SYS_Munmap / AX_IVPS_GetChnFrame / AX_IVPS_ReleaseChnFrame / AX_POOL_* is possible. Also use when the user pastes an issue description about an SDK/BSP hang, memory fault, stream start failure, or no stream issue and asks to analyze it. It runs a guided Q&A over symptoms and logs (and tells the user how to capture logs when missing) and converges to the root cause with graded evidence. 中文触发词：Axera/AX 系列芯片 SDK/BSP 挂死、崩溃、CPU 挂掉/CPU1 挂死、退出或关流时异常、CMM 内存、内存释放错误、 重复释放、释放了别人的内存、内存不足、起流失败、无码流、野指针、MemFree 用错、取帧后又 MemFree。Trigger even if the user does not explicitly say \"skill\".",
+      "version": "1.0.0",
+      "chips": [
+        "AX615",
+        "AX620"
+      ],
+      "path": "skills/sdk-bsp-sys-diag-skill",
+      "sha256": "0561934c885e14160ebae6ab6ddb9e6b75dbb0b535415f5e71ce113bdc6c2fe1",
+      "content_sha256": "06949ea22f3d9c8c8e3b6addf15648519d867573ce8d77c7291067cf8aa262c7"
+    },
+    {
+      "name": "sdk-dataflow-analysis",
+      "description": "分析 AX615/MC20L 模块间数据流转日志，定位 AX_SYS_Link_V2、HSK、LowMem/LowLatency/Offline link 参数或硬件拓扑约束导致的启动失败、断流或卡死，并对 HSK 建链后断流/不出流做机制分流。用户提供 FRTDemo、SYS、VIN、IVPS、VENC 日志并询问数据流、Link、HSK 或模块绑定问题时使用；先检查输入完整性，缺失时提示并在板端补采；当前知识覆盖 AX_SYS_Link_V2 参数检查、IVPS→VENC/JENC HSK 资源冲突、HSK 参数切换时序，以及 HSK 断流现象到机制候选的分流。用户要求跑 AXDF Golden Case、回归自检或评估分析准确性时，按「回归自检」执行 evals/ 下的盲测。",
+      "version": "1.0.0",
+      "chips": [
+        "AX615"
+      ],
+      "path": "skills/sdk-dataflow-analysis",
+      "sha256": "65e8c6ae9bb4403a5527e57f738a256cb0035b69ddf03354fd3fe355d5d32163",
+      "content_sha256": "61b8ae2099d1f32c25fbdf01497c6e2fcead86f9f336a1ffd6eb4a53b0ac47ed"
+    },
+    {
+      "name": "sdk-ivps-venc-diagnose",
+      "description": "诊断 AX615 IVPS(VPP/VGP) 到编码器之间的链路卡死。用户提供 `/proc/ax_proc/link_table`、`link_table_kernel`、`syncagent`、`venc`、`jenc`、`ivps` 的 proc 输出，或描述 IVPS 出图正常但编码无输出、帧率掉零、某个编码通道停住时使用；`SW_Low_Mem`/`SW_Low_Latency` 的 HSK 绑定按握手形态、握手高度和 16 位模进度判定，`SW_Offline` 等非 HSK 绑定按 IVPS 输出与编码器接收/送编码/取流的业务计数差值定位卡死段。解析单次采样即可给出静态判断，两次采样用于确认推进计数是否持续不变。用户要求跑 IVD Golden Case、回归自检或评估分析准确性时，按「回归自检」执行 evals/ 下的盲测。",
+      "version": "1.0.0",
+      "chips": [
+        "AX615"
+      ],
+      "path": "skills/sdk-ivps-venc-diagnose",
+      "sha256": "d2b45e0ca95cc7cb71e3652502e5b977160e52da2a57d00f8d12cbab06e23f0e",
+      "content_sha256": "210b374eaa253657309a8d00ef52863f871b90afc8ceec6fca358dff772d5ed0"
+    },
+    {
+      "name": "sdk-tx-analyse",
+      "description": "为 AX615/爱芯 SDK 的 AX_TX（外部模拟同轴发送芯片）提供两类能力——问题分析/客户答疑，以及示例代码生成/修改。覆盖 TX_VI（BT 接收）、TX_VO（CVI/AHD/TVI/CVBS 同轴发送）、TX_CLK（BtClk/PLL/MCLK）、RS485、正反向音频，以及 VO BT656/BT1120 输出与 TX 芯片对接的完整通路。当用户问 TX 同轴为什么无输出/花屏/抖动、DVR 锁不上、制式或分辨率不匹配、BtClk/BtWorkMode/SDR/DDR 该怎么选、某个 AX_TX API 或枚举含义、返回错误码代表什么、VO timing 与 TX 参数是否匹配、需要给客户解释 TX 行为与排查步骤时，进入分析答疑模式；当用户要求编写 vin_ivps_vo_tx 类示例、配置 TX 芯片输出制式、把 VO 的 BT 输出接到 TX、调整 VO timing 与 TX BtWorkMode/BtClk 映射、增删 TX_VIDEO_PROTOCAL/VO_INTF_FMT 组合时，进入代码生成模式。知识库是当前 header/external 头文件（ax_tx_api.h、ax_tx_common.h、ax_vo_api.h）、仓库 sample（msp/sample/vin_ivps_vo_tx）与本 skill 的 knowledge-base/《AX615 VO时序配置.md》，结论与代码必须引用真实 API/枚举/sample 行为与时序表，不凭记忆捏造 SDK API、枚举值或板级参数。",
+      "version": "1.0.0",
+      "chips": [
+        "AX615"
+      ],
+      "path": "skills/sdk-tx-analyse",
+      "sha256": "1a0986ff418db123006ac12140bbc36a5892c55d50129d1ac9b5b7a73a557f4b",
+      "content_sha256": "3ef0cfc2bfc3e0535f6578582befc9808fa0269e907ea6341930b6936721e84e"
+    },
+    {
+      "name": "sdk-venc-rc-config-audit",
+      "description": "审查 AX615/AX VENC 码控配置和可选码流结构。用户提供 `/proc/ax_proc/venc`、VENC RC 参数、码流文件，或描述呼吸效应、码率偏高/超出、竞品对比、GOP/IP 比例、帧率异常等问题时使用；解析单次 proc，不要求两次采样，并在有码流时调用 ffprobe 分析实际 GOP、I/P/B 帧、帧大小、码率和时间戳，再结合编码模式给出证据、风险和修改建议。用户要求跑 RC Golden Case、回归自检或评估审查准确性时，按「回归自检」执行 evals/ 下的盲测。",
+      "version": "1.0.0",
+      "chips": [
+        "AX615"
+      ],
+      "path": "skills/sdk-venc-rc-config-audit",
+      "sha256": "7ad90315450fd01f809037632833cccdcaf11568542b6bc8281c1ac8c833802b",
+      "content_sha256": "71d29de58f9c032917b05e4f2813f44f26213dffaef1f2dde6a5525998b9fb17"
+    },
+    {
+      "name": "sdk-vo-analysis",
+      "description": "AX615 芯片（含项目代号 MC20L）VO（视频输出）模块问题诊断与配置生成（仅适用于 AX615 芯片，AX615D/AX615Q）。两类任务入口：(1) 诊断——客户报告 ax615/AX615 VO 相关问题（黑屏、无输出、花屏、闪烁、撕裂、颜色异常、帧率不对、VO 初始化/使能失败、SendFrame2Disp 超时等），或提供图像现象、proc 信息、调用 SDK 接口的代码、日志要求排查 VO 问题时，按「诊断流程」输出有证据支撑的排查结论（四种终态：原因与修复建议 / 信息不足继续追问 / 原因未知 / 场景无法实现）；(2) 配置生成——客户在已知应用场景（芯片型号、输出接口、分辨率/帧率、屏规格、源色域）下需要生成 VO 初始化流程配置（Init→SetPubAttr→SetDataPinMap→SetCSC→Enable→SendFrame2Disp 的参数取值、C/Python 代码骨架、送帧建议）时，按「生成流程」输出标注证据等级的配置（已验证表条目 ＞ SDK 预设模式（预设名由公开头文件确认，能力/PCLK 仍须按当前 SDK 核验） ＞ 推导值）。内化 AX615 VO 公开头文件、54 组已验证时序表、官方 sample 19 组时序、PCLK 离散档位表、版本化行为摘要与 V3 全系版本历史（不依赖外部本地源码目录）。问题明显非 ax615 芯片、或芯片型号模糊不清时，回答中必须显式声明本 skill 的适用范围。",
+      "version": "1.0.0",
+      "chips": [
+        "AX615"
+      ],
+      "path": "skills/sdk-vo-analysis",
+      "sha256": "07e48f60e0446d53d895d187dc4426f42bcf829c5e795f78732d2f3f30a7902c",
+      "content_sha256": "d9d04a15bb1b7500b33c87b08fcb5a809bcb394dd07c6cf650bbca9d5560575d"
+    }
+  ]
+}

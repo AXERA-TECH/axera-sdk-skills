@@ -1,0 +1,54 @@
+schema_version: 1
+id: AXDF-005
+title: AX_SYS_Link_V2 Offline engine 非零
+category: module-dataflow/ax-sys-link-v2/parameter
+analyzer:
+  skill: sdk-dataflow-analysis
+platform:
+  soc: AX615
+  project: AX615_nor
+  flash: spi_nor
+  ddr_mb: 128
+  sensor: mis20s1
+reproducer:
+  patch: answer/reproducer.patch
+  application: /opt/bin/FRTDemo/frtdemo
+  command: cd /opt/bin/FRTDemo && ./run.sh -p 0 -s 16 -n 1 -l 6 -t 5 -u 0
+input:
+  type: log_set
+  files:
+    - input/serial.log
+    - input/syslog.log
+    - input/logctl.proc
+    - input/vin.proc
+    - input/ivps.proc
+    - input/venc.proc
+    - input/link.proc
+  capture:
+    userlog_level: info
+    userlog_level_value: 6
+    userlog_modules:
+      VIN: 17
+      IVPS: 13
+      VENC: 7
+    syslog_source: /tmp/data/AXSyslog/syslog/1970-02-11-04-00-55.log
+    notes:
+      - 全部输入来自同一次复现轮次，AXP 为 AX615_nor_mis20s1_V3.12.0_20260908162155_uclibc.axp，APP/SDK Ver 均为 V3.12.0。
+      - VIN→IVPS 默认 Offline（mode 3, line_cnt 0）；本轮只给该 link 加上非零 src_engine=VPP、dst_engine=VENC。IVPS→VENC LowMem 保持 line_cnt=128。
+      - serial.log 覆盖启动到 InitDetector；首次失败是 VIN(0,0)→IVPS(0,0) Linkage failed。同轮串口瞬时出现过 @AXLOG2,5e3f7a29,...，但未写入本包 serial.log，且本轮 IVPS→VENC nRingLineCnt 合法，不能当根因。
+      - syslog.log 是 logserviced 切片前 20 KiB，并并入同文件的 DstEngine 行；含 ax_sys_api.c(320) 与随后的 Linkage failed (17,0,0)=>(13,0,0)。
+      - proc 在应用仍存活（pid 3505）且 VENC CreateChn 之后采集。vin.proc 只有表头、无 Dev/Pipe 行；link_table 缺 VIN→IVPS，但 IVPS(0,0)→VENC(0,0) LowMem 与 IVPS(0,2)→VENC(0,1) Offline 存在。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/serial.log
+    - input/syslog.log
+    - input/logctl.proc
+    - input/vin.proc
+    - input/ivps.proc
+    - input/venc.proc
+    - input/link.proc
+  evaluator_only:
+    - answer/oracle.yaml
+    - answer/reproducer.patch
+    - answer/case.yaml

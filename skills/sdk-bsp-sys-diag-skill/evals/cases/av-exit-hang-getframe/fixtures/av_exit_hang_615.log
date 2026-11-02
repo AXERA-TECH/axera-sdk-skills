@@ -1,0 +1,16 @@
+1970-01-01 08:12:31 Kernel: [  421.330912]  [C1][ISP][E][330] vin_ipc_pipe_param_irq_query(1683)ITP interrupt wait timeout failed.
+1970-01-01 08:12:32 Kernel: [  422.101044]  [C1][IVPS][W][330] [ivps_sched_chn_disable:906] [PFD] enter grp_id0 chn_id0
+1970-01-01 08:12:32 Kernel: [  422.101070]  [C1][BASE][E][330] ax_base_sync_agent_session_deinit(2396)session 0 deinit ref to 1
+1970-01-01 08:12:32 Kernel: [  422.101095]  [C1][SYS][E][330] [CMM][Error]:ax_cmm_free failed!Block not found,phyaddr=0x46620000.
+1970-01-01 08:12:32 Kernel: [  422.101112]  [C1][IVPS][W][330] [ivps_sched_chn_disable:949] [PFD] exit grp_id0 chn_id0
+1970-01-01 08:12:32 Kernel: [  422.101260]  [C1][BASE][E][330] ax_base_sync_agent_session_deinit(2396)session 0 deinit ref to 0
+1970-01-01 08:12:32 Kernel: [  422.101278]  [C1][BASE][W][330] ax_base_sync_agent_session_deinit(2429)session 0 deinit success
+1970-01-01 08:12:32 Kernel: [  422.108455]  [C1][VENC_DRV][W][330] (VENC_CAL_StopRecvPic|4858) VeChn0 pid=330 goto stop,NodeCnt[64],BusyNod[0],FreeNod[64].
+1970-01-01 08:12:32 Kernel: [  422.108492]  [C1][VENC_DRV][W][330] (H26x_EncCalAbortEncTask|5092) VeChn:0, Abort Enc Task success.
+1970-01-01 08:12:32 Kernel: [  422.108511]  [C1][VENC_DRV][W][330] (VENC_CAL_StopRecvPic|4886) VeChn0 stop out.
+1970-01-01 08:12:33 App:    [  423.204338] [AENC][W][330] [W][                 AX_AENC_DestroyChn][ 512]: aenc chn 0 destroy
+1970-01-01 08:12:33 Kernel: [  423.451077]  [C0][SYS][E][356] [Pool][Func]:ioctl_pool_handle2poolid [Line]:1751 [Error]:Get poolid fail!BlockId :0x0 invalid!
+1970-01-01 08:12:33 App:    [  423.451160] [MSYS][E][330] [E][      ioctl_pool_getblockviraddr][ 462]: ioctl_pool_getblockviraddr failed
+1970-01-01 08:12:34 Kernel: [  424.660901]  [C1][VENC_DRV][W][330] (VENC_DeInit|11284) pid:330 VENC_DeInit In.
+1970-01-01 08:12:34 Kernel: [  424.661120]  [C1][VENC_DRV][W][330] (VENC_DeInit|11335) pid:330 VENC_DeInit Success.
+1970-01-01 08:12:35 Kernel: [  425.001233]  [C1][SYS][E][330] (watchdog) CPU1 stall detected, no response (backtrace unavailable, console frozen)

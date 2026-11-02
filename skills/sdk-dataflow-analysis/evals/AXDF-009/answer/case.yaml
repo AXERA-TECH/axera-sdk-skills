@@ -1,0 +1,29 @@
+schema_version: 1
+id: AXDF-009
+title: 部分通道关闭 HSK 时 merged 组不出流（现场输入不完整）
+category: module-dataflow/hsk/partial-chn-enable
+analyzer:
+  skill: sdk-dataflow-analysis
+platform:
+  soc: AX615
+reproducer:
+  patch: answer/reproducer.patch
+input:
+  type: log_set
+  files:
+    - input/ivps.proc
+  capture:
+    notes:
+      - 来源：现场截图（cat /proc/ax_proc/ivps），仅转录截图可见文本。
+      - 缺 serial.log、syslog.log、logctl.proc、vin.proc、venc.proc、link.proc；不能当完整现场。
+      - 已转录截图可见的 INPUT/GRP/CHN/FILTER INFO/FILTER STATE/SCALE RANGE；VPP INFO 仅表头，无数据行；未见 ivps_sched / IVPS SCHED DEBUG。
+      - 补采按 references/input-completeness.md 与 references/golden-capture.md：同轮录 serial/syslog，调 VIN/IVPS/VENC userlog=info，抓 vin/ivps/ivps_sched/venc/link_table/link_table_kernel/vin_ivps_mode/syncagent。
+      - osdrv 侧已有 merged HSK trigger 扫描相关修复，仅供 evaluator 背景（分析阶段不可见），不得当作本输入已确认根因。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/ivps.proc
+  evaluator_only:
+    - answer/oracle.yaml
+    - answer/reproducer.patch
+    - answer/case.yaml

@@ -1,0 +1,164 @@
+2026-09-17 11:02:07 Kernel: [ 2328.437706]  [C1][IVPS][W][1823] ax_ivps_sched_engine_mgr.c(105) engine 4 not registered
+2026-09-17 11:02:07 App: [ 2328.557821] [SYS][I][1804] ax_malloc.c(283) magic: 4f534d4d: policy: 0, mod_num: 30, phy: 4166a000, start: 4166a000, end: 4166b000
+2026-09-17 11:02:07 App: [ 2328.559997] [SYS][I][1804] ax_rpmsg_api.c(110) open /dev/ax_rpmsg failed.
+2026-09-17 11:02:07 App: [ 2328.560083] [SYS][I][1804] sys_link_ioctl.c(335) open /dev/axdev/ax_sys success!
+2026-09-17 11:02:07 App: [ 2328.560721] [SYS][I][1804] sys_mem_ioctl.c(582) open /dev/ax_cmm success!
+2026-09-17 11:02:07 App: [ 2328.561272] [SYS][I][1804] sys_pool_ioctl.c(1521) open /dev/ax_pool success!
+2026-09-17 11:02:07 Kernel: [ 2328.569020]  [C0][SYS][E][1804] ax_cmm_userdev_adapter.c(350) not found partition['venc0'],ModId=7,GrpId=0,ChnId=0,type=1.
+2026-09-17 11:02:07 App: [ 2328.569798] [SYS][I][1804] sys_mem_ioctl.c(970) ioctl failed
+2026-09-17 11:02:07 App: [ 2328.570264] [SYS][I][1804] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+2026-09-17 11:02:07 App: [ 2328.570440] [FRTDemo-IPC][C][1804] 09-17 11:02:07:230 2328540830   1804 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc0, mod=7, grp=0, chn=0, type=1, ret=0x800b000a
+2026-09-17 11:02:07 Kernel: [ 2328.570483]  [C0][SYS][E][1804] ax_cmm_userdev_adapter.c(350) not found partition['venc0'],ModId=7,GrpId=0,ChnId=0,type=0.
+2026-09-17 11:02:07 App: [ 2328.570518] [SYS][I][1804] sys_mem_ioctl.c(970) ioctl failed
+2026-09-17 11:02:07 App: [ 2328.570550] [SYS][I][1804] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+2026-09-17 11:02:07 App: [ 2328.570662] [FRTDemo-IPC][C][1804] 09-17 11:02:07:230 2328541066   1804 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc0, mod=7, grp=0, chn=0, type=0, ret=0x800b000a
+2026-09-17 11:02:07 Kernel: [ 2328.570686]  [C0][SYS][E][1804] ax_cmm_userdev_adapter.c(350) not found partition['venc11'],ModId=7,GrpId=0,ChnId=5,type=1.
+2026-09-17 11:02:07 App: [ 2328.570713] [SYS][I][1804] sys_mem_ioctl.c(970) ioctl failed
+2026-09-17 11:02:07 App: [ 2328.570741] [SYS][I][1804] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+2026-09-17 11:02:07 App: [ 2328.570841] [FRTDemo-IPC][C][1804] 09-17 11:02:07:231 2328541245   1804 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc11, mod=7, grp=0, chn=5, type=1, ret=0x800b000a
+2026-09-17 11:02:07 Kernel: [ 2328.570862]  [C0][SYS][E][1804] ax_cmm_userdev_adapter.c(350) not found partition['venc11'],ModId=7,GrpId=0,ChnId=5,type=0.
+2026-09-17 11:02:07 App: [ 2328.570887] [SYS][I][1804] sys_mem_ioctl.c(970) ioctl failed
+2026-09-17 11:02:07 App: [ 2328.570915] [SYS][I][1804] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+2026-09-17 11:02:07 App: [ 2328.571010] [FRTDemo-IPC][C][1804] 09-17 11:02:07:231 2328541416   1804 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc11, mod=7, grp=0, chn=5, type=0, ret=0x800b000a
+2026-09-17 11:02:07 Kernel: [ 2328.571030]  [C0][SYS][E][1804] ax_cmm_userdev_adapter.c(350) not found partition['venc12'],ModId=7,GrpId=0,ChnId=6,type=1.
+2026-09-17 11:02:07 App: [ 2328.571056] [SYS][I][1804] sys_mem_ioctl.c(970) ioctl failed
+2026-09-17 11:02:07 App: [ 2328.571083] [SYS][I][1804] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+2026-09-17 11:02:07 App: [ 2328.571177] [FRTDemo-IPC][C][1804] 09-17 11:02:07:231 2328541583   1804 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc12, mod=7, grp=0, chn=6, type=1, ret=0x800b000a
+2026-09-17 11:02:07 Kernel: [ 2328.571197]  [C0][SYS][E][1804] ax_cmm_userdev_adapter.c(350) not found partition['venc12'],ModId=7,GrpId=0,ChnId=6,type=0.
+2026-09-17 11:02:07 App: [ 2328.571223] [SYS][I][1804] sys_mem_ioctl.c(970) ioctl failed
+2026-09-17 11:02:07 App: [ 2328.571250] [SYS][I][1804] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+2026-09-17 11:02:07 App: [ 2328.571343] [FRTDemo-IPC][C][1804] 09-17 11:02:07:231 2328541749   1804 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc12, mod=7, grp=0, chn=6, type=0, ret=0x800b000a
+2026-09-17 11:02:07 Kernel: [ 2328.571363]  [C0][SYS][E][1804] ax_cmm_userdev_adapter.c(350) not found partition['venc13'],ModId=7,GrpId=0,ChnId=7,type=1.
+2026-09-17 11:02:07 App: [ 2328.571388] [SYS][I][1804] sys_mem_ioctl.c(970) ioctl failed
+2026-09-17 11:02:07 App: [ 2328.571415] [SYS][I][1804] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+2026-09-17 11:02:07 App: [ 2328.571512] [FRTDemo-IPC][C][1804] 09-17 11:02:07:231 2328541918   1804 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc13, mod=7, grp=0, chn=7, type=1, ret=0x800b000a
+2026-09-17 11:02:07 Kernel: [ 2328.571533]  [C0][SYS][E][1804] ax_cmm_userdev_adapter.c(350) not found partition['venc13'],ModId=7,GrpId=0,ChnId=7,type=0.
+2026-09-17 11:02:07 App: [ 2328.571560] [SYS][I][1804] sys_mem_ioctl.c(970) ioctl failed
+2026-09-17 11:02:07 App: [ 2328.571586] [SYS][I][1804] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+2026-09-17 11:02:07 App: [ 2328.571681] [FRTDemo-IPC][C][1804] 09-17 11:02:07:231 2328542086   1804 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc13, mod=7, grp=0, chn=7, type=0, ret=0x800b000a
+2026-09-17 11:02:07 Kernel: [ 2328.571701]  [C0][SYS][E][1804] ax_cmm_userdev_adapter.c(350) not found partition['VIN_POOL'],ModId=17,GrpId=0,ChnId=0,type=1.
+2026-09-17 11:02:07 App: [ 2328.571727] [SYS][I][1804] sys_mem_ioctl.c(970) ioctl failed
+2026-09-17 11:02:07 App: [ 2328.571754] [SYS][I][1804] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+2026-09-17 11:02:07 App: [ 2328.571846] [FRTDemo-IPC][C][1804] 09-17 11:02:07:232 2328542252   1804 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=VIN_POOL, mod=17, grp=0, chn=0, type=1, ret=0x800b000a
+2026-09-17 11:02:07 Kernel: [ 2328.571867]  [C0][SYS][E][1804] ax_cmm_userdev_adapter.c(350) not found partition['VIN0'],ModId=17,GrpId=0,ChnId=0,type=0.
+2026-09-17 11:02:07 App: [ 2328.571893] [SYS][I][1804] sys_mem_ioctl.c(970) ioctl failed
+2026-09-17 11:02:07 App: [ 2328.571919] [SYS][I][1804] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+2026-09-17 11:02:07 App: [ 2328.572012] [FRTDemo-IPC][C][1804] 09-17 11:02:07:232 2328542419   1804 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=VIN0, mod=17, grp=0, chn=0, type=0, ret=0x800b000a
+2026-09-17 11:02:07 Kernel: [ 2328.572032]  [C0][SYS][E][1804] ax_cmm_userdev_adapter.c(350) not found partition['VIN1'],ModId=17,GrpId=1,ChnId=0,type=0.
+2026-09-17 11:02:07 App: [ 2328.572056] [SYS][I][1804] sys_mem_ioctl.c(970) ioctl failed
+2026-09-17 11:02:07 App: [ 2328.572083] [SYS][I][1804] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+2026-09-17 11:02:07 App: [ 2328.572173] [FRTDemo-IPC][C][1804] 09-17 11:02:07:232 2328542580   1804 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=VIN1, mod=17, grp=1, chn=0, type=0, ret=0x800b000a
+2026-09-17 11:02:07 Kernel: [ 2328.572192]  [C0][SYS][E][1804] ax_cmm_userdev_adapter.c(350) not found partition['npu'],ModId=6,GrpId=0,ChnId=0,type=0.
+2026-09-17 11:02:07 App: [ 2328.572218] [SYS][I][1804] sys_mem_ioctl.c(970) ioctl failed
+2026-09-17 11:02:07 App: [ 2328.572244] [SYS][I][1804] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+2026-09-17 11:02:07 App: [ 2328.572339] [FRTDemo-IPC][C][1804] 09-17 11:02:07:232 2328542744   1804 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=npu, mod=6, grp=0, chn=0, type=0, ret=0x800b000a
+2026-09-17 11:02:07 Kernel: [ 2328.572359]  [C0][SYS][E][1804] ax_cmm_userdev_adapter.c(350) not found partition['venc1'],ModId=7,GrpId=0,ChnId=1,type=1.
+2026-09-17 11:02:07 App: [ 2328.572383] [SYS][I][1804] sys_mem_ioctl.c(970) ioctl failed
+2026-09-17 11:02:07 App: [ 2328.572410] [SYS][I][1804] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+2026-09-17 11:02:07 App: [ 2328.572505] [FRTDemo-IPC][C][1804] 09-17 11:02:07:232 2328542911   1804 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc1, mod=7, grp=0, chn=1, type=1, ret=0x800b000a
+2026-09-17 11:02:07 Kernel: [ 2328.572526]  [C0][SYS][E][1804] ax_cmm_userdev_adapter.c(350) not found partition['venc1'],ModId=7,GrpId=0,ChnId=1,type=0.
+2026-09-17 11:02:07 App: [ 2328.572551] [SYS][I][1804] sys_mem_ioctl.c(970) ioctl failed
+2026-09-17 11:02:07 App: [ 2328.572578] [SYS][I][1804] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+2026-09-17 11:02:07 App: [ 2328.572669] [FRTDemo-IPC][C][1804] 09-17 11:02:07:232 2328543075   1804 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc1, mod=7, grp=0, chn=1, type=0, ret=0x800b000a
+2026-09-17 11:02:07 Kernel: [ 2328.572688]  [C0][SYS][E][1804] ax_cmm_userdev_adapter.c(350) not found partition['venc2'],ModId=7,GrpId=0,ChnId=2,type=1.
+2026-09-17 11:02:07 App: [ 2328.572712] [SYS][I][1804] sys_mem_ioctl.c(970) ioctl failed
+2026-09-17 11:02:07 App: [ 2328.572739] [SYS][I][1804] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+2026-09-17 11:02:07 App: [ 2328.572832] [FRTDemo-IPC][C][1804] 09-17 11:02:07:233 2328543238   1804 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc2, mod=7, grp=0, chn=2, type=1, ret=0x800b000a
+2026-09-17 11:02:07 Kernel: [ 2328.572852]  [C0][SYS][E][1804] ax_cmm_userdev_adapter.c(350) not found partition['venc2'],ModId=7,GrpId=0,ChnId=2,type=0.
+2026-09-17 11:02:07 App: [ 2328.572877] [SYS][I][1804] sys_mem_ioctl.c(970) ioctl failed
+2026-09-17 11:02:07 App: [ 2328.572904] [SYS][I][1804] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+2026-09-17 11:02:07 App: [ 2328.572994] [FRTDemo-IPC][C][1804] 09-17 11:02:07:233 2328543401   1804 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc2, mod=7, grp=0, chn=2, type=0, ret=0x800b000a
+2026-09-17 11:02:07 Kernel: [ 2328.573013]  [C0][SYS][E][1804] ax_cmm_userdev_adapter.c(350) not found partition['venc3'],ModId=7,GrpId=0,ChnId=3,type=1.
+2026-09-17 11:02:07 App: [ 2328.573038] [SYS][I][1804] sys_mem_ioctl.c(970) ioctl failed
+2026-09-17 11:02:07 App: [ 2328.573065] [SYS][I][1804] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+2026-09-17 11:02:07 App: [ 2328.573155] [FRTDemo-IPC][C][1804] 09-17 11:02:07:233 2328543562   1804 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc3, mod=7, grp=0, chn=3, type=1, ret=0x800b000a
+2026-09-17 11:02:07 Kernel: [ 2328.573176]  [C0][SYS][E][1804] ax_cmm_userdev_adapter.c(350) not found partition['venc3'],ModId=7,GrpId=0,ChnId=3,type=0.
+2026-09-17 11:02:07 App: [ 2328.573204] [SYS][I][1804] sys_mem_ioctl.c(970) ioctl failed
+2026-09-17 11:02:07 App: [ 2328.573231] [SYS][I][1804] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+2026-09-17 11:02:07 App: [ 2328.573325] [FRTDemo-IPC][C][1804] 09-17 11:02:07:233 2328543731   1804 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc3, mod=7, grp=0, chn=3, type=0, ret=0x800b000a
+2026-09-17 11:02:07 Kernel: [ 2328.573345]  [C0][SYS][E][1804] ax_cmm_userdev_adapter.c(350) not found partition['venc10'],ModId=7,GrpId=0,ChnId=4,type=1.
+2026-09-17 11:02:07 App: [ 2328.573370] [SYS][I][1804] sys_mem_ioctl.c(970) ioctl failed
+2026-09-17 11:02:07 App: [ 2328.573397] [SYS][I][1804] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+2026-09-17 11:02:07 App: [ 2328.573488] [FRTDemo-IPC][C][1804] 09-17 11:02:07:233 2328543895   1804 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc10, mod=7, grp=0, chn=4, type=1, ret=0x800b000a
+2026-09-17 11:02:07 Kernel: [ 2328.573508]  [C0][SYS][E][1804] ax_cmm_userdev_adapter.c(350) not found partition['venc10'],ModId=7,GrpId=0,ChnId=4,type=0.
+2026-09-17 11:02:07 App: [ 2328.573533] [SYS][I][1804] sys_mem_ioctl.c(970) ioctl failed
+2026-09-17 11:02:07 App: [ 2328.573560] [SYS][I][1804] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+2026-09-17 11:02:07 App: [ 2328.573652] [FRTDemo-IPC][C][1804] 09-17 11:02:07:233 2328544058   1804 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc10, mod=7, grp=0, chn=4, type=0, ret=0x800b000a
+2026-09-17 11:02:07 App: [ 2328.573759] [FRTDemo-IPC][W][1804] 09-17 11:02:07:233 2328544165   1804 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module SYS OK
+2026-09-17 11:02:07 Kernel: [ 2328.578811]  [C0][NPU][W][1804] npu_clk_rst.c(247) npu CLK_NN_AXI_TMO_24M rate is fixed
+2026-09-17 11:02:07 Kernel: [ 2328.578820]  [C0][NPU][W][1804] npu_clk_rst.c(247) npu CLK_NN_BW_LMT_24M rate is fixed
+2026-09-17 11:02:07 Kernel: [ 2328.578826]  [C0][NPU][W][1804] npu_clk_rst.c(247) npu CLK_NN_LPC rate is fixed
+2026-09-17 11:02:07 Kernel: [ 2328.578835]  [C0][NPU][W][1804] npu_clk_rst.c(247) npu CLK_NN_PERF_MNR_24M rate is fixed
+2026-09-17 11:02:07 App: [ 2328.580315] [FRTDemo-IPC][W][1804] 09-17 11:02:07:240 2328550705   1804 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module NPU OK
+2026-09-17 11:02:07 Kernel: [ 2328.581690]  [C0][ISP][W][1804] isp_vin_reset.c(90) ife_axi_status:0x0, itp_axi_status:0x0, yuv_axi_status:0x0 cmd_status 0x0
+2026-09-17 11:02:07 Kernel: [ 2328.582069]  [C0][ISP][W][1804] ax_regio_glb.c(29) [GLB] dft_blk_num:9, blk_num:3
+2026-09-17 11:02:07 Kernel: [ 2328.582078]  [C0][ISP][W][1804] ax_regio_glb.c(31) [GLB] glb_ctx_size:344, os_size:5238, cmm_size:5296
+2026-09-17 11:02:07 Kernel: [ 2328.582088]  [C0][ISP][W][1804] ax_regio_blk_kern.c(101) [BLK][CTX_BRIEF_SUMMARY] blk_size:192, lock_size:4, mode_ctx_size:16
+2026-09-17 11:02:07 Kernel: [ 2328.582098]  [C0][ISP][W][1804] ax_regio_blk_kern.c(104) [BLK][CTX_BRIEF_SUMMARY] mem_info_size:24, upd_grp_size:24, cmdbuf_grp_size:24
+2026-09-17 11:02:07 Kernel: [ 2328.582107]  [C0][ISP][W][1804] ax_regio_blk_kern.c(107) [BLK][CTX_BRIEF_SUMMARY] incbuf_grp_size:24, incbuf_info_size:8, incbuf_item_size:8
+2026-09-17 11:02:07 Kernel: [ 2328.582117]  [C0][ISP][W][1804] ax_regio_blk_kern.c(110) [BLK][CTX_BRIEF_SUMMARY] incbuf_sram_grp_size:24, incbuf_sram_info_size:8, incbuf_sram_item_size:4
+2026-09-17 11:02:07 Kernel: [ 2328.582125]  [C0][ISP][W][1804] ax_regio_blk_kern.c(113) [BLK][CTX_BRIEF_SUMMARY] regmap_grp_size:24, regmap_info_size:6, regmap_item_size:4
+2026-09-17 11:02:07 Kernel: [ 2328.585581]  [C0][ISP][W][1804] vin_irq_wrapper.c(87) irq_idx = 16, seg_idx = 1, seg_offset = 0x   10, grp_start_id = 0, grp_num = 9
+2026-09-17 11:02:07 Kernel: [ 2328.585592]  [C0][ISP][W][1804] vin_irq_wrapper.c(87) irq_idx = 18, seg_idx = 2, seg_offset = 0x40010, grp_start_id = 0, grp_num = 6
+2026-09-17 11:02:07 Kernel: [ 2328.585602]  [C0][ISP][W][1804] vin_irq_wrapper.c(87) irq_idx = 18, seg_idx = 4, seg_offset = 0x80010, grp_start_id = 0, grp_num = 6
+2026-09-17 11:02:07 App: [ 2328.589002] [FRTDemo-IPC][W][1804] 09-17 11:02:07:249 2328559388   1804 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module VIN OK
+2026-09-17 11:02:07 App: [ 2328.589228] [FRTDemo-IPC][W][1804] 09-17 11:02:07:249 2328559627   1804 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module MIPI_RX OK
+2026-09-17 11:02:07 App: [ 2328.592306] [IVPS][I][1804] ax_ivps_adv_api.c(57) ----------------------------------------
+2026-09-17 11:02:07 App: [ 2328.592739] [IVPS][I][1804] ax_ivps_adv_api.c(58) [SDK version]: libax_ivps.so V3.12.0 Sep  8 2026 15:36:08
+2026-09-17 11:02:07 App: [ 2328.592772] [IVPS][I][1804] ax_ivps_adv_api.c(59) ----------------------------------------
+2026-09-17 11:02:07 Kernel: [ 2328.592922]  [C0][IVPS][W][1804] ax_ivps_sched_engine_mgr.c(105) engine 4 not registered
+2026-09-17 11:02:07 App: [ 2328.593128] [FRTDemo-IPC][W][1804] 09-17 11:02:07:253 2328563523   1804 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module IVPS OK
+2026-09-17 11:02:07 App: [ 2328.594094] [ENC][C][1804] ax_venc_api.c(254) [SDK version]: libax_venc.so V3.12.0 Sep  8 2026 15:36:27
+2026-09-17 11:02:07 Kernel: [ 2328.594367]  [C0][ENC][W][1804] venc.c(10033) pid:1804 RefCnt:0.
+2026-09-17 11:02:07 Kernel: [ 2328.594520]  [C0][ENC][W][1804] venc.c(10121) pid[1804]idx[0] Out
+2026-09-17 11:02:07 App: [ 2328.595081] [ENC][C][1804] ax_venc_api.c(308) pid:1804 Success
+2026-09-17 11:02:07 App: [ 2328.595243] [FRTDemo-IPC][W][1804] 09-17 11:02:07:255 2328565641   1804 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module VENC OK
+2026-09-17 11:02:07 App: [ 2328.606478] [FRTDemo-IPC][W][1804] 09-17 11:02:07:266 2328576863   1804 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module ACAP OK
+2026-09-17 11:02:07 App: [ 2328.609905] [FRTDemo-IPC][W][1804] 09-17 11:02:07:270 2328580286   1804 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module APLAY OK
+2026-09-17 11:02:07 App: [ 2328.625287] [FRTDemo-IPC][W][1804] 09-17 11:02:07:285 2328595670   1804 W SNS_PARSER: Parse sensor config file: ./config/ipc/sensor/mis20s1.json successfully.
+2026-09-17 11:02:07 App: [ 2328.629078] [FRTDemo-IPC][W][1804] 09-17 11:02:07:289 2328599467   1804 W IPC_PPL <InitSysMods>.2689: ---
+2026-09-17 11:02:07 Kernel: [ 2328.653555]  [C0][SYS][E][1804] ax_sys_link.c(863) link failed!Unsupported param,src(enModId=17,s32GrpId=0,s32ChnId=0),dst(enModId=13,s32GrpId=0,s32ChnId=0),FlowMode=1,engince[src: 0, dst: 4]
+2026-09-17 11:02:07 App: [ 2328.653603] [SYS][I][1804] sys_link_ioctl.c(368) ioctl SYS_IOC_LINK failed
+2026-09-17 11:02:07 App: [ 2328.654174] [SYS][I][1804] ax_sys_api.c(333) Link failed,ret=0x800b0314.
+2026-09-17 11:02:07 App: [ 2328.654338] [FRTDemo-IPC][E][1804] 09-17 11:02:07:314 2328624735   1804 E BASE_LINK: Linkage failed (17, 0, 0) => (13, 0, 0)
+2026-09-17 11:02:07 App: [ 2328.654607] [FRTDemo-IPC][W][1804] 09-17 11:02:07:314 2328625011   1804 W IPC_PPL <Construct>.97: Linkage setup.
+2026-09-17 11:02:07 App: [ 2328.654690] [FRTDemo-IPC][W][1804] 09-17 11:02:07:314 2328625097   1804 W IPC_PPL <InitSensor>.243: +++
+2026-09-17 11:02:07 App: [ 2328.654853] [FRTDemo-IPC][W][1804] 09-17 11:02:07:315 2328625256   1804 W SNS_MGR: Create sensor instance 0 ok.
+2026-09-17 11:02:07 App: [ 2328.654955] [FRTDemo-IPC][C][1804] 09-17 11:02:07:315 2328625363   1804 K SENSOR <InitEZoom>: +++
+2026-09-17 11:02:07 App: [ 2328.658328] [FRTDemo-IPC][W][1804] 09-17 11:02:07:318 2328628714   1804 W SNS_MGR: Initailize sensor 0 ok.
+2026-09-17 11:02:07 App: [ 2328.691602] [FRTDemo-IPC][W][1804] 09-17 11:02:07:351 2328661986   1804 W IPC_PPL <InitSensor>.437: ---
+2026-09-17 11:02:07 App: [ 2328.691705] [FRTDemo-IPC][W][1804] 09-17 11:02:07:351 2328662111   1804 W IPC_PPL <InitPoolConfig>.1221: +++
+2026-09-17 11:02:07 App: [ 2328.702690] [FRTDemo-IPC][C][1804] 09-17 11:02:07:362 2328673074   1804 K POOL: Latency Mode:2 vin buffer mode:0
+2026-09-17 11:02:07 App: [ 2328.703461] [FRTDemo-IPC][C][1804] 09-17 11:02:07:363 2328673855   1804 K POOL: Comm Pool[0]: YUV_2688x128_FBC_2_10x1, BlkSize:344064, MetaSize:1024
+2026-09-17 11:02:07 App: [ 2328.703564] [FRTDemo-IPC][C][1804] 09-17 11:02:07:363 2328673969   1804 K POOL: Comm Pool[1]: YUV_768x576_FBC_2_4x2, BlkSize:368640, MetaSize:1024
+2026-09-17 11:02:07 App: [ 2328.703655] [FRTDemo-IPC][C][1804] 09-17 11:02:07:363 2328674061   1804 K POOL: Comm Pool[2]: YUV_1280x720_FBC_0_0x2, BlkSize:1474560, MetaSize:1024
+2026-09-17 11:02:07 App: [ 2328.703746] [FRTDemo-IPC][C][1804] 09-17 11:02:07:363 2328674151   1804 K POOL: Comm Pool[3]: YUV_1920x1080_FBC_2_0x2, BlkSize:2211840, MetaSize:1024
+2026-09-17 11:02:07 App: [ 2328.704179] [FRTDemo-IPC][C][1804] 09-17 11:02:07:364 2328674578   1804 K POOL: Priv Pool[0]: RAW0_134_1920x1080_FBC_2_4x7, BlkSize:806400, MetaSize:1024
+2026-09-17 11:02:07 Kernel: [ 2328.705247]  [C0][ISP][W][1804] vin_glb_wrapper_impl.c(173) default priv pool blk_cnt:7, blk_size:806400, id=0
+2026-09-17 11:02:07 App: [ 2328.705592] [FRTDemo-IPC][W][1804] 09-17 11:02:07:365 2328675991   1804 W IPC_PPL <InitPoolConfig>.1242: ---
+2026-09-17 11:02:07 App: [ 2328.705684] [FRTDemo-IPC][W][1804] 09-17 11:02:07:365 2328676090   1804 W IPC_PPL <InitAudio>.228: +++
+2026-09-17 11:02:07 App: [ 2328.718448] [FRTDemo-IPC][W][1804] 09-17 11:02:07:378 2328688833   1804 W IPC_PPL <InitAudio>.236: ---
+2026-09-17 11:02:07 App: [ 2328.718548] [FRTDemo-IPC][W][1804] 09-17 11:02:07:378 2328688954   1804 W IPC_PPL <InitIvps>.442: +++
+2026-09-17 11:02:07 App: [ 2328.742334] [FRTDemo-IPC][W][1804] 09-17 11:02:07:402 2328712714   1804 W IVPS <InitParams>.485: [0] Grp filter 0x01: engine:2, w:1920, h:1080, s:1920, frameRate[0.000000,0.000000], CompressInfo[0, 0]
+2026-09-17 11:02:07 App: [ 2328.742448] [FRTDemo-IPC][C][1804] 09-17 11:02:07:402 2328712852   1804 K IVPS <UpdateCompressInfo>: nChn: 0, CompressLevel: 10
+2026-09-17 11:02:07 App: [ 2328.742569] [FRTDemo-IPC][W][1804] 09-17 11:02:07:402 2328712973   1804 W IVPS <InitParams>.561: [0][0] ChnFilter0 0x11: engine:0, w:2688, h:1520, s:2688, frameRate[30.000000,30.000000], CompressInfo[16777216, 0]
+2026-09-17 11:02:07 App: [ 2328.742654] [FRTDemo-IPC][C][1804] 09-17 11:02:07:402 2328713062   1804 K IVPS <UpdateCompressInfo>: nChn: 1, CompressLevel: 0
+2026-09-17 11:02:07 App: [ 2328.742769] [FRTDemo-IPC][W][1804] 09-17 11:02:07:402 2328713174   1804 W IVPS <InitParams>.561: [0][1] ChnFilter0 0x21: engine:0, w:1280, h:720, s:1280, frameRate[30.000000,10.000000], CompressInfo[16777216, 0]
+2026-09-17 11:02:07 App: [ 2328.742852] [FRTDemo-IPC][C][1804] 09-17 11:02:07:403 2328713260   1804 K IVPS <UpdateCompressInfo>: nChn: 2, CompressLevel: 4
+2026-09-17 11:02:07 App: [ 2328.742959] [FRTDemo-IPC][W][1804] 09-17 11:02:07:403 2328713365   1804 W IVPS <InitParams>.561: [0][2] ChnFilter0 0x31: engine:0, w:720, h:576, s:768, frameRate[30.000000,30.000000], CompressInfo[16777216, 0]
+2026-09-17 11:02:07 App: [ 2328.743042] [FRTDemo-IPC][C][1804] 09-17 11:02:07:403 2328713450   1804 K IVPS <UpdateCompressInfo>: nChn: 2, CompressLevel: 4
+2026-09-17 11:02:07 App: [ 2328.743143] [FRTDemo-IPC][W][1804] 09-17 11:02:07:403 2328713550   1804 W IVPS <InitParams>.622: [0][2] ChnFilter1 0x31: engine:4, w:720, h:576, s:768,frameRate[30.000000,30.000000]
+2026-09-17 11:02:07 App: [ 2328.743388] [FRTDemo-IPC][W][1804] 09-17 11:02:07:403 2328713791   1804 W IPC_PPL <InitIvps>.621: ---
+2026-09-17 11:02:07 App: [ 2328.743502] [FRTDemo-IPC][W][1804] 09-17 11:02:07:403 2328713882   1804 W IPC_PPL <InitVenc>.626: +++
+2026-09-17 11:02:07 App: [ 2328.744275] [FRTDemo-IPC][W][1804] 09-17 11:02:07:404 2328714672   1804 W VENC <InitParams>.912: Video attr: chn:0, w:2688, h:1520, bitrate:4096, link:1, memSrc:0, in_depth:1, out_depth:1, frameRate:[30.000000 -1.000000]
+2026-09-17 11:02:07 App: [ 2328.745033] [FRTDemo-IPC][W][1804] 09-17 11:02:07:405 2328715429   1804 W VENC <InitParams>.912: Video attr: chn:1, w:720, h:576, bitrate:400, link:1, memSrc:0, in_depth:1, out_depth:1, frameRate:[30.000000 -1.000000]
+2026-09-17 11:02:07 App: [ 2328.745383] [FRTDemo-IPC][W][1804] 09-17 11:02:07:405 2328715782   1804 W IPC_PPL <InitVenc>.788: ---
+2026-09-17 11:02:07 App: [ 2328.745493] [FRTDemo-IPC][W][1804] 09-17 11:02:07:405 2328715898   1804 W IPC_PPL <InitCollector>.1047: +++
+2026-09-17 11:02:07 App: [ 2328.746204] [FRTDemo-IPC][W][1804] 09-17 11:02:07:406 2328716611   1804 W IPC_PPL <InitCollector>.1144: ---
+2026-09-17 11:02:07 App: [ 2328.746285] [FRTDemo-IPC][W][1804] 09-17 11:02:07:406 2328716693   1804 W IPC_PPL <InitJenc>.793: +++
+2026-09-17 11:02:07 App: [ 2328.746365] [FRTDemo-IPC][W][1804] 09-17 11:02:07:406 2328716774   1804 W IPC_PPL <InitJenc>.852: ---
+2026-09-17 11:02:07 App: [ 2328.746444] [FRTDemo-IPC][W][1804] 09-17 11:02:07:406 2328716852   1804 W IPC_PPL <InitDetector>.857: +++
+2026-09-17 11:02:07 App: [ 2328.748709] [SYS][I][1804] ax_skel_compat.c(718) SkelCompat: Init entry, path=/opt/etc/skelModels
+2026-09-17 11:02:07 App: [ 2328.750345] [SYS][I][1804] ax_skel_compat.c(812) SkelCompat: Create entry, path=/opt/etc/skelModels
+2026-09-17 11:02:07 Kernel: [ 2328.903829]  [C0][NPU][W][1804] npu_model.c(1045) [NPU_CMM] model_alloc_space: model=subgraph_npu_0_b1 handle=0 npu_x=0x433AF000(1632) npu_m=0x433B0000(166592) npu_w=0x0(0)
+2026-09-17 11:02:07 Kernel: [ 2328.923908]  [C0][NPU][

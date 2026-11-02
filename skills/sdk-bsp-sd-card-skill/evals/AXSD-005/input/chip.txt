@@ -1,0 +1,2 @@
+AX615D
+SD master: 3.3 V only

@@ -1,0 +1,7 @@
+[   50.120000] PM: suspend entry (deep)
+[   50.120050] PM: Syncing filesystems ... done.
+[   50.135000] Freezing user space processes ... (elapsed 0.001 seconds) done.
+[   50.140000] Freezing remaining freezable tasks ... (elapsed 0.001 seconds) done.
+[   50.145000] Suspending console(s) (use no_console_suspend to debug)
+[   60.200000] ax_timer32: timer wakeup triggered
+[   60.201000] PM: suspend exit

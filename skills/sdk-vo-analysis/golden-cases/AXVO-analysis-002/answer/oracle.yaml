@@ -1,0 +1,26 @@
+# 由 evals.json 自动迁移生成
+{
+  "root_cause": "识别出 bIop=0（隔行）与逐行屏不匹配是首要嫌疑；其次 Pclk 36000 与屏规格 33.3MHz 不符（33.3MHz/33300 不在离散档位表内，最近可达 33000=198000÷6），且用户态不校验 porch/pclk/刷新率；给出对照时序表/文档的验证步骤",
+  "required_concepts": [
+    "报告指出 bIop=0（隔行）与逐行扫描屏规格冲突是首要嫌疑",
+    "报告指出 Pclk=36000 与屏规格书 33.3MHz 不符；若进一步核对离散档位表，应指出 33300 不可达、最近可达 33000",
+    "给出客户可执行的验证步骤（如先改 bIop=1 / 调整 Pclk 后再测，并用 check_vo_timing.py 复核）",
+    "报告不出现实现侧源码路径/文件名/内部符号名/源码行号"
+  ],
+  "forbidden_conclusions": [
+    "把 Pclk 36000 判为与屏规格 33.3MHz 一致"
+  ],
+  "evidence_signatures": {
+    "input/scenario.md": [
+      "bIop=0",
+      "Pclk=36000",
+      "33.3MHz",
+      "逐行"
+    ]
+  },
+  "expected_confidence": "high",
+  "evaluation_notes": [
+    "由 sdk-vo-analysis-all/evals/evals.json 原用例 id=1 迁移。",
+    "root_cause 字段在本 Case 表示期望分析结论/期望生成结果的核心内容（见 grading.md）。"
+  ]
+}

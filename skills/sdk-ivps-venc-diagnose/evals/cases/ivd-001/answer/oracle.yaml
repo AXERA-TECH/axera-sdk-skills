@@ -1,0 +1,41 @@
+# IVD-001 典型真实故障：VENC chn0 编码消费侧停滞（一帧在途 + HSK 编码侧 update 冻结）
+# 现场为人工构造（captured，复现方式不随包发布）。
+root_cause: VENC chn0 编码消费侧停滞。S1->S2 两轮中 chn0 Send2EncCnt=100 领先
+  EncSucCnt=99 一帧未完成，STREAM BUF HwUsed=Y（硬件占用）；目标 HSK session
+  （SessId 0，State=2）编码侧 update 寄存器停在 initVal=20992，而 VPP 侧 update
+  已推进至 21120（wait 侧可等到 21120，编码侧该 update 的未 update）。按决策树
+  步骤 5，问题模块最可能为 VENC 编码硬件/固件或 VENC HSK 消费侧。IVPS 各 filter、
+  JENC chn1、chn2 等其余通道的计数冻结均为下游停滞的反压传播表现，不是独立首因。
+required_concepts:
+  - chn0 Send2EncCnt(100) 与 EncSucCnt(99) 差一帧在途未完成
+  - HwUsed=Y（chn0 码流缓冲硬件占用中）
+  - HSK session State=2（前置条件满足，排除 session 未工作）
+  - 编码侧 update 寄存器停在 initVal(20992)，VPP 侧 update 已推进(21120)
+  - 两轮采样差值确认停滞持续（S1->S2 计数不变）
+  - 问题模块判 VENC（编码硬件/固件或 VENC HSK 消费侧）
+  - 上游（IVPS/JENC/其余通道）冻结为反压传播，不判为独立首因
+forbidden_conclusions:
+  - VPP 生产侧卡死
+  - syncagent session 未正常工作
+  - 用户态取流/码流缓冲未及时取走
+  - VIN/上游输入未供帧为首因
+  - 仅凭单轮采样判定持续卡死
+evidence_signatures:
+  input/hsk_proc.txt:
+    - '===== SAMPLE 1'
+    - '===== SAMPLE 2'
+    - 'VENC CHN HSK STATUS'
+    - '20992   22528'   # chn0 HSK initVal/syncVal 行（hskCnt=100）
+    - '21120'           # VPP 侧 update 推进到的寄存器值
+    - 'HwUsed'
+    - 'Send2EncCnt'
+    - '0     0        N       0           0         0          0         100         0            99'   # chn0 CHN STATUS 0 行
+expected_confidence: high
+evaluation_notes:
+  - 现场为人工构造的编码停滞；复现方式（如何制造）不要求分析器回答，也不作为扣分项。
+  - JENC chn1（SubmitCnt=4/SucCnt=4 一致、HwUsed=N）、chn2（SW_Offline，两轮计数一致
+    冻结）与 IVPS 各 filter 冻结均为反压传播表现；分析器将其解释为传播/反压属正确，
+    只有判其为独立根因或首因才 FAIL。
+  - ISP session（SessId 2）RegVal 两轮推进（22569->23023）可佐证 syncagent 本身工作
+    正常，属加分证据，不作必答。
+  - ReadCycle 与 WriteCycle 均为 100 且 AvalRSize=0，码流无积压；据此排除用户态取流。

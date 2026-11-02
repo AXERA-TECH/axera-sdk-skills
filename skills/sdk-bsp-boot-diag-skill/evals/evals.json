@@ -1,0 +1,58 @@
+{
+  "skill_name": "sdk-bsp-boot-diag-skill",
+  "note": "匿名评测集，覆盖启动阶段识别、证据边界、跨阶段兼容和存储错误解释。",
+  "evals": [
+    {
+      "id": 1,
+      "name": "silent-after-ddr-init",
+      "prompt": "AX615 板卡只打印 `ddr init start...` 就没有输出了，是不是 DDR 颗粒坏了？日志见 <日志文件>。",
+      "expected_output": "拒绝仅凭日志中断判断颗粒损坏；先确认最后成功阶段，并核对 DEBUG、串口参数和完整 training 日志，再路由到 DDR 诊断。",
+      "files": ["files/boot/silent-after-ddr-init.log"],
+      "assertions": [
+        "明确指出现有证据不足以判断 DDR 颗粒损坏",
+        "将最后成功阶段定位在 SPL DDR 初始化入口附近",
+        "要求核对 DEBUG 宏、串口参数和完整 training 输出",
+        "给出会推翻当前判断的反证条件"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "image-load-failure-not-media-damage",
+      "prompt": "NAND 启动时出现 `kernel image load failed`，请判断是不是 NAND 已损坏。日志见 <日志文件>。",
+      "expected_output": "区分 loader 初始化成功与指定镜像读取/校验失败，不直接判定介质损坏；要求镜像名、分区偏移、原始读校验和哈希。",
+      "files": ["files/boot/kernel-image-load-fail.log"],
+      "assertions": [
+        "识别首个异常为 kernel 镜像加载失败",
+        "不把 image load failed 等同于 NAND 物理损坏",
+        "要求核对分区布局、偏移、原始读取结果和镜像哈希",
+        "区分 flash init failed、image load failed 和 post-load failed"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "mixed-spl-uboot-abi",
+      "prompt": "设备只升级 U-Boot 后卡住，补刷同版本 SPL 就恢复。可以确认是什么问题吗？",
+      "expected_output": "把 SPL/U-Boot 共享数据 ABI 列为高可信候选，但必须用结构 diff 和成套镜像 A/B 闭环，不能只凭升级顺序宣称已确认。",
+      "files": [],
+      "assertions": [
+        "记录 SPL 与 U-Boot 的独立构建版本",
+        "要求比较共享结构的字段顺序、大小、对齐和 offset",
+        "使用只升级一侧与成套升级作为 A/B",
+        "没有结构差异时明确推翻 ABI 不兼容方向"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "spinand-status-model-dependent",
+      "prompt": "rootfs 启动失败，日志中有 `spinand_check_ecc_status: status = 0x30 (err = -22)`。请分析根因。",
+      "expected_output": "确认直接故障点在 SPI NAND 读取/ECC 路径，但不固定解释 0x30；先核对 NAND 型号、器件专用 get_status、data/OOB 和掉电写入证据。",
+      "files": [],
+      "assertions": [
+        "定位到 SPI NAND 读取/ECC 路径",
+        "说明 status 0x30 的含义依赖 NAND 型号和器件驱动",
+        "不直接断言磨损、掉电 dirty data 或驱动缺陷",
+        "提出只读/可写、频率和受控掉电的单变量 A/B"
+      ]
+    }
+  ]
+}

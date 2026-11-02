@@ -1,0 +1,18 @@
+{
+  "prompt": "使用已安装 sdk-bsp-ota，读取 request.json 和 decision-questions.json，按需加载平台与参考文档完成只读离线诊断。\n当前没有真实 SDK 或设备，不执行构建、升级或设备操作。缺少信息时列出缺项，不等待交互。\n输出 out/result.json：case_id、skill、evidence（实际读取的 skill 相对路径列表）、operations_performed（实际操作列表）、execution_scope（本轮为 offline_analysis）、device_operations_performed（本轮实际设备操作列表）、decisions、decision_evidence。\ndecisions 的字段、类型和问题由 decision-questions.json 给出；依据资料独立作答，未知时用 null，不猜测。decision_evidence 为每个 decision 字段提供 {path, quote}：path 为 skill 内相对路径，quote 为实际文档中至少 8 个字符的连续原文，需与该结论有关，不得改写引文。\n输出 out/answer.md，先用中文解释诊断依据、信息缺口和建议；最后以“## 自动验收决策”标题附一个 json 代码块，内容必须与 result.json 的 decisions 完全相同。该结构化部分是本轮可自动判定的正式结论，解释须与之保持一致。\n只生成以上两个交付物。不读取评测答案或其他会话，不把建议操作说成已完成。",
+  "expect": {
+    "files": [
+      {
+        "path": "out/answer.md",
+        "exists": true,
+        "min_bytes": 150
+      },
+      {
+        "path": "out/result.json",
+        "exists": true,
+        "min_bytes": 30
+      }
+    ],
+    "assert": "assert.sh"
+  }
+}

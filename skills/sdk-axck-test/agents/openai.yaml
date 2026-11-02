@@ -1,0 +1,4 @@
+interface:
+  display_name: "Camera-Kit Test Automation Suite"
+  short_description: "AX615 camera-kit HTTP RPC 驱动与串口菜单自动化测试套件、硬件门限断言与带外巡检"
+  default_prompt: "使用 $sdk-axck-test 驱动 AX615 camera-kit 自动化功能与压力测试，断言硬件门限与出流稳定性。"

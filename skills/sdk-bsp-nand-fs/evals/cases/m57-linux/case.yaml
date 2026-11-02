@@ -1,0 +1,24 @@
+prompt: |
+  使用已安装的 sdk-bsp-nand-fs 技能，只读分析当前目录的合成 SDK 证据、request.json 和 logs/evidence.txt。
+  按技能的工作区路由及优先级判断平台，并从请求/日志判断运行环境；无法确认时保留 unknown，不能猜测。
+  优先分析最早错误与后续失败的关系，证据不足只给待验证假设，不把最后一行失败当成已确认根因。
+  不联网、不执行任何设备命令、不修改或补造输入文件；只允许在 out/ 写入结果，无需交互等待。
+  生成 out/result.json，使用且仅使用下列字段（未知平台时另加 questions）：
+  - schema_version：整数 1。
+  - platform：m57、ax637 或 unknown。
+  - environment：linux、qnx 或 unknown。
+  - status：证据不足时为 needs_evidence。
+  - route_evidence：支持最终平台匹配的真实标记文件相对路径列表，不填目录、技能文档或虚构路径；无法匹配时为空。
+  - first_error：日志中最早错误的完整原始行，保留时间戳及原文。
+  - evidence：本次使用的日志文件相对路径列表。
+  - missing_information：根据输入证据选择缺失项，使用规范标识 platform、environment、sdk_revision、boot_medium、flash_model、geometry、partition_layout、target_partition、full_logs、image_version；不要求全部列出，不臆造硬件参数。
+  - write_allowed：布尔值，表明当前是否允许设备写操作。
+  - diagnosis：非空字符串，解释现象、首要错误、待验证假设和证据边界。
+  - next_steps：非空字符串列表，仅提出后续证据收集建议，不执行操作。
+  - questions：仅在平台未知时必填，非空字符串列表，一次列出需要用户澄清的问题。
+expect:
+  files:
+    - path: out/result.json
+      exists: true
+      min_bytes: 20
+  assert: assert.sh

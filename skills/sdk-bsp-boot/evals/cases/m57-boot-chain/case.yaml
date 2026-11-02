@@ -1,0 +1,11 @@
+prompt: |
+  使用已安装的 sdk-bsp-boot 技能回答：在 Axera M57 架构的 SDK 上，从上电到进入 Linux 内核，启动链路按顺序依次经过哪些阶段？请按顺序列出各阶段名称。
+  本轮在 Linux 环境中离线作答，仅依据已安装技能内文档回答；当前没有真实 SDK、板卡或设备，不执行 shell 命令或设备操作。
+  技能根目录以 skill 工具返回的 Base directory 为准；读取资料时原样使用工具返回的 POSIX 路径，目录分隔符为 /，保留路径中的大小写、空格和中文。
+  技能目录以外仅允许读取和覆盖当前目录的 answer.md。先用 read 读取该文件，再用 write 将完整解答一次覆盖写入 answer.md；写入成功后，用最终文本回复“已完成，答案见 answer.md”，然后结束本轮。
+expect:
+  files:
+    - path: answer.md
+      exists: true
+      min_bytes: 50
+  assert: assert.sh

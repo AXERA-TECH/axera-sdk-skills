@@ -1,0 +1,6 @@
+{
+  "case_id": "OTA-017",
+  "question": "sw-description 的 erase 在 ota.sh 前面，是否能证明掉电安全？",
+  "context": "平台背景：m57。没有提供真实 SDK、板卡或构建产物；目录标志若在问题中给出，是人工构造的场景条件。",
+  "provenance": "synthetic"
+}

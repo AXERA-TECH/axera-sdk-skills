@@ -1,0 +1,99 @@
+version: 1
+
+# m57 平台验收测试：
+platform: m57
+
+tasks:
+
+  - id: acceptance-routing-m57
+    description: 未指定平台时识别为 M57 并先确认 Secure Boot 配置参数
+    fixture: evals/fixtures/m57
+    input: |
+      使用 sdk-bsp-secure-boot skill 回答问题：帮我配置 Secure Boot ？
+    assertions:
+      - contains: "M57"
+      - contains_any: ["PLAT", "板型", "启动介质"]
+      - contains_any: ["eFuse", "RSA", "dm-verity"]
+      - contains_any: ["不会修改", "暂不修改", "没有修改"]
+      - not_contains: "ax637_demo"
+      - not_contains: "board-AX637"
+
+  - id: acceptance-configure-demo-only-nand
+    description: 配置 M57 demo_only_nand 的 Secure Boot、RSA-2048、无加密和无 dm-verity
+    fixture: evals/fixtures/m57
+    input: |
+      使用 sdk-bsp-secure-boot skill 回答问题：对 PLAT M57 demo_only_nand 平台开启 Secure Boot、efuse 未烧写、RSA 2048，固件加密不开启，dm-verity：关闭
+    assertions:
+      - contains: "demo_only_nand"
+      - contains: "SECURE_BOOT"
+      - contains: "ENABLE_CIPHER"
+      - contains: "SIGN_USE_RSA3072"
+      - contains: "ROOTFS_DMVERITY"
+      - contains: "ROOTFS_FS_TYPE"
+      - contains: "TRUE"
+      - contains: "FALSE"
+      - contains: "RSA-2048"
+      - contains: "make -C build PLAT=demo_only_nand -n axp"
+      - contains_any: ["不会触碰 eFuse", "eFuse 仍未烧写", "不会烧写 eFuse"]
+      - not_contains: "ax637_demo_only_nand"
+
+  - id: acceptance-diagnose-spl-rsa-failure
+    description: 定位 SBL 校验 M57 SPL slot 0 时的 HSM RSA 验签失败
+    fixture: evals/fixtures/m57
+    input: |
+      使用 sdk-bsp-secure-boot skill 回答问题：
+      secure cipher rsa verify failed(-9)
+      Secure boot: mark spl slot:0 partition as failed
+      怎么定位？
+    assertions:
+      - contains: "HSM_RSA_VERIFY_FAIL"
+      - contains: "-9"
+      - contains: "SBL"
+      - contains: "SPL"
+      - contains: "slot 0"
+      - contains: "u-boot-spl_signed.img"
+      - contains: "RSA-2048"
+      - contains: "m57-keys.dtsi"
+      - contains_any: ["sha256sum", "cmp", "读回"]
+
+  - id: acceptance-generate-rsa-keypair
+    description: 生成 RSA 密钥对必须给出 PKCS#1 格式公钥命令，并同步 DTB 公钥
+    fixture: evals/fixtures/m57
+    input: |
+      使用 sdk-bsp-secure-boot skill 回答问题：在 demo_nor_nand 平台上生成新的 RSA 密钥对（RSA-2048），并同步 U-Boot DTB 公钥
+    assertions:
+      - contains: "openssl genrsa"
+      - contains: "-RSAPublicKey_out"
+      - contains: "PKCS#1"
+      - contains: "extract_pkey_param.py"
+      - contains: "m57-keys.dtsi"
+      - contains: "key-akcipher2048"
+      - not_contains: "BEGIN PUBLIC KEY"
+
+  - id: acceptance-generate-aes-and-efuse
+    description: 生成 AES Key 与烧写 eFuse 需覆盖工具分工、EFUSE_WRITE_ENABLE 与 bondoption
+    fixture: evals/fixtures/m57
+    input: |
+      使用 sdk-bsp-secure-boot skill 回答问题：在 demo_nor_nand 平台生成新 AES 密钥加密启动固件，并说明如何烧写 eFuse（Root Key / FEK / PKH / bondoption）
+    assertions:
+      - contains: "openssl rand -hex 32"
+      - contains: "aes-256.key"
+      - contains: "sample_efuse_key"
+      - contains: "sample_efuse"
+      - contains: "EFUSE_WRITE_ENABLE"
+      - contains: "rootkey random"
+      - contains: "pubkey"
+      - contains: "aeskey"
+      - contains: "bondoption"
+      - contains_any: ["ax_efuse_key aeskey", "改源码", "aeskey_static_array"]
+
+  - id: acceptance-config-rsa-pss
+    description: 配置项必须体现 SIGN_USE_RSA_PSS 及其与 PKCS#1-v1.5 的关系
+    fixture: evals/fixtures/m57
+    input: |
+      使用 sdk-bsp-secure-boot skill 回答问题：demo_nor_nand 平台 Secure Boot 有哪些配置项，SIGN_USE_RSA_PSS 是什么
+    assertions:
+      - contains: "SIGN_USE_RSA_PSS"
+      - contains: "PKCS#1-v1.5"
+      - contains_any: ["SBL 之后", "后段", "SPL"]
+      - contains: "SIGN_USE_RSA3072"

@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "internalized_version": "V3.14.0",
+  "canonical_version_note": "SDK V3.14.0 实现行为，需按版本核验",
+  "version_comparison": "比较主版本 Vx.y.z；构建时间戳后缀单独保留，不改变主版本匹配结果",
+  "history_semantics": "version_history 中未标注差异的条目仅表示已收录记录未发现 VO 相关差异，不构成该版本的行为保证；目标环境仍需核验。",
+  "resources": {
+    "vo_timing_table": "V3.14.0",
+    "sample_vo_timings": "V3.14.0",
+    "vo_pclk_table": "V3.14.0",
+    "vo_sdk_behavior_notes": "V3.14.0",
+    "public_headers": "V3.14.0"
+  },
+  "version_history": [
+    {
+      "version": "V3.0.0",
+      "released": "2026-06-16",
+      "role": "V3 系列起点基线",
+      "vo_changes": "基线参照点：已含早期公开能力（API 参数校验、clip 配置接口、GUI fb 支持）。注意：该版本中 Clip 配置对 RGB 信号仍生效（V3.1.0 起才限制为仅 BT 信号生效）。"
+    },
+    {
+      "version": "V3.1.0",
+      "released": "2026-06-18",
+      "role": "发布版本",
+      "vo_changes": "Clip 调整参数改为仅 BT 信号输出生效；并行 RGB / 串行 sRGB 信号下 Clip 配置被静默忽略（不报错）。"
+    },
+    {
+      "version": "V3.2.0",
+      "released": "2026-06-26",
+      "role": "发布版本",
+      "vo_changes": "ax_global_type.h 新增 chip_type 枚举取值；官方 sample 修复 4M30 AIISP 场景 vo_tx 丢帧。"
+    },
+    {
+      "version": "V3.3.0",
+      "released": "2026-07-03",
+      "role": "发布版本",
+      "vo_changes": "ax_global_type.h 新增 CV110 chip_type 枚举取值。"
+    },
+    {
+      "version": "V3.4.0",
+      "released": "2026-07-09",
+      "role": "发布版本",
+      "vo_changes": "已收录记录未发现 VO 相关差异（不构成行为保证，目标环境仍需核验）。"
+    },
+    {
+      "version": "V3.5.0",
+      "released": "2026-07-17",
+      "role": "发布版本",
+      "vo_changes": "VSYNC 事件机制重构：用户态事件线程调整，显示中断处理线程提升为高优先级；回调单线程串行执行语义不变，但线程调度与停止时序改变，依赖旧时序的应用须实机验证。"
+    },
+    {
+      "version": "V3.6.0",
+      "released": "2026-07-24",
+      "role": "发布版本",
+      "vo_changes": "已收录记录未发现 VO 相关差异（不构成行为保证，目标环境仍需核验）。"
+    },
+    {
+      "version": "V3.7.0",
+      "released": "2026-08-03",
+      "role": "发布版本",
+      "vo_changes": "已收录记录未发现 VO 相关差异（不构成行为保证，目标环境仍需核验）。"
+    },
+    {
+      "version": "V3.8.0",
+      "released": "2026-08-07",
+      "role": "发布版本",
+      "vo_changes": "已收录记录未发现 VO 相关差异（不构成行为保证，目标环境仍需核验）。"
+    },
+    {
+      "version": "V3.8.1",
+      "released": "2026-08-11",
+      "role": "发布版本",
+      "vo_changes": "已收录记录未发现 VO 相关差异（不构成行为保证，目标环境仍需核验）。"
+    },
+    {
+      "version": "V3.9.0",
+      "released": "2026-08-14",
+      "role": "发布版本",
+      "vo_changes": "已收录记录未发现 VO 相关差异（不构成行为保证，目标环境仍需核验）。"
+    },
+    {
+      "version": "V3.10.0",
+      "released": "2026-08-21",
+      "role": "发布版本（另有 V3.10.0_2771 变体 manifest，2026-08-19）",
+      "vo_changes": "已收录记录未发现 VO 相关差异（不构成行为保证，目标环境仍需核验）。"
+    },
+    {
+      "version": "V3.11.0",
+      "released": "2026-08-28",
+      "role": "发布版本",
+      "vo_changes": "数字 Coax 输出修复：帧更新等待前帧发送完成，避免数字 Coax 数据被裁剪。V3.11.0 之前的版本存在该缺陷（现象：数字 Coax 数据偶发被裁/异常）。"
+    },
+    {
+      "version": "V3.11.1",
+      "released": "2026-09-01",
+      "role": "发布版本",
+      "vo_changes": "已收录记录未发现 VO 相关差异（不构成行为保证，目标环境仍需核验）。"
+    },
+    {
+      "version": "V3.12.0",
+      "released": "2026-09-04",
+      "role": "发布版本",
+      "vo_changes": "已收录记录未发现 VO 相关差异（不构成行为保证，目标环境仍需核验）。"
+    },
+    {
+      "version": "V3.13.0",
+      "released": "2026-09-10",
+      "role": "上一内化基线（知识保留）",
+      "vo_changes": "已收录记录未发现 VO 相关差异；全部 D/E 级知识（时序表/PCLK 表/行为摘要/约束）在该基线下生成并保留。不构成行为保证，目标环境仍需核验。"
+    },
+    {
+      "version": "V3.14.0",
+      "released": "2026-09-15",
+      "role": "当前默认基线",
+      "vo_changes": "已收录记录未发现 VO 相关差异（仅更新版本标注），不构成行为保证，目标环境仍需核验。"
+    },
+    {
+      "version": "V3.14.1",
+      "released": "2026-09-17",
+      "role": "后续版本头（无独立 manifest）",
+      "vo_changes": "已收录记录未发现 VO 相关差异；客户环境为 V3.14.1 时按 routing 规则仍判 different，可注明已收录记录未发现相关差异且目标环境仍需核验。"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+version: 1
+
+# AX637/AX637R IPC/RPMsg/RPZC 平台验收测试任务
+platform: ax637
+
+tasks:
+
+  - id: acceptance-ax637-routing
+    description: 识别 AX637 SDK，并提示复用 M57 通信规则与现场确认 board 差异
+    fixture: evals/fixtures/ax637
+    input: |
+      使用 sdk-bsp-rpmsg skill 回答问题：AX637 上如何配置 IPC/RPMsg？
+    assertions:
+      - contains: "AX637"
+      - contains: "M57"
+      - contains: "RPMsg"
+      - contains: "MCU"
+      - contains_any: ["主域", "Linux"]
+
+  - id: acceptance-ax637-rpzc-cross-domain
+    description: AX637 复用公共 RPZC 生命周期并强调跨端资源一致性
+    fixture: evals/fixtures/ax637
+    input: |
+      使用 sdk-bsp-rpmsg skill 回答问题：AX637 的 Linux RPZC 发送失败或 buffer 不可用，如何定位？
+    assertions:
+      - contains: "CHECK_AVAIL"
+      - contains: "IpcZcLinkStatusCheck()"
+      - contains_any: ["BufferName", "buffer name"]
+      - contains_any: ["reserved-memory", "共享内存"]
+      - contains_any: ["endpoint", "name service"]
+      - contains_any: ["reset", "reinit"]
+      - contains: "不能只改一端"
+
+  - id: acceptance-ax637-rtos-tests
+    description: AX637 RT-Thread 镜像核对 IPC/IPCZC 驱动与测试入口
+    fixture: evals/fixtures/ax637
+    input: |
+      使用 sdk-bsp-rpmsg skill 回答问题：AX637 的 RT-Thread IPC 和 IPCZC 如何确认驱动与测试工具已准备好？
+    assertions:
+      - contains: "SafetyIsland/rt-thread/bsp/m57/drivers/ipc/"
+      - contains: "cfg/"
+      - contains: "rpmsg/"
+      - contains: "rpzc/"
+      - contains: "sample_ipc_test"
+      - contains: "sample_ipczc_test"
+      - contains_any: ["编入当前镜像", "是否可用"]
+      - contains: "不能直接照搬"
+
+  - id: acceptance-ax637-platform-boundary
+    description: AX637 不支持 QNX，QNX 相关修改无需同步到 AX637
+    fixture: evals/fixtures/ax637
+    input: |
+      使用 sdk-bsp-rpmsg skill 回答问题：AX637 是否支持 QNX？QNX 相关修改是否需要同步到 AX637？
+    assertions:
+      - contains: "AX637"
+      - contains: "不支持 QNX"
+      - contains_any: ["无需同步", "不需要同步"]
+      - contains_any: ["Linux", "RTOS", "MCU"]
+

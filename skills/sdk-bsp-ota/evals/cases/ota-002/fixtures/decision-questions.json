@@ -1,0 +1,14 @@
+{
+  "detected_platform": {
+    "question": "空工作区的检测结果（小写，无法检测用 unknown）",
+    "type": "string"
+  },
+  "compatibility_confirmed": {
+    "question": "是否能确认升级包兼容",
+    "type": "boolean"
+  },
+  "configuration_change_allowed": {
+    "question": "信息是否足以修改配置",
+    "type": "boolean"
+  }
+}

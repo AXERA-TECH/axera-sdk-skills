@@ -1,0 +1,13 @@
+{
+  "prompt": "使用已安装的 sdk-bsp-build 技能完成任务。只给方案，不执行构建，不访问 /work/sdk/ax615。\n将结论写入 out/result.json：schema_version 为 1；sdk_root 为任务指定根目录；\nproject 为选择的工程，尚未发现工程时为 null；workflow 为 inspection/full/module/fast AXP；\nstatus 为 planned；analysis 为中文说明，包含执行前提及实际执行后应检查的结果。\ncommands 为按顺序排列的命令数组，每项含 cwd（绝对路径）、project（工程或 null）、\ntargets（目标字符串数组）、parallel（整数或 null，null 表示不带 -j）。\nprerequisites 为执行前提数组，可用 project_confirmed_by_plist、full_build_succeeded_for_same_project。\nfull_build_project 为已成功完整构建的工程（需要时填写）。\n尚未执行 plist 时不要填写或编造 projects；不要宣称命令已经执行或 AXP 已经生成。\n任务见当前目录 request.json。\n读取当前目录 request.json 中的 task，并结合 attachments 指向的附件完成任务。",
+  "expect": {
+    "files": [
+      {
+        "path": "out/result.json",
+        "exists": true,
+        "min_bytes": 20
+      }
+    ],
+    "assert": "assert.sh"
+  }
+}

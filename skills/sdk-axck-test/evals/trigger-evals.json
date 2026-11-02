@@ -1,0 +1,32 @@
+[
+  {
+    "query": "在板端运行 HTTP 驱动的 axck 自动化场景测试与并发压力测试",
+    "should_trigger": true,
+    "notes": "Direct trigger for HTTP RPC driver scenario and stress tests"
+  },
+  {
+    "query": "在板端串口运行 axck_test 进行开流、关流和帧率统计自动化测试",
+    "should_trigger": true,
+    "notes": "Direct trigger for automated board serial media testing"
+  },
+  {
+    "query": "运行 axck_test 的 SD 卡热插拔和 DTCF 循环录像子系统用例",
+    "should_trigger": true,
+    "notes": "System and storage test execution"
+  },
+  {
+    "query": "处理串口端 axck_test 菜单不断被 ANSI 清屏刷新覆盖的问题",
+    "should_trigger": true,
+    "notes": "Terminal UI state machine handling and ANSI escape filtering"
+  },
+  {
+    "query": "修改 pipeline 配置适配前置 4K 传感器",
+    "should_trigger": false,
+    "notes": "Pipeline configuration belongs to sdk-axck-config"
+  },
+  {
+    "query": "排查 dmesg 里的 SIF FIFO overflow 报错",
+    "should_trigger": false,
+    "notes": "Log error diagnosis belongs to sdk-axck-diag"
+  }
+]

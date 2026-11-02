@@ -1,0 +1,4 @@
+interface:
+  display_name: "Camera-Kit Doctor Diagnostic Engine"
+  short_description: "采集与智能诊断 AX615 camera-kit 启动与运行日志，解码 AXERA 错误码并定位系统首个原始根因"
+  default_prompt: "使用 $sdk-axck-diag 分析 camera-kit 启动运行日志，定位系统首个根因并给出修复建议。"

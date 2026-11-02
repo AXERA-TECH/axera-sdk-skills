@@ -1,0 +1,36 @@
+{
+  "skill_name": "sdk-bsp-can-safety",
+  "description": "仅验收输入中明确给出芯片、CAN ownership 和框架的平台边界。",
+  "evals": [
+    {
+      "id": "m57-qnx-safety-mcal",
+      "prompt": "M57 QNX 项目 Safety 侧使用 AUTOSAR MCAL CAN，能否使用该 skill？",
+      "expected": "支持；主项目为 QNX 不影响 Safety 侧 MCAL CAN 的适用性。",
+      "source": "用户确认"
+    },
+    {
+      "id": "m57-linux-safety-mcal",
+      "prompt": "M57 Linux 项目 Safety 侧使用 AUTOSAR MCAL CAN FD，能否使用该 skill？",
+      "expected": "支持；M57 Linux 项目 Safety 侧 AUTOSAR MCAL CAN FD 属于支持范围。",
+      "source": "支持范围"
+    },
+    {
+      "id": "reject-ax637-rtt",
+      "prompt": "AX637 Safety 侧 RTT CAN Bus-Off，能否使用该 skill？",
+      "expected": "不支持；AX637 Safety 侧使用 RTT RTOS CAN，而非 M57 AUTOSAR MCAL CAN。",
+      "source": "用户确认"
+    },
+    {
+      "id": "reject-ax637r-rtt",
+      "prompt": "AX637R Safety 侧 RTT CAN FD 配置问题，能否使用该 skill？",
+      "expected": "不支持；AX637R Safety 侧使用 RTT RTOS CAN 框架，不属于本 skill 支持范围。",
+      "source": "用户确认"
+    },
+    {
+      "id": "reject-m57-baremetal",
+      "prompt": "M57 SafetyIsland baremetal CAN 丢帧，能否使用该 skill？",
+      "expected": "不支持；SafetyIsland baremetal CAN 不是 AUTOSAR MCAL 软件栈。",
+      "source": "支持范围"
+    }
+  ]
+}

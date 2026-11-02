@@ -1,0 +1,35 @@
+# RC-001 典型真实故障：CBR 呼吸效应（I 帧质量配置激进 + 短 GOP）
+# 现场为 derived（真实双通道样本为基底，chn0 改 MaxIQp/GOP 派生）。
+root_cause: 呼吸效应发生在主码流通道 0（H.264 CBR，2688x1520@30fps）：
+  MaxIQp=30 明显低于 MaxQp=48，I 帧 QP 上限被压低、压缩能力受限，I 帧码量偏大；
+  IQpDelta=0 未做 I 帧 QP 补偿，IpropMax=100/IpropMin=1 把 I 帧码量比例上限拉满；
+  GOP=30 且 30fps，I 帧周期恰为 1 秒，与用户反馈的周期吻合。I 帧尖峰周期性
+  挤占 CBR 码率预算，P 帧画质随之周期性下降。实际码率 4118 kbps 相对目标
+  4096 偏差约 0.5%，未超 10%；RecvFps=29.8/OutFps=29.8 偏差 <10%，帧率正常。
+  子码流通道 1（720x576 CBR 400）配置与运行均正常，不是呼吸效应来源。
+required_concepts:
+  - 通道 0 为 CBR 模式，呼吸效应按 CBR 的 I 帧策略分析
+  - MaxIQp=30 偏低（低于 MaxQp=48），I 帧压缩能力受限、I 帧码量偏大
+  - IpropMax=100 / IQpDelta=0：I 帧码量比例上限拉满且无 I 帧 QP 补偿
+  - GOP=30 @30fps，I 帧周期 1 秒，与现象周期吻合
+  - 修改方向：降低 IpropMax / 将 IQpDelta 调负 / 放宽 MaxIQp，并说明副作用（I 帧清晰度下降、可能影响抓拍质量）
+  - 通道 1（子码流）配置正常，呼吸效应归因到通道 0，不误伤子码流
+  - 实际码率 4118 相对目标 4096 偏差约 0.5%，未超 10%，不判码率超出
+forbidden_conclusions:
+  - 断言码率持续超出目标（实测偏差 <10%）
+  - 把 RecvFps=29.8/OutFps=29.8 判为帧率异常
+  - 判为 VBR/AVBR 行为（通道 0 为 CBR）
+  - 把呼吸效应归因到子码流通道 1
+  - 建议更换编码格式/编码器作为解决方案
+evidence_signatures:
+  input/venc_proc.txt:
+    - '[SDK version]: ax_venc V3.15.0_20260929153144 Sep 29 2026 15:50:46 JK'
+    - '0     CBR    30    30    4096'          # chn0 RC ATTR 1 行首
+    - '10      30      0         100'          # chn0 MaxIQp=30、IpropMax=100
+    - '0     NormalP   30'                     # chn0 GOP=30
+    - '0     Y     1031          29.8'         # chn0 STATUS 2 行首
+expected_confidence: high
+evaluation_notes:
+  - 现象（呼吸效应）由任务提示词提供，不要求从 proc 单独推出；考察把现象映射到 I 帧质量配置链路。
+  - 修改建议允许任一合理组合（IpropMax/IQpDelta/MaxIQp），但必须交代画质副作用才算完整。
+  - 双通道样本中，正确把呼吸效应锚定到 chn0 而不牵连 chn1 是考察点之一。

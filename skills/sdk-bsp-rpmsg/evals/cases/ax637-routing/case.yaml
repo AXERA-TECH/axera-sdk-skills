@@ -1,0 +1,12 @@
+prompt: |
+  使用已安装的 sdk-bsp-rpmsg 技能，根据当前目录中的 SDK 目录标记和 request.md 判断平台。
+  按技能路由优先级确定平台，只读查询，不修改配置或运行硬件命令。
+  将结果写入 out/result.json，文件必须是单个 JSON 对象，不含 Markdown 围栏。
+  输出字段：platform 为 routing.yaml 命中的平台 id 字符串；loaded_rules 为该路由 load 列表，保持加载顺序。
+  可增加 explanation 字符串说明判断依据；解释措辞不参与自动评分。
+expect:
+  files:
+    - path: out/result.json
+      exists: true
+      min_bytes: 2
+  assert: assert.sh

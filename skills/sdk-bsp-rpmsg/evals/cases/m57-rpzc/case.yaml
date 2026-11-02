@@ -1,0 +1,14 @@
+prompt: |
+  使用已安装的 sdk-bsp-rpmsg 技能，只依据技能资料回答当前目录的 request.md，不修改 SDK 或操作设备。
+  将安全结论写入 out/result.json，必须是单个 JSON 对象，不含 Markdown 围栏。
+  输出字段：check_available_before_transmit 为发送前是否必须确认 buffer 可用的 JSON 布尔值；
+  receive_steps 为接收处理顺序数组，使用动作标识 CONSUME_PAYLOAD（消费数据）、RECEIVE_BUF（获取接收描述符）、REPLY_ACK（回复 ACK），按实际顺序排列；
+  reply_ack_only_if_requested 为是否仅在 need_ack 请求时回复 ACK 的 JSON 布尔值；
+  reuse_sender_buffer_after_ack 为同步发送方是否须等 ACK 完成才能复用 buffer 的 JSON 布尔值。
+  可增加 explanation 字符串说明生命周期；解释措辞不参与自动评分。不要用字符串代替布尔值。
+expect:
+  files:
+    - path: out/result.json
+      exists: true
+      min_bytes: 2
+  assert: assert.sh

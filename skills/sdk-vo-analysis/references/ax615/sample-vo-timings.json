@@ -1,0 +1,446 @@
+{
+ "_meta": {
+  "name": "官方 sample 内置 VO 时序表（19 组，内化副本）",
+  "source": "官方 SDK sample 内置时序表（sample/common/common_vo.c）",
+  "sdk_version": "V3.14.0",
+  "count": 19,
+  "internalized_at": "2026-09-15",
+  "note": "逐条内化官方 sample 的 19 组 USER 时序（保留 sample 索引与原始注释标签，参数逐字）。本表与 references/vo-timing-table.json 的 54 组表按来源独立保存，存在差异时不静默合并，差异与取舍见 conflicts 段。"
+ },
+ "entries": [
+  {
+   "index": 0,
+   "label": "360x240@60",
+   "params": {
+    "bIop": 1,
+    "u16Vact": 240,
+    "u16Vbb": 12,
+    "u16Vfb": 9,
+    "u16Hact": 360,
+    "u16Hbb": 39,
+    "u16Hfb": 6,
+    "u16Hpw": 24,
+    "u16Vpw": 1,
+    "u32Pclk": 27000,
+    "bIdv": 1,
+    "bIhs": 1,
+    "bIvs": 1,
+    "bDlbClk": 0,
+    "u8DelaySel": 0
+   }
+  },
+  {
+   "index": 1,
+   "label": "960x576@50",
+   "params": {
+    "bIop": 0,
+    "u16Vact": 576,
+    "u16Vbb": 10,
+    "u16Vfb": 25,
+    "u16Hact": 960,
+    "u16Hbb": 28,
+    "u16Hfb": 80,
+    "u16Hpw": 84,
+    "u16Vpw": 14,
+    "u32Pclk": 36000,
+    "bIdv": 1,
+    "bIhs": 1,
+    "bIvs": 1,
+    "bDlbClk": 0,
+    "u8DelaySel": 0
+   }
+  },
+  {
+   "index": 2,
+   "label": "960x480@60",
+   "params": {
+    "bIop": 0,
+    "u16Vact": 480,
+    "u16Vbb": 11,
+    "u16Vfb": 15,
+    "u16Hact": 960,
+    "u16Hbb": 28,
+    "u16Hfb": 82,
+    "u16Hpw": 74,
+    "u16Vpw": 19,
+    "u32Pclk": 36000,
+    "bIdv": 1,
+    "bIhs": 1,
+    "bIvs": 1,
+    "bDlbClk": 0,
+    "u8DelaySel": 0
+   }
+  },
+  {
+   "index": 3,
+   "label": "1920x1080@15",
+   "params": {
+    "bIop": 1,
+    "u16Vact": 1080,
+    "u16Vbb": 36,
+    "u16Vfb": 4,
+    "u16Hact": 1920,
+    "u16Hbb": 148,
+    "u16Hfb": 88,
+    "u16Hpw": 44,
+    "u16Vpw": 5,
+    "u32Pclk": 37125,
+    "bIdv": 1,
+    "bIhs": 1,
+    "bIvs": 1,
+    "bDlbClk": 0,
+    "u8DelaySel": 0
+   }
+  },
+  {
+   "index": 4,
+   "label": "1920x1080@30 bt656",
+   "params": {
+    "bIop": 1,
+    "u16Vact": 1080,
+    "u16Vbb": 36,
+    "u16Vfb": 4,
+    "u16Hact": 1920,
+    "u16Hbb": 148,
+    "u16Hfb": 88,
+    "u16Hpw": 44,
+    "u16Vpw": 5,
+    "u32Pclk": 148500,
+    "bIdv": 1,
+    "bIhs": 1,
+    "bIvs": 1,
+    "bDlbClk": 0,
+    "u8DelaySel": 0
+   }
+  },
+  {
+   "index": 5,
+   "label": "2880x1620@25 bt656",
+   "params": {
+    "bIop": 1,
+    "u16Vact": 1620,
+    "u16Vbb": 10,
+    "u16Vfb": 10,
+    "u16Hact": 2880,
+    "u16Hbb": 300,
+    "u16Hfb": 300,
+    "u16Hpw": 120,
+    "u16Vpw": 10,
+    "u32Pclk": 148500,
+    "bIdv": 1,
+    "bIhs": 1,
+    "bIvs": 1,
+    "bDlbClk": 1,
+    "u8DelaySel": 3
+   }
+  },
+  {
+   "index": 6,
+   "label": "1920x1080@30 bt656 db-edge clk",
+   "params": {
+    "bIop": 1,
+    "u16Vact": 1080,
+    "u16Vbb": 36,
+    "u16Vfb": 4,
+    "u16Hact": 1920,
+    "u16Hbb": 148,
+    "u16Hfb": 88,
+    "u16Hpw": 44,
+    "u16Vpw": 5,
+    "u32Pclk": 74250,
+    "bIdv": 1,
+    "bIhs": 1,
+    "bIvs": 1,
+    "bDlbClk": 1,
+    "u8DelaySel": 3
+   }
+  },
+  {
+   "index": 7,
+   "label": "2880x1620@10(4297x1728) bt656",
+   "params": {
+    "bIop": 1,
+    "u16Vact": 1620,
+    "u16Vbb": 36,
+    "u16Vfb": 36,
+    "u16Hact": 2880,
+    "u16Hbb": 500,
+    "u16Hfb": 500,
+    "u16Hpw": 417,
+    "u16Vpw": 36,
+    "u32Pclk": 74250,
+    "bIdv": 1,
+    "bIhs": 1,
+    "bIvs": 1,
+    "bDlbClk": 1,
+    "u8DelaySel": 3
+   }
+  },
+  {
+   "index": 8,
+   "label": "2880x1620@12.5(6875x1728) bt656",
+   "params": {
+    "bIop": 1,
+    "u16Vact": 1620,
+    "u16Vbb": 36,
+    "u16Vfb": 36,
+    "u16Hact": 2880,
+    "u16Hbb": 1500,
+    "u16Hfb": 1500,
+    "u16Hpw": 995,
+    "u16Vpw": 36,
+    "u32Pclk": 148500,
+    "bIdv": 1,
+    "bIhs": 1,
+    "bIvs": 1,
+    "bDlbClk": 1,
+    "u8DelaySel": 3
+   }
+  },
+  {
+   "index": 9,
+   "label": "2880x1620@20(4297x1728) bt656",
+   "params": {
+    "bIop": 1,
+    "u16Vact": 1620,
+    "u16Vbb": 36,
+    "u16Vfb": 36,
+    "u16Hact": 2880,
+    "u16Hbb": 500,
+    "u16Hfb": 500,
+    "u16Hpw": 417,
+    "u16Vpw": 36,
+    "u32Pclk": 148500,
+    "bIdv": 1,
+    "bIhs": 1,
+    "bIvs": 1,
+    "bDlbClk": 1,
+    "u8DelaySel": 3
+   }
+  },
+  {
+   "index": 10,
+   "label": "2880x1620@20(3438x1728) bt656",
+   "params": {
+    "bIop": 1,
+    "u16Vact": 1620,
+    "u16Vbb": 36,
+    "u16Vfb": 36,
+    "u16Hact": 2880,
+    "u16Hbb": 200,
+    "u16Hfb": 200,
+    "u16Hpw": 158,
+    "u16Vpw": 36,
+    "u32Pclk": 148500,
+    "bIdv": 1,
+    "bIhs": 1,
+    "bIvs": 1,
+    "bDlbClk": 1,
+    "u8DelaySel": 3
+   }
+  },
+  {
+   "index": 11,
+   "label": "3840x2160 bt656",
+   "params": {
+    "bIop": 1,
+    "u16Vact": 2160,
+    "u16Vbb": 72,
+    "u16Vfb": 8,
+    "u16Hact": 3840,
+    "u16Hbb": 296,
+    "u16Hfb": 176,
+    "u16Hpw": 88,
+    "u16Vpw": 10,
+    "u32Pclk": 148500,
+    "bIdv": 1,
+    "bIhs": 1,
+    "bIvs": 1,
+    "bDlbClk": 1,
+    "u8DelaySel": 3
+   }
+  },
+  {
+   "index": 12,
+   "label": "2880x1620@25 bt1120",
+   "params": {
+    "bIop": 1,
+    "u16Vact": 1620,
+    "u16Vbb": 10,
+    "u16Vfb": 10,
+    "u16Hact": 2880,
+    "u16Hbb": 300,
+    "u16Hfb": 300,
+    "u16Hpw": 120,
+    "u16Vpw": 10,
+    "u32Pclk": 148500,
+    "bIdv": 1,
+    "bIhs": 1,
+    "bIvs": 1,
+    "bDlbClk": 0,
+    "u8DelaySel": 0
+   }
+  },
+  {
+   "index": 13,
+   "label": "2880x1620@10(4297x1728) bt1120",
+   "params": {
+    "bIop": 1,
+    "u16Vact": 1620,
+    "u16Vbb": 36,
+    "u16Vfb": 36,
+    "u16Hact": 2880,
+    "u16Hbb": 500,
+    "u16Hfb": 500,
+    "u16Hpw": 417,
+    "u16Vpw": 36,
+    "u32Pclk": 74250,
+    "bIdv": 1,
+    "bIhs": 1,
+    "bIvs": 1,
+    "bDlbClk": 0,
+    "u8DelaySel": 0
+   }
+  },
+  {
+   "index": 14,
+   "label": "2880x1620@12.5(6875x1728) bt1120",
+   "params": {
+    "bIop": 1,
+    "u16Vact": 1620,
+    "u16Vbb": 36,
+    "u16Vfb": 36,
+    "u16Hact": 2880,
+    "u16Hbb": 1500,
+    "u16Hfb": 1500,
+    "u16Hpw": 995,
+    "u16Vpw": 36,
+    "u32Pclk": 148500,
+    "bIdv": 1,
+    "bIhs": 1,
+    "bIvs": 1,
+    "bDlbClk": 0,
+    "u8DelaySel": 0
+   }
+  },
+  {
+   "index": 15,
+   "label": "2880x1620@20(4297x1728) bt1120",
+   "params": {
+    "bIop": 1,
+    "u16Vact": 1620,
+    "u16Vbb": 36,
+    "u16Vfb": 36,
+    "u16Hact": 2880,
+    "u16Hbb": 500,
+    "u16Hfb": 500,
+    "u16Hpw": 417,
+    "u16Vpw": 36,
+    "u32Pclk": 148500,
+    "bIdv": 1,
+    "bIhs": 1,
+    "bIvs": 1,
+    "bDlbClk": 0,
+    "u8DelaySel": 0
+   }
+  },
+  {
+   "index": 16,
+   "label": "2880x1620@20(3438x1728) bt1120",
+   "params": {
+    "bIop": 1,
+    "u16Vact": 1620,
+    "u16Vbb": 36,
+    "u16Vfb": 36,
+    "u16Hact": 2880,
+    "u16Hbb": 200,
+    "u16Hfb": 200,
+    "u16Hpw": 158,
+    "u16Vpw": 36,
+    "u32Pclk": 148500,
+    "bIdv": 1,
+    "bIhs": 1,
+    "bIvs": 1,
+    "bDlbClk": 0,
+    "u8DelaySel": 0
+   }
+  },
+  {
+   "index": 17,
+   "label": "3840x2160 bt1120",
+   "params": {
+    "bIop": 1,
+    "u16Vact": 2160,
+    "u16Vbb": 72,
+    "u16Vfb": 8,
+    "u16Hact": 3840,
+    "u16Hbb": 296,
+    "u16Hfb": 176,
+    "u16Hpw": 88,
+    "u16Vpw": 10,
+    "u32Pclk": 148500,
+    "bIdv": 1,
+    "bIhs": 1,
+    "bIvs": 1,
+    "bDlbClk": 0,
+    "u8DelaySel": 0
+   }
+  },
+  {
+   "index": 18,
+   "label": "1920x1080@50 bt656 db-edge clk",
+   "params": {
+    "bIop": 1,
+    "u16Vact": 1080,
+    "u16Vbb": 36,
+    "u16Vfb": 4,
+    "u16Hact": 1920,
+    "u16Hbb": 588,
+    "u16Hfb": 88,
+    "u16Hpw": 44,
+    "u16Vpw": 5,
+    "u32Pclk": 148500,
+    "bIdv": 1,
+    "bIhs": 1,
+    "bIvs": 1,
+    "bDlbClk": 1,
+    "u8DelaySel": 3
+   }
+  }
+ ],
+ "conflicts": [
+  {
+   "id": "1920x1080@50-bt656-ddr-porch",
+   "required_note": true,
+   "scope": "1920x1080@50 BT656 双沿（DDR, bDlbClk=1）",
+   "sample_ref": "sample 第 18 条 1920x1080@50 bt656 db-edge clk：u16Hbb=588, u16Hfb=88, u16Hpw=44, u32Pclk=148500, bDlbClk=1, u8DelaySel=3",
+   "table_ref": "vo-timing-table.json 条目 1920x1080@50f_bt656_db-edge：u16Hbb=338, u16Hfb=338, u16Hpw=44, u32Pclk=148500, bDlbClk=1（表未记录 u8DelaySel）",
+   "difference": "仅水平消隐前后分配不同（588/88 vs 338/338）；两者 htotal 均为 2640、vtotal 均为 1125，实际刷新率均为 50Hz",
+   "guidance": "两种分配均有效且等价（htotal/刷新率一致），不得据此判其中一组错误，也不得静默合并为一组；排查时以客户实际采用的那组为准逐字段比对，差异指向 porch 分配而非刷新率错误"
+  },
+  {
+   "id": "2880x1620@10-bt1120-porch-and-totals",
+   "scope": "2880x1620@10 BT1120",
+   "sample_ref": "sample 第 13 条 2880x1620@10(4297x1728) bt1120：u16Hbb=500, u16Hfb=500, u16Hpw=417, u16Vbb=36, u16Vfb=36, u16Vpw=36, u32Pclk=74250（htotal 4297 / vtotal 1728）",
+   "table_ref": "vo-timing-table.json 条目 2880x1620@10f_bt1120：u16Hbb=750, u16Hfb=750, u16Hpw=120, u16Vbb=10, u16Vfb=10, u16Vpw=10, u32Pclk=74250（htotal 4500 / vtotal 1650）",
+   "difference": "刷新率同为约 10Hz，但 porch 分配与行/帧总长不同（4297x1728 vs 4500x1650）",
+   "guidance": "两组均为已验证数据，来源不同不可互相覆盖；诊断时先确认客户实际参数来自哪一组，再按对应来源比对"
+  },
+  {
+   "id": "2880x1620@25-bt1120-u8delaysel",
+   "scope": "2880x1620@25 BT1120",
+   "sample_ref": "sample 第 12 条：porch 与表条目一致，u8DelaySel=0",
+   "table_ref": "vo-timing-table.json 条目 2880x1620@25f_bt1120：porch 一致，表内 u8DelaySel 记为 4",
+   "difference": "仅 u8DelaySel 记录不同（0 vs 4）",
+   "guidance": "u8DelaySel 缺省/缺失时按 unknown 处理，不得默认等价；以客户实际配置为准并结合 proc/dmesg 核验"
+  },
+  {
+   "id": "3840x2160-bt1120-identical",
+   "scope": "3840x2160 BT1120",
+   "sample_ref": "sample 第 17 条 3840x2160 bt1120：u32Pclk=148500, bDlbClk=0",
+   "table_ref": "vo-timing-table.json 条目 3840x2160@15f_bt1120：porch/时钟完全一致（表未记录 u8DelaySel）",
+   "difference": "无参数差异（u32Pclk=148500 在 PCLK 离散表内可达）",
+   "guidance": "两组来源可互相印证；表未记录的字段（如 u8DelaySel）不得推断"
+  }
+ ]
+}

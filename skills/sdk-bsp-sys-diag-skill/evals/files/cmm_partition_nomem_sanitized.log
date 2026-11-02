@@ -1,0 +1,9 @@
+2026-06-01 10:14:22 Kernel: [  105.112045]  [C0][SYS][E][512] [CMM][Error]:CMM partition memory isn't enough.
+2026-06-01 10:14:22 Kernel: [  105.112052]  [C0][SYS][E][512] [CMM][Error]:Partition name 'VIN0',Total=0MB, Free=56KB, nBlock=11 
+2026-06-01 10:14:22 Kernel: [  105.112061]  [C0][SYS][E][512] ax_block_alloc(isp_regio_pipe_0_dyn, 84480, 0x1000, 0, VIN0) failed!
+2026-06-01 10:14:22 Kernel: [  105.112068]  [C0][SYS][E][512] mem_agent.c(161)[VIN0:isp_regio_pipe_0_dyn]: mem agent malloc failed, type[0] size[84480]
+2026-06-01 10:14:22 Kernel: [  105.112075]  [C0][SYS][E][512] ax_regio_pipe.c(604)[PIPE][0] failed to create regio pipe mem
+2026-06-01 10:14:22 Kernel: [  105.112081]  [C0][SYS][E][512] vin_ipc_pipe_main.c(1191)ax_regio_pipe_cmm_dyn_init failed, retval=0xffffffff
+2026-06-01 10:14:22 Kernel: [  105.112089]  [C0][SYS][E][512] vin_pipe_wrapper.c(1504)PIPE_WRAPPER[0][open] failed!
+2026-06-01 10:14:22 App:    [  105.113012] [VIN][E][512] ax_vin_pipe_api_impl.c(123):[ffffffff]: pipe[0] ax_hal_pipe_open failed!
+2026-06-01 10:14:22 App:    [  105.113105] [VIN][E][512] AX_VIN_StartPipe failed, ret=0x80110180

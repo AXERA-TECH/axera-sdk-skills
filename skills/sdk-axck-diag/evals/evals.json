@@ -1,0 +1,50 @@
+{
+  "skill_name": "sdk-axck-diag",
+  "evals": [
+    {
+      "id": 1,
+      "name": "cmm_pool_exhaustion",
+      "prompt": "Analyze boot log showing [AX_SYS] [ERR] AX_POOL_CreatePool failed, ret=0x80050004 and isolate root cause",
+      "expected_output": "Root cause identified as AX_ERR_POOL_NOBUF (0x80050004), CMM pool exhaustion. Recommendations include increasing pool block count or adjusting resolution.",
+      "expectations": [
+        "Decodes 0x80050004 as AX_ERR_POOL_NOBUF",
+        "Identifies SYS/POOL as root cause module",
+        "Provides actionable recommendations on app_config buffer pools"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "vin_channel_conflict",
+      "prompt": "Analyze log showing AX_VIN_CreateDev failed, ret=0x80070216",
+      "expected_output": "Decodes 0x80070216 as VIN resource or channel conflict, identifies hardware constraint violation.",
+      "expectations": [
+        "Decodes 0x80070216 accurately",
+        "Identifies VIN module error",
+        "Pinpoints pipe/dev binding conflict"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "sif_fifo_overflow",
+      "prompt": "Diagnose MIPI CSI / SIF FIFO overflow crash with dmesg trace",
+      "expected_output": "Isolates hardware FIFO overflow caused by MIPI clock mismatch, memory bandwidth contention, or missing sensor reset.",
+      "expectations": [
+        "Highlights SIF FIFO overflow signature",
+        "Differentiates root cause from cascading downstream IVPS errors",
+        "Recommends PHY frequency and CMM bandwidth check"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "mp4_mux_wait_key_violation",
+      "prompt": "Analyze log showing [MUX_MP4][mp4mux_h265_write_nal][E] Need vps: 1 need SPS: 1 need PPS: 1 needIDR: 1 during recording file switch",
+      "expected_output": "Isolates root cause to record state machine prematurely resetting wait status upon receiving thumbnail frame, causing legacy P frames to be passed into MP4 muxer before IDR arrives.",
+      "expectations": [
+        "Identifies MP4_MUX_WAIT_KEY_VIOLATION signature",
+        "Pinpoints ChkCanWrite in axck_record_api.c as root cause location",
+        "Explains thumbnail frame effIsThumb prematurely resetting rwsWaitKey state",
+        "Confirms muxer error is protective intercept rather than muxer failure"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+prompt: |
+  使用已安装的 sdk-axck-diag 技能，分析当前目录下 serial.log 中的 VIN 错误码，定位通道与硬件资源冲突根因，将结果写入 out/report.md。
+expect:
+  files:
+    - path: out/report.md
+      exists: true
+      min_bytes: 40
+  assert: assert.sh

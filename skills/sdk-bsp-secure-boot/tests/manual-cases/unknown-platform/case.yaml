@@ -1,0 +1,8 @@
+prompt: 使用已安装的 sdk-bsp-secure-boot 技能：帮我配置 Secure Boot。当前目录为 SDK 样本。只读咨询，将待确认的问题写入
+  out/response.md；不要修改工作区或生成密钥。缺少参数时在文件中提问后结束。
+expect:
+  files:
+  - path: out/response.md
+    exists: true
+    min_bytes: 20
+  assert: assert.sh

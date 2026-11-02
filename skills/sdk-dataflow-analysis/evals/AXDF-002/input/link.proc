@@ -1,0 +1,32 @@
+===== /proc/ax_proc/link_table =====
+--------------------SDK VERSION-------------------
+[SDK version]: ax_sys V3.12.0 Sep  8 2026 16:03:22
+--------------------Link Table V2----------------------------------------------------
+         Src            |          Dst               |                               |
+(ModId   GrpId   ChnId) | (ModId   GrpId   ChnId)    |     Mode    |        line     |
+-------------------------------------------------------------------------------------
+(IVPS	    0	    0) -> (VENC	    0	    0)   Mode :   SW_Low_Mem    Line :   128
+(IVPS	    0	    1) -> (VENC	    0	    1)   Mode :   SW_Low_Mem    Line :   128
+(IVPS	    0	    2) -> (VENC	    0	    2)   Mode :   SW_Offline    Line :     0
+(ADEC	    0	    0) -> (AO	    0	    0)   Mode :   SW_Offline    Line :     0
+(VIN	    0	    0) -> (IVPS	    0	    0)   Mode :   SW_Offline    Line :     0
+(AI	    0	    0) -> (AENC	    0	    0)   Mode :   SW_Offline    Line :     0
+===== /proc/ax_proc/link_table_kernel =====
+--------------------SDK VERSION-------------------
+[SDK version]: ax_sys V3.12.0 Sep  8 2026 16:03:22
+--------------------Link Table Kernel V2-------------------------------------------------------------------------
+         Src            |          Dst               |                   Link Attribute                          |
+(ModId   GrpId   ChnId) | (ModId   GrpId   ChnId)    |     Mode    |        line     |      Engine(src->dst)     |
+-----------------------------------------------------------------------------------------------------------------
+(IVPS	    0	    2) -> (VENC	    0	    2)   Mode :   SW_Offline    Line :     0   Engine (0:None --> 0:None)
+(ADEC	    0	    0) -> (AO	    0	    0)   Mode :   SW_Offline    Line :     0   Engine (0:None --> 0:None)
+(VIN	    0	    0) -> (IVPS	    0	    0)   Mode :   SW_Offline    Line :     0   Engine (0:None --> 0:None)
+(AI	    0	    0) -> (AENC	    0	    0)   Mode :   SW_Offline    Line :     0   Engine (0:None --> 0:None)
+(VPP	    0	    0) -> (JENC	    0	    0)   Mode :   SW_Low_Mem    Line :   128   Engine (1:VPP --> 3:JENC)
+(VPP	    0	    1) -> (JENC	    0	    1)   Mode :   SW_Low_Mem    Line :   128   Engine (2:VPPVGP --> 3:JENC)
+(VPP	    0	    1) -> (VGP	    0	    1)   Mode :   SW_Low_Mem    Line :   128   Engine (2:VPPVGP --> 3:JENC)
+(VGP	    0	    1) -> (JENC	    0	    1)   Mode :   SW_Low_Mem    Line :   128   Engine (2:VPPVGP --> 3:JENC)
+===== /proc/ax_proc/sys/vin_ivps_mode =====
+--------------------SDK VERSION--------------------
+[SDK version]: axdrv V3.12.0 Sep  8 2026 16:00:02
+===== /proc/ax_proc/syncagent =====

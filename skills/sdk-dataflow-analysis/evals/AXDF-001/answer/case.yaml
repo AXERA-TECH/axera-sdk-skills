@@ -1,0 +1,54 @@
+schema_version: 1
+id: AXDF-001
+title: AX_SYS_Link_V2 LowMem nRingLineCnt 非法
+category: module-dataflow/ax-sys-link-v2/parameter
+analyzer:
+  skill: sdk-dataflow-analysis
+platform:
+  soc: AX615
+  project: AX615_nor
+  flash: spi_nor
+  ddr_mb: 128
+  sensor: mis20s1
+reproducer:
+  patch: answer/reproducer.patch
+  application: /opt/bin/FRTDemo/frtdemo
+  command: cd /opt/bin/FRTDemo && ./run.sh -p 0 -s 16 -n 1 -l 7 -t 4
+input:
+  type: log_set
+  files:
+    - input/serial.log
+    - input/syslog.log
+    - input/logctl.proc
+    - input/vin.proc
+    - input/ivps.proc
+    - input/venc.proc
+    - input/link.proc
+  capture:
+    userlog_level: info
+    userlog_level_value: 6
+    userlog_modules:
+      VIN: 17
+      IVPS: 13
+      VENC: 7
+    syslog_source: /tmp/data/AXSyslog/syslog/2026-09-08-17-31-02.log
+    syslog_byte_range: 0..131071
+    notes:
+      - 全部输入来自同一次干净上电后的复现轮次。
+      - serial.log 合并同轮串口上的 AXLOG2 token 与重定向保存的应用 console 输出，并移除 ANSI 颜色码。
+      - proc 在异常 Link 建立失败后采集。
+      - syslog.log 是 logserviced 文件的原始前 128 KiB，包含失败后的板端 kernel/syslog 信息。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/serial.log
+    - input/syslog.log
+    - input/logctl.proc
+    - input/vin.proc
+    - input/ivps.proc
+    - input/venc.proc
+    - input/link.proc
+  evaluator_only:
+    - answer/oracle.yaml
+    - answer/reproducer.patch
+    - answer/case.yaml

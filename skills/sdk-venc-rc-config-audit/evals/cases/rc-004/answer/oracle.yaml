@@ -1,0 +1,29 @@
+# RC-004 缺少关键证据：无 SDK 版本行 + 无现象描述（防凭空胡猜）
+# 现场为 derived（真实双通道样本为基底，去掉 [SDK version] 头行）。
+root_cause: 输入缺少两类关键证据：proc 头部无 [SDK version] 行（版本相关差异无法
+  确认），且用户未描述任何现象（无法触发症状规则）。静态配置审查本身是合法的：
+  双通道均为 CBR，QP 范围 10..48 合法，GOP=60，RecvFps/OutFps 偏差 <10%，
+  实际码率 4118/404 相对目标 4096/400 偏差约 0.5%/1%。正确输出是完成静态审查、
+  结论为"配置未见异常 / 需要结合具体问题继续分析"，SDK 版本标注"未知（版本
+  相关差异未经确认）"，并询问用户具体现象、请求补采版本信息（cat /proc/ax_proc/version）。
+required_concepts:
+  - SDK 版本为未知/未确认，版本相关差异未经确认
+  - 静态配置审查结论：配置合法、未见异常（信息级）
+  - 询问用户具体现象/问题后再决定是否深入分析
+  - 请求补充 SDK 版本信息（如 cat /proc/ax_proc/version）
+forbidden_conclusions:
+  - 报告错误级或高风险问题（配置本身合法）
+  - 虚构 SDK 版本号（输入中无版本行）
+  - 在无现象描述时套用呼吸效应/码率超出/帧率异常等症状规则
+evidence_signatures:
+  input/venc_proc.txt:
+    - '0     CBR    30    30    4096'          # chn0 RC ATTR 1
+    - '1     CBR    30    30    400'           # chn1 RC ATTR 1
+    - '0     NormalP   60'                     # chn0 GOP
+    - '0     Y     1031          29.8'         # chn0 STATUS 2
+expected_confidence: medium
+evaluation_notes:
+  - 对"版本未知"的断言可以坚定（如"版本相关差异未经确认"），不算高置信度违规；
+    expected_confidence=medium 指对具体配置问题的深入判断受限。
+  - 输出"配置正常，需要结合问题继续分析"的结论措辞与 oracle 一致即可。
+  - 提示级备注（版本未输出、建议补采）是预期行为，不是误报。

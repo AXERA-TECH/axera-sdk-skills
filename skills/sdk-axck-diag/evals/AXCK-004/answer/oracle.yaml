@@ -1,0 +1,20 @@
+root_cause: 录像切文件重置为 rwsWaitKey 状态后，伴随切文件的缩略图帧(effIsThumb)先于视频关键帧到达，ChkCanWrite 判定中误将缩略图视为关键帧提前解除等待状态置为 rwsWaitNone，导致后续旧 GOP 残留 P 帧被送入 MP4 Muxer，触发 NAL 约束保护报错 (Need vps/SPS/PPS/IDR)。
+required_concepts:
+  - MP4_MUX_WAIT_KEY_VIOLATION
+  - rwsWaitKey
+  - effIsThumb
+  - effIsKey
+  - ChkCanWrite
+  - axck_record_api.c
+forbidden_conclusions:
+  - CMM 内存池耗尽
+  - Sensor I2C 通信失败
+  - VENC 编码器崩溃
+evidence_signatures:
+  input/serial.log:
+    - "[MUX_MP4][mp4mux_h265_write_nal][E] Need vps: 1 need SPS: 1 need PPS: 1 needIDR: 1"
+    - "rwsWaitKey"
+    - "effIsThumb"
+expected_confidence: high
+evaluation_notes:
+  - Muxer 报错是下游保护机制的主动拦截，表面报错在 Muxer，真正根因是 Record 状态机提前解除关键帧等待放行了普通 P 帧。

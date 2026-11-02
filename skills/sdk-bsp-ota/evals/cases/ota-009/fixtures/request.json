@@ -1,0 +1,6 @@
+{
+  "case_id": "OTA-009",
+  "question": "QNX 差分提示 RDIFF_BUFFER_SIZE assertion，OLD_AXP 只是一个同名旧包。",
+  "context": "平台背景：m57。没有提供真实 SDK、板卡或构建产物；目录标志若在问题中给出，是人工构造的场景条件。",
+  "provenance": "synthetic"
+}

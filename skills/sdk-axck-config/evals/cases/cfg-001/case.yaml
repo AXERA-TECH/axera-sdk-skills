@@ -1,0 +1,8 @@
+prompt: |
+  使用已安装的 sdk-axck-config 技能，分析当前目录下的 ppl_config.json、app_config.json 和 sns_info.json，排查图像超分插值引擎配置问题，将结果写入 out/report.md。
+expect:
+  files:
+    - path: out/report.md
+      exists: true
+      min_bytes: 40
+  assert: assert.sh

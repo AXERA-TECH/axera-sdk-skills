@@ -1,0 +1,16 @@
+prompt: 'M57 可以新增一个自定义数据分区吗？
+
+
+  使用已安装的 sdk-bsp-memory-partition 技能，当前目录仅是精简的 SDK 路由/配置样本，不含完整源码和工具链。
+
+  这是只读咨询：简洁地将建议、必要命令或待确认问题写入 out/response.md。
+
+  不得修改样本配置、构建镜像或刷写设备；缺少参数时将问题写入文件后结束，不等待交互。
+
+  '
+expect:
+  files:
+  - path: out/response.md
+    exists: true
+    min_bytes: 40
+  assert: assert.sh

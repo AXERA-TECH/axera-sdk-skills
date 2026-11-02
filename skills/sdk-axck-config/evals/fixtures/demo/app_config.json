@@ -1,0 +1,796 @@
+{
+    "app_name": "dashcam",
+    "version": "0.1",
+    "camera":
+    [
+        {
+            "sns_enable": 1,
+            "sns_pos": 0,
+            "sns_id": 8,
+            "sns_name": "SC438HAI",
+            "frame_rate": 30,
+            "pipe_id": 0,
+            "dev_id": 0,
+            "rx_dev": 0,
+            "hdr_support": 1,
+            "sns_mode_des": "1: AX_SNS_LINEAR_MODE; 2: AX_SNS_HDR_2X_MODE;",
+            "sns_mode": 1,
+            "run_mode_des": "0: NPU; 1: None NPU;",
+            "run_mode": 0,
+            "depurple_mode_des": "-1: nochange; 0: depurple off; 1: depurple on",
+            "depurple_mode": -1,
+            "vin_ivps_mode_des": "-1:Disable, 0:AX_ITP_OFFLINE_VPP, 1:AX_GDC_ONLINE_VPP, 2:AX_ITP_ONLINE_VPP",
+            "vin_ivps_mode":1,
+            "isp_run_thread_msleep": 0,
+            "rotate_des":"0: 0; 1: 90; 2: 180; 3: 270",
+            "rotate":0,
+            "flip":0,
+            "mirror":0,
+            "anti_flicker_des": "-1: default; 0: disable; 1: 50Hz; 2: 60Hz",
+            "anti_flicker": -1,
+            "tuning_ctrl": 0,
+            "tuning_port": 8082,
+            "bin_file":
+                [
+                    {
+                        "mode": 1,
+                        "enable": 1,
+                        "desp": "sdr",
+                        "file":
+                            [
+                                {
+                                    "type": 0,
+                                    "desp": "Normal mode",
+                                    "file": "/opt/etc/sc438hai_sdr_t_aiisp_reduce_fps.bin"
+                                }
+                            ]
+                    },
+                    {
+                        "mode": 2,
+                        "enable": 1,
+                        "desp": "hdr",
+                        "file":
+                            [
+                                {
+                                    "type": 0,
+                                    "desp": "Normal mode",
+                                    "file": "/opt/etc/sc438hai_hdr_2x.bin"
+                                },
+                                {
+                                    "type": 1,
+                                    "desp": "Parking mode",
+                                    "file": "/opt/etc/sc438hai_hdr_t_aiisp_fix_ratio.bin"
+                                }
+                            ]
+                    }
+                ],
+            "ldc": {
+                "enable": 0,
+                "Aspect": 0,
+                "XRatio": 0,
+                "YRatio": 0,
+                "XYRatio": 0,
+                "CenterXOffset": 0,
+                "CenterYOffset": 0,
+                "DistortionRatio": 0
+            },
+            "hotbalance": {
+                "enable": 0,
+                "//": "strategy: [temperature, sns_fps(-1: keep initial; others), venc_fps(-1: same as sns_fps; 0: keep initial; others), aiisp(0: tisp; 1: aiisp; 2: auto; -1: default))]",
+                "strategy":
+                [
+                    {"temperature": 98, "sns_fps": 15, "venc_fps": -1, "aiisp": -1},
+                    {"temperature": 102, "sns_fps": 10, "venc_fps": -1, "aiisp": -1},
+                    {"temperature": 106, "sns_fps": 5, "venc_fps": -1, "aiisp": -1}
+                ],
+                "debounce_cnt": 1,
+                "hold_time": 120
+            }
+        },
+        {
+            "sns_enable": 0,
+            "sns_pos": 1,
+            "sns_id": 6,
+            "sns_name": "xs9950",
+            "frame_rate": 25,
+            "pipe_id": 1,
+            "dev_id": 1,
+            "rx_dev": 1,
+            "hdr_support": 0,
+            "sns_mode": 1,
+            "run_mode": 1,
+            "depurple_mode": -1,
+            "vin_ivps_mode":1,
+            "isp_run_thread_msleep": 0,
+            "rotate_des":"0: 0; 1: 90; 2: 180; 3: 270",
+            "rotate":0,
+            "flip":0,
+            "mirror":1,
+            "ldc": {
+                "enable": 0,
+                "Aspect": 0,
+                "XRatio": 0,
+                "YRatio": 0,
+                "XYRatio": 0,
+                "CenterXOffset": 0,
+                "CenterYOffset": 0,
+                "DistortionRatio": 0
+            },
+            "hotbalance": {
+                "enable": 0,
+                "//": "strategy: [temperature, sns_fps(-1: keep initial; others), venc_fps(-1: same as sns_fps; 0: keep initial; others), aiisp(0: tisp; 1: aiisp; 2: auto; -1: default))]",
+                "strategy":
+                [
+                    {"temperature": 98, "sns_fps": 15, "venc_fps": -1, "aiisp": -1},
+                    {"temperature": 102, "sns_fps": 10, "venc_fps": -1, "aiisp": -1},
+                    {"temperature": 106, "sns_fps": 5, "venc_fps": -1, "aiisp": -1}
+                ],
+                "debounce_cnt": 1,
+                "hold_time": 120
+            }
+        }
+    ],
+    "osd":
+    [
+        {
+            "size_des": "// for size >= 4K",
+            "size":0,
+            "font": "res/osd/font0.bmp",
+            "logo": "res/osd/logo0.bmp",
+            "items":
+            [
+                {
+                    "id":1,
+                    "x":32,
+                    "y":2060,
+                    "type":"time",
+                    "color":"white",
+                    "alpha":255
+                },
+                {
+                    "id":2,
+                    "x":3640,
+                    "y":2080,
+                    "type":"logo",
+                    "color":"white",
+                    "alpha":255
+                },
+                {
+                    "id":3,
+                    "x":1920,
+                    "y":2060,
+                    "text":"4k",
+                    "type":"text",
+                    "color":"white",
+                    "alpha":255
+                }
+            ]
+        },
+        {
+            "size_des": "// for size >= 2K(2560x1440)",
+            "size":1,
+            "font": "res/osd/font1.bmp",
+            "logo": "res/osd/logo1.bmp",
+            "items":
+            [
+                {
+                    "id":11,
+                    "x":48,
+                    "y":1360,
+                    "type":"time",
+                    "color":"white",
+                    "alpha":255
+                },
+                {
+                    "id":12,
+                    "x":2360,
+                    "y":1360,
+                    "type":"logo",
+                    "color":"white",
+                    "alpha":255
+                },
+                {
+                    "id":13,
+                    "x":1280,
+                    "y":1360,
+                    "text":"2k",
+                    "type":"text",
+                    "color":"white",
+                    "alpha":255
+                }
+            ]
+        },
+        {
+            "size_des": "// for size >= 1080P",
+            "size":2,
+            "font": "res/osd/font2.bmp",
+            "logo": "res/osd/logo2.bmp",
+            "items":
+            [
+                {
+                    "id":21,
+                    "x":16,
+                    "y":1020,
+                    "type":"time",
+                    "color":"white",
+                    "alpha":255
+                },
+                {
+                    "id":22,
+                    "x":1780,
+                    "y":1020,
+                    "type":"logo",
+                    "color":"white",
+                    "alpha":255
+                },
+                {
+                    "id":23,
+                    "x":960,
+                    "y":1020,
+                    "text":"1080p",
+                    "type":"text",
+                    "color":"white",
+                    "alpha":255
+                }
+            ]
+        },
+        {
+            "size_des": "// for size >= 720P",
+            "size":3,
+            "font": "res/osd/font3.bmp",
+            "logo": "res/osd/logo3.bmp",
+            "items":
+            [
+                {
+                    "id":31,
+                    "x":12,
+                    "y":680,
+                    "type":"time",
+                    "color":"white",
+                    "alpha":255
+                },
+                {
+                    "id":32,
+                    "x":1180,
+                    "y":680,
+                    "type":"logo",
+                    "color":"white",
+                    "alpha":255
+                },
+                {
+                    "id":33,
+                    "x":640,
+                    "y":680,
+                    "text":"720p",
+                    "type":"text",
+                    "color":"white",
+                    "alpha":255
+                }
+            ]
+        },
+        {
+            "size_des": "// for size >= 960x540",
+            "size":4,
+            "font": "res/osd/font4.bmp",
+            "logo": "res/osd/logo4.bmp",
+            "items":
+            [
+                {
+                    "id":41,
+                    "x":12,
+                    "y":360,
+                    "type":"time",
+                    "color":"white",
+                    "alpha":255
+                },
+                {
+                    "id":42,
+                    "x":800,
+                    "y":360,
+                    "type":"logo",
+                    "color":"white",
+                    "alpha":255
+                },
+                {
+                    "id":43,
+                    "x":480,
+                    "y":360,
+                    "text":"540p",
+                    "type":"text",
+                    "color":"white",
+                    "alpha":255
+                }
+            ]
+        },
+        {
+            "size_des": "// for size of the others",
+            "size":5,
+            "font": "res/osd/font4.bmp",
+            "logo": "res/osd/logo4.bmp",
+            "items":
+            [
+                {
+                    "id":51,
+                    "x":12,
+                    "y":320,
+                    "type":"time",
+                    "color":"white",
+                    "alpha":255
+                },
+                {
+                    "id":52,
+                    "x":540,
+                    "y":320,
+                    "type":"logo",
+                    "color":"white",
+                    "alpha":255
+                },
+                {
+                    "id":53,
+                    "x":300,
+                    "y":320,
+                    "text":"480p",
+                    "type":"text",
+                    "color":"white",
+                    "alpha":255
+                }
+            ]
+        }
+    ],
+    "venc":
+    [
+        {
+            "id": 0,
+            "rc": {
+                "type": "VBR",
+                "stat_time": 1,
+                "vq": 0,
+                "min_qp": 28,
+                "max_qp": 48,
+                "min_iqp": 28,
+                "max_iqp": 48,
+                "min_i_prop": 10,
+                "max_i_prop": 40,
+                "intra_qp_delta": 0,
+                "idr_qp_delta": 10,
+                "change_pos": 85,
+                "block_rcsize": 2,
+                "min_frame_qp": 30,
+                "max_frame_qp": 51,
+                "min_i_frame_qp": 30,
+                "max_i_frame_qp": 51,
+                "cb_qp_offset": -6,
+                "cr_qp_offset": -6,
+                "motion_sen": 6,
+                "motion_alpha": 32,
+                "still_i_bit_percent": 25,
+                "ctu_bits_ref_en": 0,
+                "ctu_bits_ref_qp_delta_range": 3,
+                "act_on_i_frame": 0,
+                "qp_map_finely": 1,
+                "use_qp_map1": 0,
+                "use_qp_map2": 0,
+                "use_local_map": 0
+            },
+            "bitrate": 4096,
+            "fps": 0,
+            "gop": 0,
+            "type": 265
+        },
+        {
+            "id": 1,
+            "rc": {
+                "type": "VBR",
+                "stat_time": 1,
+                "vq": 0,
+                "min_qp": 20,
+                "max_qp": 44,
+                "min_iqp": 18,
+                "max_iqp": 42,
+                "min_i_prop": 10,
+                "max_i_prop": 40,
+                "intra_qp_delta": 0,
+                "idr_qp_delta": 10,
+                "change_pos": 85,
+                "block_rcsize": 2,
+                "min_frame_qp": 30,
+                "max_frame_qp": 51,
+                "min_i_frame_qp": 30,
+                "max_i_frame_qp": 51,
+                "cb_qp_offset": -6,
+                "cr_qp_offset": -6,
+                "motion_sen": 6,
+                "motion_alpha": 32,
+                "still_i_bit_percent": 25,
+                "ctu_bits_ref_en": 0,
+                "ctu_bits_ref_qp_delta_range": 3,
+                "act_on_i_frame": 0,
+                "qp_map_finely": 1,
+                "use_qp_map1": 0,
+                "use_qp_map2": 0,
+                "use_local_map": 0
+            },
+            "bitrate": 1024,
+            "fps": 0,
+            "gop": 0,
+            "type": 264
+        },
+        {
+            "id": 2,
+            "rc": {
+                "type": "VBR",
+                "stat_time": 1,
+                "vq": 0,
+                "min_qp": 28,
+                "max_qp": 48,
+                "min_iqp": 28,
+                "max_iqp": 48,
+                "min_i_prop": 10,
+                "max_i_prop": 40,
+                "intra_qp_delta": -2,
+                "idr_qp_delta": 10,
+                "change_pos": 85,
+                "block_rcsize": 2,
+                "min_frame_qp": 30,
+                "max_frame_qp": 51,
+                "min_i_frame_qp": 30,
+                "max_i_frame_qp": 51,
+                "cb_qp_offset": -6,
+                "cr_qp_offset": -6,
+                "motion_sen": 6,
+                "motion_alpha": 32,
+                "still_i_bit_percent": 25,
+                "ctu_bits_ref_en": 0,
+                "ctu_bits_ref_qp_delta_range": 3,
+                "act_on_i_frame": 0,
+                "qp_map_finely": 1,
+                "use_qp_map1": 0,
+                "use_qp_map2": 0,
+                "use_local_map": 0
+            },
+            "bitrate": 4096,
+            "fps": 0,
+            "gop": 0,
+            "type": 264
+        },
+        {
+            "id": 3,
+            "rc": {
+                "type": "VBR",
+                "stat_time": 1,
+                "vq": 0,
+                "min_qp": 28,
+                "max_qp": 48,
+                "min_iqp": 28,
+                "max_iqp": 48,
+                "min_i_prop": 10,
+                "max_i_prop": 40,
+                "intra_qp_delta": -2,
+                "idr_qp_delta": 10,
+                "change_pos": 85,
+                "block_rcsize": 2,
+                "min_frame_qp": 30,
+                "max_frame_qp": 51,
+                "min_i_frame_qp": 30,
+                "max_i_frame_qp": 51,
+                "cb_qp_offset": -6,
+                "cr_qp_offset": -6,
+                "motion_sen": 6,
+                "motion_alpha": 32,
+                "still_i_bit_percent": 25,
+                "ctu_bits_ref_en": 0,
+                "ctu_bits_ref_qp_delta_range": 3,
+                "act_on_i_frame": 0,
+                "qp_map_finely": 1,
+                "use_qp_map1": 0,
+                "use_qp_map2": 0,
+                "use_local_map": 0
+            },
+            "bitrate": 1024,
+            "fps": 0,
+            "gop": 0,
+            "type":264
+        },
+        {
+            "id": 4,
+            "rc": {
+                "type": "VBR",
+                "stat_time": 1,
+                "vq": 0,
+                "min_qp": 28,
+                "max_qp": 48,
+                "min_iqp": 28,
+                "max_iqp": 48,
+                "min_i_prop": 10,
+                "max_i_prop": 40,
+                "intra_qp_delta": -2,
+                "idr_qp_delta": 10,
+                "change_pos": 85,
+                "block_rcsize": 2,
+                "min_frame_qp": 30,
+                "max_frame_qp": 51,
+                "min_i_frame_qp": 30,
+                "max_i_frame_qp": 51,
+                "cb_qp_offset": -6,
+                "cr_qp_offset": -6,
+                "motion_sen": 6,
+                "motion_alpha": 32,
+                "still_i_bit_percent": 25,
+                "ctu_bits_ref_en": 0,
+                "ctu_bits_ref_qp_delta_range": 3,
+                "act_on_i_frame": 0,
+                "qp_map_finely": 1,
+                "use_qp_map1": 0,
+                "use_qp_map2": 0,
+                "use_local_map": 0
+            },
+            "bitrate": 4096,
+            "fps": 0,
+            "gop": 0,
+            "type": 264
+        },
+        {
+            "id": 5,
+            "rc": {
+                "type": "VBR",
+                "stat_time": 1,
+                "vq": 0,
+                "min_qp": 28,
+                "max_qp": 48,
+                "min_iqp": 28,
+                "max_iqp": 48,
+                "min_i_prop": 10,
+                "max_i_prop": 40,
+                "intra_qp_delta": -2,
+                "idr_qp_delta": 10,
+                "change_pos": 85,
+                "block_rcsize": 2,
+                "min_frame_qp": 30,
+                "max_frame_qp": 51,
+                "min_i_frame_qp": 30,
+                "max_i_frame_qp": 51,
+                "cb_qp_offset": -6,
+                "cr_qp_offset": -6,
+                "motion_sen": 6,
+                "motion_alpha": 32,
+                "still_i_bit_percent": 25,
+                "ctu_bits_ref_en": 0,
+                "ctu_bits_ref_qp_delta_range": 3,
+                "act_on_i_frame": 0,
+                "qp_map_finely": 1,
+                "use_qp_map1": 0,
+                "use_qp_map2": 0,
+                "use_local_map": 0
+            },
+            "bitrate": 1024,
+            "fps": 0,
+            "gop": 0,
+            "type":264
+        }
+    ],
+    "jenc":
+    [
+        {
+            "id": 0,
+            "qplevel": 90
+        },
+        {
+            "id": 1,
+            "qplevel": 90
+        }
+    ],
+    "rtsp":
+    [
+        {
+            "id": 0,
+            "port_num": 8554,
+            "stream_cnt": 2,
+            "stream_name": ["axstream0", "axstream1"]
+        }
+    ],
+    "cgi":
+    {
+        "enable": 1,
+        "base_dir": "web"
+    },
+
+    "ain":
+    [
+        {
+            "id":0,
+            "sample_rate": 16000,
+            "latency_des": "unit: ms, multiples of 10",
+            "latency": 40,
+            "volume_des": "0-10.0",
+            "volume": 1.0
+        }
+    ],
+    "aout":
+    [
+        {
+            "id": 0,
+            "sample_rate": 16000,
+            "volume_des": "0-10.0",
+            "volume": 1.0
+        }
+    ],
+    "sys":
+    {
+        "venc_thread_num": 2
+    },
+    "display":
+    [
+        {
+            "deviceID": 0,
+            "intface": "dsi",
+            "timing_description": "auto: default timing; user: timing defined in <user_timings> with index <user_timing_id>",
+            "timing": "user",
+            "user_timing_id": 0,
+            "user_timings":
+            [
+                {
+                    "clock_frequency": 29700,
+                    "h_active": 412,
+                    "h_front_porch": 30,
+                    "h_back_porch": 30,
+                    "h_sync_len": 8,
+                    "v_active": 960,
+                    "v_front_porch": 30,
+                    "v_back_porch": 30,
+                    "v_sync_len": 20,
+                    "inverse_data_valid": 1,
+                    "inverse_h_synch": 1,
+                    "inverse_v_synch": 1
+                },
+                {
+                    "clock_frequency": 29700,
+                    "h_active": 480,
+                    "h_front_porch": 130,
+                    "h_back_porch": 130,
+                    "h_sync_len": 8,
+                    "v_active": 640,
+                    "v_front_porch": 30,
+                    "v_back_porch": 30,
+                    "v_sync_len": 20,
+                    "inverse_data_valid": 1,
+                    "inverse_h_synch": 1,
+                    "inverse_v_synch": 1
+                }
+            ],
+            "rotate": 90,
+            "width": 412,
+            "height": 960,
+            "fps": 60,
+            "enableUI": 1,
+            "mirror": 0,
+            "flip": 0,
+            "area":
+            [
+                {
+                    "x": 0,
+                    "y": 0,
+                    "w": 412,
+                    "h": 960
+                }
+            ],
+            "csi_tx_attr": {
+                "out_fmt": "yuv422",
+                "yuv420_fbc": 0,
+                "yuv420_uv_swap": 0,
+                "yuv422p_only": 0,
+                "mipi_attr":
+                {
+                    "lane":"lane_4",
+                    "lane_map_des":"index->[tx lane sequence], value->[data_lane: 0-3, clk_lane: 4]",
+                    "lane_map":[4,0,1,2,3]
+                }
+            }
+        }
+    ],
+    "aov":
+    {
+        "type_specification":"0: sleep; 1: lapse",
+        "type":0,
+        "sleep_ms":1000,
+        "sleep_count":0,
+        "wakeup_ms":0,
+        "audio_in_aov":0,
+        "fps":
+        {
+            "front": 1,
+            "rear": -1,
+            "other": -1
+        }
+    },
+    "file":
+    {
+        "file_grow": 20,
+        "file_mux": "mp4"
+    },
+    "algo":
+    [
+        {
+            "type":"skel",
+            "instance":
+            [
+                {
+                    "id": 0,
+                    "enable": 1,
+                    "//": "0: none; 1: HVCP; 2: FACE; 10: PCD",
+                    "detect_algo_type": 10,
+                    "detect_models_path": "/opt/etc/skelModels",
+                    "detect_track_active": 1,
+                    "panorama_enabled": 0,
+                    "push_attr_always": 1,
+                    "push_enabled": 0,
+                    "best_width": 1024,
+                    "best_height": 576,
+                    "crop_encoder_qplevel": 75,
+                    "object_filter": [
+                        {
+                            "enable":1,
+                            "object_category": "face",
+                            "confidence": 0
+                        },
+                        {
+                            "enable":1,
+                            "object_category": "body",
+                            "confidence": 0
+                        },
+                        {
+                            "enable":1,
+                            "object_category": "vehicle",
+                            "confidence": 0
+                        },
+                        {
+                            "enable":1,
+                            "object_category": "cycle",
+                            "confidence": 0
+                        },
+                        {
+                            "enable":1,
+                            "object_category": "plate",
+                            "confidence": 0
+                        }
+                    ],
+                    "push_strategy": {
+                        "//": "1: fast; 2: interval; 3: best",
+                        "push_mode": 3,
+                        "interval_time": 2000,
+                        "push_counts": 3
+                    }
+                }
+            ]
+        }
+    ],
+    "pool":
+    {
+        "//": "format: BAYER_RAW_10BPP_PACKED:133, YUV420_SEMIPLANAR:3",
+        "private":
+        [
+            {
+                "//": "front camera",
+                "width": 2688, "height": 1520, "pixel_format": 133, "block_count": 6, "compress_mode": 2, "compress_level": 4
+            }
+        ],
+        "common":
+        [
+            {
+                "//": "front camera",
+                "width": 2688, "height": 1520, "pixel_format": 3, "block_count": 2, "compress_mode": 2, "compress_level": 10
+            },
+            {
+                "//": "front camera main video SW_LOW_MEM",
+                "width": 2688, "height": 128, "pixel_format": 3, "block_count": 1, "compress_mode": 2, "compress_level": 4
+            },
+            {
+                "//": "front camera sub video SW_OFFLINE",
+                "width": 1280, "height": 720,  "pixel_format": 3, "block_count": 2, "compress_mode": 2, "compress_level": 4
+            },
+            {
+                "//": "front capture thumb (scale YUV and JENC)",
+                "width": 200, "height": 110,  "pixel_format": 3, "block_count": 1, "compress_mode": 0, "compress_level": 0
+            }
+        ]
+    }
+}

@@ -1,0 +1,8 @@
+prompt: |
+  使用已安装的 sdk-axck-diag 技能，分析当前目录下 serial.log 中的 MP4 Muxer NAL 约束错误，定位录像切文件状态机根因并输出修复建议至 out/report.md。
+expect:
+  files:
+    - path: out/report.md
+      exists: true
+      min_bytes: 40
+  assert: assert.sh

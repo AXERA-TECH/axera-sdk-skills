@@ -1,0 +1,32 @@
+prompt: '使用已安装的 sdk-dataflow-analysis 技能分析当前目录 input/ 中的现场材料。
+
+  先读取已安装技能的 SKILL.md，再执行技能规定的输入完整性检查，并按技能流程处理。当前为离线评测，没有板卡连接；不得交互提问或等待补采。
+
+  输入检查返回非零或 INCOMPLETE 是需要报告的诊断结果，不是终止交付的理由。无论输入是否完整，结束前必须实际创建并保存 result.md 和 result.json；输入不足时在两个文件中记录缺失项和补采指令，不补造证据。
+
+  将完整答复写入 result.md，并将同一结论写入 result.json，格式为：
+
+  {"status":"failure|normal|incomplete","root_cause":"根因、正常行为或证据不足的说明","confidence":"high|medium|low","evidence":[{"source":"input/文件名","quote":"原始材料中的证据原文"}],"missing_information":["需要补充的文件或信息"]}
+
+  status 只选一个值：failure 表示证据支持故障归因，normal 表示未发现所述故障，incomplete 表示输入门禁未通过。
+
+  root_cause 写出完整结论：错误字段或机制、日志可见的实际值（未打印则写未知）、适用的文档约束；涉及范围、对齐或容量限制时，将具体约束数字写入 root_cause，不只放在 result.md 的分析段中。不得从评测编号猜参数值。
+
+  输入门禁未通过时，status 为 incomplete，confidence 为 low；result.md 保留 INCOMPLETE 或 INCONCLUSIVE 标记，missing_information 列出所有缺失或内容不足的必需输入。
+
+  输入完整时引用至少两条证据，输入不足时只报告缺失项和补采，不强行归因。
+
+  evidence 引用必须直接支撑 root_cause 的关键机制。结论涉及运行期配置变化时，应引用变化动作、对应 proc 中的生效字段和持续出流证据；引用 proc 表格时同时保留对应表头和数据行，使字段含义可以核对。
+
+  只读取 input/ 和已安装技能；评测答案不属于分析输入。
+
+  '
+expect:
+  files:
+  - path: result.md
+    exists: true
+    min_bytes: 200
+  - path: result.json
+    exists: true
+    min_bytes: 100
+  assert: assert.sh

@@ -1,0 +1,4 @@
+interface:
+  display_name: "AX615 IVPS→VENC Diagnose"
+  short_description: "诊断 AX615 IVPS→VENC/JENC 的链路卡死，含 HSK 握手与 SW_Offline 绑定"
+  default_prompt: "使用 $sdk-ivps-venc-diagnose 分析 AX615 link_table/syncagent/venc/jenc/ivps proc 输出，识别 IVPS→VENC 的 HSK 形态或判定 SW_Offline 链路的数据流卡死段，定位问题模块并生成 HTML 报告。"

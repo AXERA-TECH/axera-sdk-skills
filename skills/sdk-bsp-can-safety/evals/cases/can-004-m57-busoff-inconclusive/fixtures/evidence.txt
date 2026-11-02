@@ -1,0 +1,5 @@
+Chip: M57
+Main project OS: Linux
+CAN ownership: Safety side
+Safety CAN framework: AUTOSAR MCAL CAN
+Symptom: CAN Bus-Off on controller 2, recurs shortly after recovery

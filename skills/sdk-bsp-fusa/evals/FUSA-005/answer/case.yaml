@@ -1,0 +1,26 @@
+schema_version: 1
+id: FUSA-005
+title: S0 输入闭合门禁：输入不足时只追问一个问题
+category: stage-gate/input-completeness/ask-not-guess
+source: synthetic
+analyzer:
+  skill: sdk-bsp-fusa
+  runtime_name: sdk-bsp-fusa
+platform: unknown
+platform_evidence: 客户未提供任何平台判据（无 SDK 路径、无版本号、无板端节点输出），S1 无法进行
+expected_stage: S0
+input:
+  type: client_report
+  files:
+    - input/prompt.md
+  capture:
+    notes:
+      - 只有客户第一句话，三项必需输入（现象描述、完整日志、复现步骤）全部不合格。
+      - 本 Case 考的是"停在 S0 追问"，不是结论文本。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/prompt.md
+  evaluator_only:
+    - answer/oracle.yaml
+    - answer/case.yaml

@@ -1,0 +1,14 @@
+{
+  "disable_signature_check": {
+    "question": "是否应关闭验签",
+    "type": "boolean"
+  },
+  "continue_writing_on_failure": {
+    "question": "验签失败是否继续写入",
+    "type": "boolean"
+  },
+  "end_to_end_trust_check_required": {
+    "question": "是否需端到端检查签名与公钥配置",
+    "type": "boolean"
+  }
+}

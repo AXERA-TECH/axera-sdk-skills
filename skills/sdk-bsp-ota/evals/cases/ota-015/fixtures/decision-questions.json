@@ -1,0 +1,14 @@
+{
+  "business_validation_proven": {
+    "question": "题目是否已证明业务验证完成",
+    "type": "boolean"
+  },
+  "lua_alternative_possible": {
+    "question": "缺 sh 时是否还可能存在 lua 验证脚本",
+    "type": "boolean"
+  },
+  "all_hooks_missing_defaults_pass": {
+    "question": "文档实现中全部验证脚本缺失是否默认返回通过",
+    "type": "boolean"
+  }
+}

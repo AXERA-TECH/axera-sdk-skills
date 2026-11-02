@@ -1,0 +1,36 @@
+version: 1
+platform: ax637
+skill: sdk-bsp-nand-fs
+status: reviewed
+
+cases:
+  - id: ax637-linux-nand-detection
+    environment: linux
+    task: 根据 AX637/AX637R board/PLAT、Flash ID、geometry 和启动日志确认 NAND 识别与 scan 配置。
+    evidence: [board, plat, serial_log, dmesg, flash_id, controller_config]
+    expected: 能基于 config.mk、U-Boot/Linux DTS、Flash 表和最早日志判断识别/scan 问题，并明确 M57 scan 命令和参数不能直接作为 AX637 默认值。
+  - id: ax637-linux-filesystem
+    environment: linux
+    task: 区分 raw MTD、MTD partition、UBI volume 和 UBIFS 挂载问题。
+    evidence: [board, plat, dmesg, proc_mtd, mtd_links, mount_info, filesystem_image]
+    expected: 能结合 `/proc/mtd`、`/dev/link/*`、rescan 脚本、分区 JSON 和挂载日志定位设备层边界，不使用 QNX `ax_mtd`/ETFS 语义。
+  - id: ax637-nand-partition
+    environment: linux_or_safety_rtos
+    task: 审计 ONLY_NAND 或相关启动介质下的分区 JSON、生成元数据与启动后布局。
+    evidence: [board, plat, partition_json, generated_package, bootloader_layout, runtime_layout]
+    expected: 能审计 AX637/AX637R 的分区 JSON、生成包、U-Boot 启动模式、mtdparts metadata 与运行时布局，指出 label、边界或 metadata 不一致。
+  - id: ax637-ab-filesystem
+    environment: linux
+    task: 判断 AX637 与 AX637R 的 AB/non-AB、镜像大小、坏块预留和文件系统容量是否一致。
+    evidence: [board, plat, ab_mode, partition_layout, image_size, filesystem_info]
+    expected: 能识别当前 demo 配置中 AX637 non-AB 与 AX637R AB 的差异，核对对应 `partitions*.json`、镜像大小和 UBI/rootfs 容量，并标明客户板待确认项。
+  - id: ax637-flash-adaptation
+    environment: linux_or_safety_rtos
+    task: 评估新增或替换 NAND/Flash 后的 ECC、坏块、接口模式和性能回归。
+    evidence: [flash_id, geometry, ecc_config, bad_block_info, controller_config, baseline]
+    expected: 能核对 W25N04LW 当前表项、4-4 线、100 MHz NAND 子节点频率、`rx-sample-delays = <3>` 及 SBL/U-Boot/Linux 各层适配，并区分 demo 默认值和客户板事实。
+  - id: ax637-programming-boot-failure
+    environment: linux_or_safety_rtos
+    task: 从 AXDL/FDL/OTA 日志与首个启动错误定位烧录包、分区元数据或镜像不一致。
+    evidence: [program_log, package_metadata, partition_layout, serial_log, sdk_revision]
+    expected: 能从 AXDL/FDL 与首个启动错误入手，核对 Flash 型号、包元数据、分区 JSON、mtdparts 校验和镜像大小，避免未经确认执行全擦或重分区。

@@ -1,0 +1,28 @@
+# 由 evals.json 自动迁移生成
+{
+  "root_cause": "指出 0x80038A80=AX_ERR_VO_DEV_OP_FAIL 是公开 API 的包装错误码，PCLK 不命中会以该码表现，真实原因需看 dmesg 的 unsupport clk；说明 PCLK 必须精确命中离散档位表（无容差、无就近取整），非整除档位按截断取整：36000÷14 → 2571（不是 2571.43、更不是 2572）；33300 同样不可达（最近 33000=198000÷6）；给出修正（用 2571 或改选可达档位）与核验步骤",
+  "required_concepts": [
+    "说明 u32Pclk 必须精确命中离散档位表（80 槽位/62 可达值），无容差、无就近取整",
+    "指出非整除档位按源频率截断取整：2572 与 2571.43 都不合法，合法值是 2571（36000÷14）",
+    "指出 0x80038A80=AX_ERR_VO_DEV_OP_FAIL 是包装后的错误码，须结合 dmesg 的 unsupport clk 与 proc 信息定位，而不是只看 API 返回值",
+    "对 33300 给出结论：不在离散档位表（最近可达 33000=198000÷6）",
+    "引用 PCLK 表结论时带版本标注（「SDK V3.14.0 实现行为，需按版本核验」或等价声明）",
+    "报告不出现实现侧源码路径/文件名/内部符号名/源码行号"
+  ],
+  "forbidden_conclusions": [
+    "不结合 dmesg 就断定硬件故障",
+    "声称 PCLK 有容差可就近取整"
+  ],
+  "evidence_signatures": {
+    "input/scenario.md": [
+      "0x80038A80",
+      "AX_ERR_VO_DEV_OP_FAIL",
+      "unsupport clk"
+    ]
+  },
+  "expected_confidence": "high",
+  "evaluation_notes": [
+    "由 sdk-vo-analysis-all/evals/evals.json 原用例 id=8 迁移。",
+    "root_cause 字段在本 Case 表示期望分析结论/期望生成结果的核心内容（见 grading.md）。"
+  ]
+}

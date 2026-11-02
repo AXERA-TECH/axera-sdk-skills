@@ -1,0 +1,14 @@
+{
+  "template_order_proves_safety": {
+    "question": "仅模板排列能否证明掉电安全",
+    "type": "boolean"
+  },
+  "core_handler_timing_check_required": {
+    "question": "是否需核对 core/handler 实际时序",
+    "type": "boolean"
+  },
+  "protection_before_all_writes_required": {
+    "question": "目标保护是否必须覆盖 erase/write/copy",
+    "type": "boolean"
+  }
+}

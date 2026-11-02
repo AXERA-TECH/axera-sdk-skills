@@ -1,0 +1,26 @@
+schema_version: 1
+id: rc-005
+display_id: RC-005
+title: 配置与实测矛盾：DstFr=30 但 OutFps=15 减半，输入侧正常
+category: venc-rc/common/config-runtime-contradiction
+analyzer:
+  skill: sdk-venc-rc-config-audit
+platform:
+  soc: AX615
+  sdk_version: V3.15.0
+input:
+  type: proc_snapshot
+  files:
+    - input/venc_proc.txt
+  capture:
+    source: derived
+    notes:
+      - 真实双通道样本为基底，chn0 STATUS 2 的 OutFps/BsFrmCnt/BitRate 减半派生。
+      - 现象（输出帧率只有配置一半）通过 case.yaml 的任务提示词提供。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/venc_proc.txt
+  evaluator_only:
+    - answer/manifest.yaml
+    - answer/oracle.yaml

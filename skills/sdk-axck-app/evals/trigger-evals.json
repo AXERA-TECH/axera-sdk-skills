@@ -1,0 +1,27 @@
+[
+  {
+    "query": "帮我编译 camera-kit 下的 axck_service 和 client 库",
+    "should_trigger": true,
+    "notes": "Direct trigger for building AXCK application and service modules"
+  },
+  {
+    "query": "检查 opt.filelist 里是否已经包含了 libaxck_client.so 和配置文件打包规则",
+    "should_trigger": true,
+    "notes": "Firmware packaging and opt.filelist validation"
+  },
+  {
+    "query": "排查 axck_service 和 axck_client 之间的 nanomsg RPC 消息调用超时",
+    "should_trigger": true,
+    "notes": "Client-Service IPC architecture debugging"
+  },
+  {
+    "query": "修改 IVPS 缩放尺寸到 3K 分辨率",
+    "should_trigger": false,
+    "notes": "Image pipeline configuration belongs to sdk-axck-config"
+  },
+  {
+    "query": "在串口控制台运行自动化开流和录像测试",
+    "should_trigger": false,
+    "notes": "Board testing belongs to sdk-axck-test"
+  }
+]

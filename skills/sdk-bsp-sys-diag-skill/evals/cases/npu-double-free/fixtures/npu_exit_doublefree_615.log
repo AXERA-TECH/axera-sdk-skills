@@ -1,0 +1,11 @@
+1970-01-01 09:03:11 App:    [  733.551002] [NPU][W][512] [W][             AX_ENGINE_DestroyHandle][ 402]: destroy npu handle 0
+1970-01-01 09:03:11 Kernel: [  733.552118]  [C0][SYS][E][512] [CMM][Error]:ax_cmm_free failed!Block not found,phyaddr=0x48ab0000.
+1970-01-01 09:03:11 Kernel: [  733.552140]  [C0][SYS][E][512] [Pool][Func]:ioctl_pool_handle2physaddr [Line]:1675 [Error]:Get block phyaddr fail!BlockId :0x0 invalid!
+1970-01-01 09:03:11 App:    [  733.552402] [NPU][W][512] [W][                  AX_ENGINE_Deinit][ 431]: engine deinit done
+1970-01-01 09:03:12 Kernel: [  734.880233]  [C0][MM][E][512] Unable to handle kernel paging request at virtual address 5e011c40
+1970-01-01 09:03:12 Kernel: [  734.880251]  [C0][MM][E][512] pgd = ffffffc0 [5e011c40] *pgd=00000000
+1970-01-01 09:03:12 Kernel: [  734.880266]  [C0][MM][E][512] Internal error: Oops: 96000005 [#1] SMP
+1970-01-01 09:03:12 Kernel: [  734.880290]  [C0][MM][E][512] CPU: 0 PID: 512 Comm: npu_infer_test
+1970-01-01 09:03:12 Kernel: [  734.880314]  [C0][MM][E][512] PC is at __ax_cmm_block_release+0x3c/0x120
+1970-01-01 09:03:12 Kernel: [  734.880330]  [C0][MM][E][512] LR is at ax_cmm_free+0x88/0x160
+1970-01-01 09:03:12 Kernel: [  734.880361]  [C0][MM][E][512] (backtrace truncated - console frozen, watchdog pending)

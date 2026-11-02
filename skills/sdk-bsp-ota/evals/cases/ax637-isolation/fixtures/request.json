@@ -1,0 +1,6 @@
+{
+  "case_id": "AX637-ISOLATION",
+  "question": "platform=ax637，Linux。请列出 OTA 首次验证和日志入口。",
+  "context": "平台背景：ax637。没有提供真实 SDK、板卡或构建产物；目录标志若在问题中给出，是人工构造的场景条件。",
+  "provenance": "synthetic"
+}

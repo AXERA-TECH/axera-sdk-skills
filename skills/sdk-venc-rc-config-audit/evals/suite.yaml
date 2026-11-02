@@ -1,0 +1,42 @@
+version: 1
+defaults:
+  # llmproxy 网关偶发排队 turns=0 超时（run#2 rc-004/005、run#4 rc-005）。
+  # timeout 上限受 max_wall_seconds 约束：6 用例串行，timeout×6 必须 < 3600，
+  # 故 480 是安全上限（480×6=2880；600 会触发 discover 的 "Budget exceeded"）
+  timeout_seconds: 480
+  samples: 1
+gates:
+  smoke:
+    - rc-001
+    - rc-004
+budget:
+  max_agent_runs: 8
+  # 并发 2 时 llmproxy 网关出现排队，后发 case 轮次为 0 直接超时；保持串行。
+  # max_wall_seconds 上限 3600，不得再调高（7200 会触发 "Invalid max_wall_seconds"）
+  max_wall_seconds: 3600
+  concurrency: 1
+cases:
+  - id: rc-001
+    path: cases/rc-001
+    kind: behavior
+    required: true
+  - id: rc-002
+    path: cases/rc-002
+    kind: behavior
+    required: true
+  - id: rc-003
+    path: cases/rc-003
+    kind: behavior
+    required: true
+  - id: rc-004
+    path: cases/rc-004
+    kind: behavior
+    required: true
+  - id: rc-005
+    path: cases/rc-005
+    kind: behavior
+    required: true
+  - id: rc-006
+    path: cases/rc-006
+    kind: behavior
+    required: true

@@ -1,0 +1,54 @@
+schema_version: 1
+id: AXDF-006
+title: LowMem VIN→IVPS 运行期打开 LDC
+category: module-dataflow/ax-sys-link-v2/runtime-constraint
+analyzer:
+  skill: sdk-dataflow-analysis
+platform:
+  soc: AX615
+  project: AX615_nor
+  flash: spi_nor
+  ddr_mb: 128
+  sensor: mis20s1
+reproducer:
+  patch: answer/reproducer.patch
+  application: /opt/bin/FRTDemo/frtdemo
+  command: cd /opt/bin/FRTDemo && ./run.sh -p 0 -s 16 -n 1 -l 6 -t 5 -u 1
+input:
+  type: log_set
+  files:
+    - input/serial.log
+    - input/syslog.log
+    - input/logctl.proc
+    - input/vin.proc
+    - input/ivps.proc
+    - input/venc.proc
+    - input/link.proc
+  capture:
+    userlog_level: info
+    userlog_level_value: 6
+    userlog_modules:
+      VIN: 17
+      IVPS: 13
+      VENC: 7
+    syslog_source: /tmp/data/AXSyslog/syslog/2026-09-17-10-45-46.log
+    notes:
+      - 全部输入来自同一次复现轮次，AXP 为 AX615_nor_mis20s1_V3.12.0_20260908162155_uclibc.axp，APP/SDK Ver 均为 V3.12.0。
+      - VIN→IVPS 改为 LowMem mode 1、line_cnt 0、src_engine NONE、dst_engine GDC；IVPS→VENC LowMem 保持 line_cnt=128。VIN→IVPS 的 line_cnt 不要改成 256，ddr128 FRTDemo 该值会撑爆启动。
+      - testsuite 裁成 scenario_1 只留 LDC enable=1、distor_ratio=2000、x/y_ratio=50，LoopNum=1、DefIntervalMs=1000、RandomEnable=0。V3.12.0 必须 -u 1 才跑 TestSuite。
+      - serial.log 覆盖启动、三条 Link setup 成功、TestSuite LDC 0→1 以及 UpdateLDC 成功返回。syslog.log 是 logserviced 后期切片，启动瞬间 Linkage/LDC 行可能不在前 24KiB；首次 LDC 动作以 serial.log 为准。
+      - proc 在应用仍存活且 LDC 下发后采集。vin.proc WARP STATUS LDC=1，几何仍 1920x1080；ivps.proc GDC DewarpType=LDC 且 Fail1=0、OutFps 约 30；venc.proc chn0 持续收流。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/serial.log
+    - input/syslog.log
+    - input/logctl.proc
+    - input/vin.proc
+    - input/ivps.proc
+    - input/venc.proc
+    - input/link.proc
+  evaluator_only:
+    - answer/oracle.yaml
+    - answer/reproducer.patch
+    - answer/case.yaml

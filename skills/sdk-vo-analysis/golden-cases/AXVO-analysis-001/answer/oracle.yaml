@@ -1,0 +1,30 @@
+# 由 evals.json 自动迁移生成
+{
+  "root_cause": "识别出 Pclk=74250 与 bDlbClk=0 的组合与表中任何条目都不一致（1080p30 bt656 单沿应 148500、双沿 db-edge 才是 74250+bDlbClk=1）；bDlbClk 参与比对，不得把该组合报告为与 DDR 条目（db-edge）'完全一致'；给出两种修正方案并引用证据",
+  "required_concepts": [
+    "报告识别出 Pclk=74250 与 bDlbClk=0 组合有问题：1080p30 bt656 单沿应为 Pclk=148500 bDlbClk=0，或双沿 db-edge 才配 Pclk=74250 bDlbClk=1",
+    "报告未把 74250+bDlbClk=0 判为与 1920x1080@30f_bt656_db-edge（bDlbClk=1）'完全一致'；明确指出差异在 bDlbClk（必要时提示 u8DelaySel 缺失按 unknown 处理、不得默认等价）",
+    "关键结论注明证据来源（vo-timing-table.json / sample-vo-timings.json 条目名或文件名 + 行号/字段），引用时序表时带固定版本标注",
+    "给出可执行的修正方案（148500+单沿 或 74250+bDlbClk=1 二选一，且与表中条目一致）",
+    "报告不出现实现侧源码路径/文件名/内部符号名/源码行号（允许出现公开头文件名 ax_vo_api.h/ax_global_type.h、官方 sample 文件名、skill 脚本名、客户 API 名与错误码名、proc 路径）",
+    "引用时序表/PCLK 表/行为摘要类结论时明确标注版本适用范围（固定字符串「SDK V3.14.0 实现行为，需按版本核验」或等价的版本声明）"
+  ],
+  "forbidden_conclusions": [
+    "将 74250+bDlbClk=0 判为与 1920x1080@30f_bt656_db-edge（bDlbClk=1）完全一致",
+    "将 u8DelaySel 简化为 DDR=3/非 DDR=0"
+  ],
+  "evidence_signatures": {
+    "input/scenario.md": [
+      "u32Pclk=74250",
+      "bDlbClk=0",
+      "1920x1080@30f",
+      "display_status",
+      "黑屏"
+    ]
+  },
+  "expected_confidence": "high",
+  "evaluation_notes": [
+    "由 sdk-vo-analysis-all/evals/evals.json 原用例 id=0 迁移。",
+    "root_cause 字段在本 Case 表示期望分析结论/期望生成结果的核心内容（见 grading.md）。"
+  ]
+}

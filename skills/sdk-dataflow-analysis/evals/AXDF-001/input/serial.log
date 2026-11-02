@@ -1,0 +1,34 @@
+launching frtdemo, md5: 56bb801f3825281feb2b7777fedbc99d ...
+[AXLOG2][E][277] @AXLOG2,5e3f7a29,00000001,6ce072bd,0
+=============== APP(APP Ver: V3.12.0, SDK Ver: V3.12.0) Started Sep  8 2026 15:52:28 ===============
+[D]AX_GZIPD_Init: [SDK version]: libax_gzipd.so V3.12.0 Sep  8 2026 15:38:54
+
+09-08 17:30:13:879 80181209    277 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc0, mod=7, grp=0, chn=0, type=1, ret=0x800b000a
+09-08 17:30:13:879 80181474    277 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc0, mod=7, grp=0, chn=0, type=0, ret=0x800b000a
+09-08 17:30:13:879 80181600    277 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc11, mod=7, grp=0, chn=5, type=1, ret=0x800b000a
+09-08 17:30:13:880 80181709    277 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc11, mod=7, grp=0, chn=5, type=0, ret=0x800b000a
+09-08 17:30:13:880 80181815    277 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc12, mod=7, grp=0, chn=6, type=1, ret=0x800b000a
+09-08 17:30:13:880 80181915    277 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc12, mod=7, grp=0, chn=6, type=0, ret=0x800b000a
+09-08 17:30:13:880 80182018    277 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc13, mod=7, grp=0, chn=7, type=1, ret=0x800b000a
+09-08 17:30:13:880 80182119    277 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc13, mod=7, grp=0, chn=7, type=0, ret=0x800b000a
+09-08 17:30:13:880 80182220    277 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=VIN_POOL, mod=17, grp=0, chn=0, type=1, ret=0x800b000a
+09-08 17:30:13:880 80182321    277 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=VIN0, mod=17, grp=0, chn=0, type=0, ret=0x800b000a
+09-08 17:30:13:880 80182422    277 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=VIN1, mod=17, grp=1, chn=0, type=0, ret=0x800b000a
+09-08 17:30:13:880 80182524    277 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=npu, mod=6, grp=0, chn=0, type=0, ret=0x800b000a
+09-08 17:30:13:880 80182625    277 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc1, mod=7, grp=0, chn=1, type=1, ret=0x800b000a
+09-08 17:30:13:881 80182725    277 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc1, mod=7, grp=0, chn=1, type=0, ret=0x800b000a
+09-08 17:30:13:881 80182824    277 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc2, mod=7, grp=0, chn=2, type=1, ret=0x800b000a
+09-08 17:30:13:881 80182924    277 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc2, mod=7, grp=0, chn=2, type=0, ret=0x800b000a
+09-08 17:30:13:881 80183025    277 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc3, mod=7, grp=0, chn=3, type=1, ret=0x800b000a
+09-08 17:30:13:881 80183127    277 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc3, mod=7, grp=0, chn=3, type=0, ret=0x800b000a
+09-08 17:30:13:881 80183227    277 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc10, mod=7, grp=0, chn=4, type=1, ret=0x800b000a
+09-08 17:30:13:881 80183326    277 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc10, mod=7, grp=0, chn=4, type=0, ret=0x800b000a
+09-08 17:30:13:959 80260704    277 E BASE_LINK: Linkage failed (13, 0, 0) => (7, 0, 0)
+09-08 17:30:13:959 80260906    277 K SENSOR <InitEZoom>: +++
+09-08 17:30:14:005 80307491    277 K POOL: Latency Mode:2 vin buffer mode:0
+09-08 17:30:14:006 80308216    277 K POOL: Comm Pool[0]: YUV_2688x128_FBC_2_10x1, BlkSize:344064, MetaSize:1024
+09-08 17:30:14:006 80308293    277 K POOL: Comm Pool[1]: YUV_768x576_FBC_2_4x2, BlkSize:368640, MetaSize:1024
+09-08 17:30:14:006 80308360    277 K POOL: Comm Pool[2]: YUV_1280x720_FBC_0_0x2, BlkSize:1474560, MetaSize:1024
+09-08 17:30:14:006 80308426    277 K POOL: Comm Pool[3]: YUV_1920x1080_FBC_2_0x2, BlkSize:2211840, MetaSize:1024
+09-08 17:30:14:007 80308784    277 K POOL: Priv Pool[0]: RAW0_134_1920x1080_FBC_2_4x7, BlkSize:806400, MetaSize:1024
+Terminated

@@ -1,0 +1,47 @@
+# IVD-002 正常基线（防误报）：单轮在途差一帧、HwUsed=Y、未启用通道全 0 均不得误判停滞
+# 现场为正常出流双轮采样（captured）。
+root_cause: 运行正常，无卡死。HSK 链路（VENC chn0/SessId 0、JENC chn1/SessId 1）握手
+  进度与业务计数按两轮差值持续推进：venc chn0 Send2EncCnt 1884->2036、EncSucCnt
+  1883->2036、FrmRecv 1884->2036（RecvFps 30.7 / OutFps 29.8）；jenc chn1 FrmRecv
+  63->68、SubmitCnt 63->68、SucCnt 58->63（RecvFps 0.9，JPEG 低帧率正常）；SW_Offline
+  链路 venc chn2 各计数 1883->2036 同步推进；IVPS 各 filter InCnt/OutCnt 全推进且
+  Fail1/Fail2=0；三个 syncagent session State=2 且 update/wait 双侧 RegVal 同步推进
+  （sess0 8704->45632、sess1 31232->38912、sess2 ISP 5696->6153）。
+required_concepts:
+  - 结论为运行正常/无卡死（或等价表述）
+  - 判定依据是两轮采样差值持续推进，而非单轮数值大小
+  - S1 单轮中 venc chn0 Send2EncCnt=1884 领先 EncSucCnt=1883 一帧属正常在途，
+    两轮同速推进（各 +152）即正常，不得判停滞
+  - STREAM BUF HwUsed=Y 为瞬时占用，ReadCycle=WriteCycle 且两轮推进即正常
+  - JENC chn15 已创建未启用（bHsk=N、全 0），属正常静止，不得判"计数冻结停滞"
+  - HSK 链路与 Offline 链路分别判定；venc chn2 不在 HSK STATUS 中属 SW_Offline 正常形态
+  - JENC chn1 低帧率（RecvFps 0.9，JPEG 按需编码）不判异常
+forbidden_conclusions:
+  - 任一在用链路判卡死或停滞
+  - 因单轮 Send2EncCnt 与 EncSucCnt 差一帧而判 VENC 消费异常
+  - 因 HwUsed=Y 而判码流缓冲异常
+  - 把 JENC chn15 全 0 判为停滞故障
+  - 把 JENC chn1 低帧率判为供帧不足
+  - 建议调整配置（无依据时）
+evidence_signatures:
+  input/hsk_proc.txt:
+    - '===== SAMPLE 1'
+    - '===== SAMPLE 2'
+    - 'VENC CHN HSK STATUS'
+    - '8704    10240'    # chn0 HSK initVal/syncVal 行（hskCnt=1884）
+    - '29696   31232'    # jenc chn1 HSK initVal/syncVal 行（hskCnt=63）
+    - 'HwUsed'
+    - 'Send2EncCnt'
+    - '30.7'            # chn0 RecvFps，正常满帧率
+    - '0.9'             # jenc chn1 RecvFps，JPEG 低帧率
+    - '1884       1884       0'   # chn0 STREAM BUF ReadCycle/WriteCycle/AvalRSize
+expected_confidence: high
+evaluation_notes:
+  - 本用例核心考防误报：单轮快照中存在多个"看似异常"的形态（差一帧在途、HwUsed=Y、
+    chn15 全 0、JPEG 低帧率），只有用两轮差值才能排除；模型未逐一列出全部形态不算错，
+    只要结论为正常且依据是差值推进即可。
+  - sess0/sess1 的 HoldCnt/ReleaseCnt 恒 0 属该类 session 正常形态（venc/jenc HSK），
+    仅 sess2（ISP）的 Hold/Release 推进，不得把 sess0/sess1 计数为 0 判为异常。
+  - 模型若给出"某字段需关注但不影响运行"的克制提示，不算误报；只有断言卡死/停滞才 FAIL。
+  - venc chn0 与 jenc chn1 的 initVal/syncVal 差值（10240-8704=1536、31232-29696=1536）
+    为 HSK 正常超前量，非停滞证据。

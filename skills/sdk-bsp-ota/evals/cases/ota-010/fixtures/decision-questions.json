@@ -1,0 +1,14 @@
+{
+  "readonly_ext4_diff_supported": {
+    "question": "按本平台手册，只读 ext4 是否支持所问差分方式",
+    "type": "boolean"
+  },
+  "readonly_proves_baseline": {
+    "question": "只读是否足以证明基线匹配",
+    "type": "boolean"
+  },
+  "full_package_alternative": {
+    "question": "匹配布局的完整包是否为替代方案",
+    "type": "boolean"
+  }
+}

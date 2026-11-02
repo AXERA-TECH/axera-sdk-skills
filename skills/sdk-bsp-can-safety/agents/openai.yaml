@@ -1,0 +1,4 @@
+interface:
+  display_name: "M57 Safety MCAL CAN 诊断"
+  short_description: "诊断 M57 Linux/QNX 项目 Safety 侧 AUTOSAR MCAL CAN/CAN FD 问题：平台范围确认、EB 配置核对、Bus-Off/ISR/TX 失败/RX FIFO 证据路由"
+  default_prompt: "使用 $sdk-bsp-can-safety，依据提供的问题证据，判断该场景是否适用并给出诊断结论。"

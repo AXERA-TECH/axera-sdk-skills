@@ -1,0 +1,37 @@
+tasks:
+  - name: route-and-confirm-ax637
+    prompt: "使用 sdk-bsp-boot skill 回答：开AB了嘛？"
+    expect: "识别为 ax637（AX637 / AX637R SDK，基于 M57 架构），明确未指定 PLAT，再逐项列出支持的 PLAT、FLASHTYPE 及 SUPPORT_AB 状态，再请用户选择目标 PLAT；"
+
+  - name: ax637-ab-enable
+    prompt: "使用 sdk-bsp-boot skill 回答：对 ax637_demo_only_nand 打开AB"
+    expect: "完成对 build/platforms/axera/ax637_demo_only_nand/config.mk:22 的 SUPPORT_AB 由 FALSE 改为 TRUE 修改，并提示下一步需重新全量编译并烧写验证"
+
+  - name: ax637-scope-boundary
+    prompt: "使用 sdk-bsp-boot skill 回答：eFuse 烧写顺序"
+    expect: "说明eFuse 属于 Secure Boot 范围，本 skill 转向 sdk-bsp-secure-boot，我加载该 skill 回答。"
+
+  - name: ax637-ab-faq-log-scenario-0
+    prompt: "使用 sdk-bsp-boot skill 回答：出现日志 unbootable slot 0 tries: 0, corrupt: 0 unbootable slot 1 tries: 0, corrupt: 0，分析原因？"
+    expect: "说明触发场景 自己是出厂态、对面也是出厂态；自己是 A 或 B；启动过程 异常断电 或 异常软复位；"
+
+  - name: ax637-ab-faq-log-scenario-1
+    prompt: "使用 sdk-bsp-boot skill 回答：出现日志 Do not switch Safety abc. Rebooting...，分析原因？"
+    expect: "说明触发场景：出厂前 自己是出厂态、对面也是出厂态，自己是 A 或 B，启动过程异常断电；"
+
+  - name: ax637-boot-chain
+    prompt: "使用 sdk-bsp-boot skill 回答：启动链路介绍"
+    expect: "说明 AX637 复用 M57 架构，BootROM → SBL → SPL → BL31 → OP-TEE → U-Boot → Kernel，按逐级链路说明各阶段职责(各阶段/执行者/关键动作/交付物)。"
+   
+  - name: ax637-distro-boot
+    prompt: "使用 sdk-bsp-boot skill 回答：uboot引导内核介绍"
+    expect: "说明默认维持 distro_bootcmd，经 bootcmd_blk_extlinux/boot_extlinux 调用 sysboot，读取 extlinux/extlinux.conf，加载 kernel 与 dtb 后按镜像格式调用 booti 或 bootm；不要把简化命令误说成默认链路。"
+
+  - name: ax637-simple-bootcmd-nonab
+    prompt: "使用 sdk-bsp-boot skill 回答：AX637 only_nand、非 AB、非安全启动时，简化 BOOTCMD 怎么写？"
+    expect: "给出 load mtd 0:9 0x110000000 Image.axgzip、load mtd 0:9 0x118000000 <dtb>、booti 0x110000000 - 0x118000000；说明这是按场景选择的简化方式，默认仍是 distro_bootcmd。"
+
+  - name: ax637-bootrom-diagnosis
+    prompt: "使用 sdk-bsp-boot skill 回答：AX637 串口看到 BOOTROM 的 CF，下一步按什么方向判断？"
+    expect: "按 BootROM 阶段定位：CF 是读取的数据 checksum 失败；核对镜像源、烧录位置/分区、FLASH读链路，不把这两个字符解释成 Secure Boot 错误。"
+

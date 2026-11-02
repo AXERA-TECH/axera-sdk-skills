@@ -1,0 +1,82 @@
+{
+  "skill_name": "sdk-bsp-build",
+  "note": "五个离线方案评测，对应真实 SDK 上的操作步骤。Case 2 使用 Case 1 确认的有效工程；Case 5 要求同一 SDK、同一工程的 Case 2 完整构建成功。各模型用例隔离运行，前提由任务明确给定，不共享执行状态，不代表已完成真实编译。",
+  "evals": [
+    {
+      "id": 1,
+      "name": "discover-projects",
+      "title": "发现工程",
+      "prompt": "SDK 根目录为 /work/sdk/ax615。进入 SDK 的 build 目录执行 make plist，确认当前 SDK 支持哪些工程。不要发现或分析条件模块；在实际执行前无法知道 plist 输出，不要编造工程列表。 本次仅输出执行方案，不运行构建。",
+      "expected_output": "进入 build 执行 make plist；满足上述前提后才能执行，不编造运行结果。",
+      "files": [],
+      "assertions": [
+        "工作目录为 /work/sdk/ax615/build",
+        "目标顺序为 plist",
+        "命令不带 -j 参数",
+        "只给方案，不宣称已经执行或构建成功",
+        "不编造 plist 输出，不分析条件模块"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "full-build-axp",
+      "title": "完整编译并生成 AXP",
+      "prompt": "SDK 根目录为 /work/sdk/ax615。前提：Case 1 的实际 make plist 输出已确认支持 AX615_fastnor。选择该有效工程，在 build 目录执行 make p=\"$PROJECT\" clean all install axp -j64，生成 AXP。 本次仅输出执行方案，不运行构建。",
+      "expected_output": "进入 build 执行 make p=\"$PROJECT\" clean all install axp -j64；满足上述前提后才能执行，不编造运行结果。",
+      "files": [],
+      "assertions": [
+        "工作目录为 /work/sdk/ax615/build",
+        "目标顺序为 clean all install axp",
+        "并行参数为 -j64",
+        "只给方案，不宣称已经执行或构建成功",
+        "PROJECT 来自实际 plist 确认的有效工程，本场景选择 AX615_fastnor"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "build-bl1",
+      "title": "单编 BL1",
+      "prompt": "SDK 根目录为 /work/sdk/ax615。前提：AX615_fastnor 已由实际 make plist 确认为有效工程。只编译 BL1：进入 boot/bl1，执行 make p=\"$PROJECT\" clean all install -j64。不要编译其他模块或打包。 本次仅输出执行方案，不运行构建。",
+      "expected_output": "进入 boot/bl1 执行 make p=\"$PROJECT\" clean all install -j64；满足上述前提后才能执行，不编造运行结果。",
+      "files": [],
+      "assertions": [
+        "工作目录为 /work/sdk/ax615/boot/bl1",
+        "目标顺序为 clean all install",
+        "并行参数为 -j64",
+        "只给方案，不宣称已经执行或构建成功",
+        "PROJECT 来自实际 plist 确认的有效工程，本场景选择 AX615_fastnor"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "build-linux",
+      "title": "单编 Linux",
+      "prompt": "SDK 根目录为 /work/sdk/ax615。前提：AX615_fastnor 已由实际 make plist 确认为有效工程。只编译 Linux：进入 kernel/linux，执行 make p=\"$PROJECT\" clean all install -j64。不要编译其他模块或打包。 本次仅输出执行方案，不运行构建。",
+      "expected_output": "进入 kernel/linux 执行 make p=\"$PROJECT\" clean all install -j64；满足上述前提后才能执行，不编造运行结果。",
+      "files": [],
+      "assertions": [
+        "工作目录为 /work/sdk/ax615/kernel/linux",
+        "目标顺序为 clean all install",
+        "并行参数为 -j64",
+        "只给方案，不宣称已经执行或构建成功",
+        "PROJECT 来自实际 plist 确认的有效工程，本场景选择 AX615_fastnor"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "fast-build-axp",
+      "title": "快速生成 AXP",
+      "prompt": "SDK 根目录为 /work/sdk/ax615。前提：Case 1 确认 AX615_fastnor 有效，且 Case 2 已在同一 SDK 中对 AX615_fastnor 完整构建成功。进入 build/projects/$PROJECT，执行 make p=\"$PROJECT\" clean all install axp，不带 -j。说明未完成该前置构建时应先执行 Case 2。 本次仅输出执行方案，不运行构建。",
+      "expected_output": "进入 build/projects/AX615_fastnor 执行 make p=\"$PROJECT\" clean all install axp；满足上述前提后才能执行，不编造运行结果。",
+      "files": [],
+      "assertions": [
+        "工作目录为 /work/sdk/ax615/build/projects/AX615_fastnor",
+        "目标顺序为 clean all install axp",
+        "命令不带 -j 参数",
+        "只给方案，不宣称已经执行或构建成功",
+        "PROJECT 来自实际 plist 确认的有效工程，本场景选择 AX615_fastnor",
+        "确认同一 SDK、同一 PROJECT 的 Case 2 完整构建成功是快速打包前提"
+      ]
+    }
+  ]
+}

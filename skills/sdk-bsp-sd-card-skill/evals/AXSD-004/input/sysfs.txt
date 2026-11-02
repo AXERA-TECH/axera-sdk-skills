@@ -1,0 +1,2 @@
+$ cat /sys/block/mmcblk0/ro
+0

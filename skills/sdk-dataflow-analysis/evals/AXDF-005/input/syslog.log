@@ -1,0 +1,79 @@
+1970-02-11 04:00:55 Kernel: [ 7242.930991]  [C0][IVPS][W][3524] ax_ivps_sched_engine_mgr.c(105) engine 4 not registered
+1970-02-11 04:00:55 App: [ 7243.013042] [SYS][I][3505] ax_malloc.c(283) magic: 4f534d4d: policy: 0, mod_num: 30, phy: 41793000, start: 41793000, end: 41794000
+1970-02-11 04:00:55 App: [ 7243.015346] [SYS][I][3505] ax_rpmsg_api.c(110) open /dev/ax_rpmsg failed.
+1970-02-11 04:00:55 App: [ 7243.015437] [SYS][I][3505] sys_link_ioctl.c(335) open /dev/axdev/a
+1970-02-11 04:00:55 App: [ 7243.026676] [FRTDemo-IPC][C][3505] 02-11 04:00:55:687 7242997077   3505 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc12, mod=7, grp=0, chn=6, type=1, ret=0x800b000a
+1970-02-11 04:00:55 Kernel: [ 7243.026695]  [C1][SYS][E][3505] ax_cmm_userdev_adapter.c(350) not found partition['venc12'],ModId=7,GrpId=0,ChnId=6,type=0.
+1970-02-11 04:00:55 App: [ 7243.026720] [SYS][I][3505] sys_mem_ioctl.c(970) ioctl failed
+1970-02-11 04:00:55 App: [ 7243.026748] [SYS][I][3505] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+1970-02-11 04:00:55 App: [ 7243.026838] [FRTDemo-IPC][C][3505] 02-11 04:00:55:687 7242997241   3505 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc12, mod=7, grp=0, chn=6, type=0, ret=0x800b000a
+1970-02-11 04:00:55 Kernel: [ 7243.026858]  [C1][SYS][E][3505] ax_cmm_userdev_adapter.c(350) not found partition['venc13'],ModId=7,GrpId=0,ChnId=7,type=1.
+1970-02-11 04:00:55 App: [ 7243.026882] [SYS][I][3505] sys_mem_ioctl.c(970) ioctl failed
+1970-02-11 04:00:55 App: [ 7243.026909] [SYS][I][3505] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+1970-02-11 04:00:55 App: [ 7243.026998] [FRTDemo-IPC][C][3505] 02-11 04:00:55:687 7242997401   3505 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc13, mod=7, grp=0, chn=7, type=1, ret=0x800b000a
+1970-02-11 04:00:55 Kernel: [ 7243.027018]  [C1][SYS][E][3505] ax_cmm_userdev_adapter.c(350) not found partition['venc13'],ModId=7,GrpId=0,ChnId=7,type=0.
+1970-02-11 04:00:55 App: [ 7243.027042] [SYS][I][3505] sys_mem_ioctl.c(970) ioctl failed
+1970-02-11 04:00:55 App: [ 7243.027069] [SYS][I][3505] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+1970-02-11 04:00:55 App: [ 7243.027159] [FRTDemo-IPC][C][3505] 02-11 04:00:55:687 7242997562   3505 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc13, mod=7, grp=0, chn=7, type=0, ret=0x800b000a
+1970-02-11 04:00:55 Kernel: [ 7243.027180]  [C1][SYS][E][3505] ax_cmm_userdev_adapter.c(350) not found partition['VIN_POOL'],ModId=17,GrpId=0,ChnId=0,type=1.
+1970-02-11 04:00:55 App: [ 7243.027205] [SYS][I][3505] sys_mem_ioctl.c(970) ioctl failed
+1970-02-11 04:00:55 App: [ 7243.027232] [SYS][I][3505] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+1970-02-11 04:00:55 App: [ 7243.027325] [FRTDemo-IPC][C][3505] 02-11 04:00:55:687 7242997726   3505 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=VIN_POOL, mod=17, grp=0, chn=0, type=1, ret=0x800b000a
+1970-02-11 04:00:55 Kernel: [ 7243.027344]  [C1][SYS][E][3505] ax_cmm_userdev_adapter.c(350) not found partition['VIN0'],ModId=17,GrpId=0,ChnId=0,type=0.
+1970-02-11 04:00:55 App: [ 7243.027369] [SYS][I][3505] sys_mem_ioctl.c(970) ioctl failed
+1970-02-11 04:00:55 App: [ 7243.027396] [SYS][I][3505] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+1970-02-11 04:00:55 App: [ 7243.027486] [FRTDemo-IPC][C][3505] 02-11 04:00:55:687 7242997889   3505 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=VIN0, mod=17, grp=0, chn=0, type=0, ret=0x800b000a
+1970-02-11 04:00:55 Kernel: [ 7243.027505]  [C1][SYS][E][3505] ax_cmm_userdev_adapter.c(350) not found partition['VIN1'],ModId=17,GrpId=1,ChnId=0,type=0.
+1970-02-11 04:00:55 App: [ 7243.027529] [SYS][I][3505] sys_mem_ioctl.c(970) ioctl failed
+1970-02-11 04:00:55 App: [ 7243.027557] [SYS][I][3505] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+1970-02-11 04:00:55 App: [ 
+1970-02-11 04:00:55 Kernel: [ 7243.027665]  [C1][SYS][E][3505] ax_cmm_userdev_adapter.c(350) not found partition['npu'],ModId=6,GrpId=0,ChnId=0,type=0.
+1970-02-11 04:00:55 App: [ 7243.027690] [SYS][I][3505] sys_mem_ioctl.c(970) ioctl failed
+1970-02-11 04:00:55 App: [ 7243.027717] [SYS][I][3505] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+1970-02-11 04:00:55 App: [ 7243.027807] [FRTDemo-IPC][C][3505] 02-11 04:00:55:688 7242998210   3505 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=npu, mod=6, grp=0, chn=0, type=0, ret=0x800b000a
+1970-02-11 04:00:55 Kernel: [ 7243.027827]  [C1][SYS][E][3505] ax_cmm_userdev_adapter.c(350) not found partition['venc1'],ModId=7,GrpId=0,ChnId=1,type=1.
+1970-02-11 04:00:55 App: [ 7243.027851] [SYS][I][3505] sys_mem_ioctl.c(970) ioctl failed
+1970-02-11 04:00:55 App: [ 7243.027879] [SYS][I][3505] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+1970-02-11 04:00:55 App: [ 7243.027968] [FRTDemo-IPC][C][3505] 02-11 04:00:55:688 7242998370   3505 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc1, mod=7, grp=0, chn=1, type=1, ret=0x800b000a
+1970-02-11 04:00:55 Kernel: [ 7243.027988]  [C1][SYS][E][3505] ax_cmm_userdev_adapter.c(350) not found partition['venc1'],ModId=7,GrpId=0,ChnId=1,type=0.
+1970-02-11 04:00:55 App: [ 7243.028013] [SYS][I][3505] sys_mem_ioctl.c(970) ioctl failed
+1970-02-11 04:00:55 App: [ 7243.028040] [SYS][I][3505] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+1970-02-11 04:00:55 App: [ 7243.028131] [FRTDemo-IPC][C][3505] 02-11 04:00:55:688 7242998533   3505 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc1, mod=7, grp=0, chn=1, type=0, ret=0x800b000a
+1970-02-11 04:00:55 Kernel: [ 7243.028151]  [C1][SYS][E][3505] ax_cmm_userdev_adapter.c(350) not found partition['venc2'],ModId=7,GrpId=0,ChnId=2,type=1.
+1970-02-11 04:00:55 App: [ 7243.028175] [SYS][I][3505] sys_mem_ioctl.c(970) ioctl failed
+1970-02-11 04:00:55 App: [ 7243.028202] [SYS][I][3505] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+1970-02-11 04:00:55 App: [ 7243.028291] [FRTDemo-IPC][C][3505] 02-11 04:00:55:688 7242998694   3505 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc2, mod=7, grp=0, chn=2, type=1, ret=0x800b000a
+1970-02-11 04:00:55 Kernel: [ 7243.028311]  [C1][SYS][E][3505] ax_cmm_userdev_adapter.c(350) not found partition['venc2'],ModId=7,GrpId=0,ChnId=2,type=0.
+1970-02-11 04:00:55 App: [ 7243.028335] [SYS][I][3505] sys_mem_ioctl.c(970) ioctl failed
+1970-02-11 04:00:55 App: [ 7243.028362] [SYS][I][3505] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+1970-02-11 04:00:55 App: [ 7243.028452] [FRTDemo-IPC][C][3505] 02-11 04:00:55:688 7242998854   3505 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc2, mod=7, grp=0, chn=2, type=0, ret=0x800b000a
+1970-02-11 04:00:55 Kernel: [ 7243.028471]  [C1][SYS][E][3505] ax_cmm_userdev_adapter.c(350) not found partition['venc3'],ModId=7,GrpId=0,ChnId=3,type=1.
+1970-02-11 04:00:55 App: [ 7243.028495] [SYS][I][3505] sys_mem_ioctl.c(970) ioctl failed
+1970-02-11 04:00:55 App: [ 7243.028522] [SYS][I][3505] ax_sys_api.c(904) Set mem param failed,ret=0x800b000a.
+1970-02-11 04:00:55 App: [ 7243.028612] [FRTDemo-IPC][C][3505] 02-11 04:00:55:688 7242999015   3505 K IPC_PPL <APP_SYS_Init>: AX_SYS_MemSetParam, name=venc3, mod=7, grp=0, chn=3, type=1, ret=0x800b000a
+1970-02-11 04:00:55 Kernel: [ 7243.028634]  [C1][SYS][E][3505] ax_cmm_userdev_adapter.c(350) not found partition['venc3'],ModId=7,GrpId=0,ChnId=3,type=0.
+1970-02-11 04:00:55 Kernel: [ 7243.041611]  [C1][ISP][W][3505] vin_irq_wrapper.c(87) irq_idx = 16, seg_idx = 1, seg_offset = 0x   10, grp_start_id = 0, grp_num = 9
+1970-02-11 04:00:55 Kernel: [ 7243.041628]  [C1][ISP][W][3505] vin_irq_wrapper.c(87) irq_idx = 18, seg_idx = 2, seg_offset = 0x40010, grp_start_id = 0, grp_num = 6
+1970-02-11 04:00:55 Kernel: [ 7243.041645]  [C1][ISP][W][3505] vin_irq_wrapper.c(87) irq_idx = 18, seg_idx = 4, seg_offset = 0x80010, grp_start_id = 0, grp_num = 6
+1970-02-11 04:00:55 App: [ 7243.045660] [FRTDemo-IPC][W][3505] 02-11 04:00:55:705 7243016042   3505 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module VIN OK
+1970-02-11 04:00:55 App: [ 7243.045892] [FRTDemo-IPC][W][3505] 02-11 04:00:55:706 7243016286   3505 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module MIPI_RX OK
+1970-02-11 04:00:55 App: [ 7243.047809] [IVPS][I][3505] ax_ivps_adv_api.c(57) ----------------------------------------
+1970-02-11 04:00:55 App: [ 7243.048232] [IVPS][I][3505] ax_ivps_adv_api.c(58) [SDK version]: libax_ivps.so V3.12.0 Sep  8 2026 15:36:08
+1970-02-11 04:00:55 App: [ 7243.048261] [IVPS][I][3505] ax_ivps_adv_api.c(59) ----------------------------------------
+1970-02-11 04:00:55 Kernel: [ 7243.048409]  [C1][IVPS][W][3505] ax_ivps_sched_engine_mgr.c(105) engine 4 not registered
+1970-02-11 04:00:55 App: [ 7243.048613] [FRTDemo-IPC][W][3505] 02-11 04:00:55:708 7243019003   3505 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module IVPS OK
+1970-02-11 04:00:55 App: [ 7243.049837] [ENC][C][3505] ax_venc_api.c(254) [SDK version]: libax_venc.so V3.12.0 Sep  8 2026 15:36:27
+1970-02-11 04:00:55 Kernel: [ 7243.050114]  [C1][ENC][W][3505] venc.c(10033) pid:3505 RefCnt:0.
+1970-02-11 04:00:55 Kernel: [ 7243.050537]  [C1][ENC][W][3505] venc.c(10121) pid[3505]idx[0] Out
+1970-02-11 04:00:55 App: [ 7243.051103] [ENC][C][3505] ax_venc_api.c(308) pid:3505 Success
+1970-02-11 04:00:55 App: [ 7243.051261] [FRTDemo-IPC][W][3505] 02-11 04:00:55:711 7243021655   3505 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module VENC OK
+1970-02-11 04:00:55 App: [ 7243.062631] [FRTDemo-IPC][W][3505] 02-11 04:00:55:722 7243033011   3505 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module ACAP OK
+1970-02-11 04:00:55 App: [ 7243.066006] [FRTDemo-IPC][W][3505] 02-11 04:00:55:726 7243036386   3505 W IPC_PPL <InitSysMods>.2681: InitSysMods: init module APLAY OK
+1970-02-11 04:00:55 App: [ 7243.081254] [FRTDemo-IPC][W][3505] 02-11 04:00:55:741 7243051631   3505 W SNS_PARSER: Parse sensor config file: ./config/ipc/sensor/mis20s1.json successfully.
+1970-02-11 04:00:55 App: [ 7243.084980] [FRTDemo-IPC][W][3505] 02-11 04:00:55:745 7243055364   3505 W IPC_PPL <InitSysMods>.2689: ---
+1970-02-11 04:00:55 App: [ 7243.109561] [SYS][I][3505] ax_sys_api.c(320) DstEngine and Srcengine should be zero when flowmode is sw_offline
+1970-02-11 04:00:55 App: [ 7243.109755] [FRTDemo-IPC][E][3505] 02-11 04:00:55:770 7243080147   3505 E BASE_LINK: Linkage failed (17, 0, 0) => (13, 0, 0)
+1970-02-11 04:00:55 App: [ 7243.110024] [FRTDemo-IPC][W][3505] 02-11 04:00:55:770 7243080426   3505 W IPC_PPL <Construct>.97: Linkage setup.
+1970-02-11 04:00:55 App: [ 7243.110109] [FRTDemo-IPC][W][3505] 02-11 04:00:55:770 7243080511   3505 W IPC_PPL <InitSensor>.243: +++
+1970-02-11 04:00:55 App: [ 7243.110267] [FRTDemo-IPC][W][3505] 02-11 04:00:55:770 7243080668   3505 W SNS_MGR: Create sensor instance 0 ok.
+1970-02-11 04:00:55 App: [ 7243.110371] [FRTDemo-IPC][C][3505] 02-11 04:00:55:770 7243080773   3505 K SENSOR <InitEZoom>: +++

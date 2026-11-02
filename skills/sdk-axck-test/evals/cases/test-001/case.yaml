@@ -1,0 +1,8 @@
+prompt: |
+  使用已安装的 sdk-axck-test 技能，分析 test_session.log 中的串口自动化测试超时问题，识别 ANSI 转义干扰，将结果写入 out/report.md。
+expect:
+  files:
+    - path: out/report.md
+      exists: true
+      min_bytes: 40
+  assert: assert.sh

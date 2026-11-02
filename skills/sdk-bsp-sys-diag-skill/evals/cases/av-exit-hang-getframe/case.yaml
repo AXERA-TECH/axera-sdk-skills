@@ -1,0 +1,10 @@
+prompt: |
+  使用已安装的 sdk-bsp-sys-diag-skill 技能，根据当前目录下的日志文件 av_exit_hang_615.log 分析问题：
+  “我们 AX615 IPC，音视频退出的时候某个 CPU 直接挂死，NMI 都不响应，只能重启，复现概率挺高。抓到一段内核日志在 av_exit_hang_615.log。帮我分析根因，给出定位方向和下一步。”
+  请依据技能内置流程和知识库完成诊断，将最终诊断报告生成到 out/diagnosis.md。
+expect:
+  files:
+    - path: out/diagnosis.md
+      exists: true
+      min_bytes: 100
+  assert: assert.sh

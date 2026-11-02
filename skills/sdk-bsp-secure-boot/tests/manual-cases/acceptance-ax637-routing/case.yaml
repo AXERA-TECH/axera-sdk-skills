@@ -1,0 +1,18 @@
+prompt: '使用 sdk-bsp-secure-boot skill 回答问题：帮我配置 Secure Boot ？
+
+
+  这是只读咨询评测。当前目录是精简的 SDK 路由样本，不含完整工具链。
+
+  使用已安装的 sdk-bsp-secure-boot 技能，只输出操作建议或待确认的问题到 out/response.md。
+
+  不得修改 config.mk、生成密钥、执行构建或烧写 eFuse；用户要求生成/配置时给出命令说明即可。
+
+  如果缺少必要参数，在 response.md 中提出问题后结束，不等待交互。
+
+  '
+expect:
+  files:
+  - path: out/response.md
+    exists: true
+    min_bytes: 40
+  assert: assert.sh

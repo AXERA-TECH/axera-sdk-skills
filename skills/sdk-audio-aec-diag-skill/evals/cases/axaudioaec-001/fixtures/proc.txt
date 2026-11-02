@@ -1,0 +1,71 @@
+cat /proc/ax_proc/ai
+-------- AI VERSION ------------------------
+[SDK version]: ax_audio unknown
+
+-------- AI DEV ATTR ------------------------
+AiCardId        AiDevId         ChnCnt          Samplerate      PeriodSize      PeriodCount     LinkMode        LayoutMode      AiDepth         f2mic_distance  enBitwidth
+0               0               2               16000           160             8               0               MIC_REF         30              0.000000        16bit
+-------- AI DEV FIR RES INFO ------------------------
+AiCardId        AiDevId         ResEnable       ResLen          InRate          OutRate         Channels
+0               0               0               0               0               0               0
+-------- AI DEV VQE ATTR ------------------------
+AiCardId        AiDevId         VqeEnabled      SampleRate      FrameSamples    AecMode         NsEnable        VadEnable       AgcEnable
+0               0               1               16000           160             0               1               0               0
+-------- AI DEV AEC ATTR ------------------------
+AiCardId        AiDevId         VqeEnabled      AecMode         SupOrRouting    ComfortNoise    ExtFilterEnable SndCardBufMs    SupEX           SupEx_level
+0               0               1               0               2               1               1               0               0               0
+-------- AI DEV NS ATTR ------------------------
+AiCardId        AiDevId         VqeEnabled      NsEnable        AgLevel
+0               0               1               1               2
+-------- AI DEV VAD ATTR ------------------------
+AiCardId        AiDevId         VqeEnabled      VadEnable       VadLevel
+0               0               1               0               2
+-------- AI DEV AGC ATTR ------------------------
+AiCardId        AiDevId         VqeEnabled      AgcEnable       AgcMode         TargetLevel     Gain
+0               0               1               0               2               -5              12
+-------- AI DEV NSADV ATTR ------------------------
+AiCardId        AiDevId         VqeEnabled      NsAdvEnable     AgLevel
+0               0               1               0               3
+-------- AI DEV VOLCTL ATTR ------------------------
+AiCardId        AiDevId         VqeVolume
+0               0               1.000000
+-------- AI DEV SEC RES INFO ------------------------
+AiCardId        AiDevId         ResEnable       ResLen          InRate          OutRate         Channels
+0               0               0               0               0               0               0
+-------- AI DEV DUMP AND BYPASS ------------------------
+AiCardId        AiDevId         Dump            DumpPath        DumpCount       Bypass
+0               0               0               /tmp/aec/       1200            0
+-------- AI DEV STATUS ------------------------
+AiCardId        AiDevId         GetBlockFail    Readi           FifoFull        DispatchFail    GetFrm          RlsFrm
+0               0               0               1202            0               0               1200            1200
+cat /proc/ax_proc/ao
+-------- AO VERSION ------------------------
+[SDK version]: ax_audio unknown
+
+-------- AO DEV ATTR ------------------------
+AoCardId        AoDevId         ChnCnt          Samplerate      PeriodSize      PeriodCount     LinkMode        InsertSilence   AoDepth         enBitwidth
+0               0               2               16000           160             8               0               0               10              16bit
+-------- AO DEV FIR RES INFO ------------------------
+AoCardId        AoDevId         ResEnable       ResLen          InRate          OutRate         Channels
+0               0               0               0               0               0               0
+-------- AO DEV VQE ATTR ------------------------
+AoCardId        AoDevId         VqeEnabled      SampleRate      FrameSamples    NsEnable        AgcEnable
+0               0               0               0               0               0               0
+-------- AO DEV NS ATTR ------------------------
+AoCardId        AoDevId         VqeEnabled      NsEnable        AgLevel
+0               0               0               0               0
+-------- AO DEV AGC ATTR ------------------------
+AoCardId        AoDevId         VqeEnabled      AgcEnable       AgcMode         TargetLevel     Gain
+0               0               0               0               0               0               0
+-------- AO DEV VOLCTL ATTR ------------------------
+AoCardId        AoDevId         VqeVolume       CurrVqeVolume   MuteEnable      Fade            FadeInRate      FadeOutRate
+0               0               1.000000        1.000000        0               0               0               0
+-------- AO DEV SEC RES INFO ------------------------
+AoCardId        AoDevId         ResEnable       ResLen          InRate          OutRate         Channels
+0               0               0               0               0               0               0
+-------- AO DEV DUMP AND BYPASS ------------------------
+AoCardId        AoDevId         Dump            DumpPath        DumpCount       Bypass
+0               0               0               /tmp/aec/       1200            0
+-------- AO DEV STATUS ------------------------
+AoCardId        AoDevId         SndFrm          GetFrm          Writei
+0               0               1200            1200            1198

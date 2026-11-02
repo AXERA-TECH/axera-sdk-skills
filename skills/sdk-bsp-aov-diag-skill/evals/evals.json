@@ -1,0 +1,105 @@
+{
+  "skill_name": "sdk-bsp-aov-diag-skill",
+  "note": "AX615 AOV 低功耗休眠唤醒诊断评测集，覆盖唤醒丢失、wakeup_count 协议、任务冻结、取帧超时、唤醒延迟、生命周期与防御性取证，强调分层与反证。",
+  "evals": [
+    {
+      "id": 1,
+      "name": "missing-wakeup-event",
+      "prompt": "AX615 在 deep suspend 下，外部通过 gpio_lp 发送 1~8ms 短脉冲频繁无法唤醒，50ms 以上长脉冲能唤醒。查看驱动代码已调用 wakeup_source_register(\"wake_int\")，但中断处理函数里只有 wake_up_interruptible。应用层等待队列偶有事件，但 PM 丢唤醒，日志见 <日志文件>。如何排查与修复？",
+      "expected_output": "定位到 kernel/driver 层 PM wakeup-source 与 gpio_lp 协同问题；指出 handler 中缺失 __pm_wakeup_event(gpio_lp->ws, 0) 为高可信候选根因；给出补丁并在 remove/probe 错误路径注销 wakeup_source；设计 1~8ms 短脉冲 A/B 验证及反证条件。",
+      "files": ["files/aov/missing-wakeup-event.log"],
+      "assertions": [
+        "定位到 kernel/driver 层 gpio_lp 与 PM wakeup-source 机制协同",
+        "在未核对实际运行镜像前将根因标注为高可信候选而非已确认",
+        "明确指出核心根因是中断处理函数缺失 __pm_wakeup_event 调用",
+        "要求在 remove 或 probe 回滚路径补齐 wakeup_source_unregister",
+        "要求做 1~8ms 短脉冲修复前后单变量 A/B 验证并观察 wakeup_sources",
+        "说明已调用 __pm_wakeup_event 且计数递增仍无法唤醒时推翻该假设"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "wakeup-count-protocol-race",
+      "prompt": "为了避免短时 GPIO 唤醒丢信号，脚本里执行 `cat /sys/power/wakeup_count > /sys/power/wakeup_count`，随后 GPIO 能生效，但系统经常无法休眠，AX_SYS_Sleep 返回 0x800b0715，内核日志 suspend entry 后立即 exit。怎么解决？",
+      "expected_output": "识别为 wakeup_count 用户空间协议错误与并发竞态；指出 cat 管道写法破坏两阶段协议，写回失败是内核避免丢事件的保护机制；给出标准 read-prepare-write 脚本时序，写回失败时必须中止休眠，且驱动仍须同步 __pm_wakeup_event。",
+      "files": [],
+      "assertions": [
+        "明确指出 cat > 管道写法破坏 Linux PM 两阶段协议",
+        "解释写回失败是内核检测到并发唤醒事件的保护机制",
+        "给出标准休眠协议：读取并保存计数值、准备休眠、写回校验、失败则中止",
+        "指出 AX_SYS_Sleep 失败需结合内核 PM 日志排查，不能单凭错误码断言",
+        "强调驱动层仍须同步 __pm_wakeup_event，不能单纯靠应用层延时规避"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "freeze-tasks-aborted",
+      "prompt": "设备请求 deep suspend，串口打印 Freezing user space processes ... Freezing of tasks aborted after 20.000 seconds，进程卡在 D 状态，AX_SYS_Sleep 报错。测试认为 gpio_lp 驱动丢中断导致无法休眠，日志见 <日志文件>。该判断是否正确？",
+      "expected_output": "果断判定测试人员的结论为误判；说明此时系统在任务冻结阶段超时中止，根本未进入 deep suspend，与 GPIO 唤醒无关；要求通过 /proc/<pid>/stack 和 Call Trace 排查 D 状态任务原因；给出反证条件。",
+      "files": ["files/aov/freezing-aborted.log"],
+      "assertions": [
+        "明确判定测试人员'gpio_lp 驱动丢中断'为误判",
+        "解释任务冻结超时中止发生于休眠前，系统未进入 deep sleep，与 GPIO 唤醒无关",
+        "指出进程处于 D 状态（TASK_UNINTERRUPTIBLE）是冻结超时的直接原因",
+        "要求采集进程堆栈与排查驱动阻塞或锁等待",
+        "说明冻结成功且进入休眠后无法唤醒才转入 gpio_lp 排查"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "getdevframe-timeout-isolation",
+      "prompt": "GPIO 唤醒信号发出后，应用层调用 GetDevFrame 返回 0x80110180 超时。工程师认定是底层 wakeup_count 和 gpio_lp 唤醒源机制损坏。日志见 <日志文件>。请做专业分析。",
+      "expected_output": "将结论定为待验证并做跨层隔离；指出 GetDevFrame 超时属于 VIN/ISP 图像通路，不能等同于 GPIO 唤醒失败；从日志看出 PM 已成功 resume，唤醒正常；问题在唤醒后外设就绪时序或 MIPI 超时；给出反证条件。",
+      "files": ["files/aov/getdevframe-timeout.log"],
+      "assertions": [
+        "明确区分内核 PM resume 与应用层 GetDevFrame 图像通路，指出超时不能直接等同于唤醒失败",
+        "结论定为待验证或指出当前证据显示系统内核已被唤醒",
+        "划分排查分支：确认内核是否成功唤醒，与唤醒后 Sensor/MIPI/ISP 初始化时序",
+        "要求排查 /proc/interrupts、wakeup_sources 及 Sensor 供电复位时序",
+        "说明内核已成功 resume 即可推翻 gpio_lp 唤醒故障的假设"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "wakeup-latency-regression",
+      "prompt": "合入 __pm_wakeup_event 补丁后 1~8ms 短脉冲唤醒不再丢失，但测试反馈唤醒延迟从原先长脉冲的约 15ms 增加到约 46~50ms，怀疑补丁导致性能回归。怎么分析与评估？",
+      "expected_output": "强调兼顾唤醒可靠性与唤醒延迟；解释 PM core 纳管事件带来的必要状态机开销，对比历史 46/50ms 参照值；要求统一度量边界，使用示波器进行多轮单变量 A/B 统计（均值与 P99）；检查 event timeout 参数与外设 resume 耗时。",
+      "files": [],
+      "assertions": [
+        "强调必须同时兼顾唤醒可靠性与唤醒延迟两个维度",
+        "指出历史参考值（约 46ms/50ms）仅供参考，不作为绝对产品承诺",
+        "要求统一度量边界（GPIO 跳变到指示点），使用硬件示波器或单调时间戳",
+        "设计多轮单变量 A/B 测试对比平均时延与离群值",
+        "说明纯内核恢复耗时无差异时推翻驱动补丁引入时延回归的结论"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "driver-lifecycle-leak-check",
+      "prompt": "开发在 wakeup_gpio_lp_handler 中增加了 __pm_wakeup_event(gpio_lp->ws, 0)，并在 probe 中创建了 wakeup_source_register，但 probe 失败直接 return ret，remove 中无操作。该补丁是否完整并可合入交付？",
+      "expected_output": "审查判定不能直接交付；指出 probe 失败回滚未注销 wakeup_source 导致泄漏，remove 路径缺失 wakeup_source_unregister 会导致悬空指针或资源残留；给出完整回滚与注销代码；提出多次 probe/remove 验证方案。",
+      "files": [],
+      "assertions": [
+        "明确指出补丁存在驱动生命周期与资源回滚缺陷，不能直接交付",
+        "指出 probe 错误分支缺失 wakeup_source_unregister 导致资源泄漏",
+        "指出 remove 路径缺失 wakeup_source_unregister",
+        "给出 probe unwind 与 remove 注销并置空指针的规范修复代码",
+        "要求进行模块 probe/remove 循环或错误注入测试以验证资源释放"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "evidence-discipline-vague-input",
+      "prompt": "客户反馈：AX615 AOV 低功耗休眠唤醒测试失败，系统唤醒不起来，AX_SYS_Sleep 报错。请马上给一个修复补丁！",
+      "expected_output": "结论定为待验证；坚守证据驱动纪律，拒绝盲目套用历史补丁；明确标注 SDK 版本、硬件、GPIO 编号、错误码、日志等未提供；分层列出可能原因；给出非破坏性只读取证命令清单与追问事项。",
+      "files": [],
+      "assertions": [
+        "结论等级严格标注为待验证，拒绝在无客观数据时断言根因",
+        "拒绝直接向客户提供 gpio_lp 补丁或经验方案",
+        "对所有缺失要素（SDK版本、硬件、GPIO编号、错误码、日志）标注未提供，不能判断",
+        "按硬件/Boot、kernel/driver、系统服务、应用层分层列出可能原因",
+        "给出非破坏性只读取证命令清单（dmesg、interrupts、wakeup_sources 等）"
+      ]
+    }
+  ]
+}

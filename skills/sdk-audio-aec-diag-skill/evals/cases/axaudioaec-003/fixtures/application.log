@@ -1,0 +1,6 @@
+t=0.000 talk=stopped
+t=0.010 app_set ref_delay_ms=20 ret=0
+t=0.020 app_get ref_delay_ms=20 ret=0
+t=0.030 talk=start aec=enabled
+t=0.100 playback=start capture=start shared_sample_clock=true
+t=8.100 capture=complete frames=800 overrun=0 underrun=0

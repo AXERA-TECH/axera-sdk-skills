@@ -1,0 +1,99 @@
+schema_version: 1
+id: axaudioaec-003
+display_id: AXAUDIOAEC-003
+title: 稳定时延与配置不匹配
+category: audio-aec/timing
+analyzer:
+  skill: sdk-audio-aec-diag-skill
+platform:
+  soc: AX615
+  board: unknown
+  sdk_version: unknown
+  notes: 目标诊断平台为 AX615，现有材料不证明具体板型或固件版本。
+  project: unknown
+  flash: unknown
+  ddr_mb: null
+  sensor: unknown
+provenance:
+  format_basis: AX 对外文档中的 AI/AO proc 结构与公开采集点说明。
+  limitations: 未完成硬件验证。
+  generation_script: null
+  generation_note: 固定时差合成输入；生成程序未随交付包提供，当前包不提供自动重建入口。
+  audio_basis: 使用仓库 axaudioaec-001 的 REF 前 8 秒语音，MIC 延后 32 样本并衰减；未使用客户私有材料。
+input:
+  type: audio_capture_set
+  main_round: fixtures
+  control_rounds: []
+  files:
+  - fixtures/AiCard0_Dev0_vqeIn.pcm
+  - fixtures/AiCard0_Dev0_vqeOut.pcm
+  - fixtures/AiCard0_Dev0_vqeRef.pcm
+  - fixtures/application.log
+  - fixtures/capture.txt
+  - fixtures/config.txt
+  - fixtures/proc.txt
+  session_integrity:
+    statement: 同轮三路音频的时间关系按 capture.txt 声明使用；尚未独立验证硬件时序。
+    proc_scope: 本轮录音结束状态；应用参考延迟读回见 application.log。
+    raw_capture: null
+    log_level_proof: null
+    missing_evidence:
+    - 未提供原始板端采集起止记录和原始日志 SHA256，不能声称已校验真实采集链。
+    - 未提供日志等级快照，不能仅凭未出现错误日志认定没有错误。
+  sha256:
+    fixtures/AiCard0_Dev0_vqeIn.pcm: 99923e143fbe052dc3aebb36ef57016c9aeb8787f7951908df4bcb55d72e02c2
+    fixtures/AiCard0_Dev0_vqeOut.pcm: 5360da7c0b4770afa830a13e4b2a8af496104a7220e48664a07c4b09be464f4a
+    fixtures/AiCard0_Dev0_vqeRef.pcm: 8d77dd3d01dba4178b371ae7e903448923f5a1f0f0528ec0c64644ffbf1c8b59
+    fixtures/application.log: a75bf40dd9d65d1c905e664bfa30757186e6ada6dfebc5e3a28f00a1697cd4ba
+    fixtures/capture.txt: cbaa1a7e20efd037a1e0b7e22ec0307422006a22d9999b285895360b54424e98
+    fixtures/config.txt: e73c8d9fcd702bb5cf4f693ee086d6053f8accd247b9baf60dd87776be64fbe5
+    fixtures/proc.txt: 81bb2e1f8c0fe0430458c577c0cc31e8d41617d49f1776e6cca9e4111138ae77
+evaluation:
+  report_validator: scripts/validate_report.py
+  policy: 所有关键断言逐项通过；多次运行保存全部结果，不采用多数票。
+  archive: 评测记录关联输入版本，保留平台 Harness 生成的报告、样本结果及已生成的分析输出；失败结果也应保留。
+  deterministic_checks: answer/assert.sh
+  semantic_review: 按 answer/oracle.yaml 多维审阅；现有文本正则仅为 smoke 检查，不代表完整语义通过。
+separation:
+  analyzer_visible:
+  - fixtures/AiCard0_Dev0_vqeIn.pcm
+  - fixtures/AiCard0_Dev0_vqeOut.pcm
+  - fixtures/AiCard0_Dev0_vqeRef.pcm
+  - fixtures/application.log
+  - fixtures/capture.txt
+  - fixtures/config.txt
+  - fixtures/proc.txt
+  - SKILL.md
+  - agents/openai.yaml
+  - references/contract.md
+  - references/diagnosis.md
+  - references/collection.md
+  - references/delay.md
+  - references/signal-quality.md
+  - references/response-template.md
+  - scripts/validate_report.py
+  - scripts/render_report.py
+  - scripts/measure_segments.py
+  - scripts/requirements-delay.txt
+  - scripts/analyze.py
+  - scripts/proc_audio.py
+  - scripts/delay.py
+  evaluator_only:
+  - case.yaml
+  - assert.sh
+  - answer/case.yaml
+  - answer/oracle.yaml
+  - answer/reproducer.patch
+  - answer/assert.sh
+  path_resolution: fixtures/ 相对用例目录；SKILL.md、agents/、references/、scripts/ 相对已安装技能根；evaluator_only 相对用例目录。
+  prompt: 根 case.yaml 只提取 prompt 给分析器；平台信息在 prompt 公开，不交付 expect 或 answer。
+reproducer:
+  patch: answer/reproducer.patch
+  status: unavailable
+  application: null
+  command: null
+  preconditions: 录音格式、播放条件、区间与轮次关系以 fixtures/capture.txt 为准。
+  sequence: 远端单讲下测量 MIC/REF 时差，核对应用读回；参数定义和补偿位置需补证后再做调整对照。
+  hardware_status: not_run
+  notes: reproducer.patch 仅记录缺失原因，不含可执行 diff；无基线工程，不编造复现命令或物理根因。
+oracle: answer/oracle.yaml

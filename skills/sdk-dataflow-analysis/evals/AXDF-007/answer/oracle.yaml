@@ -1,0 +1,42 @@
+root_cause: FRTDemo 把 IVPS(0,0) 到 VENC(0,0) 的 H264 LowMem 通道目标帧率配成 60，高于源帧率 30。建链成功。H264/HEVC 在 LowMem 下会打开 bAllowFrameEnlarge，因此 sync_agent 不拒绝 DstFrameRate>SrcFrameRate；通道 0 实际 RecvFps 约 30、OutFps 约 60。这不是失败，不能写成“LowMem 不支持帧率放大”。
+required_concepts:
+  - AX_SYS_Link_V2
+  - AX_MOD_DATA_FLOW_SW_LOW_MEM
+  - IVPS(0,0) 到 VENC(0,0) LowMem 已建链
+  - H264 通道 0 的 SrcFr 为 30、DstFr 为 60
+  - bAllowFrameEnlarge 对 H264/HEVC 为真，LowMem 允许帧率放大
+  - RecvFps 约 30，OutFps 约 60，EncSucCnt 约为 FrmRecv 的两倍
+  - serial 没有 Linkage failed，也没有 illegal parameters in eDataFlowMode
+  - 不能把 H264 LowMem 倍帧写成静默失败
+forbidden_conclusions:
+  - nRingLineCnt 非法
+  - AX_SYS_Link_V2 因帧率放大建链失败
+  - LowMem 不支持帧率放大导致断流
+  - illegal parameters in eDataFlowMode
+  - JPEG/JENC 拒绝倍帧
+  - sensor 初始化失败
+  - VB/CMM 内存不足
+  - 两路 JENC HSK 资源冲突
+evidence_signatures:
+  input/serial.log:
+    - 'APP Ver: V3.12.0, SDK Ver: V3.12.0'
+    - 'Linkage setup: (13, 0, 0) => (7, 0, 0)'
+    - '[0] VENC start receive'
+  input/logctl.proc:
+    - 'VENC     7     6'
+    - 'IVPS    13     6'
+    - 'VIN    17     6'
+  input/link.proc:
+    - 'SW_Low_Mem'
+    - 'Engine (1:VPP --> 4:VENC)'
+  input/venc.proc:
+    - 'CBR    30    60'
+    - 'bHsk'
+    - 'ringLCnt'
+    - '59.5'
+expected_confidence: high
+evaluation_notes:
+  - 本 Case 是负例：IVPS→VENC LowMem 加 H264 目标 60fps 会真正倍帧。分析器应写允许且 OutFps 约 60。
+  - 内核 ax_venc_sync_agent.c 只在 !bAllowFrameEnlarge 时拒绝 DstFrameRate>SrcFrameRate。h26x_enc_cal.c 对 H264/HEVC 置 TRUE；JPEG 才传 NI_FALSE。本包是 H264，不能引用 JENC 拒绝日志。
+  - encoder.json 的 frame_rate 实际值分析器看不到；只根据 venc.proc 的 SrcFr/DstFr 和 OutFps 判断。
+  - syslog 可能只有后期 IVPS info；没有 illegal 行不能改判失败。

@@ -1,0 +1,6 @@
+--- /dev/null
++++ b/evals/AXSD-005/fixture.txt
+@@
++Use an AX615D SD master whose hardware path is 3.3 V only.
++Keep an sd-uhs-sdr50 request while omitting pwr_sw_gpio.
++Retain the driver's 3.3 V fallback and successful high-speed enumeration.

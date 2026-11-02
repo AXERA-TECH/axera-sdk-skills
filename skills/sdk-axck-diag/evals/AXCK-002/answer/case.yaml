@@ -1,0 +1,20 @@
+schema_version: 1
+id: AXCK-002
+title: VENC 通道 ID 冲突导致 AX_VENC_CreateChn 失败 (0x80070216)
+category: codec/venc/channel_conflict
+analyzer:
+  skill: sdk-axck-diag
+platform:
+  soc: AX615
+  project: AX615_dashcam_nor
+input:
+  type: log_set
+  files:
+    - input/serial.log
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/serial.log
+  evaluator_only:
+    - answer/oracle.yaml
+    - answer/case.yaml

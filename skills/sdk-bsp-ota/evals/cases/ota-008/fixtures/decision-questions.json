@@ -1,0 +1,18 @@
+{
+  "hardcode_mmcblk1p5": {
+    "question": "是否固定使用 mmcblk1p5",
+    "type": "boolean"
+  },
+  "skip_partition_check": {
+    "question": "是否跳过分区校验",
+    "type": "boolean"
+  },
+  "layout_match_required": {
+    "question": "是否需核对包与板端 layout",
+    "type": "boolean"
+  },
+  "removable_media_check_required": {
+    "question": "是否需检查可移动介质和枚举",
+    "type": "boolean"
+  }
+}

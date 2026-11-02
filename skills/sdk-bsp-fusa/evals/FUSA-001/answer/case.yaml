@@ -1,0 +1,31 @@
+schema_version: 1
+id: FUSA-001
+title: Linux 平台心跳刷屏：heartbeat time:N 属设计预期，应在 S3 收口
+category: platform-gate+faq-match/design-expected/heartbeat
+source: synthetic
+analyzer:
+  skill: sdk-bsp-fusa
+  runtime_name: sdk-bsp-fusa
+platform: linux
+platform_evidence: kernel/linux/linux-6.1.83/drivers/soc/axera/fusa 目录命中；SDK_VERSION=V2.10.0 无 QNX 前缀；manifest 为 M57_SDK_V*.xml
+expected_stage: S3
+input:
+  type: client_report
+  files:
+    - input/prompt.md
+    - input/sdk-check.txt
+    - input/serial.log
+  capture:
+    notes:
+      - prompt.md 是客户第一次提问的原始措辞，后两段是后续追问的回填说明。
+      - sdk-check.txt 为客户按 S1 要求回填的 SDK 路径判据，Linux 单边命中。
+      - serial.log 为同一轮串口摘录，全程只有 heartbeat time:N 与 ack，没有 heartbeat timeout. 行。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/prompt.md
+    - input/sdk-check.txt
+    - input/serial.log
+  evaluator_only:
+    - answer/oracle.yaml
+    - answer/case.yaml

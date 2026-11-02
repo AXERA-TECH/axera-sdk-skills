@@ -1,0 +1,6 @@
+{
+  "case_id": "OTA-015",
+  "question": "QNX ota_check 返回成功，但没找到 axera_test.sh，业务是否已验证？",
+  "context": "平台背景：m57。没有提供真实 SDK、板卡或构建产物；目录标志若在问题中给出，是人工构造的场景条件。",
+  "provenance": "synthetic"
+}

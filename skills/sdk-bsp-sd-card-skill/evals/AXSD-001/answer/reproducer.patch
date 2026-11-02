@@ -1,0 +1,6 @@
+--- /dev/null
++++ b/evals/AXSD-001/fixture.txt
+@@
++CONFIG_MMC_SDHCI_AXERA=m
++sdhci-axera.ko is intentionally absent from the matching module tree.
++modprobe sdhci-axera therefore fails before the AXERA SDHCI probe path.

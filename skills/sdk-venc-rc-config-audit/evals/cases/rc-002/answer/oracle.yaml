@@ -1,0 +1,30 @@
+# RC-002 正常无误现场：双通道 CBR 配置与运行均正常，考察防误报（False Positive）
+# 现场为 captured（真实板端 cat /proc/ax_proc/venc，版本行脱敏为 ax_venc V3.15.0）。
+root_cause: 两个通道配置与运行状态均正常，无异常：通道 0（H.264 CBR 2688x1520@30fps，
+  目标 4096 kbps）与通道 1（H.264 CBR 720x576@30fps，目标 400 kbps）QP 范围均为
+  10..48 合法、GOP=60；实测 RecvFps=29.8/OutFps=29.8（chn0）、29.8/30.7（chn1），
+  相对配置 30fps 偏差均 <10%；实际码率 4118/404 相对目标 4096/400 偏差约
+  0.5%/1%，在 10% 阈值以内。正确输出为"运行正常/无异常"，最多附带信息级说明，
+  不得虚构问题或套用症状规则。
+required_concepts:
+  - 结论为正常/无异常（结论行明确写"正常"）
+  - 双通道 QP 范围 10..48 合法
+  - 帧率偏差均 <10%（chn0 29.8/29.8、chn1 29.8/30.7）
+  - 码率偏差在 10% 阈值内（chn0 4118 vs 4096、chn1 404 vs 400）
+forbidden_conclusions:
+  - 报告错误级或高风险问题（无中生有）
+  - 判定码率超出/超限
+  - 在无现象描述时套用呼吸效应/码率偏高等症状规则强行挑刺
+  - 把 IpropMax=100 或 GOP=60 判为异常
+evidence_signatures:
+  input/venc_proc.txt:
+    - '[SDK version]: ax_venc V3.15.0_20260929153144 Sep 29 2026 15:50:46 JK'
+    - '0     CBR    30    30    4096'          # chn0 RC ATTR 1
+    - '1     CBR    30    30    400'           # chn1 RC ATTR 1
+    - '0     NormalP   60'                     # chn0 GOP
+    - '0     Y     1031          29.8'         # chn0 STATUS 2
+expected_confidence: high
+evaluation_notes:
+  - 用户未描述现象时按 SKILL.md 第 1 节只做配置审查；审查后询问现象属加分项，不作必答。
+  - 允许输出"配置正常，需要结合具体问题继续分析"这类结论措辞。
+  - 信息级/提示级的备注（如 GOP 间隔、码率偏差数字）不算误报。

@@ -1,0 +1,14 @@
+{
+  "detected_platform": {
+    "question": "按题目所给目录标志检测的 platform（小写）",
+    "type": "string"
+  },
+  "target_plat_known": {
+    "question": "是否已知构建 PLAT",
+    "type": "boolean"
+  },
+  "configuration_change_allowed": {
+    "question": "信息是否足以修改配置",
+    "type": "boolean"
+  }
+}

@@ -1,0 +1,31 @@
+root_cause: CONFIG_MMC_SDHCI_AXERA=m，但当前 /lib/modules/4.19.125-ax615 未提供 sdhci-axera.ko；modprobe 因模块不存在失败，AXERA SDHCI 驱动没有完成加载和 probe，因此不能创建 /dev/mmcblk*。当前证据只支持 driver/module 层高可信判断，不支持卡、供电或 card detect 硬件故障结论。
+required_concepts:
+  - 识别 CONFIG_MMC_SDHCI_AXERA=m
+  - 区分 module 与 built-in
+  - modprobe sdhci-axera 返回 Module not found
+  - 模块查找结果没有 sdhci-axera.ko
+  - 驱动未加载时不能完成 probe 和卡枚举
+  - 先补齐与 uname -r 匹配的模块包及依赖，再重新加载并观察 dmesg
+  - 无 /dev/mmcblk* 不等于 SD 卡或供电损坏
+forbidden_conclusions:
+  - 直接判定 SD 卡物理损坏
+  - 直接判定供电或 card detect 硬件故障
+  - 把 CONFIG_MMC_SDHCI_AXERA=m 改写为 built-in
+  - 建议对不存在的文件执行 insmod
+  - 在未补齐驱动前修改 PHY delay 或格式化 SD 卡
+evidence_signatures:
+  input/config.txt:
+    - 'CONFIG_MMC_SDHCI_AXERA=m'
+    - 'CONFIG_MMC_BLOCK=m'
+  input/commands.log:
+    - 'modprobe sdhci-axera'
+    - 'Module sdhci-axera not found'
+    - 'sdhci.ko'
+  input/dmesg.log:
+    - 'sdhci: Secure Digital Host Controller Interface driver'
+    - 'No such file or directory'
+expected_confidence: high
+evaluation_notes:
+  - 结论应停留在 driver/module 层；高置信度来自 config、modprobe 和模块文件列表相互印证。
+  - 建议核对与 uname -r 一致的 sdhci-axera.ko、mmc_core/mmc_block 及依赖，使用 modprobe 并保留完整错误。
+  - 若后来确认实际运行 kernel 为 CONFIG_MMC_SDHCI_AXERA=y，或确认模块已存在且 probe 完成，应撤销本 Case 的 module 缺失结论并转入后续阶段。

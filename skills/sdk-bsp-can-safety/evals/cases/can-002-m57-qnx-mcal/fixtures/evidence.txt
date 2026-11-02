@@ -1,0 +1,4 @@
+Chip: M57
+Main project OS: QNX
+CAN ownership: Safety side
+Safety CAN framework: AUTOSAR MCAL CAN

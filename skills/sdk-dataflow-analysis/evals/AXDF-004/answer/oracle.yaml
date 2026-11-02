@@ -1,0 +1,45 @@
+root_cause: VIN(0,0) 到 IVPS(0,0) 已按 LowMem 建链（dst engine GDC）后，TestSuite 在运行期把旋转从 0 改到 1（90 度）。AX_SYS_Link_V2 建链阶段不检查旋转，AX_VIN_SetChnRotation 随即返回 0x80110114，VIN 通道旋转仍为 0、输出仍为 1920x1080。FRTDemo 未因此停止，继续把 IVPS GDC/通道几何改成 1080x1920 等竖屏尺寸，并让 VENC 按新分辨率 Reset。上下游几何与 LowMem/GDC 握手不再匹配，GDC Fail1 累积，VENC 通道 0 帧率归零。
+required_concepts:
+  - AX_SYS_Link_V2
+  - AX_MOD_DATA_FLOW_SW_LOW_MEM
+  - 识别 VIN(0,0) 到 IVPS/GDC 的 LowMem link 在旋转前已经建立
+  - LowMem 下 VIN→IVPS 不支持 90/270 旋转
+  - AX_VIN_SetChnRotation failed ret=0x80110114
+  - VIN 通道 Rotation 仍为 0，输出仍为 1920x1080
+  - FRTDemo 在 VIN 失败后仍继续 UpdateRotation，IVPS 几何被改成 1080x1920
+  - IVPS GDC Fail1 累积、通道 OutFps 归零是传播结果
+  - VENC fps 0.00 recv 0 是传播结果，不是建链失败
+  - syslog 中较晚出现的 GDC HSK / Get block fail 不是首次失败点
+forbidden_conclusions:
+  - nRingLineCnt 非法导致建链失败
+  - 两路 JENC HSK 资源冲突
+  - AX_SYS_Link_V2 因旋转参数在建链阶段返错
+  - sensor 初始化失败
+  - VB/CMM/pool 内存不足是首要根因
+  - VENC 码控配置错误
+evidence_signatures:
+  input/serial.log:
+    - 'Rotation: [SnsID:0, rotation: (0 ---> 1)]'
+    - 'AX_VIN_SetChnRotation failed ret=0x80110114'
+    - 'Reset resolution for ivps (Grp: 0): w: 1080, h: 1920'
+    - 'VENC: [0] fps  0.00, recv 0'
+  input/logctl.proc:
+    - 'VENC     7     6'
+    - 'IVPS    13     6'
+    - 'VIN    17     6'
+  input/link.proc:
+    - 'SW_Low_Mem'
+    - 'Engine (0:None --> 5:GDC)'
+  input/vin.proc:
+    - '1920  1080'
+    - '0    0        0'
+  input/ivps.proc:
+    - 'GDC    1080 1920'
+    - 'GDC    7277       7275'
+expected_confidence: high
+evaluation_notes:
+  - 判定核心是组合证据：LowMem VIN→IVPS/GDC 已建链、运行期旋转 90 度、VIN ioctl 失败且 VIN 几何未变、应用仍改 IVPS 几何后断流。
+  - 0x80110114 是 VIN 运行期 ioctl 失败，不是 AX_SYS_Link_V2 建链校验；不能据此写成“建链拒绝旋转”。
+  - 分析器不必猜出 0x80110114 的精确 VIN 子码名称；写出 VIN SetChnRotation 失败且 LowMem 不支持 90/270 即可。
+  - syslog 的 GDC online dst input fail / Get block fail 是停流后的传播，不能倒因为内存不足或 GDC 驱动故障。
+  - 修正方式是 LowMem VIN→IVPS 不要开 90/270，或将该 link 改为 Offline 后再旋转。

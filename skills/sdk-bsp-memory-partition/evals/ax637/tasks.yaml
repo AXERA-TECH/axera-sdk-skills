@@ -1,0 +1,40 @@
+version: 1
+
+# ax637 平台 eval 任务
+platform: ax637
+
+tasks:
+
+  - id: ax637-mem-001
+    description: AX637 默认 1 GiB DDR 的 Linux/CMM 文档基线应为 384 MiB/640 MiB，并提示实际硬件差异
+    input: |
+      AX637 默认 1 GiB DDR 怎么分给 Linux 和 CMM？
+    assertions:
+      - contains_any: ["384 MiB", "384MiB"]
+      - contains_any: ["640 MiB", "640MiB"]
+      - contains_any: ["ATF", "OPTEE"]
+      - contains_any: ["实际硬件", "实际板卡", "基线"]
+
+  - id: ax637-mem-002
+    description: 调整 AX637 Linux 内存时应修改 config.mk，并验证 U-Boot 动态 fixup 和内存报告
+    input: |
+      想把 AX637 Linux 内存从 384 MiB 调大，改哪里，怎么验证？
+    assertions:
+      - contains: "LINUX_MEMORY_SZ"
+      - contains: "config.mk"
+      - contains: "ft_system_fixup_memory"
+      - contains_any: ["动态", "没有静态", "不存在静态"]
+      - contains_any: ["重建", "rebuild", "重新编译"]
+      - contains_any: ["DTB", "/proc/meminfo"]
+
+  - id: ax637-part-001
+    description: AX637 ONLY_NAND AB 扩大 rootfs 时应检查 JSON、KB 单位、NAND 对齐、坏块余量、镜像容量和 SBL
+    input: |
+      AX637 ONLY_NAND AB 想把 rootfs 扩到 1G，有哪些分区约束？
+    assertions:
+      - contains_any: ["partitions", ".json"]
+      - contains_any: ["KB", "KiB"]
+      - contains_any: ["block alignment", "块对齐", "对齐"]
+      - contains_any: ["bad-block", "坏块"]
+      - contains_any: ["image", "filesystem", "文件系统"]
+      - contains: "SBL"

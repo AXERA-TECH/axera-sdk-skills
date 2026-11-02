@@ -1,0 +1,24 @@
+tasks:
+  - name: full-axp-build
+    prompt: "编译 ax637_demo_only_nand 的完整 SDK 并生成 AXDL 可用包。"
+    expect: "先用 make plist 确认平台，再执行 clean all install axp，并核验 build/out 产物。"
+
+  - name: list-supported-platforms-ax637
+    prompt: "在 AX637 SDK 中，有哪些支持的工程目标？命名规则是什么？"
+    expect: "在 build/ 目录执行 make plist，命名规则为 BOARDNAME_FLASHTYPE，支持 ax637_demo_only_nand, ax637_demo_only_emmc, ax637r_demo_only_nand, ax637r_demo_only_emmc。"
+
+  - name: standalone-kernel-build-ax637
+    prompt: "修改了 AX637 的驱动代码，如何单独编译内核？指出对应 defconfig 和生成的镜像位置。"
+    expect: "在 kernel/linux 目录执行 make PLAT=ax637_demo_only_nand clean all install，使用 configs/ax637-tiny_defconfig，生成 build/out/ax637_demo_only_nand/images/kernel.img。"
+
+  - name: standalone-uboot-build-ax637
+    prompt: "为 AX637 单独编译 U-Boot，说明使用的 U-Boot 版本、配置文件位置及输出产物。"
+    expect: "使用 u-boot-2022.10，配置文件为 boot/uboot/u-boot-2022.10/configs/ax637-demo-only-nand_defconfig，在 boot/uboot 目录执行 make PLAT=ax637_demo_only_nand clean all install，输出为 build/out/ax637_demo_only_nand/images/u-boot.img。"
+
+  - name: standalone-rootfs-build-ax637
+    prompt: "如何在 AX637 SDK 中单独构建 rootfs 并生成 rootfs.img？"
+    expect: "在 rootfs 目录执行 make PLAT=ax637_demo_only_nand clean all install，生成 build/out/ax637_demo_only_nand/images/rootfs.img。"
+
+  - name: disable-optee-build-ax637
+    prompt: "AX637 项目如果不需要 OP-TEE，该改哪个文件？重新打包后如何验证？"
+    expect: "修改 build/platforms/axera/ax637_demo_only_nand/config.mk 中的 SUPPORT_OPTEE := FALSE，在 build 重新执行 make PLAT=... axp，核验 images/ 与 AXP 中不包含 optee.img。"

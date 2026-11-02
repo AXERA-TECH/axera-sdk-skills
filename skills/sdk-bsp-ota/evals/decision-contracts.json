@@ -1,0 +1,582 @@
+{
+  "ota-001": {
+    "questions": {
+      "detected_platform": {
+        "question": "按题目所给目录标志检测的 platform（小写）",
+        "type": "string"
+      },
+      "target_plat_known": {
+        "question": "是否已知构建 PLAT",
+        "type": "boolean"
+      },
+      "configuration_change_allowed": {
+        "question": "信息是否足以修改配置",
+        "type": "boolean"
+      }
+    },
+    "expected": {
+      "detected_platform": "ax637",
+      "target_plat_known": false,
+      "configuration_change_allowed": false
+    }
+  },
+  "ota-002": {
+    "questions": {
+      "detected_platform": {
+        "question": "空工作区的检测结果（小写，无法检测用 unknown）",
+        "type": "string"
+      },
+      "compatibility_confirmed": {
+        "question": "是否能确认升级包兼容",
+        "type": "boolean"
+      },
+      "configuration_change_allowed": {
+        "question": "信息是否足以修改配置",
+        "type": "boolean"
+      }
+    },
+    "expected": {
+      "detected_platform": "unknown",
+      "compatibility_confirmed": false,
+      "configuration_change_allowed": false
+    }
+  },
+  "ota-003": {
+    "questions": {
+      "target_os": {
+        "question": "目标 OS（小写）",
+        "type": "string"
+      },
+      "linux_device_number_applicable": {
+        "question": "能否直接使用 Linux 的设备编号",
+        "type": "boolean"
+      },
+      "system_log_tool": {
+        "question": "目标 OS 的系统日志工具名",
+        "type": "string"
+      },
+      "partition_tool": {
+        "question": "文档中 QNX 分区表工具名",
+        "type": "string"
+      }
+    },
+    "expected": {
+      "target_os": "qnx",
+      "linux_device_number_applicable": false,
+      "system_log_tool": "slog2info",
+      "partition_tool": "pted"
+    }
+  },
+  "ota-004": {
+    "questions": {
+      "delivery_ready": {
+        "question": "仅凭网页写完是否可交付",
+        "type": "boolean"
+      },
+      "reboot_required": {
+        "question": "是否还需重启到目标槽",
+        "type": "boolean"
+      },
+      "business_validation_required": {
+        "question": "是否还需业务验证",
+        "type": "boolean"
+      },
+      "successful_proven": {
+        "question": "题目是否已证明 AB successful",
+        "type": "boolean"
+      }
+    },
+    "expected": {
+      "delivery_ready": false,
+      "reboot_required": true,
+      "business_validation_required": true,
+      "successful_proven": false
+    }
+  },
+  "ota-005": {
+    "questions": {
+      "state": {
+        "question": "BCB state 数值",
+        "type": "integer"
+      },
+      "target_slot_index": {
+        "question": "BCB 目标 slot 数值",
+        "type": "integer"
+      },
+      "sync_progress": {
+        "question": "BCB sync 数值",
+        "type": "integer"
+      },
+      "resume_enabled": {
+        "question": "是否启用 resume",
+        "type": "boolean"
+      },
+      "sync_enabled": {
+        "question": "是否启用 sync",
+        "type": "boolean"
+      },
+      "successful_proven": {
+        "question": "题目是否证明 AB successful",
+        "type": "boolean"
+      },
+      "resume_is_network_download": {
+        "question": "resume 是否指网络下载续传",
+        "type": "boolean"
+      }
+    },
+    "expected": {
+      "state": 1,
+      "target_slot_index": 1,
+      "sync_progress": 0,
+      "resume_enabled": true,
+      "sync_enabled": false,
+      "successful_proven": false,
+      "resume_is_network_download": false
+    }
+  },
+  "ota-006": {
+    "questions": {
+      "failed_target_slot": {
+        "question": "失败目标槽大写字母",
+        "type": "string"
+      },
+      "preserve_slot": {
+        "question": "应保护的旧成功槽大写字母",
+        "type": "string"
+      },
+      "mark_current_slot_unbootable": {
+        "question": "是否应把当前旧成功槽标 unbootable",
+        "type": "boolean"
+      },
+      "clear_bcb_before_evidence": {
+        "question": "是否先清空 BCB 再取证",
+        "type": "boolean"
+      }
+    },
+    "expected": {
+      "failed_target_slot": "B",
+      "preserve_slot": "A",
+      "mark_current_slot_unbootable": false,
+      "clear_bcb_before_evidence": false
+    }
+  },
+  "ota-007": {
+    "questions": {
+      "rollback_failure_proven": {
+        "question": "copy 空间不足是否证明选槽回退损坏",
+        "type": "boolean"
+      },
+      "rewrite_metadata_fixes_capacity": {
+        "question": "重写 AB metadata 能否解决容量问题",
+        "type": "boolean"
+      },
+      "opposite_capacity_check_required": {
+        "question": "是否需要检查对侧容量",
+        "type": "boolean"
+      },
+      "old_slot_integrity_proven": {
+        "question": "题目是否证明旧槽内容完整",
+        "type": "boolean"
+      }
+    },
+    "expected": {
+      "rollback_failure_proven": false,
+      "rewrite_metadata_fixes_capacity": false,
+      "opposite_capacity_check_required": true,
+      "old_slot_integrity_proven": false
+    }
+  },
+  "ota-008": {
+    "questions": {
+      "hardcode_mmcblk1p5": {
+        "question": "是否固定使用 mmcblk1p5",
+        "type": "boolean"
+      },
+      "skip_partition_check": {
+        "question": "是否跳过分区校验",
+        "type": "boolean"
+      },
+      "layout_match_required": {
+        "question": "是否需核对包与板端 layout",
+        "type": "boolean"
+      },
+      "removable_media_check_required": {
+        "question": "是否需检查可移动介质和枚举",
+        "type": "boolean"
+      }
+    },
+    "expected": {
+      "hardcode_mmcblk1p5": false,
+      "skip_partition_check": false,
+      "layout_match_required": true,
+      "removable_media_check_required": true
+    }
+  },
+  "ota-009": {
+    "questions": {
+      "same_filename_proves_baseline": {
+        "question": "旧包同名是否足以证明差分基线匹配",
+        "type": "boolean"
+      },
+      "repeat_same_package_without_checks": {
+        "question": "是否不核对直接反复重试原包",
+        "type": "boolean"
+      },
+      "rdiffbase_check_required": {
+        "question": "是否需核对 rdiffbase",
+        "type": "boolean"
+      },
+      "handler_buffer_check_required": {
+        "question": "是否需核对 handler 与 buffer 限制",
+        "type": "boolean"
+      }
+    },
+    "expected": {
+      "same_filename_proves_baseline": false,
+      "repeat_same_package_without_checks": false,
+      "rdiffbase_check_required": true,
+      "handler_buffer_check_required": true
+    }
+  },
+  "ota-010": {
+    "questions": {
+      "readonly_ext4_diff_supported": {
+        "question": "按本平台手册，只读 ext4 是否支持所问差分方式",
+        "type": "boolean"
+      },
+      "readonly_proves_baseline": {
+        "question": "只读是否足以证明基线匹配",
+        "type": "boolean"
+      },
+      "full_package_alternative": {
+        "question": "匹配布局的完整包是否为替代方案",
+        "type": "boolean"
+      }
+    },
+    "expected": {
+      "readonly_ext4_diff_supported": false,
+      "readonly_proves_baseline": false,
+      "full_package_alternative": true
+    }
+  },
+  "ota-011": {
+    "questions": {
+      "disable_signature_check": {
+        "question": "是否应关闭验签",
+        "type": "boolean"
+      },
+      "continue_writing_on_failure": {
+        "question": "验签失败是否继续写入",
+        "type": "boolean"
+      },
+      "end_to_end_trust_check_required": {
+        "question": "是否需端到端检查签名与公钥配置",
+        "type": "boolean"
+      }
+    },
+    "expected": {
+      "disable_signature_check": false,
+      "continue_writing_on_failure": false,
+      "end_to_end_trust_check_required": true
+    }
+  },
+  "ota-012": {
+    "questions": {
+      "newer_version": {
+        "question": "题目两个版本中较新的原始版本字符串",
+        "type": "string"
+      },
+      "lexical_comparison": {
+        "question": "是否按字符串字典序比较数字版本",
+        "type": "boolean"
+      },
+      "universal_suffix_order_known": {
+        "question": "是否存在本题资料已证明的通用 _P1 排序规则",
+        "type": "boolean"
+      }
+    },
+    "expected": {
+      "newer_version": "0.13.0",
+      "lexical_comparison": false,
+      "universal_suffix_order_known": false
+    }
+  },
+  "ota-013": {
+    "questions": {
+      "extension_file": {
+        "question": "新增 type handler 的主要文件名",
+        "type": "string"
+      },
+      "decode_in_lifecycle_hook": {
+        "question": "是否将镜像解码主体放 ota.sh",
+        "type": "boolean"
+      },
+      "error_propagation_required": {
+        "question": "是否需验证错误传播",
+        "type": "boolean"
+      }
+    },
+    "expected": {
+      "extension_file": "swupdate_handlers.lua",
+      "decode_in_lifecycle_hook": false,
+      "error_propagation_required": true
+    }
+  },
+  "ota-014": {
+    "questions": {
+      "arbitrary_512_raw_writes": {
+        "question": "是否可以直接按任意 512 字节 raw 分笔写 ETFS",
+        "type": "boolean"
+      },
+      "oob_required": {
+        "question": "是否需考虑 spare/OOB",
+        "type": "boolean"
+      },
+      "transaction_granularity_required": {
+        "question": "是否需匹配事务/页粒度",
+        "type": "boolean"
+      },
+      "linux_raw_method_applicable": {
+        "question": "是否可直接照搬 Linux 裸 MTD 写法",
+        "type": "boolean"
+      }
+    },
+    "expected": {
+      "arbitrary_512_raw_writes": false,
+      "oob_required": true,
+      "transaction_granularity_required": true,
+      "linux_raw_method_applicable": false
+    }
+  },
+  "ota-015": {
+    "questions": {
+      "business_validation_proven": {
+        "question": "题目是否已证明业务验证完成",
+        "type": "boolean"
+      },
+      "lua_alternative_possible": {
+        "question": "缺 sh 时是否还可能存在 lua 验证脚本",
+        "type": "boolean"
+      },
+      "all_hooks_missing_defaults_pass": {
+        "question": "文档实现中全部验证脚本缺失是否默认返回通过",
+        "type": "boolean"
+      }
+    },
+    "expected": {
+      "business_validation_proven": false,
+      "lua_alternative_possible": true,
+      "all_hooks_missing_defaults_pass": true
+    }
+  },
+  "ota-017": {
+    "questions": {
+      "template_order_proves_safety": {
+        "question": "仅模板排列能否证明掉电安全",
+        "type": "boolean"
+      },
+      "core_handler_timing_check_required": {
+        "question": "是否需核对 core/handler 实际时序",
+        "type": "boolean"
+      },
+      "protection_before_all_writes_required": {
+        "question": "目标保护是否必须覆盖 erase/write/copy",
+        "type": "boolean"
+      }
+    },
+    "expected": {
+      "template_order_proves_safety": false,
+      "core_handler_timing_check_required": true,
+      "protection_before_all_writes_required": true
+    }
+  },
+  "ota-018": {
+    "questions": {
+      "within_ota_scope": {
+        "question": "独立烧 eFuse 是否属于 OTA skill 范围",
+        "type": "boolean"
+      },
+      "redirect_skill": {
+        "question": "应转向的技能名",
+        "type": "string"
+      },
+      "efuse_write_performed": {
+        "question": "本轮是否实际执行 eFuse 写入",
+        "type": "boolean"
+      }
+    },
+    "expected": {
+      "within_ota_scope": false,
+      "redirect_skill": "sdk-bsp-secure-boot",
+      "efuse_write_performed": false
+    }
+  },
+  "ax637-isolation": {
+    "questions": {
+      "target_os": {
+        "question": "目标 OS（小写）",
+        "type": "string"
+      },
+      "slog2info_verified_for_target": {
+        "question": "slog2info 是否已核实为该目标工具",
+        "type": "boolean"
+      },
+      "ota_erase_verified_for_target": {
+        "question": "ota_erase 是否已核实为该目标工具",
+        "type": "boolean"
+      },
+      "manual_test_hook": {
+        "question": "AX637 使用说明记载的测试脚本名",
+        "type": "string"
+      },
+      "final_deployment_check_required": {
+        "question": "是否需要核对本版最终部署",
+        "type": "boolean"
+      }
+    },
+    "expected": {
+      "target_os": "linux",
+      "slog2info_verified_for_target": false,
+      "ota_erase_verified_for_target": false,
+      "manual_test_hook": "custom_test.sh",
+      "final_deployment_check_required": true
+    }
+  },
+  "ax637-success": {
+    "questions": {
+      "delivery_ready": {
+        "question": "仅凭写完是否完成升级可交付",
+        "type": "boolean"
+      },
+      "reboot_required": {
+        "question": "是否需目标槽重启",
+        "type": "boolean"
+      },
+      "business_validation_required": {
+        "question": "是否需业务验证",
+        "type": "boolean"
+      },
+      "successful_proven": {
+        "question": "题目是否证明 AB successful",
+        "type": "boolean"
+      }
+    },
+    "expected": {
+      "delivery_ready": false,
+      "reboot_required": true,
+      "business_validation_required": true,
+      "successful_proven": false
+    }
+  },
+  "ax637-explicit": {
+    "questions": {
+      "explicit_platform": {
+        "question": "题目显式 platform 小写值",
+        "type": "string"
+      },
+      "detected_platform": {
+        "question": "按源码标志检测的 platform 小写值",
+        "type": "string"
+      },
+      "target_conflict": {
+        "question": "是否存在目标冲突",
+        "type": "boolean"
+      },
+      "configuration_change_allowed": {
+        "question": "冲突未解决时是否允许直接修改",
+        "type": "boolean"
+      }
+    },
+    "expected": {
+      "explicit_platform": "m57",
+      "detected_platform": "ax637",
+      "target_conflict": true,
+      "configuration_change_allowed": false
+    }
+  },
+  "m57-linux-source": {
+    "questions": {
+      "qnx_shared_design_reusable": {
+        "question": "QNX 文档公共设计是否可用于 Linux",
+        "type": "boolean"
+      },
+      "linux_primary_file": {
+        "question": "当前 Linux 实现应优先使用的 skill 知识库文件名",
+        "type": "string"
+      },
+      "copy_qnx_deployment_paths": {
+        "question": "是否直接套用 QNX 部署路径",
+        "type": "boolean"
+      }
+    },
+    "expected": {
+      "qnx_shared_design_reusable": true,
+      "linux_primary_file": "Linux-OTA-知识库.md",
+      "copy_qnx_deployment_paths": false
+    }
+  },
+  "m57-linux-overlay": {
+    "questions": {
+      "base_board_is_final_authority": {
+        "question": "board fs-overlay 是否总是最终生效来源",
+        "type": "boolean"
+      },
+      "deployment_script": {
+        "question": "应检查的 rootfs 打包脚本名",
+        "type": "string"
+      },
+      "final_rootfs_check_required": {
+        "question": "是否需比较最终 rootfs 实际文件",
+        "type": "boolean"
+      },
+      "overlay_order": {
+        "question": "按文档从低到高排列覆盖层，使用 board、initd、common、init_platform、build_platform 五个标识",
+        "type": "array"
+      }
+    },
+    "expected": {
+      "base_board_is_final_authority": false,
+      "deployment_script": "package_rootfs.sh",
+      "final_rootfs_check_required": true,
+      "overlay_order": [
+        "board",
+        "initd",
+        "common",
+        "init_platform",
+        "build_platform"
+      ]
+    },
+    "accepted_values": {
+      "deployment_script": [
+        "package_rootfs.sh",
+        "build/scripts/package_rootfs.sh"
+      ]
+    }
+  },
+  "m57-linux-test": {
+    "questions": {
+      "axera_test_qnx_exclusive": {
+        "question": "axera_test.lua/sh 是否为 QNX 专属",
+        "type": "boolean"
+      },
+      "difference_is_os_boundary": {
+        "question": "两种脚本名称是否表示 OS 边界",
+        "type": "boolean"
+      },
+      "rename_without_callchain_check": {
+        "question": "是否应不查调用链就改名",
+        "type": "boolean"
+      },
+      "missing_hook_proves_business_success": {
+        "question": "全部脚本缺失默认通过是否证明业务成功",
+        "type": "boolean"
+      }
+    },
+    "expected": {
+      "axera_test_qnx_exclusive": false,
+      "difference_is_os_boundary": false,
+      "rename_without_callchain_check": false,
+      "missing_hook_proves_business_success": false
+    }
+  }
+}

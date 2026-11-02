@@ -1,0 +1,30 @@
+{
+  "state": {
+    "question": "BCB state 数值",
+    "type": "integer"
+  },
+  "target_slot_index": {
+    "question": "BCB 目标 slot 数值",
+    "type": "integer"
+  },
+  "sync_progress": {
+    "question": "BCB sync 数值",
+    "type": "integer"
+  },
+  "resume_enabled": {
+    "question": "是否启用 resume",
+    "type": "boolean"
+  },
+  "sync_enabled": {
+    "question": "是否启用 sync",
+    "type": "boolean"
+  },
+  "successful_proven": {
+    "question": "题目是否证明 AB successful",
+    "type": "boolean"
+  },
+  "resume_is_network_download": {
+    "question": "resume 是否指网络下载续传",
+    "type": "boolean"
+  }
+}

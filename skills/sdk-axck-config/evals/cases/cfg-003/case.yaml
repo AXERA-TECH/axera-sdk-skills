@@ -1,0 +1,8 @@
+prompt: |
+  使用已安装的 sdk-axck-config 技能，检查当前目录下的配置文件，验证 CMM Pool 内存预算是否满足当前管线需求，将结果写入 out/report.md。
+expect:
+  files:
+    - path: out/report.md
+      exists: true
+      min_bytes: 40
+  assert: assert.sh

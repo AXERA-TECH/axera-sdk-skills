@@ -1,0 +1,33 @@
+schema_version: 1
+id: ivd-002
+display_id: IVD-002
+title: 正常出流基线（防误报）：HSK 与 Offline 链路两轮计数均推进，单轮差一帧与 HwUsed=Y 不判异常
+category: ivps-venc/normal-baseline
+analyzer:
+  skill: sdk-ivps-venc-diagnose
+platform:
+  soc: AX615
+  sdk_version: V3.15.0
+input:
+  type: proc_sampling
+  files:
+    - input/hsk_proc.txt
+  capture:
+    samples: 2
+    sample_interval_seconds: 5
+    source: captured
+    notes:
+      - 板端真实双轮采样，系统正常出流稳定运行中。
+      - 采样前已执行 echo 'priv on' > /proc/ax_proc/syncagent。
+      - 含 link_table、link_table_kernel、syncagent（3 个 session）、venc、jenc、ivps 六个 proc。
+      - SDK 版本：ax_sys V3.15.0_20260929153144 / ax_venc V3.15.0 / ax_ivps V3.15.0。
+      - 拓扑：IVPS 0/0->VENC 0/0 为 SW_Low_Mem HSK（sess0）；IVPS 0/1->VENC 0/1 实为
+        JENC chn1（JPEG，经 VPP+VGP 二对一汇入 sess1）；IVPS 0/2->VENC 0/2 为 SW_Offline；
+        JENC chn15 已创建但未启用（bHsk=N，全 0）。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/hsk_proc.txt
+  evaluator_only:
+    - answer/manifest.yaml
+    - answer/oracle.yaml

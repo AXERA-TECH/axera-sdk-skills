@@ -1,0 +1,8 @@
+[   45.102340] [AXCK_APP] Video recording switch file triggered...
+[   45.102390] [AXCK_REC] Close current file, opening next file /opt/data/REC_20261009_0002.mp4
+[   45.102450] [AXCK_REC] Switch file completed, set state to rwsWaitKey
+[   45.102520] [AXCK_REC] Thumbnail frame arrived with flag effIsThumb
+[   45.102600] [MUX_MP4][mp4mux_h265_write_nal][E] Need vps: 1 need SPS: 1 need PPS: 1 needIDR: 1
+[   45.102640] [MUX_MP4][mp4mux_h265_write_nal][E] Need vps: 1 need SPS: 1 need PPS: 1 needIDR: 1
+[   45.102680] [MUX_MP4][mp4mux_h265_write_nal][E] Need vps: 1 need SPS: 1 need PPS: 1 needIDR: 1
+[   45.135000] [AXCK_REC] Video key frame (IDR) arrived with flag effIsKey

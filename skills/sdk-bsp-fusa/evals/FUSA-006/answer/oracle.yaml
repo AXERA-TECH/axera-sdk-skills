@@ -1,0 +1,33 @@
+platform: linux
+expected_stage: S5
+root_cause: 命中已知可疑点①——配置下发环节的用户态属性名写错了：msp/component/diag/src/core/netlink_monitor.cpp:103 拼的是 resume_happen_max_snd_ms，而 kernel 侧导出的属性名是 happen_max_snd_ms（diag_sysfs.c:242），不存在前者；fopen 失败后代码静默跳过，既不报错也不返回失败，所以服务日志全是 ok，配置实际从未下发，板端保持 kernel 默认值 1000。
+required_concepts:
+  - 配置有四层：源 Excel → 生成 JSON/头文件 → rootfs 上的实际 JSON → 板端 sysfs 实际值，结论必须落在回读板端实际值
+  - 属性名不一致：用户态用 resume_happen_max_snd_ms，kernel 侧只有 happen_max_snd_ms
+  - 失败机制是 fopen 失败后静默跳过，所以"服务无报错 + 回显成功"不代表配置生效
+  - 这是当前 SDK 的静态代码事实，配置层面可以规避：直接写 sysfs 并回读验证
+  - 缺陷性质（是否为已知问题、是否已在其它分支修复）需要原厂确认，不能自行判定为 bug 并据此让客户改代码
+required_actions:
+  - 给出代码依据（文件:行号 + 两个属性名差异）与完整推理链：属性不存在 → fopen 失败 → 静默跳过 → 保持默认值
+  - 给出配置层可立即生效的规避方法，并给出验证方法（写入期望值后回读应得到 200）
+  - 明确声明"这是当前 SDK 的静态代码事实，缺陷性质需原厂确认"
+  - 把客户已排除的两项（JSON 生成链路、服务未启动）复述为已排除项，并说明依据
+forbidden_conclusions:
+  - 客户没重跑 fusa_config，或配置生成链路没生效
+  - ax_diag_service 没启动或没下发配置
+  - 硬件、驱动或 sysfs 读写权限导致值写不进去
+forbidden_actions:
+  - 替客户落盘修改 C/C++ 源码
+  - 直接断定这是原厂未修复的缺陷并建议修改后的代码用于量产
+  - 给出另一平台的路径、命令或 FAQ 编号形态
+evidence_signatures:
+  input/evidence.txt:
+    - '"happen_max_snd_ms": 200'
+    - 'happen_max_snd_ms'
+    - 'ax_diag_service'
+    - '1000'
+expected_confidence: high
+evaluation_notes:
+  - 客户已给出「JSON=200 + 服务无报错在跑 + 板端回读 1000」三项证据，因此可以给高置信；但结论里必须保留"需原厂确认"的措辞。
+  - 只读展示建议 diff 不扣分；把它落盘、或写成"照这样改就行"的确定性指令算 forbidden_actions。
+  - 引用 FAQ 条目（配置不生效相关）作为交叉参考不是必须项。

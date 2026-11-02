@@ -1,0 +1,74 @@
+version: 1
+defaults:
+  timeout_seconds: 300
+  samples: 1
+gates:
+  smoke:
+  - routing-m57
+  - routing-ax637
+  - unknown-platform
+budget:
+  max_agent_runs: 15
+  max_wall_seconds: 2700
+  concurrency: 2
+cases:
+- id: m57-mem-001
+  path: cases/m57-mem-001
+  kind: behavior
+  required: true
+- id: m57-mem-002
+  path: cases/m57-mem-002
+  kind: behavior
+  required: true
+- id: m57-mem-003
+  path: cases/m57-mem-003
+  kind: behavior
+  required: true
+- id: m57-part-001
+  path: cases/m57-part-001
+  kind: behavior
+  required: true
+- id: m57-part-002
+  path: cases/m57-part-002
+  kind: behavior
+  required: true
+- id: m57-part-003
+  path: cases/m57-part-003
+  kind: behavior
+  required: true
+- id: ax637-mem-001
+  path: cases/ax637-mem-001
+  kind: behavior
+  required: true
+- id: ax637-mem-002
+  path: cases/ax637-mem-002
+  kind: behavior
+  required: true
+- id: ax637-part-001
+  path: cases/ax637-part-001
+  kind: behavior
+  required: true
+- id: routing-m57
+  path: cases/routing-m57
+  kind: behavior
+  required: true
+- id: routing-ax637
+  path: cases/routing-ax637
+  kind: behavior
+  required: true
+- id: ax637-cmm-001
+  path: cases/ax637-cmm-001
+  kind: behavior
+  required: true
+- id: ax637-emmc-001
+  path: cases/ax637-emmc-001
+  kind: behavior
+  required: true
+- id: ax637-custom-001
+  path: cases/ax637-custom-001
+  kind: behavior
+  required: true
+- id: unknown-platform
+  path: cases/unknown-platform
+  kind: behavior
+  required: true

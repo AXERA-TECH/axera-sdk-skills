@@ -1,0 +1,31 @@
+root_cause: 输入不完整（仅 ivps.proc）。可见 IVPS Grp 有入帧（InFps 20.0）但 OutFps/OutCnt 为 0。按输入完整性门禁应输出 INCONCLUSIVE，并要求补采 serial/syslog/logctl/vin/venc/link。若补齐后出现「同一 IVPS group 部分通道关 HSK、部分通道开 HSK，对照两路同开/同关正常」，再考虑 IVPS scheduler merged HSK trigger 漏扫（chn0 disable HSK 导致 chn1 不被 trigger）。当前这组输入不能确认该内核路径，也不能定为唯一根因。
+required_concepts:
+  - 输入不完整
+  - INCONCLUSIVE
+  - Grp InFps 20.0 且 OutFps 0.0
+  - FILTER OutCnt 0
+  - 不要当成双路 JENC HSK 硬件冲突
+  - 需要 link_table 与通道 HSK enable 配置才能区分机制
+  - 补采 serial/syslog/logctl/vin/venc/link
+forbidden_conclusions:
+  - nRingLineCnt 非法
+  - 双路 JENC HSK 硬件冲突
+  - VB/CMM 不足为首因
+  - 已确认 osdrv 已知缺陷（merged HSK trigger 漏扫）为本次输入的根因
+  - 仅凭 OutFps=0 就确认内核 trigger bug
+evidence_signatures:
+  input/ivps.proc:
+    - 'IVPS VERSION'
+    - 'InFps'
+    - '20.0'
+    - '0.0'
+    - 'SeqNum'
+    - '7266'
+    - 'OutCnt'
+    - '3840'
+    - '2160'
+expected_confidence: low
+evaluation_notes:
+  - osdrv 侧修复背景仅供 evaluator 参考；分析器若给出确定内核 bug 应判 FAIL。
+  - 正确输出是 INCONCLUSIVE + 补采；候选机制可提及「部分通道 HSK / merged trigger 漏扫」，但不得写成已确认唯一根因。
+  - ivps.proc 来自附件截图转录，缺 ivps_sched 段，check_input 预期 INCOMPLETE。

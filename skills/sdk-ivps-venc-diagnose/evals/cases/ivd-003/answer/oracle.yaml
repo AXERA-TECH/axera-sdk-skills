@@ -1,0 +1,40 @@
+# IVD-003 单支冻结：JENC chn1 支路停滞，其余链路正常——判分支不判整组（决策树第 10 条）
+# 现场为 derived 构造（基底：ivd-002 正常采样，S2 的 JENC 支路替换为 S1 内容）。
+root_cause: 仅 JENC chn1 支路（HSK SessId 1，VPP+VGP 二对一汇入的 JPEG 链路）停滞：
+  两轮 FrmRecv 63->63、SubmitCnt 63->63、SucCnt 58->58、hskCnt 63->63 全部不变，
+  sess1 各连接 update/wait 双侧 RegVal 一致停在 31232；而其上游 IVPS chn1 链路
+  （flt2/flt3）OutCnt 63->68 仍在推进，VENC chn0（sess0，Send2EncCnt 1884->2036）、
+  VENC chn2（SW_Offline，1883->2036）、IVPS 主链与 ISP session 全部正常。分界在
+  JENC 支路的 HSK 消费/JENC 编码侧，问题模块判 JENC（或 sess1 链路一侧）；
+  按决策树第 10 条不得把整个 IVPS 组或其余正常链路判停滞。
+required_concepts:
+  - 指出只有 JENC chn1 支路两轮不推进，其余链路（VENC chn0/chn2、IVPS 主链）正常
+  - JENC chn1 冻结证据：FrmRecv/SubmitCnt/SucCnt/hskCnt 两轮不变（63/63、58/58）
+  - sess1 双侧 RegVal 一致停在 31232（update/wait 均冻结）
+  - 上游 IVPS chn1（flt2/flt3 OutCnt 63->68）仍推进，分界在 JENC 消费侧
+  - 正常支路证据：venc chn0 Send2EncCnt 1884->2036、venc chn2 1883->2036
+  - HSK 链路与 Offline 链路分别判定，规则不混用
+  - 结论基于两轮差值
+forbidden_conclusions:
+  - 整个 IVPS 组卡死 / 上游整体停摆 / 整机编码停摆
+  - 把正常推进的 VENC chn0/chn2 或 IVPS 主链判为停滞
+  - 用 HSK 握手规则解释 SW_Offline 的 venc chn2（或反之）
+  - 把 JENC chn15（未启用、全 0）判为停滞故障
+  - 仅凭单轮判定持续卡死
+evidence_signatures:
+  input/hsk_proc.txt:
+    - '===== SAMPLE 1'
+    - '===== SAMPLE 2'
+    - '29696   31232'    # jenc chn1 HSK initVal/syncVal 行（两轮相同=冻结）
+    - '31232  [29696'    # sess1 连接行：RegVal 停在 31232 且 RegVal0 回到 S1 基准（两轮相同）
+    - 'Send2EncCnt'
+    - 'FrmRecv'
+    - '63            0.9'   # jenc chn1 CHN STATUS 2 行（FrmRecv/RecvFps 两轮相同）
+expected_confidence: high
+evaluation_notes:
+  - venc chn0 推进锚点：Send2EncCnt 1884（S1）与 2036（S2）分别出现于两轮 VENC CHN STATUS 0。
+  - sess1 双侧一致冻结（31232=31232）与 ivd-001 的"单侧冻结"形态不同：本例更接近
+    该支路无新消费，模型判 JENC 消费侧或 sess1 链路一侧均算对；只有判整组卡死
+    或把正常支路也判停滞才 FAIL。
+  - jenc chn15 全 0 为未启用通道（次生噪声），判其停滞应 FAIL。
+  - IVPS chn1 flt2 OutCnt 63->68 推进是关键分界证据；模型若未引用，扣分但不一票否决。

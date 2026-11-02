@@ -1,0 +1,55 @@
+schema_version: 1
+id: AXDF-003
+title: HSK 模式下改分辨率未协同 VENC 时序
+category: module-dataflow/hsk/switch-sequence
+analyzer:
+  skill: sdk-dataflow-analysis
+platform:
+  soc: AX615
+  project: AX615_nor
+  flash: spi_nor
+  ddr_mb: 128
+  sensor: mis20s1
+reproducer:
+  patch: answer/reproducer.patch
+  application: /opt/bin/FRTDemo/frtdemo
+  command: cd /opt/bin/FRTDemo && ./run.sh -p 0 -s 16 -n 1 -l 6 -t 4
+input:
+  type: log_set
+  files:
+    - input/serial.log
+    - input/syslog.log
+    - input/logctl.proc
+    - input/vin.proc
+    - input/ivps.proc
+    - input/venc.proc
+    - input/link.proc
+  capture:
+    userlog_level: info
+    userlog_level_value: 6
+    userlog_modules:
+      VIN: 17
+      IVPS: 13
+      VENC: 7
+    syslog_source:
+      - /tmp/data/AXSyslog/syslog/（本轮 logserviced 切片，采集前已清空目录）
+    notes:
+      - 全部输入来自同一次复现轮次，复现前已清理上一轮进程与 syslog 目录。
+      - serial.log 从 FRTDemo 启动前开始录制，覆盖起流、运行期分辨率切换和切换后的停流窗口，已移除 ANSI 颜色码。
+      - proc 在切换完成、编码停流稳定约 20 秒后采集，与 serial.log 属同一轮现场。
+      - syslog.log 是本轮 logserviced 文件的前 220 行。停流后 ENC 模块以极高频率输出 AXLOG2 错误 token，logserviced 切片轮转很快，因此 syslog 只覆盖采集时刻附近，不含切换瞬间；切换动作与首个帧率异常见 serial.log。
+      - 板卡为 AX615 NOR / DDR128 / MIS20S1 配置，与 AXDF-001/AXDF-002 同规格。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/serial.log
+    - input/syslog.log
+    - input/logctl.proc
+    - input/vin.proc
+    - input/ivps.proc
+    - input/venc.proc
+    - input/link.proc
+  evaluator_only:
+    - answer/oracle.yaml
+    - answer/reproducer.patch
+    - answer/case.yaml

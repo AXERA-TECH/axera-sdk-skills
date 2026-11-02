@@ -1,0 +1,18 @@
+# FUSA-002 串口摘录（客户原始保存，已去 ANSI 颜色码）
+
+[    0.000000] Linux version 6.1.83 (build@axera) #1 SMP PREEMPT
+[    9.882104] axdiag: register_axdiag: platform device created
+[  120.000000] ax_diag_service is up, netlink handshake done
+[  400.120301] isp_pipe: stream on chn 0
+[  412.881900] diag-netlink: err ID: 17 module ID: 45 domain ID: 0
+[  412.882104] axdiag: diagnosis_error_send: report=1 forward=1 reset=0
+[  412.883012] NetlinkHeartBeatHandle: ack
+[  420.110000] diag_stl: heartbeat time:1
+[  420.130119] NetlinkHeartBeatHandle: ack
+[  440.110000] diag_stl: heartbeat time:1
+[  440.130119] NetlinkHeartBeatHandle: ack
+[  460.110000] diag_stl: heartbeat time:1
+[  460.130119] NetlinkHeartBeatHandle: ack
+
+# ---- 用户态侧打印 ----
+[  412.883900] AxDiagCore: recv event error_mask: 0x002D0011

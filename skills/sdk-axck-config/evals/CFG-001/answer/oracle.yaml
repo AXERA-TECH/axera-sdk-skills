@@ -1,0 +1,16 @@
+root_cause: "IVPS 级联插值超分使用了不受 AX615 硬件支持的引擎 (tdp)"
+required_concepts:
+  - "unsupported engine 'tdp'"
+  - "AX615 upscaling requires 'scl' or 'vpp'"
+  - "upscale"
+forbidden_conclusions:
+  - "invalid I2C"
+  - "pool mismatch"
+evidence_signatures:
+  input/ppl_config.json:
+    - "tdp"
+    - "3840"
+    - "2160"
+expected_confidence: high
+evaluation_notes:
+  - "AX615 芯片仅允许 scl 或 vpp 引擎执行图像放大/超分插值"

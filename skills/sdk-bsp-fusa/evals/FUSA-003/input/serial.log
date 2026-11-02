@@ -1,0 +1,29 @@
+# FUSA-003 串口摘录（客户原始保存）
+
+[    5.118224] diag_core_drv: heartbeat time:1
+[    5.138300] diag_core_drv: heartbeat time:2
+[    5.158412] diag_core_drv: heartbeat time:1
+[   32.118224] diag_core_drv: heartbeat time:1
+[  610.500000] maxpwr: stress round 37, cpu load 91%
+[  612.882104] diag_core.cpp: BSP HeartBeat error !!!
+[  612.902145] diag_core.cpp: BSP HeartBeat error !!!
+[  612.922167] diag_core.cpp: BSP HeartBeat error !!!
+[  612.942301] diag_core.cpp: BSP HeartBeat error !!!
+[  613.001220] diag_core_drv: heartbeat time:4
+[  613.021340] diag_core_drv: heartbeat time:5
+[  613.041452] diag_core_drv: heartbeat timeout.
+[  613.060000] diag_core.cpp: BSP HeartBeat error !!!
+[  618.220000] maxpwr: stress round 38, cpu load 93%
+
+# ---- 客户顺手贴的进程表 ----
+$ pidin ar | grep -E "diag_core_drv|diag_extend|m57_ecm_drv|fcu_drv"
+  4194321       1 diag_core_drv       10r   usr/bin/diag_core_drv
+  4194322       1 diag_extend         10r   usr/bin/diag_extend
+  4194323       1 m57_ecm_drv         10r   usr/bin/m57_ecm_drv
+  4194324       1 fcu_drv             10r   usr/bin/fcu_drv
+
+# ---- 负载 ----
+$ hogs -n -%1
+  61.2%  maxpwr
+  22.4%  diag_core_drv
+   9.1%  ax_diag_service

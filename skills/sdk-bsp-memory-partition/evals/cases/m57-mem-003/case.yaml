@@ -1,0 +1,21 @@
+prompt: 'M57 把 DDR 从 1G 改成 2G 后，Inline ECC 配置需要改吗？
+
+
+  使用已安装的 sdk-bsp-memory-partition 技能，当前目录仅是精简的 SDK 路由/配置样本，不含完整源码和工具链。
+
+  这是只读咨询：简洁地将建议、必要命令或待确认问题写入 out/response.md。
+
+  不得修改样本配置、构建镜像或刷写设备；缺少参数时将问题写入文件后结束，不等待交互。
+
+  另将计算结果写入 out/analysis.json，包含整数 ddr_bytes（2 GiB 的字节数）和 ecc_block_1_start（按文档公式计算的字节偏移）；不要添加其他字段。
+
+  '
+expect:
+  files:
+  - path: out/response.md
+    exists: true
+    min_bytes: 40
+  - path: out/analysis.json
+    exists: true
+    min_bytes: 10
+  assert: assert.sh

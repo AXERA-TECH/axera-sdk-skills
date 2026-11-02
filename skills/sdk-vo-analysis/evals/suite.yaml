@@ -1,0 +1,57 @@
+version: 1
+defaults:
+  timeout_seconds: 240
+  samples: 1
+gates:
+  smoke:
+    - analysis-001
+    - setting-001
+budget:
+  max_agent_runs: 12
+  max_wall_seconds: 2700
+  concurrency: 2
+cases:
+  - id: analysis-001
+    path: cases/analysis-001
+    kind: behavior
+    required: true
+  - id: analysis-002
+    path: cases/analysis-002
+    kind: behavior
+    required: true
+  - id: analysis-003
+    path: cases/analysis-003
+    kind: behavior
+    required: true
+  - id: analysis-004
+    path: cases/analysis-004
+    kind: behavior
+    required: true
+  - id: analysis-005
+    path: cases/analysis-005
+    kind: behavior
+    required: true
+  - id: analysis-006
+    path: cases/analysis-006
+    kind: behavior
+    required: true
+  - id: analysis-007
+    path: cases/analysis-007
+    kind: behavior
+    required: true
+  - id: setting-001
+    path: cases/setting-001
+    kind: behavior
+    required: true
+  - id: setting-002
+    path: cases/setting-002
+    kind: behavior
+    required: true
+  - id: setting-003
+    path: cases/setting-003
+    kind: behavior
+    required: true
+  - id: setting-004
+    path: cases/setting-004
+    kind: behavior
+    required: true

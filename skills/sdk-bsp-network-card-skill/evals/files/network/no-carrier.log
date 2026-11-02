@@ -1,0 +1,2 @@
+stmmaceth 00000000.ethernet eth0: Link is Down
+2: eth0: <BROADCAST,MULTICAST,UP,NO-CARRIER> mtu 1500 state DOWN

@@ -1,0 +1,37 @@
+version: 1
+
+# Memory/Partition 路由：workspace 检测 → 平台事实与参考文档
+#
+# 注意：不要用 build/platforms/axera/{ax637*,demo*}/partitions*.json 这类 board 目录
+# glob 区分平台——M57 SDK 打包时同时携带 ax637_* 与 demo_* 两个 board 目录，会导致 M57
+# 被误判为 AX637。优先使用 SafetyIsland 下 SDK 独有的 board 层标志：
+#   - M57 SDK 独有 SafetyIsland/mcal；
+#   - AX637/AX637R SDK 独有 SafetyIsland/rt-thread（bsp/m57/configs_ax637*）。
+platforms:
+  - id: ax637
+    display: AX637 / AX637R memory and FLASH partition
+    detect:
+      any:
+        - path_exists: board-AX637
+        - path_exists: SafetyIsland/rt-thread
+    load:
+      - platforms/ax637.md
+    reference_root: reference/ax637/
+
+  - id: m57
+    display: M57 memory and FLASH partition
+    detect:
+      any:
+        - path_exists: board-M57
+        - path_exists: SafetyIsland/mcal
+    load:
+      - platforms/m57.md
+    reference_root: reference/m57/
+
+fallback:
+  id: unknown
+  action: ask
+  message: |
+    未识别到已登记的 Memory/Partition 平台。请：
+      1) 通过 args 显式指定 platform=ax637 或 platform=m57；或
+      2) 在 routing.yaml 中新增平台条目并补充 platforms/<id>.md 与 reference/<id>/。

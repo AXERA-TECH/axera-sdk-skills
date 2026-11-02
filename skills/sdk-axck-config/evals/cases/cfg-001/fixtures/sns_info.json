@@ -1,0 +1,166 @@
+[
+    {
+        "sns_name":"SC438HAI",
+        "sns_id": 8,
+        "sns_ahd":0,
+        "i2c_dev":1,
+        "i2c_addr":48,
+        "reset_gpio":69,
+        "sns_lib":
+        {
+            "lib": "libsns_sc438hai.so",
+            "obj": "gSnssc438haiObj"
+        },
+        "sns_attr":
+        {
+            "sns_mode": 1,
+            "settingindex_des": "[none, sdr, hdr] refer to sc438hai_settings.h",
+            "settingindex": [-1, 1, 2],
+            "width":2688,
+            "height":1520,
+            "raw_type": "raw10",
+            "bayer_pattern": "rggb",
+            "sns_fps_minus_des": "if frame_rate < sns_fps_minus, sns attr will set to sns_fps_minus and then control frame_rate by pipe setting",
+            "sns_fps_minus": 2.0,
+            "frame_rate":30.0
+        },
+        "sns_clk":
+        {
+            "clk_idx":0,
+            "clk_rate":"27m"
+        },
+        "dev_attr":
+        {
+            "dev_mode":"online",
+            "sns_type":"mipi",
+            "start_x":0,
+            "start_y":0,
+            "width":2688,
+            "height":1520,
+            "bayer_pattern":"rggb",
+            "pixel_fmt":"raw10bpppkd",
+            "out_mode":0,
+            "fps_ctrl":
+            {
+                "src_fps":0,
+                "dst_fps":0
+            },
+            "compress":
+            {
+                "mode":0,
+                "level":0
+            },
+            "yuv422_to_420":0,
+            "yuv422_factor":0,
+            "dev_work_mode_des": "0: 1MULTIPLEX; 1: 2MULTIPLEX",
+            "dev_work_mode": [0, 0, 0],
+            "mipi_intf_attr":
+            {
+                "img_vc":0,
+                "img_dt":43,
+                "info_vc":0,
+                "info_dt":0
+            }
+        },
+        "pipe_attr":
+        {
+            "mode":"normal",
+            "start_x":0,
+            "start_y":0,
+            "width":2688,
+            "height":1520,
+            "bayer_pattern":"rggb",
+            "pixel_fmt":"raw10bpppkd",
+            "ai_isp_enable":1,
+            "compress":
+            {
+                "mode":2,
+                "level":4
+            },
+            "comb_mode":0,
+            "3d_nr":
+            {
+                "enable":0,
+                "compress":
+                {
+                    "mode":1,
+                    "level":0
+                }
+            },
+            "ai_nr":
+            {
+                "enable":0,
+                "compress":
+                {
+                    "mode":1,
+                    "level":0
+                }
+            },
+            "fps_ctrl":
+            {
+                "src_fps":0,
+                "dst_fps":0
+            }
+        },
+        "mipi_attr":
+        {
+            "lane":"lane_4",
+            "data_rate":756,
+            "lane_map":[0,1,3,4],
+            "clk_lane":[2,5]
+        },
+        "chn_attr":
+        [
+            {
+                "width":2688,
+                "height":1520,
+                "pixel_fmt":"yuv420sp",
+                "depth":0,
+                "compress":
+                {
+                    "mode":2,
+                    "level":10
+                },
+                "fps_ctrl":
+                {
+                    "src_fps":30,
+                    "dst_fps":30
+                }
+            }
+        ],
+        "sns_tcm":
+        {
+            "stream_ctrl_mode": 0,
+            "light_config": {
+                "enable": 0,
+                "light_id": 11,
+                "ae_sensitivity":50,
+                "light_control":
+                [
+                    {
+                        "//": "for normal mode",
+                        "pipe_id": 0,
+                        "mode des": "0: Always-On Mode, 1: PWM dimming mode, 2: Flash mode",
+                        "mode": 1,
+                        "pwm_config":{
+                            "level": 100,
+                            "duty_pct": 80,
+                            "freq_hz ": 100
+                        }
+                    },
+                    {
+                        "//": "for AOV mode",
+                        "pipe_id": 0,
+                        "mode des": "0: Always-On Mode, 1: PWM dimming mode, 2: Flash mode",
+                        "mode": 1,
+                        "pwm_config":{
+                            "level": 100,
+                            "duty_pct": 20,
+                            "freq_hz ": 100
+                        }
+                    }
+                ]
+            }
+        }
+    }
+]

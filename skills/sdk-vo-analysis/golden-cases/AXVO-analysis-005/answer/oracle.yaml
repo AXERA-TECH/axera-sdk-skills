@@ -1,0 +1,30 @@
+{
+  "root_cause": "根因是 CSC 矩阵与源色域不匹配：片源为 BT709 色域，但客户显式配置 AX_VO_CSC_MATRIX_BT601_TO_BT601，BT709 数据被按 BT601 语义转换，产生系统性色偏（整体偏绿）。属配置错误，不是芯片缺陷——CSC 默认矩阵即 BT601_TO_BT601，'不调用 SetCSC ≠ 不做转换'，源为 BT709/RGB 时按 BT601 解释产生系统性偏色是既定行为。修正：改用与源匹配的矩阵（源 BT709 YUV → 输出 YUV 用 AX_VO_CSC_MATRIX_BT709_TO_BT709，或按显示器需求选 BT709_TO_BT601 等 14 种枚举之一）。",
+  "required_concepts": [
+    "排除'芯片 CSC 硬件通路出厂缺陷'：CSC 是配置通路，正确配置即可恢复，且 proc 显示链路本身正常（Refresh/Pclk/InFps/OutFps/DiscFrames/BlkMiss 均正常）",
+    "识别根因：源色域 BT709 与 CSC 矩阵 BT601_TO_BT601 不匹配，BT709 数据按 BT601 语义转换导致系统性偏色",
+    "指出 CSC 默认矩阵为 AX_VO_CSC_MATRIX_BT601_TO_BT601（不调用 SetCSC ≠ 不做转换）",
+    "给出修正配置：改用 BT709_TO_BT709（或按输出需求从 14 种枚举中选，引用 ax_vo_api.h 280-295 枚举），并说明选择依据",
+    "引用证据带来源与固定版本标注（约束表 CSC 节 / ax_vo_api.h 枚举 / SDK V3.14.0 实现行为，需按版本核验）"
+  ],
+  "forbidden_conclusions": [
+    "断言 CSC 硬件通路出厂缺陷",
+    "建议使用 Layer 级 CSC（AX615 不支持，Layer 系列接口返回 NOT_SUPPORT）",
+    "把时序/接口问题当作根因（场景中链路输出正常）"
+  ],
+  "evidence_signatures": {
+    "input/scenario.md": [
+      "BT709",
+      "AX_VO_CSC_MATRIX_BT601_TO_BT601",
+      "偏绿",
+      "AX615Q",
+      "V3.13.0"
+    ]
+  },
+  "expected_confidence": "high",
+  "evaluation_notes": [
+    "由原 AXVO-007（信息不足终态 2）场景补足客户信息后改写：芯片型号、接口、时序、CSC 代码、proc、SDK 版本均已给出，分析者可得出确定结论。",
+    "root_cause 字段在本 Case 表示期望分析结论的核心内容（见 grading.md）。",
+    "场景中 SDK 版本 V3.13.0 在 V3 版本历史中且该区间无 VO 差异；CSC 矩阵枚举与默认矩阵行为对 V3.13.0 适用。"
+  ]
+}

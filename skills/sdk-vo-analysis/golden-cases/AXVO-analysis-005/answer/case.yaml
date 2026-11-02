@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "id": "AXVO-analysis-005",
+  "title": "BT709 源配 BT601 CSC 矩阵导致画面偏绿（客户疑出厂缺陷）",
+  "category": "diagnosis/color/csc-gamut-mismatch",
+  "analyzer": {
+    "skill": "sdk-vo-analysis"
+  },
+  "platform": {
+    "soc": "AX615Q",
+    "skill_baseline": "V3.14.0",
+    "interface": "BT656",
+    "resolution": "1920x1080@30"
+  },
+  "input": {
+    "type": "scenario",
+    "files": [
+      "input/scenario.md"
+    ]
+  },
+  "oracle": "answer/oracle.yaml",
+  "separation": {
+    "analyzer_visible": [
+      "input/scenario.md"
+    ],
+    "evaluator_only": [
+      "answer/oracle.yaml",
+      "answer/case.yaml"
+    ]
+  }
+}

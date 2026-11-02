@@ -1,0 +1,11 @@
+[
+  {"query": "M57 Safety 侧 MCAL CAN Bus-Off", "should_trigger": true, "source": "支持范围"},
+  {"query": "M57 QNX 项目 Safety 侧 CanIf_ControllerBusOff", "should_trigger": true, "source": "用户确认"},
+  {"query": "M57 Linux 项目 Safety 侧 MCAL CAN FD 采样点", "should_trigger": true, "source": "支持范围"},
+  {"query": "M57 Safety 侧 Can_Write 返回 CAN_NOT_OK", "should_trigger": true, "source": "支持范围"},
+  {"query": "M57 Safety 侧 MCAL CAN RX Enhanced FIFO 丢帧", "should_trigger": true, "source": "支持范围"},
+  {"query": "AX637 Safety 侧 RTT CAN Bus-Off", "should_trigger": false, "source": "用户确认"},
+  {"query": "AX637R Safety 侧 CAN FD", "should_trigger": false, "source": "用户确认"},
+  {"query": "M57 QNX 主 CPU 原生 CAN 丢帧", "should_trigger": false, "source": "支持范围"},
+  {"query": "M57 SafetyIsland baremetal CAN 丢帧", "should_trigger": false, "source": "支持范围"}
+]

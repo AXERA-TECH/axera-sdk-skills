@@ -1,0 +1,38 @@
+{
+  "skill_name": "sdk-axck-config",
+  "evals": [
+    {
+      "id": 1,
+      "name": "inspect_pipeline_topology",
+      "prompt": "Inspect the camera-kit sensor pipeline configuration in camera-kit/service/res/config/AX615D/demo",
+      "expected_output": "Detailed pipeline breakdown showing front sensor SC438HAI, input resolution 2688x1520, IVPS channel mappings, and CMM pool allocations.",
+      "expectations": [
+        "Identifies sensor model as SC438HAI",
+        "Extracts input resolution 2688x1520",
+        "Maps out VIN, IVPS, and VENC channel routing"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "validate_interpolation_constraints",
+      "prompt": "Validate IVPS scaling and common pool consistency check for 3K interpolation",
+      "expected_output": "Validation report confirming IVPS scaling rules, verifying width <= 3200, height <= 1800, and checking CMM pool buffer allocation.",
+      "expectations": [
+        "Runs interpolation consistency verification",
+        "Checks max scaling factor limits",
+        "Confirms CMM pool block count and size budget"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "sensor_migration_safety",
+      "prompt": "Migrate camera pipeline from SC438HAI to OS04A10 with safe backup and diff preview",
+      "expected_output": "Safe execution plan with timestamped backup, unified diff preview, and hardware contract validation before applying changes.",
+      "expectations": [
+        "Verifies source and target sensor compatibility",
+        "Creates timestamped backup of configuration files",
+        "Provides rollback mechanism if validation fails"
+      ]
+    }
+  ]
+}

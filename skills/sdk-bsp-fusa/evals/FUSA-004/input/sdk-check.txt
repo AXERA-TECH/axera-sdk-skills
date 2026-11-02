@@ -1,0 +1,10 @@
+$ cd /workspace/sdk/m57-qnx
+$ test -f kernel/osdrv/private_drv/diag_core/driver/diag_stl.c && echo QNX_HIT
+QNX_HIT
+$ cat build/version/m57_version.mk
+SDK_VERSION=QNX_V1.10.0
+SDK_BRANCH=m57qnx_trunk
+$ ls .repo/manifests/ | tail -2
+M57_SDK_QNX_V1.10.0.xml
+$ ls docs/internal/domain/bsp/fcu.md
+docs/internal/domain/bsp/fcu.md

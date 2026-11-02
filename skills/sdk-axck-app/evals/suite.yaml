@@ -1,0 +1,24 @@
+version: 1
+defaults:
+  timeout_seconds: 240
+  samples: 1
+gates:
+  smoke:
+  - app-001
+budget:
+  max_agent_runs: 6
+  max_wall_seconds: 1200
+  concurrency: 2
+cases:
+- id: app-001
+  path: cases/app-001
+  kind: behavior
+  required: true
+- id: app-002
+  path: cases/app-002
+  kind: behavior
+  required: true
+- id: app-003
+  path: cases/app-003
+  kind: behavior
+  required: true

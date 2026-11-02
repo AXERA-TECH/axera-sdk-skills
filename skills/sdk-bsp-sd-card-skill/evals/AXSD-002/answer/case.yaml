@@ -1,0 +1,34 @@
+schema_version: 1
+id: AXSD-002
+title: built-in probe 完成但 cd-gpios 极性和电平待验证
+category: linux-sd/card-detect/gpio
+analyzer:
+  skill: sdk-bsp-sd-card-skill
+platform:
+  soc: AX615
+  os: linux-4.19.125
+reproducer:
+  patch: answer/reproducer.patch
+input:
+  type: log_set
+  files:
+    - input/config.txt
+    - input/dmesg.log
+    - input/dts.txt
+    - input/gpio-notes.txt
+  capture:
+    notes:
+      - 合成 Golden Case，覆盖 built-in 驱动已经 probe 并注册 host，但可插拔卡没有后续枚举日志的场景。
+      - 目标节点使用 cd-gpios、cd-inverted 和 debounce；插拔后的 GPIO 实测与 pinmux 信息尚未闭合。
+      - 分析阶段应把范围收敛到 card detect，并保留供电、pinmux、CMD 响应作为后续分支，而不是直接判定极性错误。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/config.txt
+    - input/dmesg.log
+    - input/dts.txt
+    - input/gpio-notes.txt
+  evaluator_only:
+    - answer/oracle.yaml
+    - answer/reproducer.patch
+    - answer/case.yaml

@@ -1,0 +1,6 @@
+{
+  "case_id": "AX637-SUCCESS",
+  "question": "AX637 Linux 的 SWUpdate 已写完，是否完成升级？",
+  "context": "平台背景：ax637。没有提供真实 SDK、板卡或构建产物；目录标志若在问题中给出，是人工构造的场景条件。",
+  "provenance": "synthetic"
+}

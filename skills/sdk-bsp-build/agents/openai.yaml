@@ -1,0 +1,4 @@
+interface:
+  display_name: "AX615 BSP Build"
+  short_description: "编译 AX615 BSP、images 并生成与验证 AXP 包"
+  default_prompt: "Use $ax615-bsp-build to build an AX615 BSP project and verify the newly generated AXP artifact."

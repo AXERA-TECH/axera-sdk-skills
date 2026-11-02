@@ -1,0 +1,43 @@
+root_cause: FRTDemo 将 VIN(0,0) 到 IVPS(0,0) 的 AX_SYS_Link_V2 配成 Offline（SW_OFFLINE），但 eSrcEngine/eDstEngine 非零（本包配置为 VPP/VENC）。SYS 在 ax_sys_api.c(320) 拒绝该 Link，返回非法参数。FRTDemo 未向上终止构建，继续 Setup 后续 Link 并启动；link_table 因此缺少 VIN→IVPS，VIN Dev 未创建。
+required_concepts:
+  - AX_SYS_Link_V2
+  - AX_MOD_DATA_FLOW_SW_OFFLINE
+  - Offline 模式下 eSrcEngine 和 eDstEngine 必须为 AX_ENG_NONE
+  - DstEngine and Srcengine should be zero when flowmode is sw_offline
+  - VIN(0,0) 到 IVPS(0,0) Link 建立失败
+  - FRTDemo 继续启动不代表该 Link 成功
+  - link_table 中缺少 VIN(0,0) 到 IVPS(0,0)，而 IVPS(0,0) 到 VENC(0,0) 与 IVPS(0,2) 到 VENC(0,1) 仍存在
+  - 启动瞬间可能出现的 LowMem nRingLineCnt token 不是本 Case 根因
+forbidden_conclusions:
+  - nRingLineCnt 非法
+  - sensor 初始化失败
+  - VB/CMM 内存不足
+  - VENC 码控配置错误
+  - 把 IVPS(0,0) 到 VENC(0,0) Link 失败当根因
+  - 非法 engine 矩阵 / Unsupported param
+evidence_signatures:
+  input/serial.log:
+    - 'APP Ver: V3.12.0, SDK Ver: V3.12.0'
+    - 'Linkage failed (17, 0, 0) => (13, 0, 0)'
+    - 'Linkage setup: (13, 0, 0) => (7, 0, 0)'
+  input/syslog.log:
+    - 'DstEngine and Srcengine should be zero when flowmode is sw_offline'
+    - 'Linkage failed (17, 0, 0) => (13, 0, 0)'
+  input/logctl.proc:
+    - 'VENC     7     6'
+    - 'IVPS    13     6'
+    - 'VIN    17     6'
+  input/link.proc:
+    - 'Link Table V2'
+    - 'Link Table Kernel V2'
+    - 'SW_Low_Mem'
+    - 'SW_Offline'
+  input/venc.proc:
+    - 'VENC CHN ATTR'
+    - 'VENC CHN STATUS'
+expected_confidence: high
+evaluation_notes:
+  - 直接证据是 syslog 的 DstEngine 行加上紧随其后的 VIN→IVPS Linkage failed；engine 实际值日志未打印，分析器应写未知，除非读了 evaluator-only patch。
+  - 本轮 IVPS→VENC LowMem 建链成功，不能把第二条 Link 失败或 nRingLineCnt token 写成根因。
+  - vin.proc 只有表头、无 Dev 是 VIN→IVPS 未建链后的状态证据，不是 VIN 驱动故障。
+  - 修正方式是 Offline link 去掉 src_engine/dst_engine，或改回默认 mode 3、line_cnt 0 且不带 engine 字段。

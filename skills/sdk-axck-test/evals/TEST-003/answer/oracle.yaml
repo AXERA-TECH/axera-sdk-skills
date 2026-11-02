@@ -1,0 +1,16 @@
+root_cause: "自动化压力测试断言失败，IVPS 出流帧率跌破门限，底层存在 CMM 饥饿或反压丢帧"
+required_concepts:
+  - "FPS dropped below"
+  - "IVPS"
+  - "CMM"
+  - "threshold"
+forbidden_conclusions:
+  - "NOR Flash"
+  - "ANSI"
+evidence_signatures:
+  input/test_session.log:
+    - "L2 Pipeline Soak Assertion Failed"
+    - "FPS dropped below 15.0 fps threshold"
+expected_confidence: high
+evaluation_notes:
+  - "HTTP RPC 测试驱动 L2/L3 场景流水线必须断言 /proc 硬件出流门限"

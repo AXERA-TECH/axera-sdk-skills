@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#475569"/>
+    </marker>
+    <style>
+      .box { stroke-width: 2; rx: 10; ry: 10; }
+      .title { font: 700 22px Arial, sans-serif; fill: #0f172a; }
+      .label { font: 600 17px Arial, sans-serif; fill: #0f172a; }
+      .small { font: 14px Arial, sans-serif; fill: #334155; }
+      .arrow { stroke: #475569; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1200" height="620" fill="#f8fafc"/>
+  <text x="600" y="42" text-anchor="middle" class="title">AX615 I 帧最终 QP 生成流程</text>
+
+  <rect x="55" y="90" width="245" height="92" class="box" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="177" y="124" text-anchor="middle" class="label">码控基础决策</text>
+  <text x="177" y="151" text-anchor="middle" class="small">码率、场景、GOP、历史统计</text>
+
+  <rect x="350" y="75" width="300" height="122" class="box" fill="#fef3c7" stroke="#d97706"/>
+  <text x="500" y="111" text-anchor="middle" class="label">I/P 比例约束</text>
+  <text x="500" y="139" text-anchor="middle" class="small">u32MinIprop / u32MaxIprop</text>
+  <text x="500" y="165" text-anchor="middle" class="small">限制 I 帧 target bits（不是直接改 QP）</text>
+
+  <rect x="700" y="90" width="245" height="92" class="box" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="822" y="124" text-anchor="middle" class="label">I 帧 target bits</text>
+  <text x="822" y="151" text-anchor="middle" class="small">根据目标 bit 反推 I 帧 QP</text>
+
+  <path d="M300 136 L350 136" class="arrow"/>
+  <path d="M650 136 L700 136" class="arrow"/>
+
+  <rect x="245" y="260" width="300" height="112" class="box" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="395" y="298" text-anchor="middle" class="label">帧级 QP 调整</text>
+  <text x="395" y="326" text-anchor="middle" class="small">+ s32IntraQpDelta</text>
+  <text x="395" y="352" text-anchor="middle" class="small">I 帧目标 QP</text>
+
+  <rect x="655" y="260" width="300" height="112" class="box" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="805" y="298" text-anchor="middle" class="label">帧级范围钳位</text>
+  <text x="805" y="326" text-anchor="middle" class="small">s32MinIFrameQp / s32MaxIFrameQp</text>
+  <text x="805" y="352" text-anchor="middle" class="small">得到 I 帧基础 QP</text>
+
+  <path d="M822 182 C822 220 395 215 395 260" class="arrow"/>
+  <path d="M545 316 L655 316" class="arrow"/>
+
+  <rect x="245" y="440" width="300" height="112" class="box" fill="#e0f2fe" stroke="#0284c7"/>
+  <text x="395" y="478" text-anchor="middle" class="label">块级局部调整</text>
+  <text x="395" y="506" text-anchor="middle" class="small">QPMAP / ROI / CTU bit refine</text>
+  <text x="395" y="532" text-anchor="middle" class="small">叠加 block-level QP delta</text>
+
+  <rect x="655" y="440" width="300" height="112" class="box" fill="#f1f5f9" stroke="#475569"/>
+  <text x="805" y="478" text-anchor="middle" class="label">最终 CU/宏块 QP</text>
+  <text x="805" y="506" text-anchor="middle" class="small">clip(..., u32MinIQp, u32MaxIQp)</text>
+  <text x="805" y="532" text-anchor="middle" class="small">再计算色度 QP offset</text>
+
+  <path d="M805 372 L805 440" class="arrow"/>
+  <path d="M545 496 L655 496" class="arrow"/>
+
+  <text x="600" y="595" text-anchor="middle" class="small">u32MaxIprop 影响 target bits，随后通过 QP 反推间接影响 I 帧 QP；它不属于 CU 级 QP 钳位阶段。</text>
+</svg>

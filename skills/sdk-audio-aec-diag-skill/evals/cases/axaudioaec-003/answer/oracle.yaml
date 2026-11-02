@@ -1,0 +1,102 @@
+schema_version: 1
+id: axaudioaec-003
+root_cause: 评分侧构造为稳定时差与配置不匹配。可见录音中 MIC 晚于 REF 32 样本（2 ms），应用 ref_delay_ms 读回为 20；现场未提供参数定义和补偿位置，足以提出时序或配置嫌疑，不能确认物理补偿误差或直接给出修正值。
+required_concepts:
+- 从 proc 核对处理状态，从 application.log 引用 ref_delay_ms=20 的读回。
+- 按共同起点测量 MIC/REF 稳定正时差约 2 ms，保留有效窗口。
+- 将录音时差与配置读回作为待核实线索，补查参数单位、语义、采集点相对补偿位置及其他偏移。
+- 取得参数定义后设计单变量对照、读回及回滚，不将 2 ms 直接作为确定的板端设置。
+- 复测回声和近端保真，未执行不得声称改善或已解决。
+forbidden_conclusions:
+- 把稳定偏移判断成已证实的时钟漂移、丢帧或切换缓存缺陷。
+- 仅凭参数名认定总纯延迟语义，或把 ref_delay_ms 直接映射为 SDK 字段。
+- 未确认参数语义和补偿位置就断言配置大 18 ms、必须改成 2 ms，或已确定唯一根因。
+allowed_unknowns:
+- 参数定义、补偿位置、认可容差与验收阈值。
+- 实际板型和 SDK 版本。
+- 调整后的回声改善幅度与近端保真结果。
+required_additional_evidence:
+- 应用参数定义及采集链说明，确认单位、映射、补偿位置和生效条件。
+- 经确认的单变量调整前后读回、同条件录音和五类场景验收。
+measurement_expectations:
+- paths:
+  - fixtures/AiCard0_Dev0_vqeIn.pcm
+  - fixtures/AiCard0_Dev0_vqeOut.pcm
+  - fixtures/AiCard0_Dev0_vqeRef.pcm
+  interpretation: delay.status=estimated，lag_samples=32，lag_ms=2；至少三个有效窗口且跨度不超过一个样本。capture_stage=unknown，parameter_comparison=not_comparable；不得虚构参数语义和认可容差以生成配置偏大标记。
+evidence_signatures:
+  fixtures/capture.txt:
+  - lines: 1-9
+    text: '录音格式：16000 Hz，S16_LE，无文件头；每帧 160 个采样点。
+
+      AiCard0_Dev0_vqeIn.pcm：单声道，处理前 MIC。
+
+      AiCard0_Dev0_vqeRef.pcm：单声道，REF 采集数据。
+
+      AiCard0_Dev0_vqeOut.pcm：单声道，上行处理输出。
+
+      同轮各文件 sample 0 对齐，共用样本时基，未分别裁剪或归一化。
+
+      proc.txt 为录音结束后的 AI/AO 状态；config.txt 为应用配置，application.log 为本轮应用日志。
+
+      本轮连续录制 8 秒，远端播放语音，近端保持安静。
+
+      目标播放档位下远端仍听到明显回声。
+
+      本次提交为一轮录音。'
+  fixtures/config.txt:
+  - lines: 1-11
+    text: '[audio]
+
+      sample_rate=16000
+
+      sample_format=S16_LE
+
+      layout=MIC_REF
+
+      frame_samples=160
+
+      [uplink]
+
+      aec=on
+
+      ns=on
+
+      vad=off
+
+      agc=off
+
+      ref_delay_ms=20'
+  fixtures/application.log:
+  - lines: 1-6
+    text: 't=0.000 talk=stopped
+
+      t=0.010 app_set ref_delay_ms=20 ret=0
+
+      t=0.020 app_get ref_delay_ms=20 ret=0
+
+      t=0.030 talk=start aec=enabled
+
+      t=0.100 playback=start capture=start shared_sample_clock=true
+
+      t=8.100 capture=complete frames=800 overrun=0 underrun=0'
+  fixtures/proc.txt:
+  - lines: 5-7
+    text: '-------- AI DEV VQE ATTR ------------------------
+
+      AiCardId AiDevId VqeEnabled SampleRate FrameSamples AecMode NsEnable VadEnable AgcEnable
+
+      0 0 1 16000 160 1 1 0 0'
+    section: AI DEV VQE ATTR
+    device:
+      AiCardId: 0
+      AiDevId: 0
+expected_confidence: medium
+confidence_scope: 稳定录音时差可信；与应用参数的映射和故障因果关系尚待补证。
+evaluation_notes:
+- 完整事实仅描述现有固定输入，不虚构隐藏补丁事实；不得要求未知的 SDK 版本、硬件机制或参数值。
+- required_concepts 按含义及其证据关系评审，不要求固定措辞；否定、引用客户说法及待验证假设不等于断言根因。
+- forbidden_conclusions 仅在报告将其肯定为根因、已解决或已验证事实时判负；查看上下文与实际证据。
+- 审阅结论、证据归属、推理边界、措施与反证、回归五个维度；所有必答项需覆盖，允许未知不扣分。
+- 独立 assert.sh 检查结构、测量、分类及部分文本 smoke；通过不等于 oracle 语义审阅或声学验收通过。
+- 所有用例均未提供修正后板端验收；不得判为 resolved，也不得虚构已运行复测。

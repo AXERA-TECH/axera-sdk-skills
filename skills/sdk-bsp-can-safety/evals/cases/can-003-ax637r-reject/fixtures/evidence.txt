@@ -1,0 +1,5 @@
+Chip: AX637R
+Main project OS: Linux
+CAN ownership: Safety side
+Safety CAN framework: RTT RTOS CAN
+Symptom: CAN Bus-Off on safety controller

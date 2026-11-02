@@ -1,0 +1,32 @@
+# 由 evals.json 自动迁移生成，请按需补全平台与复现信息
+{
+  "schema_version": 1,
+  "id": "AXVO-setting-004",
+  "title": "PCLK 截断档位（2572/33300 均不命中）",
+  "category": "generation/pclk/truncation",
+  "analyzer": {
+    "skill": "sdk-vo-analysis"
+  },
+  "platform": {
+    "soc": "AX615",
+    "skill_baseline": "V3.14.0",
+    "interface": "BT656",
+    "resolution": "custom"
+  },
+  "input": {
+    "type": "scenario",
+    "files": [
+      "input/scenario.md"
+    ]
+  },
+  "oracle": "answer/oracle.yaml",
+  "separation": {
+    "analyzer_visible": [
+      "input/scenario.md"
+    ],
+    "evaluator_only": [
+      "answer/oracle.yaml",
+      "answer/case.yaml"
+    ]
+  }
+}

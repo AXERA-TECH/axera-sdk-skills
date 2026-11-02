@@ -1,0 +1,22 @@
+{
+  "skill_name": "sdk-bsp-fast-boot-skill",
+  "note": "参考 sdk-bsp-ddr-diag-skill/evals/evals.json 的结构。skill_name 对齐 SKILL.md 的 name: sdk-bsp-fast-boot-skill（目录名为 sdk-bsp-fast-boot-skill）。仅保留 Case 1，覆盖 Pre-Handover I2C 过度 Claim、仲裁保护及通道 bitmap 与寄存器位布局的区分。附件均为合成样本，不代表真实客诉；仅用于离线分析，不操作真实设备。files 路径相对于本 evals 目录。",
+  "evals": [
+    {
+      "id": 1,
+      "name": "pre-handover-overclaim-blocks-linux-modem",
+      "prompt": "AX615 打猎相机，Linux 的 4G 模组必须在交接前通过 I2C0 通信，Sensor 在 I2C1。附件报 busy。是不是把 Linux 驱动的 busy 检查删掉就能解决？请只分析并给验证建议，不操作板子。",
+      "expected_output": "定位 Pre-Handover 过度 Claim。RTOS 只应 Claim Sensor 所需通道，Linux 提前访问 I2C0 应被允许；保持仲裁检查及负错误码。",
+      "files": [
+        "files/pre-handover-i2c.log"
+      ],
+      "assertions": [
+        "用 handover request 尚未发出界定 Pre-Handover，并引用 I2C0 busy、-EBUSY",
+        "指出 rtos_i2c_claim_mask=0x7 占用全部三通道，而 Sensor 只需 I2C1",
+        "建议按需 Claim I2C1、释放 Linux 所需 I2C0，保留 Sensor 通道所有权",
+        "区分通道 bitmap 与 AX_DUMMY_SW6_ADDR bits[4:2] 的寄存器位布局，给数值时不把二者直接混用",
+        "保留 Linux 仲裁检查和 -EBUSY，不建议绕过保护以允许两核同时驱动同一通道"
+      ]
+    }
+  ]
+}

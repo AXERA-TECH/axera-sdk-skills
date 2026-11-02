@@ -1,0 +1,8 @@
+$ lsmod | grep -iE 'mmc|sdhci'
+sdhci 32768 0
+$ modprobe sdhci-axera
+modprobe: FATAL: Module sdhci-axera not found in directory /lib/modules/4.19.125-ax615
+$ find /lib/modules/$(uname -r) -name '*sdhci*'
+/lib/modules/4.19.125-ax615/kernel/drivers/mmc/host/sdhci.ko
+$ find /lib/modules/$(uname -r) -name '*mmc*'
+/lib/modules/4.19.125-ax615/kernel/drivers/mmc/core/mmc_core.ko

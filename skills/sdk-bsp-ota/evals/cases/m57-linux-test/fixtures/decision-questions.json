@@ -1,0 +1,18 @@
+{
+  "axera_test_qnx_exclusive": {
+    "question": "axera_test.lua/sh 是否为 QNX 专属",
+    "type": "boolean"
+  },
+  "difference_is_os_boundary": {
+    "question": "两种脚本名称是否表示 OS 边界",
+    "type": "boolean"
+  },
+  "rename_without_callchain_check": {
+    "question": "是否应不查调用链就改名",
+    "type": "boolean"
+  },
+  "missing_hook_proves_business_success": {
+    "question": "全部脚本缺失默认通过是否证明业务成功",
+    "type": "boolean"
+  }
+}

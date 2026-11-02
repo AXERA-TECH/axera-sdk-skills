@@ -1,0 +1,9 @@
+[   80.000000] PM: suspend entry (deep)
+[   80.000050] PM: Syncing filesystems ... done.
+[   80.005000] Freezing user space processes ...
+[  100.005500] Freezing of tasks aborted after 20.000 seconds:
+[  100.005600] task_worker     D    0  1042   1010 0x00000000
+[  100.005650] Call Trace:
+[  100.005700] [<ffff000008085120>] __switch_to+0x90/0xa0
+[  100.005750] [<ffff000008b23410>] __schedule+0x210/0x6b0
+[  100.005800] PM: suspend exit

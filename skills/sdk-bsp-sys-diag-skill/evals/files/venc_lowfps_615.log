@@ -1,0 +1,9 @@
+1970-01-01 10:15:02 Kernel: [ 1102.330912]  [C0][VENC_DRV][W][330] (RcCalcQp|2213) VeChn0 target bitrate 4096kbps, real 6120kbps, qp clip to 51
+1970-01-01 10:15:03 Kernel: [ 1103.101044]  [C0][VENC_DRV][W][330] (VencFrmLost|3187) VeChn0 frame dropped, fifo full, lost cnt 12
+1970-01-01 10:15:04 App:    [ 1104.204338] [VENC][W][330] [W][                  AX_VENC_GetStream][ 771]: chn0 get stream slow, fps 18/25
+1970-01-01 10:15:05 Kernel: [ 1105.330141]  [C0][VENC_DRV][W][330] (RcCalcQp|2213) VeChn0 target bitrate 4096kbps, real 5980kbps, qp clip to 51
+1970-01-01 10:15:06 Kernel: [ 1106.660901]  [C0][VENC_DRV][W][330] (VencFrmLost|3187) VeChn0 frame dropped, fifo full, lost cnt 19
+1970-01-01 10:15:07 App:    [ 1107.881233] [IVPS][W][330] [W][                        ivps_frc_check][ 655]: grp0 chn0 frc drop, in 25fps out 18fps
+1970-01-01 10:15:08 Kernel: [ 1108.112050]  [C0][VENC_DRV][W][330] (H26xBlockyGuard|4471) VeChn0 high qp 51, visible blockiness risk on motion
+1970-01-01 10:15:09 App:    [ 1109.330912] [VENC][W][330] [W][                  AX_VENC_GetStream][ 771]: chn0 get stream slow, fps 17/25
+1970-01-01 10:15:10 Kernel: [ 1110.550210]  [C0][VENC_DRV][W][330] (RcCalcQp|2213) VeChn0 target bitrate 4096kbps, real 6210kbps, qp clip to 51

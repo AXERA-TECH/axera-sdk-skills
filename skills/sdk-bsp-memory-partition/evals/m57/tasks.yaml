@@ -1,0 +1,70 @@
+version: 1
+
+# m57 平台 eval 任务
+platform: m57
+
+tasks:
+
+  # Memory 分配与调整
+  - id: m57-mem-001
+    description: M57 默认 1 GiB DDR 的 Linux/CMM 文档基线应为 384 MiB/640 MiB，并提示实际硬件差异
+    input: |
+      M57 默认 1 GiB DDR 怎么分给 Linux 和 CMM？
+    assertions:
+      - contains_any: ["384 MiB", "384MiB"]
+      - contains_any: ["640 MiB", "640MiB"]
+      - contains_any: ["ATF", "OPTEE"]
+      - contains_any: ["实际硬件", "实际板卡", "实际情况"]
+
+  - id: m57-mem-002
+    description: 调整 M57 Linux 内存时应修改 config.mk 或 uboot 命令行的 SYSTEM_MEMORY_SZ 和 LINUX_MEMORY_SZ
+    input: |
+      想把 M57 Linux 内存从 384 MiB 调大，改哪里，怎么验证？
+    assertions:
+      - contains_any: ["config.mk", "demo_nor_nand/config.mk"]
+      - contains_any: ["SYSTEM_MEMORY_SZ", "LINUX_MEMORY_SZ"]
+      - contains_any: ["uboot 命令行", "动态调整"]
+      - contains_any: ["/proc/meminfo", "cmm"]
+
+  - id: m57-mem-003
+    description: M57 修改 DDR 大小后必须同步 Inline ECC 配置，并警告 ECC code 存储区域
+    input: |
+      M57 把 DDR 从 1G 改成 2G 后，Inline ECC 配置需要改吗？
+    assertions:
+      - contains_any: ["需要", "必须", "同步"]
+      - contains: "ddrmc_init.h"
+      - contains: "INLINE_ECC_BLOCK_1_START"
+      - contains_any: ["DDR大小 - 128M", "DDR大小-128M"]
+      - contains_any: ["ECC code", "存储区域", "不允许使用"]
+
+  # 分区管理
+  - id: m57-part-001
+    description: M57 调整分区大小时应修改 partitions.json 并遵守 NOR 4K、NAND 256K 对齐约束
+    input: |
+      M57 想把 kernel 分区扩大，有哪些对齐约束？
+    assertions:
+      - contains_any: ["partitions.json", "demo_nor_nand/partitions.json"]
+      - contains_any: ["4K", "4096", "NOR"]
+      - contains_any: ["256K", "256KB", "NAND"]
+      - contains_any: ["W35N04JW", "GD25F64", "erase size", "整数倍"]
+
+  - id: m57-part-002
+    description: M57 不支持新增/删除分区，分区顺序在代码中固化
+    input: |
+      M57 可以新增一个自定义数据分区吗？
+    assertions:
+      - contains_any: ["不支持", "暂不支持", "不允许"]
+      - contains_any: ["创建", "删除", "新增"]
+      - contains_any: ["固化", "代码中", "顺序"]
+      - contains_any: ["影响启动", "设备启动"]
+
+  - id: m57-part-003
+    description: M57 分区从 offset 0 紧密排布，partitions.json 是 source of truth，通过 AXDL 写入 metadata
+    input: |
+      M57 的分区信息存在哪里，怎么生效？
+    assertions:
+      - contains: "partitions.json"
+      - contains_any: ["offset 0", "偏移 0", "紧密排布"]
+      - contains_any: ["mtdparts", "metadata"]
+      - contains_any: ["AXDL", "axdl"]
+      - contains_any: ["uboot", "U-Boot"]

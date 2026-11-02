@@ -1,0 +1,26 @@
+schema_version: 1
+id: rc-002
+display_id: RC-002
+title: 正常 CBR 出流基线：双通道配置与实测均在合理范围内，防误报
+category: venc-rc/cbr/normal-baseline
+analyzer:
+  skill: sdk-venc-rc-config-audit
+platform:
+  soc: AX615
+  sdk_version: V3.15.0
+input:
+  type: proc_snapshot
+  files:
+    - input/venc_proc.txt
+  capture:
+    source: captured
+    notes:
+      - 真实板端 cat /proc/ax_proc/venc 采集，保留完整版本串（含编译时间与编译者标记）。
+      - 采集背景（巡检、无异常反馈）通过 case.yaml 的任务提示词提供。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/venc_proc.txt
+  evaluator_only:
+    - answer/manifest.yaml
+    - answer/oracle.yaml

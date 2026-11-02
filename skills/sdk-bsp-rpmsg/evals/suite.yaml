@@ -1,0 +1,27 @@
+version: 1
+defaults:
+  timeout_seconds: 180
+  samples: 1
+gates:
+  smoke: [m57-routing, ax637-routing, ax637-boundary, m57-rpzc]
+budget:
+  max_agent_runs: 4
+  max_wall_seconds: 600
+  concurrency: 2
+cases:
+  - id: m57-routing
+    path: cases/m57-routing
+    kind: behavior
+    required: true
+  - id: ax637-routing
+    path: cases/ax637-routing
+    kind: behavior
+    required: true
+  - id: ax637-boundary
+    path: cases/ax637-boundary
+    kind: behavior
+    required: true
+  - id: m57-rpzc
+    path: cases/m57-rpzc
+    kind: behavior
+    required: true

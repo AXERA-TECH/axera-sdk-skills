@@ -1,0 +1,42 @@
+tasks:
+  - name: route-and-confirm-m57
+    prompt: "使用 sdk-bsp-boot skill 回答：开AB了嘛？"
+    expect: "识别为 M57（命中 SafetyIsland/mcal）；明确未指定 PLAT；再逐项列出支持的 PLAT、FLASHTYPE 及 SUPPORT_AB 状态，再请用户选择目标 PLAT；"
+
+  - name: m57-scope-boundary
+    prompt: "使用 sdk-bsp-boot skill 回答：eFuse 烧写顺序"
+    expect: "说明eFuse 属于 Secure Boot 范围，本 skill 转向 sdk-bsp-secure-boot，我加载该 skill 回答。"
+
+  - name: m57-ab-faq-log-scenario-0
+    prompt: "使用 sdk-bsp-boot skill 回答：出现日志 unbootable slot 0 tries: 0, corrupt: 0 unbootable slot 1 tries: 0, corrupt: 0，分析原因？"
+    expect: "说明触发场景 自己是出厂态、对面也是出厂态；自己是 A 或 B；启动过程 异常断电 或 异常软复位；"
+
+  - name: m57-ab-faq-log-scenario-1
+    prompt: "使用 sdk-bsp-boot skill 回答：出现日志 Do not switch Safety abc. Rebooting...，分析原因？"
+    expect: "说明触发场景：出厂前 S1 阶段——自己是出厂态、对面也是出厂态，自己是 A 或 B，启动过程异常断电；"
+
+  - name: m57-boot-chain
+    prompt: "使用 sdk-bsp-boot skill 回答：启动链路介绍"
+    expect: "说明 BootROM → SBL → SPL → BL31 → OP-TEE → U-Boot → Kernel，按逐级链路说明各阶段职责(各阶段/执行者/关键动作/交付物)。"
+            
+  - name: m57-default-distro-boot
+    prompt: "使用 sdk-bsp-boot skill 回答：uboot引导内核介绍"
+    expect: "说明默认链路为 bootcmd=run distro_bootcmd → bootcmd_blk_extlinux → boot_extlinux → sysboot；sysboot 探测文件系统、读取 extlinux/extlinux.conf，将 kernel 与 dtb 加载到 kernel_addr_r/fdt_addr_r 后按镜像格式调用 booti 或 bootm。"
+
+  - name: m57-bootrom-diagnosis
+    prompt: "使用 sdk-bsp-boot skill 回答：M57 串口看到 BOOTROM 的 CF，下一步按什么方向判断？"
+    expect: "按 BootROM 阶段定位：CF 是读取的数据 checksum 失败；核对镜像源、烧录位置/分区、FLASH读链路，不把这两个字符解释成 Secure Boot 错误。"
+
+  - name: m57-bootcnt
+    prompt: "使用 sdk-bsp-boot skill 回答：M57 BootCnt 记录哪些阶段？怎样开启并 dump 出记录？"
+    expect: "说明 BootCnt 记录 SBL/SPL/RTOS/ATF/OP-TEE/U-Boot/Kernel 的失败与成功信息；在 SafetyIsland/mcal/mcal_example/examples/Demo/config.mak 打开 SUPPORT_TEST_CASE_DEMO_BOOTCNT，按方案关闭冲突的 Fls Demo，并用 dd + hexdump 检查 metadata 偏移 3K 的 struct boot_diag_info。"
+
+  - name: m57-rtos-ocm-ddr
+    prompt: "使用 sdk-bsp-boot skill 回答：M57 mcal部分代码需要放在ddr上跑, 引导方案上如何调整支持？"
+    expect: "说明 需要做的调整 链接：把要跑在 DDR 的代码/数据放进专用 section/打包 构建/超过4M时要做的扩 remap + 链接布局 + Linux 预留。"
+
+  - name: m57-reset-main
+    prompt: "使用 sdk-bsp-boot skill 回答：SBL 的冷启动boot与复位main boot 区别？复位main boot 失败有哪些原因？"
+    expect: "列举 冷启动 normal boot vs 复位 main boot 差异项(触发/.data.bss/AB管理/RTOS img(ALL on OCM)/RTOS img(OCM+DDR)/最后跳转成功/最后跳转失败), 列举 复位 main boot 失败常见原因 SBL 侧(timer4 冲突/SBL 128K 内存未预留/Reset 模块任务栈不够/ADC并行用)。"
+
+

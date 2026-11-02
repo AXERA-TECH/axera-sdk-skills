@@ -1,0 +1,32 @@
+schema_version: 1
+id: AXSD-003
+title: broken-cd polling 导致插卡检测存在正常延迟
+category: linux-sd/card-detect/broken-cd-polling
+analyzer:
+  skill: sdk-bsp-sd-card-skill
+platform:
+  soc: AX615
+  os: linux-4.19.125
+reproducer:
+  patch: answer/reproducer.patch
+input:
+  type: log_set
+  files:
+    - input/dts.txt
+    - input/dmesg.log
+    - input/timeline.txt
+  capture:
+    notes:
+      - 合成 Golden Case，覆盖 broken-cd polling 下插卡到枚举之间的正常延迟。
+      - 日志包含 host 注册、插卡时间、后续卡枚举和 mmcblk0 创建的时间顺序。
+      - 本 Case 用于防止分析器把短时间无日志误报为 card detect 失效。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/dts.txt
+    - input/dmesg.log
+    - input/timeline.txt
+  evaluator_only:
+    - answer/oracle.yaml
+    - answer/reproducer.patch
+    - answer/case.yaml

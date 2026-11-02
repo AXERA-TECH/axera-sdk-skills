@@ -1,0 +1,7 @@
+sd: sdhci@1B40000 {
+    compatible = "axera,sdhc";
+    reg = <0x01B40000 0x1000>;
+    status = "okay";
+    bus-width = <4>;
+    broken-cd;
+};

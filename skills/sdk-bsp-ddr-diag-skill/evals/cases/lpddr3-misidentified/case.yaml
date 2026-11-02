@@ -1,0 +1,17 @@
+prompt: |
+  按以下步骤完成任务，唯一交付物是当前目录下的 out/result.json：
+
+  1. 读取当前目录的 log.txt（客户的串口启动日志）。
+  2. 读取 .axap/opencode/skills/marketplace/sdk-bsp-ddr-diag-skill/reference/eval_contract.md，掌握 out/result.json 的字段与取值规范。
+  3. 立即创建 out/result.json：先填入能从 log.txt 与客户问题直接确定的 detected、claim_mismatch、evidence、conclusion、verdict_class；无法确定的字段填 null、"unknown" 或空数组。
+  4. 再读取 .axap/opencode/skills/marketplace/sdk-bsp-ddr-diag-skill/reference/known_suspects.md，核对与日志现象匹配的条目，补充 sus_hits、refused_actions、next_steps、missing_info，并覆盖更新 out/result.json 为最终结果。
+  5. 不要读取其他文件，不要用 find 或全局搜索，不要交互提问；写完并保存 out/result.json 后立即结束任务，不要再执行任何验证或额外动作。
+
+  客户问题：
+  我们是 AX615DV210，用的是 LPDDR3 2133。客户反馈设备起不来，我看日志里 `read eye training fail` 了（详见 log.txt），是不是读时序的窗太小了？需要怎么调大？
+expect:
+  files:
+    - path: out/result.json
+      exists: true
+      min_bytes: 100
+  assert: assert.sh

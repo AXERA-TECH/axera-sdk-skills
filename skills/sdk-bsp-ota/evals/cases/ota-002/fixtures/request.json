@@ -1,0 +1,6 @@
+{
+  "case_id": "OTA-002",
+  "question": "空 workspace，无源码和检测标志。帮我配置 OTA，未指定 platform 和 PLAT。",
+  "context": "空工作区，没有提供平台背景或 SDK。",
+  "provenance": "synthetic"
+}

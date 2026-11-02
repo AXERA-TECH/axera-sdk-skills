@@ -1,0 +1,26 @@
+# 由 evals.json 自动迁移生成
+{
+  "root_cause": "颜色问题归因 CSC 未配置（引文档 CSC 章节说明默认矩阵 BT601_TO_BT601 与建议配置），超时/失败问题说明公开 API 的错误码包装语义（队列满/超时等底层错误在用户态统一表现为 AX_ERR_VO_DEV_OP_FAIL，需结合 dmesg/proc 定位）与 buffer 生命周期要求，给出修复建议",
+  "required_concepts": [
+    "颜色问题归因 CSC 未配置（默认 BT601_TO_BT601 是既定行为），建议调用 AX_VO_SetCSC 并引用文档证据，而非断言芯片默认配置有 bug；且指出 SetCSC 在 SetPubAttr 之后、Enable 前后均可调用",
+    "正确解释 SendFrame2Disp 的 s32MS 语义（>0 为超时等待、0 非阻塞、-1 阻塞），且**不假设公开 API 会直接透传 QUEUE_FULL/TIMED_OUT**——指出底层队列满/超时在用户态被包装为 AX_ERR_VO_DEV_OP_FAIL，须结合 dmesg/proc 判断真实原因",
+    "指出客户 buffer 发送后立即复用是超时/显示异常的风险点，区分 SDK 池内存 block 释放与直接覆写物理 buffer，并给出正确的 buffer 使用方式",
+    "报告不出现实现侧源码路径/文件名/内部符号名/源码行号"
+  ],
+  "forbidden_conclusions": [
+    "断言底层队列满/超时错误码会原样返回给客户"
+  ],
+  "evidence_signatures": {
+    "input/scenario.md": [
+      "偏色",
+      "CSC",
+      "AX_ERR_VO_DEV_OP_FAIL",
+      "超时"
+    ]
+  },
+  "expected_confidence": "high",
+  "evaluation_notes": [
+    "由 sdk-vo-analysis-all/evals/evals.json 原用例 id=2 迁移。",
+    "root_cause 字段在本 Case 表示期望分析结论/期望生成结果的核心内容（见 grading.md）。"
+  ]
+}

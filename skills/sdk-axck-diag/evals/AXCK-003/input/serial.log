@@ -1,0 +1,6 @@
+[   20.100234] [AXCK_APP] Pipeline running, streaming active...
+[   20.145120] [AX_VIN] [ERR] SIF FIFO OVERFLOW detected on dev 0, pipe 0!
+[   20.145180] [AX_VIN] [ERR] Sensor line time violation, HTS too small or MCLK mismatch
+[   20.145220] [AXCK_PPL] Frame dropped due to hardware FIFO overflow
+[   20.145300] [AX_IVPS] [WARN] IVPS frame timeout waiting for VIN output
+[   20.145400] [AX_VENC] [WARN] VENC starvation detected

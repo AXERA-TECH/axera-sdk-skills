@@ -1,0 +1,13 @@
+{
+  "prompt": "使用已安装的 sdk-bsp-fast-boot-skill 技能分析任务，附件是合成数据。\n只给分析和验证方案，不连接设备、不改设置、不执行压测；无需交互补问。\n将结论写入 out/result.json。此结构仅用于评测，不改变技能的日常报告形式：\nschema_version: 1；phase: Pre-Handover/In-Handover/Post-Handover/Unknown；\nprecursor_phase: 最早前置异常的阶段（适用时填写）；\nconfidence: supported/suspected/insufficient，表示当前证据对主要结论的支持程度；\ndiagnosis、analysis: 中文说明，区分观测事实、假设、因果关系和下一步；\nevidence: 从附件或任务原文摘取的非空字符串数组，保留日志与代码标识原文，不虚构证据；\nrecommendations: 数组，每项为 {target, operation, reason}。\ntarget 使用原始配置项、API、寄存器、设备节点或技术名，例如 RTOS/Linux、I2C0、\npthread_mutex_init、Trace32；operation 取 inspect/configure/initialize/validate/\npreserve/request/retain，reason 用中文说明作用。相同操作可有多个目标。\ni2c_plan（适用时）: {rtos_channels: 整数数组, linux_channels: 整数数组,\nclaim_bitmap: 整数, dummy_status_bits: 整数, preserve_arbitration: boolean}，\n其中 bitmap 为通道位图，dummy_status_bits 为共享寄存器的实际位掩码，均表示建议配置；\nrejected_actions: 字符串数组，从以下选项中列出与本任务有关、但不应作为修复的方法：\nbypass_i2c_arbitration / remove_sensor_claim / extend_timeout_only / force_refcnt_zero /\nassume_rpmsg_packet_loss / assume_ddr_damage / chmod_missing_device / tune_sensor_timing /\nconfirm_deadlock_without_evidence；\nlimitations: 当前缺失且需要验证的证据或机制，用中文说明。\n只根据技能和输入确定上述内容，字段与候选项没有提供本题答案。\n\n任务：\n读取当前目录 request.json 中的 task，并结合 attachments 指向的附件完成任务。\n附件路径：files/pre-handover-i2c.log",
+  "expect": {
+    "files": [
+      {
+        "path": "out/result.json",
+        "exists": true,
+        "min_bytes": 20
+      }
+    ],
+    "assert": "assert.sh"
+  }
+}

@@ -1,0 +1,9 @@
+prompt: |
+  使用已安装的 sdk-bsp-sdk-environment 技能，说明 M57 离线准备 SDK 源码时 sdk_unpack.sh 各参数（-k, -u, -a, -o）对应的源码组件。
+  请将内容直接写入当前目录的 answer.md 文件中，无需冗长说明。
+expect:
+  files:
+    - path: answer.md
+      exists: true
+      min_bytes: 30
+  assert: assert.sh

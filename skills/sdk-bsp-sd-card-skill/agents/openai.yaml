@@ -1,0 +1,4 @@
+interface:
+  display_name: "AX615 Linux SD 卡问题分析"
+  short_description: "根据 Linux 启动后日志定位 AX615 SD 卡故障层级"
+  default_prompt: "请使用 AX615 Linux SD 卡问题分析 skill，优先检查驱动 built-in 或 .ko 加载、DTB、card detect、供电和管脚上下拉，再分析枚举、读写及 FAT/exFAT 挂载；严格区分 sync/umount 后拔卡与异常拔卡，证据不足时不得猜测。"

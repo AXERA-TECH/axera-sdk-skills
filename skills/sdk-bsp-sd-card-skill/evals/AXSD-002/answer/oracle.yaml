@@ -1,0 +1,36 @@
+root_cause: driver/module 和 Linux host probe 已成功，但可插拔 SD 卡在使用 cd-gpios + cd-inverted 的 card-detect 路径中没有后续枚举；当前缺少插拔前后 GPIO1_29 电平、pinmux 和中断证据，因此根因只能标为 card detect 高可信待验证，不能确认极性写反或卡/供电损坏。
+required_concepts:
+  - CONFIG_MMC_SDHCI_AXERA=y 表示 built-in，不应要求 insmod
+  - axera sdhci probe、phy lock successful 和 host 注册证明 probe 已进入/完成
+  - cd-gpios 表示 GPIO card detect
+  - cd-inverted 会改变有效电平逻辑，不能仅凭属性断言正确或错误
+  - 需要测量插卡/拔卡前后实际 GPIO 电平
+  - 需要核对 GPIO pinmux、debounce 和中断/检测状态
+  - detect 修正后仍无 CMD 响应时应转查供电、pinmux 和枚举
+forbidden_conclusions:
+  - 要求加载 sdhci-axera.ko 或执行 insmod
+  - 仅凭 cd-inverted 判定极性一定错误
+  - 直接判定 SD 卡物理损坏
+  - 直接判定供电器件损坏
+  - 将没有枚举日志等同于 host probe 失败
+  - 在没有证据时修改 PHY delay
+evidence_signatures:
+  input/config.txt:
+    - 'CONFIG_MMC_SDHCI_AXERA=y'
+    - 'CONFIG_MMC_BLOCK=y'
+  input/dmesg.log:
+    - 'axera sdhci probe'
+    - 'phy lock successful'
+    - 'mmc0: SDHCI controller on platform'
+  input/dts.txt:
+    - 'cd-gpios'
+    - 'cd-inverted'
+    - 'cd-debounce-delay-ms'
+  input/gpio-notes.txt:
+    - '尚未测量 GPIO1_29'
+    - 'pinmux'
+expected_confidence: medium
+evaluation_notes:
+  - 输出应确认 driver/module 与 host 注册阶段已成功，并将未枚举现象定位到 card-detect 待验证区间。
+  - 首选低风险动作是读取/测量插拔前后 GPIO 电平、核对 pinmux 并抓取完整 dmesg；必要时只对 cd-inverted 做一次 A/B。
+  - 若 detect 逻辑已一致且仍无枚举，应转查供电、CMD/响应和信号，不得继续单点归因于 card detect。

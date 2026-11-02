@@ -1,0 +1,27 @@
+version: 1
+defaults:
+  timeout_seconds: 180
+  samples: 1
+gates:
+  smoke: [ax637-priority, unknown-platform]
+budget:
+  max_agent_runs: 4
+  max_wall_seconds: 600
+  concurrency: 2
+cases:
+  - id: m57-linux
+    path: cases/m57-linux
+    kind: behavior
+    required: true
+  - id: m57-qnx
+    path: cases/m57-qnx
+    kind: behavior
+    required: true
+  - id: ax637-priority
+    path: cases/ax637-priority
+    kind: behavior
+    required: true
+  - id: unknown-platform
+    path: cases/unknown-platform
+    kind: behavior
+    required: true

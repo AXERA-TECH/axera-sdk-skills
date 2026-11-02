@@ -1,0 +1,27 @@
+version: 1
+defaults:
+  timeout_seconds: 480
+  samples: 1
+gates:
+  smoke: [chip-type-mismatch]
+budget:
+  max_agent_runs: 4
+  max_wall_seconds: 1100
+  concurrency: 2
+cases:
+  - id: chip-type-mismatch
+    path: cases/chip-type-mismatch
+    kind: behavior
+    required: true
+  - id: lpddr2-write-deskew
+    path: cases/lpddr2-write-deskew
+    kind: behavior
+    required: true
+  - id: lpddr3-misidentified
+    path: cases/lpddr3-misidentified
+    kind: behavior
+    required: true
+  - id: silent-hang
+    path: cases/silent-hang
+    kind: behavior
+    required: true

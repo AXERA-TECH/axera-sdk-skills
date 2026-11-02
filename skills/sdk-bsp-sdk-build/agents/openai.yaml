@@ -1,0 +1,4 @@
+interface:
+  display_name: "Axera SDK Build"
+  short_description: "指导 Axera SoC 平台编译、分立组件构建与 AXP 烧录包打包"
+  default_prompt: "指导完成 Axera SoC SDK 镜像编译与 AXP 打包流程。"

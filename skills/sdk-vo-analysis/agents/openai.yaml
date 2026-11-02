@@ -1,0 +1,4 @@
+interface:
+  display_name: "AX615 VO 分析与配置"
+  short_description: "诊断 AX615 VO 问题并生成带证据的配置"
+  default_prompt: "使用 $sdk-vo-analysis 分析 AX615/MC20L VO 问题或生成 VO 配置；先确认芯片、接口、时序和 SDK 版本，再按证据等级给出结论、参数与验证步骤。"

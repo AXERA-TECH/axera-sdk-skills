@@ -1,0 +1,6 @@
+--- /dev/null
++++ b/evals/AXSD-004/fixture.txt
+@@
++Write data to an exFAT volume.
++Remove the card without sync or umount.
++On the next insertion, preserve the exFAT unclean-unmount and read-only messages.

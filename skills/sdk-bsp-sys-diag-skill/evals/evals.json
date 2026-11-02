@@ -1,0 +1,76 @@
+{
+  "skill_name": "sdk-bsp-sys-diag-skill",
+  "note": "全部锚定 AX615 IPC 真实场景。用例覆盖:核心路径(取帧后误 MemFree)、无日志分支、错法变体(重复释放自己的 buffer)、负向克制(非 CMM 问题)。日志文件在 files/ 下,跑测试时把绝对路径注入 prompt 的 <日志文件> 占位。assertions 为 with_skill 期望的可核验核验点。",
+  "evals": [
+    {
+      "id": 1,
+      "name": "av-exit-hang-getframe-then-memfree",
+      "prompt": "我们 AX615 IPC，音视频退出的时候某个 CPU 直接挂死，NMI 都不响应，只能重启，复现概率挺高。抓到一段内核日志在 <日志文件>。帮我分析根因，给出定位方向和下一步。",
+      "expected_output": "识别为退出阶段+硬挂+CMM 错误释放路径;跑 scan 脚本抽出 phyaddr=0x46620000;指引用 /proc/ax_proc/mem_cmm_info 的 name=token 反查该地址 owner;审调用配对(重点:取帧后是否又 AX_SYS_MemFree);证据分级(Block not found=强,归因到某次误 free=中,需补 owner/调用序列/改后不复现来闭环);修复=删掉多余 MemFree、帧只 ReleaseChnFrame 归还、Mmap/Munmap 成对。因 backtrace 被 watchdog 截断,应建议开 ramoops/pstore(热重启后读 /sys/fs/pstore/console-ramoops-0、dmesg-ramoops-0) 抓崩溃栈,并按官方用 axsyslog(/opt/data/AXSyslog)+/proc/ax_proc/logctl 调等级,而非通用 dmesg/loglevel。",
+      "files": ["files/av_exit_hang_615.log"],
+      "assertions": [
+        "抽出锚点 phyaddr=0x46620000",
+        "指出用 /proc/ax_proc/mem_cmm_info 的 name=token 反查该地址 owner",
+        "根因方向为取帧后误用 AX_SYS_MemFree / 跨所有权释放 CMM(与标杆案例同型)",
+        "包含证据强度分级(强/中/弱)且诚实区分已证实与推断",
+        "抓日志建议 ramoops/pstore + axsyslog/logctl,不建议 loglevel=8 或通用 dmesg/var-log-syslog",
+        "指出 backtrace 被截断需按官方补完整栈"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "no-log-but-callseq-getframe-then-memfree",
+      "prompt": "AX615 上我用 AX_IVPS_GetChnFrame 拿帧做二维码识别，退出时偶发崩溃。我的调用是：AX_IVPS_GetChnFrame → AX_SYS_Mmap →(识别)→ AX_SYS_Munmap → AX_IVPS_ReleaseChnFrame → AX_SYS_MemFree。手上暂时没抓到日志。你看是哪里的问题？",
+      "expected_output": "直接依据三对配对铁律判定最后的 AX_SYS_MemFree 是错的(帧归 IVPS pool,ReleaseChnFrame 已完整归还,MemFree 只配自己的 AX_SYS_MemAlloc);同时因为没有日志,提示按 log-capture-guide 抓 axsyslog/串口日志 + 复现前 dump mem_cmm_info、必要时开 ramoops 来确认,不假装已看到日志、不硬编;给修复=删掉那行 MemFree,需 CPU 访问时保留 Mmap/Munmap 成对。",
+      "files": [],
+      "assertions": [
+        "判定调用序列末尾的 AX_SYS_MemFree 是错误的(违反配对铁律)",
+        "说明帧归 IVPS pool、ReleaseChnFrame 已归还、MemFree 只配自己 AX_SYS_MemAlloc",
+        "因无日志给出 AX615 官方抓取指引(axsyslog/ramoops/mem_cmm_info)而非假装已看到日志",
+        "给出修复:删掉末尾 MemFree,需 CPU 访问时 Mmap/Munmap 成对保留"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "double-free-own-buffer-npu",
+      "prompt": "AX615，我用 AX_SYS_MemAlloc(token=\"npu_in\") 自己申请了一块 CMM 给 NPU 输入用，退出时偶发崩，日志在 <日志文件>。我检查代码发现正常退出分支和一个错误处理分支里都调了 AX_SYS_MemFree(同一个 phyaddr)。是这个原因吗？",
+      "expected_output": "抽出 phyaddr=0x48ab0000;指出 owner 反查会指向应用自己(token=npu_in)而非跨所有权模块,因此判为对自己 buffer 的重复释放(double free)这一支,而不是取帧误放;用崩溃栈(PC=__ax_cmm_block_release/LR=ax_cmm_free)佐证崩在 CMM 释放路径,证据可判较强;解释 ABA(释放后地址可能被复用,第二次 free 可能误伤别人);修复=释放即清零 phyaddr/vir、错误分支与正常分支单出口只释放一次。",
+      "files": ["files/npu_exit_doublefree_615.log"],
+      "assertions": [
+        "抽出锚点 phyaddr=0x48ab0000",
+        "判为对自己 buffer 的重复释放(double free)这一支,而非取帧误放",
+        "指出 owner 反查会指向应用自己(token=npu_in)",
+        "解释 ABA(释放后地址可能被复用,第二次 free 误伤他人)",
+        "用崩溃栈(__ax_cmm_block_release/ax_cmm_free)佐证崩在 CMM 释放路径",
+        "给出修复:释放即清零 + 单出口只释放一次"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "negative-venc-lowfps-not-cmm",
+      "prompt": "AX615 IPC，VENC H.265 编码运行中偶尔帧率掉、画面有块状花屏，程序不崩也不挂，能一直跑。日志在 <日志文件>。是不是内存释放有问题？",
+      "expected_output": "识别出这不符合 CMM 错误释放的识别特征(非退出阶段、无硬挂、日志里没有 ax_cmm_free/Block not found/pool invalid 等关键字,只有码控 qp clip/帧率/FRC drop/花屏风险);如实说明本诊断路径(CMM 错误释放)不适用,不硬套 MemFree 根因;建议转 VENC 码率控制/带宽/参考帧或 FRC 等方向。考察技能的克制与不过度归因。",
+      "files": ["files/venc_lowfps_615.log"],
+      "assertions": [
+        "判定现象不符合 CMM 错误释放的识别特征(非退出/无硬挂/日志无 ax_cmm_free/Block not found/pool 关键字)",
+        "未硬套 MemFree 或内存释放根因",
+        "如实说明本诊断路径(CMM 错误释放)不适用",
+        "建议转 VENC 码控/带宽/参考帧或 FRC 等方向"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "cmm-partition-nomem-quick-diag",
+      "prompt": "我们 AX615 板子，业务起流时提示失败，串口打印了 AX_VIN_StartPipe failed, ret=0x80110180，日志在 <日志文件>。请从 SYS/CMM 系统层帮我分析根因，快速给出定界结论和转派建议。",
+      "expected_output": "快速定性为 CMM 物理连续内存不足 (NOMEM) 引起;识别关键错误日志 CMM partition memory isn't enough 及错误码 0x80110180;明确指出受影响分区为 VIN0,剩余 Free=56KB 无法满足申请大小 84480 字节;未误判为悬垂释放或内存被踩,给出清晰定界结论与转派建议(转派给系统应用/配置维护人员加大该分区容量)。",
+      "files": ["files/cmm_partition_nomem_sanitized.log"],
+      "assertions": [
+        "明确定性为 CMM 内存不足(NOMEM)",
+        "指出受影响的分区为 VIN0 且剩余容量不足以满足申请",
+        "引用关键日志特征(CMM partition memory isn't enough 或 0x80110180)",
+        "未硬套为 CMM 错误释放或野指针踩内存",
+        "给出明确的转派或配置调整建议"
+      ]
+    }
+  ]
+}

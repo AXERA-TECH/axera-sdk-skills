@@ -1,0 +1,4 @@
+[    1.100] axera sdhci probe
+[    1.180] AX615D SD mst only design 3.3V, not support UHS, switch 3.3V mode
+[    1.190] no sd_pwr_sw_gpio, cannot switch to 1.8V
+[    1.220] mmc0: new high speed SDHC card at address 0001

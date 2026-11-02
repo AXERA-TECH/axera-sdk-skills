@@ -1,0 +1,16 @@
+# FUSA-004 客户在主线代码里检索关中断原语的原始输出
+
+$ cd /workspace/sdk/m57-qnx
+
+$ rg -l "set_mask" kernel/osdrv/private_drv/fcu/
+kernel/osdrv/private_drv/fcu/driver/fcu_main.c
+kernel/osdrv/private_drv/fcu/lib/fcu_api.c
+
+$ rg -c "irq_save|InterruptLock|InterruptDisable" kernel/osdrv/private_drv/fcu/
+(无匹配，退出码 1)
+
+$ rg -c "pthread_mutex|Interrupt" kernel/osdrv/private_drv/fcu/driver/fcu_main.c
+kernel/osdrv/private_drv/fcu/driver/fcu_main.c:3
+
+# 说明：客户只检索了主线 private_drv/fcu/ 这一层，
+# 没有检索 SDK 里其它目录（客户原话："我们只在 private_drv/fcu 下面找了，别的地方没看"）。

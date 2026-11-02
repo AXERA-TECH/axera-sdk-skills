@@ -1,0 +1,90 @@
+schema_version: 1
+id: axaudioaec-005
+display_id: AXAUDIOAEC-005
+title: 双讲断续与首字丢失
+category: audio-aec/processing
+analyzer:
+  skill: sdk-audio-aec-diag-skill
+platform:
+  soc: AX615
+  board: unknown
+  sdk_version: unknown
+  notes: 目标诊断平台为 AX615，现有材料不证明具体板型或固件版本。
+  project: unknown
+  flash: unknown
+  ddr_mb: null
+  sensor: unknown
+provenance:
+  format_basis: AX 对外文档中的 AI/AO proc 结构与公开采集点说明。
+  limitations: 未完成硬件验证。
+input:
+  type: audio_capture_set
+  main_round: fixtures
+  control_rounds: []
+  files:
+  - fixtures/AiCard0_Dev0_vqeIn.pcm
+  - fixtures/AiCard0_Dev0_vqeOut.pcm
+  - fixtures/AiCard0_Dev0_vqeRef.pcm
+  - fixtures/capture.txt
+  - fixtures/proc.txt
+  session_integrity:
+    statement: 同轮三路音频的时间关系按 capture.txt 声明使用；尚未独立验证硬件时序。
+    proc_scope: 主轮次结束状态，不代表全过程快照。
+    raw_capture: null
+    log_level_proof: null
+    missing_evidence:
+    - 未提供原始板端采集起止记录和原始日志 SHA256，不能声称已校验真实采集链。
+    - 未提供日志等级快照，不能仅凭未出现错误日志认定没有错误。
+  sha256:
+    fixtures/AiCard0_Dev0_vqeIn.pcm: a7b8b312aebb53f035b152c27e21ee634acb581ea109104cbf6935a52d6eba43
+    fixtures/AiCard0_Dev0_vqeOut.pcm: f6737ab4a61afa0b105e90df1d23c68e68f58d9b03cb651f81fdd80db1c455f8
+    fixtures/AiCard0_Dev0_vqeRef.pcm: 422da34aeffd6bf3e34a7a457ecff487dd1196541a5354738e65ae3ee1ad4332
+    fixtures/capture.txt: 4278aaab2f691f1f31a0c786f91b15cce093241ec4255dcc4ed3606326330507
+    fixtures/proc.txt: 8eaa631e69979a439ab8c62d052323b2070bd679b798b48d1385b86d6ba1eb0a
+evaluation:
+  report_validator: scripts/validate_report.py
+  policy: 所有关键断言逐项通过；多次运行保存全部结果，不采用多数票。
+  archive: 评测记录关联输入版本，保留平台 Harness 生成的报告、样本结果及已生成的分析输出；失败结果也应保留。
+  deterministic_checks: answer/assert.sh
+  semantic_review: 按 answer/oracle.yaml 多维审阅；现有文本正则仅为 smoke 检查，不代表完整语义通过。
+separation:
+  analyzer_visible:
+  - fixtures/AiCard0_Dev0_vqeIn.pcm
+  - fixtures/AiCard0_Dev0_vqeOut.pcm
+  - fixtures/AiCard0_Dev0_vqeRef.pcm
+  - fixtures/capture.txt
+  - fixtures/proc.txt
+  - SKILL.md
+  - agents/openai.yaml
+  - references/contract.md
+  - references/diagnosis.md
+  - references/collection.md
+  - references/delay.md
+  - references/signal-quality.md
+  - references/response-template.md
+  - scripts/validate_report.py
+  - scripts/render_report.py
+  - scripts/measure_segments.py
+  - scripts/requirements-delay.txt
+  - scripts/analyze.py
+  - scripts/proc_audio.py
+  - scripts/delay.py
+  evaluator_only:
+  - case.yaml
+  - assert.sh
+  - answer/case.yaml
+  - answer/oracle.yaml
+  - answer/reproducer.patch
+  - answer/assert.sh
+  path_resolution: fixtures/ 相对用例目录；SKILL.md、agents/、references/、scripts/ 相对已安装技能根；evaluator_only 相对用例目录。
+  prompt: 根 case.yaml 只提取 prompt 给分析器；平台信息在 prompt 公开，不交付 expect 或 answer。
+reproducer:
+  patch: answer/reproducer.patch
+  status: unavailable
+  application: null
+  command: null
+  preconditions: 录音格式、播放条件、区间与轮次关系以 fixtures/capture.txt 为准。
+  sequence: 同一录音依次包含远端单讲、近端单讲、双讲及静音，按 capture.txt 的区间比较。
+  hardware_status: not_run
+  notes: reproducer.patch 仅记录缺失原因，不含可执行 diff；无基线工程，不编造复现命令或物理根因。
+oracle: answer/oracle.yaml

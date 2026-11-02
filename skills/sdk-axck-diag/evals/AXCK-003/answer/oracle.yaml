@@ -1,0 +1,20 @@
+root_cause: 运行期间检测到硬件 SIF FIFO OVERFLOW（Sensor HTS 较小导致单行传输时间低于 AX615 SIF 367MHz 吞吐下限，或 MCLK 驱动频偏），造成硬件层直接丢帧，并导致下游 IVPS 等待超时与 VENC 饥饿。
+required_concepts:
+  - SIF FIFO OVERFLOW
+  - HTS
+  - 行时间违规 (Line time violation)
+  - AX615 吞吐限制
+  - 调整 Sensor HTS / settingindex
+  - 下游 IVPS/VENC 超时为级联受害者
+forbidden_conclusions:
+  - VENC 编码器崩溃
+  - IVPS 滤波器参数错误
+  - Flash 坏块
+evidence_signatures:
+  input/serial.log:
+    - "SIF FIFO OVERFLOW detected"
+    - "Sensor line time violation"
+    - "Frame dropped due to hardware FIFO overflow"
+expected_confidence: high
+evaluation_notes:
+  - IVPS 与 VENC 的 starvation/timeout 属于下游因输入源无帧而产生的衍生告警，根本诱因在于前端 VIN/SIF 硬件 FIFO 溢出。

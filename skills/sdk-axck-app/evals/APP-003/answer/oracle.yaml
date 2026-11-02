@@ -1,0 +1,13 @@
+root_cause: "固件打包 opt.filelist 漏配关键后台守护进程 bin/axck_service，导致固件开机后客户端无服务响应"
+required_concepts:
+  - "opt.filelist"
+  - "axck_service"
+forbidden_conclusions:
+  - "SUBDIRS = apps"
+  - "rpc_msg.h"
+evidence_signatures:
+  input/opt.filelist:
+    - "libaxck*.so"
+expected_confidence: high
+evaluation_notes:
+  - "opt.filelist 必须同时声明 libaxck*.so, bin/axck_service 以及资源配置路径"

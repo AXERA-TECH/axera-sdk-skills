@@ -1,0 +1,9 @@
+prompt: |
+  使用已安装的 sdk-bsp-sdk-build 技能回答：在 M57 SDK 工作区中，请指导用户如何编译 demo_nor_nand 的完整 SDK 并生成 AXDL 可用包。
+  说明平台识别方法、构建命令及最终生成产物的位置，并将完整回答内容写入当前目录的 answer.md 文件中。
+expect:
+  files:
+    - path: answer.md
+      exists: true
+      min_bytes: 50
+  assert: assert.sh

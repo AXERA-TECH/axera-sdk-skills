@@ -1,0 +1,21 @@
+prompt: '使用 sdk-bsp-memory-partition 技能识别当前 SDK 平台；这里只咨询默认内存分配，暂不指定具体 PLAT。
+
+
+  使用已安装的 sdk-bsp-memory-partition 技能，当前目录仅是精简的 SDK 路由/配置样本，不含完整源码和工具链。
+
+  这是只读咨询：简洁地将建议、必要命令或待确认问题写入 out/response.md。
+
+  不得修改样本配置、构建镜像或刷写设备；缺少参数时将问题写入文件后结束，不等待交互。
+
+  另写 out/analysis.json，唯一字段 platform 为 routing.yaml 的平台 id；未识别时为 unknown。
+
+  '
+expect:
+  files:
+  - path: out/response.md
+    exists: true
+    min_bytes: 40
+  - path: out/analysis.json
+    exists: true
+    min_bytes: 10
+  assert: assert.sh

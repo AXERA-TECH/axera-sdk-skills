@@ -1,0 +1,21 @@
+prompt: |
+  目标平台为 AX615；实际板型和 SDK 版本未知。
+  使用已安装的 sdk-audio-aec-diag-skill 分析当前目录的 proc.txt、application.log、config.txt、capture.txt 和三路 PCM。
+  客户问题：目标播放音量下远端仍听到明显回声。请根据所给材料分析原因，给出有证据的判断、处理建议和复测方法。
+  按技能流程自主选择排查方向，按 references/contract.md 整理输入并实际测量录音。先读 measurements.md，按需提取 JSON，保留证据出处。
+  按契约交付 out/ 下的 measurements.json、measurements.md、diagnosis.json、diagnosis.md；写完 diagnosis.json 后用 scripts/render_report.py --out out 生成并校验 Markdown。
+  不交互补问；缺失材料和待验证解释写入报告，未执行的板端复测如实记录。
+expect:
+  files:
+    - path: out/measurements.json
+      exists: true
+      min_bytes: 50
+    - path: out/measurements.md
+      exists: true
+    - path: out/diagnosis.json
+      exists: true
+      min_bytes: 100
+    - path: out/diagnosis.md
+      exists: true
+      min_bytes: 80
+  assert: assert.sh

@@ -1,0 +1,6 @@
+{
+  "case_id": "OTA-003",
+  "question": "M57 QNX 上如何取升级失败现场？",
+  "context": "平台背景：m57。没有提供真实 SDK、板卡或构建产物；目录标志若在问题中给出，是人工构造的场景条件。",
+  "provenance": "synthetic"
+}

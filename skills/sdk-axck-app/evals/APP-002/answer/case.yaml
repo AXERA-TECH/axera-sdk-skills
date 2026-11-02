@@ -1,0 +1,16 @@
+schema_version: 1
+id: APP-002
+analyzer:
+  skill: sdk-axck-app
+input:
+  files:
+    - input/Makefile
+    - input/rpc_msg.h
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/Makefile
+    - input/rpc_msg.h
+  evaluator_only:
+    - answer/case.yaml
+    - answer/oracle.yaml

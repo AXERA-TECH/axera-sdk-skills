@@ -1,0 +1,3 @@
+[    2.041000] ubi0 error: ubi_io_read_ec_hdr: bad magic number at PEB 0: 00000000 instead of 55424923
+[    2.045000] ubi0 error: ubi_attach_mtd_dev: failed to attach mtd3, error -22
+[    2.051000] UBIFS error: cannot open ubi0:rootfs, mount failed

@@ -1,0 +1,502 @@
+{
+ "_meta": {
+  "name": "AX615 VO PCLK 离散档位表（5 源 × 16 分频，完整枚举）",
+  "source": "SDK V3.14.0 实现行为，需按版本核验",
+  "sdk_version": "V3.14.0",
+  "count_combos": 80,
+  "count_reachable": 62,
+  "note": "u32Pclk 必须精确命中本表某一取值（无容差、无就近取整）；不命中时 SetPubAttr 阶段失败，内核日志出现 unsupport clk（公开 API 侧返回 AX_ERR_VO_DEV_OP_FAIL，需结合 dmesg 定位）。非整除档位按源频率整除截断取整，须填表内值而非数学计算值。",
+  "usage": "check_vo_timing.py / gen_vo_timing.py 运行时读取本表（skill 自包含，不访问外部路径）。"
+ },
+ "pll_sources_khz": [
+  36000,
+  108000,
+  118800,
+  198000,
+  297000
+ ],
+ "dividers": [
+  1,
+  2,
+  4,
+  6,
+  8,
+  10,
+  12,
+  14,
+  16,
+  18,
+  20,
+  22,
+  24,
+  26,
+  28,
+  30
+ ],
+ "combos": [
+  {
+   "source_khz": 36000,
+   "divider": 1,
+   "pclk_khz": 36000
+  },
+  {
+   "source_khz": 36000,
+   "divider": 2,
+   "pclk_khz": 18000
+  },
+  {
+   "source_khz": 36000,
+   "divider": 4,
+   "pclk_khz": 9000
+  },
+  {
+   "source_khz": 36000,
+   "divider": 6,
+   "pclk_khz": 6000
+  },
+  {
+   "source_khz": 36000,
+   "divider": 8,
+   "pclk_khz": 4500
+  },
+  {
+   "source_khz": 36000,
+   "divider": 10,
+   "pclk_khz": 3600
+  },
+  {
+   "source_khz": 36000,
+   "divider": 12,
+   "pclk_khz": 3000
+  },
+  {
+   "source_khz": 36000,
+   "divider": 14,
+   "pclk_khz": 2571
+  },
+  {
+   "source_khz": 36000,
+   "divider": 16,
+   "pclk_khz": 2250
+  },
+  {
+   "source_khz": 36000,
+   "divider": 18,
+   "pclk_khz": 2000
+  },
+  {
+   "source_khz": 36000,
+   "divider": 20,
+   "pclk_khz": 1800
+  },
+  {
+   "source_khz": 36000,
+   "divider": 22,
+   "pclk_khz": 1636
+  },
+  {
+   "source_khz": 36000,
+   "divider": 24,
+   "pclk_khz": 1500
+  },
+  {
+   "source_khz": 36000,
+   "divider": 26,
+   "pclk_khz": 1384
+  },
+  {
+   "source_khz": 36000,
+   "divider": 28,
+   "pclk_khz": 1285
+  },
+  {
+   "source_khz": 36000,
+   "divider": 30,
+   "pclk_khz": 1200
+  },
+  {
+   "source_khz": 108000,
+   "divider": 1,
+   "pclk_khz": 108000
+  },
+  {
+   "source_khz": 108000,
+   "divider": 2,
+   "pclk_khz": 54000
+  },
+  {
+   "source_khz": 108000,
+   "divider": 4,
+   "pclk_khz": 27000
+  },
+  {
+   "source_khz": 108000,
+   "divider": 6,
+   "pclk_khz": 18000
+  },
+  {
+   "source_khz": 108000,
+   "divider": 8,
+   "pclk_khz": 13500
+  },
+  {
+   "source_khz": 108000,
+   "divider": 10,
+   "pclk_khz": 10800
+  },
+  {
+   "source_khz": 108000,
+   "divider": 12,
+   "pclk_khz": 9000
+  },
+  {
+   "source_khz": 108000,
+   "divider": 14,
+   "pclk_khz": 7714
+  },
+  {
+   "source_khz": 108000,
+   "divider": 16,
+   "pclk_khz": 6750
+  },
+  {
+   "source_khz": 108000,
+   "divider": 18,
+   "pclk_khz": 6000
+  },
+  {
+   "source_khz": 108000,
+   "divider": 20,
+   "pclk_khz": 5400
+  },
+  {
+   "source_khz": 108000,
+   "divider": 22,
+   "pclk_khz": 4909
+  },
+  {
+   "source_khz": 108000,
+   "divider": 24,
+   "pclk_khz": 4500
+  },
+  {
+   "source_khz": 108000,
+   "divider": 26,
+   "pclk_khz": 4153
+  },
+  {
+   "source_khz": 108000,
+   "divider": 28,
+   "pclk_khz": 3857
+  },
+  {
+   "source_khz": 108000,
+   "divider": 30,
+   "pclk_khz": 3600
+  },
+  {
+   "source_khz": 118800,
+   "divider": 1,
+   "pclk_khz": 118800
+  },
+  {
+   "source_khz": 118800,
+   "divider": 2,
+   "pclk_khz": 59400
+  },
+  {
+   "source_khz": 118800,
+   "divider": 4,
+   "pclk_khz": 29700
+  },
+  {
+   "source_khz": 118800,
+   "divider": 6,
+   "pclk_khz": 19800
+  },
+  {
+   "source_khz": 118800,
+   "divider": 8,
+   "pclk_khz": 14850
+  },
+  {
+   "source_khz": 118800,
+   "divider": 10,
+   "pclk_khz": 11880
+  },
+  {
+   "source_khz": 118800,
+   "divider": 12,
+   "pclk_khz": 9900
+  },
+  {
+   "source_khz": 118800,
+   "divider": 14,
+   "pclk_khz": 8485
+  },
+  {
+   "source_khz": 118800,
+   "divider": 16,
+   "pclk_khz": 7425
+  },
+  {
+   "source_khz": 118800,
+   "divider": 18,
+   "pclk_khz": 6600
+  },
+  {
+   "source_khz": 118800,
+   "divider": 20,
+   "pclk_khz": 5940
+  },
+  {
+   "source_khz": 118800,
+   "divider": 22,
+   "pclk_khz": 5400
+  },
+  {
+   "source_khz": 118800,
+   "divider": 24,
+   "pclk_khz": 4950
+  },
+  {
+   "source_khz": 118800,
+   "divider": 26,
+   "pclk_khz": 4569
+  },
+  {
+   "source_khz": 118800,
+   "divider": 28,
+   "pclk_khz": 4242
+  },
+  {
+   "source_khz": 118800,
+   "divider": 30,
+   "pclk_khz": 3960
+  },
+  {
+   "source_khz": 198000,
+   "divider": 1,
+   "pclk_khz": 198000
+  },
+  {
+   "source_khz": 198000,
+   "divider": 2,
+   "pclk_khz": 99000
+  },
+  {
+   "source_khz": 198000,
+   "divider": 4,
+   "pclk_khz": 49500
+  },
+  {
+   "source_khz": 198000,
+   "divider": 6,
+   "pclk_khz": 33000
+  },
+  {
+   "source_khz": 198000,
+   "divider": 8,
+   "pclk_khz": 24750
+  },
+  {
+   "source_khz": 198000,
+   "divider": 10,
+   "pclk_khz": 19800
+  },
+  {
+   "source_khz": 198000,
+   "divider": 12,
+   "pclk_khz": 16500
+  },
+  {
+   "source_khz": 198000,
+   "divider": 14,
+   "pclk_khz": 14142
+  },
+  {
+   "source_khz": 198000,
+   "divider": 16,
+   "pclk_khz": 12375
+  },
+  {
+   "source_khz": 198000,
+   "divider": 18,
+   "pclk_khz": 11000
+  },
+  {
+   "source_khz": 198000,
+   "divider": 20,
+   "pclk_khz": 9900
+  },
+  {
+   "source_khz": 198000,
+   "divider": 22,
+   "pclk_khz": 9000
+  },
+  {
+   "source_khz": 198000,
+   "divider": 24,
+   "pclk_khz": 8250
+  },
+  {
+   "source_khz": 198000,
+   "divider": 26,
+   "pclk_khz": 7615
+  },
+  {
+   "source_khz": 198000,
+   "divider": 28,
+   "pclk_khz": 7071
+  },
+  {
+   "source_khz": 198000,
+   "divider": 30,
+   "pclk_khz": 6600
+  },
+  {
+   "source_khz": 297000,
+   "divider": 1,
+   "pclk_khz": 297000
+  },
+  {
+   "source_khz": 297000,
+   "divider": 2,
+   "pclk_khz": 148500
+  },
+  {
+   "source_khz": 297000,
+   "divider": 4,
+   "pclk_khz": 74250
+  },
+  {
+   "source_khz": 297000,
+   "divider": 6,
+   "pclk_khz": 49500
+  },
+  {
+   "source_khz": 297000,
+   "divider": 8,
+   "pclk_khz": 37125
+  },
+  {
+   "source_khz": 297000,
+   "divider": 10,
+   "pclk_khz": 29700
+  },
+  {
+   "source_khz": 297000,
+   "divider": 12,
+   "pclk_khz": 24750
+  },
+  {
+   "source_khz": 297000,
+   "divider": 14,
+   "pclk_khz": 21214
+  },
+  {
+   "source_khz": 297000,
+   "divider": 16,
+   "pclk_khz": 18562
+  },
+  {
+   "source_khz": 297000,
+   "divider": 18,
+   "pclk_khz": 16500
+  },
+  {
+   "source_khz": 297000,
+   "divider": 20,
+   "pclk_khz": 14850
+  },
+  {
+   "source_khz": 297000,
+   "divider": 22,
+   "pclk_khz": 13500
+  },
+  {
+   "source_khz": 297000,
+   "divider": 24,
+   "pclk_khz": 12375
+  },
+  {
+   "source_khz": 297000,
+   "divider": 26,
+   "pclk_khz": 11423
+  },
+  {
+   "source_khz": 297000,
+   "divider": 28,
+   "pclk_khz": 10607
+  },
+  {
+   "source_khz": 297000,
+   "divider": 30,
+   "pclk_khz": 9900
+  }
+ ],
+ "reachable_pclk_khz": [
+  1200,
+  1285,
+  1384,
+  1500,
+  1636,
+  1800,
+  2000,
+  2250,
+  2571,
+  3000,
+  3600,
+  3857,
+  3960,
+  4153,
+  4242,
+  4500,
+  4569,
+  4909,
+  4950,
+  5400,
+  5940,
+  6000,
+  6600,
+  6750,
+  7071,
+  7425,
+  7615,
+  7714,
+  8250,
+  8485,
+  9000,
+  9900,
+  10607,
+  10800,
+  11000,
+  11423,
+  11880,
+  12375,
+  13500,
+  14142,
+  14850,
+  16500,
+  18000,
+  18562,
+  19800,
+  21214,
+  24750,
+  27000,
+  29700,
+  33000,
+  36000,
+  37125,
+  49500,
+  54000,
+  59400,
+  74250,
+  99000,
+  108000,
+  118800,
+  148500,
+  198000,
+  297000
+ ]
+}

@@ -1,0 +1,6 @@
+{
+  "case_id": "AX637-EXPLICIT",
+  "question": "platform=m57，但源码有 configs_ax637 检测标志。请直接改 OTA 配置。",
+  "context": "以问题中的显式参数与检测标志为准，二者可能冲突。",
+  "provenance": "synthetic"
+}

@@ -1,0 +1,10 @@
+prompt: |
+  使用已安装的 sdk-bsp-sys-diag-skill 技能，根据当前目录下的日志文件 cmm_partition_nomem_sanitized.log 分析问题：
+  “我们 AX615 板子，业务起流时提示失败，串口打印了 AX_VIN_StartPipe failed, ret=0x80110180，日志在 cmm_partition_nomem_sanitized.log。请从 SYS/CMM 系统层帮我分析根因，快速给出定界结论和转派建议。”
+  请依据技能内置流程和知识库完成诊断，将最终诊断报告生成到 out/diagnosis.md。
+expect:
+  files:
+    - path: out/diagnosis.md
+      exists: true
+      min_bytes: 100
+  assert: assert.sh

@@ -1,0 +1,11 @@
+prompt: |
+  使用已安装的 sdk-venc-rc-config-audit 技能读取当前目录的 venc_proc.txt。
+  现场背景：三个通道的码控配置审查，重点确认有没有配置错误。
+  按技能规定完成码控配置审查，将最终答复完整写入 result.md。
+  不要读取或猜测任何评测答案；只使用当前目录的 venc_proc.txt、已安装技能中的 references 与脚本。
+expect:
+  files:
+    - path: result.md
+      exists: true
+      min_bytes: 200
+  assert: assert.sh

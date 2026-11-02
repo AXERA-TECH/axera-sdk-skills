@@ -1,0 +1,39 @@
+# IVD-006 HSK session 前置门禁：SessId 0 State=1，先报同步 session 未工作（决策树步骤 2）
+# 现场为 derived 构造（基底：ivd-002 正常采样；sess0 State 改 1 + venc chn0 支路冻结）。
+root_cause: 目标 HSK session（SessId 0，IVPS 0/0 -> VENC 0/0 SW_Low_Mem）State=1，
+  未进入正常工作态（State=2）。按 SKILL.md 决策树步骤 2，这是先于握手分析的前置
+  问题：此时 wait/update 寄存器值不具备正常握手语义（本例两轮均停在同一 RegVal
+  8704），不能据此判读握手进度；venc chn0 支路计数冻结（Send2EncCnt=EncSucCnt=1884、
+  FrmRecv 1884 两轮不变）是 session 未就绪的伴随表现，不应归因于 VPP/VENC/JENC
+  硬件本体。问题应定位为同步 session 未正常建立/未 Start/链路建立阶段的问题，
+  需先恢复 session State=2 后再重新判读。
+required_concepts:
+  - 指出目标 HSK session（SessId 0）State=1（非 2）
+  - session 未正常工作是先于握手分析的前置问题
+  - wait/update 在 State≠2 时不具备正常握手语义（或等价表述）
+  - venc chn0 计数冻结是伴随表现，不归因 VPP/VENC/JENC 硬件本体
+  - 其余链路正常（jenc chn1、venc chn2、IVPS、sess1/sess2），非全局问题
+  - 结论基于两轮差值
+forbidden_conclusions:
+  - VENC 编码硬件/固件卡死（本例与 ivd-001 的关键对照：State=2 且差一帧在途才走该分支）
+  - VPP 生产侧卡死 / VPP 本体异常
+  - JENC 卡死或把 jenc chn1 低帧率判为异常
+  - 按 16 位模握手进度正常判读并据此下结论
+evidence_signatures:
+  input/hsk_proc.txt:
+    - '===== SAMPLE 1'
+    - '===== SAMPLE 2'
+    - '0      0      1     0       7168'   # 两轮相同的 sess0 SESSION 行（State=1）
+    - '8704    10240'                       # chn0 HSK initVal/syncVal 行（两轮相同）
+    - '1884        0            1883'      # chn0 CHN STATUS 0 行（两轮相同）
+    - 'SESSION'
+expected_confidence: high
+evaluation_notes:
+  - 与 ivd-001 构成对照对：ivd-001 的 sess0 State=2、Send2EncCnt 领先 EncSucCnt
+    一帧在途、HwUsed=Y，判 VENC 消费侧；本例 State=1、Send2EncCnt=EncSucCnt 无
+    在途差，判 session 未就绪。模型若把两者判成同一根因，即 FAIL。
+  - 允许补充"session 恢复 State=2 后需重新判读"的后续建议；不允许跳过前置门禁
+    直接按握手进度给结论。
+  - ivps 主链仍推进（InCnt 1884->2036）属正常：HSK 未就绪时上游在 ring buffer
+    反压前仍可持续产出，不作为判 VPP 异常的依据。
+  - jenc chn15 全 0 为未启用通道，判停滞应 FAIL。

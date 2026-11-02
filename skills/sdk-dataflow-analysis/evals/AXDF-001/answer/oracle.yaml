@@ -1,0 +1,33 @@
+root_cause: FRTDemo 将 IVPS(0,0) 到 VENC(0,0) 的 AX_SYS_Link_V2 配置为 LowMem，但 nRingLineCnt=100；该非零值小于 128 且不能被 64 整除，因此 SYS 拒绝建立该 Link。FRTDemo 未向上终止构建，proc 显示 VENC channel 0 未进入接收状态。
+required_concepts:
+  - AX_SYS_Link_V2
+  - AX_MOD_DATA_FLOW_SW_LOW_MEM
+  - 识别 LowMem nRingLineCnt 参数非法
+  - nRingLineCnt 非零时范围为 128..3840
+  - nRingLineCnt 必须按 64 对齐
+  - 参数校验失败导致 IVPS(0,0) 到 VENC(0,0) Link 建立失败
+  - FRTDemo 继续启动不代表该 Link 成功
+  - link_table 中缺少 IVPS(0,0) 到 VENC(0,0)，而 IVPS(0,2) 到 VENC(0,1) 正常存在
+  - syslog 中较晚出现的 IVPS/CMM 错误不是首次失败点
+forbidden_conclusions:
+  - sensor 初始化失败
+  - VB/CMM 内存不足
+  - VENC 码控配置错误
+evidence_signatures:
+  input/serial.log:
+    - '@AXLOG2,5e3f7a29,00000001,6ce072bd,0'
+    - 'Linkage failed (13, 0, 0) => (7, 0, 0)'
+  input/logctl.proc:
+    - 'VENC     7     6'
+    - 'IVPS    13     6'
+    - 'VIN    17     6'
+  input/link.proc:
+    - 'IVPS'
+    - 'SW_Offline'
+  input/venc.proc:
+    - 'VeChn bRecv'
+    - '0     N'
+expected_confidence: high
+evaluation_notes:
+  - 日志 token 未携带参数值，分析结果不要求猜出 100；100 由 evaluator-only reproducer.patch 确认。
+  - token 映射仅适用于该 golden set 对应的 SDK V3.12.0 运行包。

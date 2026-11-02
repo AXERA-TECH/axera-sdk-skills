@@ -1,0 +1,62 @@
+[
+  {
+    "query": "M57 板子上 heartbeat timeout 一直刷，还有 cyclework overdue，帮我排查一下",
+    "should_trigger": true,
+    "notes": "FuSa 心跳 / 周期自检类现场问题，本 skill 适用域。explicit activation：应提示用户输入 /sdk-bsp-fusa 启动，未显式调用前不要直接开始排查"
+  },
+  {
+    "query": "error_mask 0x002D0011 是什么意思？err ID: 17 module ID: 45 domain ID: 0 又怎么解",
+    "should_trigger": true,
+    "notes": "S2 归属定位：mask 三段解码与 module 归属，本 skill 核心能力"
+  },
+  {
+    "query": "改了 Fault_diagnosis_event_list.xlsx 并重跑 fusa_config，板端回读还是老值",
+    "should_trigger": true,
+    "notes": "【配置·使用·方法】配置不生效类，命中 FAQ 配置生成链路与已知可疑点"
+  },
+  {
+    "query": "QNX 上 fcu handler timeout / 0x800A0010 是 bug 吗？要不要升级",
+    "should_trigger": true,
+    "notes": "FCU 超时上报属设计预期（FAQ-32），且需带 QNX 平台判定"
+  },
+  {
+    "query": "/sdk-bsp-fusa 我们 Linux SDK 压测时出 Call trace 和 RCU stall，诊断日志也跟着乱",
+    "should_trigger": true,
+    "notes": "显式调用 + 压测稳定性分支，S4 取证要按 Linux 侧规则（FCU 命令加 timeout）"
+  },
+  {
+    "query": "以前有 FuSa 诊断日志，最近一个都收不到了，是不是没有故障所以没日志？",
+    "should_trigger": true,
+    "notes": "诊断静默失效：QNX 侧首查四个进程是否存活，Linux 侧查动作链与节点，本 skill 适用域"
+  },
+  {
+    "query": "把前后摄双路视频流编译成可执行程序，并支持录像",
+    "should_trigger": false,
+    "notes": "AXCK 应用开发/编译，属于 sdk-axck-app"
+  },
+  {
+    "query": "运行 axck_test 的 SD 卡热插拔和 DTCF 循环录像用例",
+    "should_trigger": false,
+    "notes": "AXCK 自动化测试，属于 sdk-axck-test"
+  },
+  {
+    "query": "排查 dmesg 里的 SIF FIFO overflow 和 IVPS 级联崩溃",
+    "should_trigger": false,
+    "notes": "AXCK 启动日志诊断，属于 sdk-axck-diag"
+  },
+  {
+    "query": "修改 pipeline 配置适配前置 4K 传感器",
+    "should_trigger": false,
+    "notes": "图像处理管线配置，属于 sdk-axck-config"
+  },
+  {
+    "query": "修复张三名下未解决的软安 SAST 问题并提交 Gerrit",
+    "should_trigger": false,
+    "notes": "SAST 问题修复闭环，属于 sdk-sast-fix"
+  },
+  {
+    "query": "分析 FRTDemo 启动日志里 AX_SYS_Link_V2 建链失败，是不是 HSK 资源冲突",
+    "should_trigger": false,
+    "notes": "模块间数据流转分析，属于 sdk-dataflow-analysis；虽然同属 M57 语境但与 FuSa 诊断框架无关"
+  }
+]

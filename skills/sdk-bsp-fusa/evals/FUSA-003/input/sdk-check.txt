@@ -1,0 +1,10 @@
+$ cd /workspace/sdk/m57-qnx
+$ test -f kernel/osdrv/private_drv/diag_core/driver/diag_stl.c && echo QNX_HIT
+QNX_HIT
+$ test -d kernel/linux/linux-6.1.83/drivers/soc/axera/fusa && echo LINUX_HIT
+$ cat build/version/m57_version.mk
+SDK_VERSION=QNX_V0.10.0
+SDK_BRANCH=m57qnx_trunk
+BOARD=<客户板型>
+$ ls .repo/manifests/ | tail -2
+M57_SDK_QNX_V0.10.0.xml

@@ -1,0 +1,1 @@
+Directory fixture only; see routing.yaml for platform selection.

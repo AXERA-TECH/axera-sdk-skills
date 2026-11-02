@@ -1,0 +1,118 @@
+schema_version: 1
+id: axaudioaec-005
+root_cause: 输入展示双讲时近端声音断续及首字丢失，输出包含 AEC、NS/NSADV、AGC、VAD 等完整上行处理。输入/输出可观察到语音保真差异，但缺少单变量对照，无法唯一归因某个处理模块。
+required_concepts:
+- 按 capture 划分静音、远端单讲、近端单讲和双讲；相同近端内容按片段内相对位置比较。
+- 结合 MIC 与完整上行输出，识别近端语音保真问题，而非把静音区整体平均当作吞音证据。
+- 读回完整 AEC/NS/NSADV/AGC/VAD 配置，保留处理组合的候选解释。
+- 一次只改一项，保存原值、读回并复测；同时验收近端首字/可懂度和回声，不能以牺牲任一方换取通过。
+forbidden_conclusions:
+- 仅凭输出吞音即确认 AEC、NS、VAD 或 AGC 中某一项为唯一根因。
+- 关闭 AEC 后近端清楚就判定解决，或通过静音掩盖回声。
+- 完整上行输出当作纯 AEC 输出，并以其能量差认定 AEC 抑制量。
+allowed_unknowns:
+- 各处理模块对吞音的独立贡献及是否存在组合效应。
+- 参数最优值、客户验收阈值和调整后效果。
+required_additional_evidence:
+- 匹配版本的完整配置读回和逐项调整前后三路对照，保留片段时间定位。
+- 包含弱语音、首字及重叠讲话的近端保真与回声联合验收。
+measurement_expectations:
+- paths:
+  - fixtures/AiCard0_Dev0_vqeIn.pcm
+  - fixtures/AiCard0_Dev0_vqeRef.pcm
+  - fixtures/AiCard0_Dev0_vqeOut.pcm
+  interpretation: 按 0–2/22–24s 静音、2–8s 远端、8–14s 近端、14–22s 双讲分段；保持片段相对位置，比较输入与输出，不能据全段能量判模块根因。
+evidence_signatures:
+  fixtures/capture.txt:
+  - lines: 7-11
+    text: '本轮连续录制 24 秒；以下时段均相对 sample 0。
+
+      0–2 s 静音，2–8 s 远端单讲，8–14 s 近端单讲，14–22 s 双讲，22–24 s 静音。
+
+      近端和远端为不同说话人；近端单讲与双讲播放相同的近端语音内容，各段从该语音起点开始。
+
+      远端单讲回声较轻，近端单讲清楚；两边同时讲话时近端声音断续、首字丢失。
+
+      本次提交为一轮录音。'
+  fixtures/proc.txt:
+  - section: AI DEV ATTR
+    device:
+      AiCardId: 0
+      AiDevId: 0
+    lines: 5-7
+    text: |-
+      -------- AI DEV ATTR ------------------------
+      AiCardId        AiDevId         ChnCnt          Samplerate      PeriodSize      PeriodCount     LinkMode        LayoutMode      AiDepth         f2mic_distance  enBitwidth
+      0               0               2               16000           160             8               0               MIC_REF         30              0.000000        16bit
+  - section: AI DEV VQE ATTR
+    device:
+      AiCardId: 0
+      AiDevId: 0
+    lines: 11-13
+    text: |-
+      -------- AI DEV VQE ATTR ------------------------
+      AiCardId        AiDevId         VqeEnabled      SampleRate      FrameSamples    AecMode         NsEnable        VadEnable       AgcEnable
+      0               0               1               16000           160             1               1               1               1
+  - section: AI DEV AEC ATTR
+    device:
+      AiCardId: 0
+      AiDevId: 0
+    lines: 14-16
+    text: |-
+      -------- AI DEV AEC ATTR ------------------------
+      AiCardId        AiDevId         VqeEnabled      AecMode         SupOrRouting    ComfortNoise    ExtFilterEnable SndCardBufMs    SupEX           SupEx_level
+      0               0               1               1               2               1               1               0               0               0
+  - section: AI DEV DUMP AND BYPASS
+    device:
+      AiCardId: 0
+      AiDevId: 0
+    lines: 35-37
+    text: |-
+      -------- AI DEV DUMP AND BYPASS ------------------------
+      AiCardId        AiDevId         Dump            DumpPath        DumpCount       Bypass
+      0               0               0               /tmp/aec/       2400            0
+  - section: AI DEV NS ATTR
+    device:
+      AiCardId: 0
+      AiDevId: 0
+    lines: 17-19
+    text: |-
+      -------- AI DEV NS ATTR ------------------------
+      AiCardId        AiDevId         VqeEnabled      NsEnable        AgLevel
+      0               0               1               1               2
+  - section: AI DEV NSADV ATTR
+    device:
+      AiCardId: 0
+      AiDevId: 0
+    lines: 26-28
+    text: |-
+      -------- AI DEV NSADV ATTR ------------------------
+      AiCardId        AiDevId         VqeEnabled      NsAdvEnable     AgLevel
+      0               0               1               1               3
+  - section: AI DEV AGC ATTR
+    device:
+      AiCardId: 0
+      AiDevId: 0
+    lines: 23-25
+    text: |-
+      -------- AI DEV AGC ATTR ------------------------
+      AiCardId        AiDevId         VqeEnabled      AgcEnable       AgcMode         TargetLevel     Gain
+      0               0               1               1               2               -5              12
+  - section: AI DEV VAD ATTR
+    device:
+      AiCardId: 0
+      AiDevId: 0
+    lines: 20-22
+    text: |-
+      -------- AI DEV VAD ATTR ------------------------
+      AiCardId        AiDevId         VqeEnabled      VadEnable       VadLevel
+      0               0               1               1               2
+expected_confidence: medium
+confidence_scope: 近端保真异常可见；模块归因需单变量对照。
+evaluation_notes:
+- 完整事实仅描述现有固定输入，不虚构隐藏补丁事实；不得要求未知的 SDK 版本、硬件机制或参数值。
+- required_concepts 按含义及其证据关系评审，不要求固定措辞；否定、引用客户说法及待验证假设不等于断言根因。
+- forbidden_conclusions 仅在报告将其肯定为根因、已解决或已验证事实时判负；查看上下文与实际证据。
+- 审阅结论、证据归属、推理边界、措施与反证、回归五个维度；所有必答项需覆盖，允许未知不扣分。
+- 独立 assert.sh 检查结构、测量、分类及部分文本 smoke；通过不等于 oracle 语义审阅或声学验收通过。
+- 所有用例均未提供修正后板端验收；不得判为 resolved，也不得虚构已运行复测。

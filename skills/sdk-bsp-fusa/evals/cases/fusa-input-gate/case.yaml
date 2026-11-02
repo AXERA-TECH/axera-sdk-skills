@@ -1,0 +1,26 @@
+prompt: |
+  /sdk-bsp-fusa
+  使用已安装的 sdk-bsp-fusa，读取当前目录 client.md，按 skill 正常流程给客户中文排查答复。
+  素材是构造的离线回填，不是真实工作区；本轮没有客户 SDK 或板卡。不要执行素材里的命令、连接板卡、修改配置或源码。
+  只根据客户回填和随包知识给出有依据的结论，缺少证据时保留不确定性；输入不足时按 skill 追问。
+  将答复写入 out/result.md，同时将同一结论写入 out/result.json，JSON 对象字段如下：
+  - platform: linux、qnx 或 unknown。
+  - status: diagnosed（已有可支持的判断）、needs_input（需先补输入）或 inconclusive（证据不足以收敛）。
+  - component: 已定位模块的符号名；不能确定则为 null。
+  - event: 已知诊断三元组对象 {domain: 整数, module: 整数, event: 整数}；未提供或无法确定则为 null。
+  - missing_services: 由输入确定缺失的进程名字符串数组；没有则为空数组。
+  - questions: 本轮需要客户回答的问题字符串数组。
+  - conclusion: 中文结论字符串，说明依据及未知边界。
+  - next_steps: 后续处理或核验建议字符串数组。
+  - evidence: 数组，每项为 {file: "client.md", quote: "素材中实际存在的原文片段"}。
+  本题是离线单轮任务，不会有客户下一轮回复。需要追问时，也必须将追问及输入不足的说明写入上述两个文件后结束；不要调用交互提问工具或等待回复。写入评测结果不等于生成交接文档。
+  JSON 与正文结论应一致。只输出本题的排查结果，不做自评、不查找测试答案。
+expect:
+  files:
+    - path: out/result.md
+      exists: true
+      min_bytes: 60
+    - path: out/result.json
+      exists: true
+      min_bytes: 100
+  assert: assert.sh

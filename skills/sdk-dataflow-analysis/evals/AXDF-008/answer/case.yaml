@@ -1,0 +1,55 @@
+schema_version: 1
+id: AXDF-008
+title: AX_SYS_Link_V2 VIN→IVPS LowMem dst engine 非法
+category: module-dataflow/ax-sys-link-v2/parameter
+analyzer:
+  skill: sdk-dataflow-analysis
+platform:
+  soc: AX615
+  project: AX615_nor
+  flash: spi_nor
+  ddr_mb: 128
+  sensor: mis20s1
+reproducer:
+  patch: answer/reproducer.patch
+  application: /opt/bin/FRTDemo/frtdemo
+  command: cd /opt/bin/FRTDemo && ./run.sh -p 0 -s 16 -n 1 -l 6 -t 5 -u 0
+input:
+  type: log_set
+  files:
+    - input/serial.log
+    - input/syslog.log
+    - input/logctl.proc
+    - input/vin.proc
+    - input/ivps.proc
+    - input/venc.proc
+    - input/link.proc
+  capture:
+    userlog_level: info
+    userlog_level_value: 6
+    userlog_modules:
+      VIN: 17
+      IVPS: 13
+      VENC: 7
+    syslog_source: /tmp/data/AXSyslog/syslog/2026-09-17-11-02-07.log
+    notes:
+      - 全部输入来自同一次复现轮次，AXP 为 AX615_nor_mis20s1_V3.12.0_20260908162155_uclibc.axp，APP/SDK Ver 均为 V3.12.0。
+      - VIN→IVPS 改为 LowMem mode 1、line_cnt 0、src_engine NONE、dst_engine VENC。VIN→IVPS LowMem 合法 dst engine 只有 GDC 或 VPP。IVPS→VENC LowMem 保持 line_cnt=128。
+      - 不能用 ppl.json 的 dst_mod=JENC 触发 AX_ID_JENC，FRTDemo 仍映射成 AX_ID_VENC。本 Case 考的是 engine 矩阵，不是 JENC 模块 ID。
+      - serial.log 首次失败是 VIN(0,0)→IVPS(0,0) Linkage failed；随后 IVPS→VENC 两条 Link setup 成功。syslog 含 ax_sys_link.c(863) Unsupported param，FlowMode=1，engince src=0 dst=4。
+      - 启动瞬间串口可能出现 @AXLOG2,5e3f7a29,...，本包 serial.log 未写入该行；IVPS→VENC nRingLineCnt=128，不能当根因。
+      - proc 在应用仍存活（pid 1804）且 VENC CreateChn 之后采集。userspace/kernel link_table 都缺 VIN→IVPS；IVPS(0,0)→VENC(0,0) LowMem 与 IVPS(0,2)→VENC(0,1) Offline 仍在。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/serial.log
+    - input/syslog.log
+    - input/logctl.proc
+    - input/vin.proc
+    - input/ivps.proc
+    - input/venc.proc
+    - input/link.proc
+  evaluator_only:
+    - answer/oracle.yaml
+    - answer/reproducer.patch
+    - answer/case.yaml

@@ -1,0 +1,90 @@
+schema_version: 1
+id: axaudioaec-001
+root_cause: 输入中 AI 0/0 成功设置并读回 AX_AEC_MODE_DISABLE。已确认 AEC 未开启的配置异常，可解释回声；未提供修正后结果，不证明唯一根因或已解决。
+required_concepts:
+- 区分 VQE 已开启与 AEC 已开启；以 AI 0/0 设置、读回和 proc 为依据。
+- 识别 AEC 未启用的配置异常，不以未活动分支参数推断算法效果。
+- 保存旧配置，核对客户版本支持的模式及重配置阶段，禁用设备后按顺序修改并读回。
+- NS 开启且输出为完整上行处理，MIC/output 能量差不是纯 AEC ERLE。
+- 修正后保持现场条件，复测五类场景；当前为待复测或待补证据。
+forbidden_conclusions:
+- 仅因 proc 中 VqeEnabled=1 而认定 AEC 已开启。
+- SDK 算法缺陷已确认，或 AEC 时延补偿过大已确认。
+- 开启 AEC 后一定解决全部回声，或本次已通过板端验收。
+allowed_unknowns:
+- 客户具体板型和 SDK 版本。
+- 启用 AEC 后的实际回声、近端保真及是否存在其他链路问题。
+required_additional_evidence:
+- 目标版本和模式能力、完整参数及禁用/设置/启用后的返回值与读回。
+- 同条件修正后三路录音、远端接收效果及五类场景验收。
+measurement_expectations:
+- paths:
+  - fixtures/AiCard0_Dev0_vqeIn.pcm
+  - fixtures/AiCard0_Dev0_vqeRef.pcm
+  - fixtures/AiCard0_Dev0_vqeOut.pcm
+  interpretation: 三路真实读取并关联本轮；全段电平差只作观察，不能证明纯 AEC 效果。
+evidence_signatures:
+  fixtures/capture.txt:
+  - lines: 7-9
+    text: '本轮连续录制 12 秒，远端循环播放语音，近端保持安静。
+
+      现场扬声器有声，远端持续听到自己的声音。
+
+      本次提交为一轮录音。'
+  fixtures/application.log:
+  - lines: 1-5
+    text: 't=-0.080 AX_AI_SetUpTalkVqeAttr aiCard=0 aiDev=0 enAecMode=AX_AEC_MODE_DISABLE bNsEnable=1 ret=0
+
+      t=-0.060 AX_AI_EnableDev aiCard=0 aiDev=0 ret=0
+
+      t=-0.040 AX_AI_GetUpTalkVqeAttr aiCard=0 aiDev=0 enAecMode=AX_AEC_MODE_DISABLE bNsEnable=1 ret=0
+
+      t=0.000 playback=start capture=start scene=far_only
+
+      t=12.000 capture=complete frames=1200 overrun=0 underrun=0'
+  fixtures/proc.txt:
+  - section: AI DEV ATTR
+    device:
+      AiCardId: 0
+      AiDevId: 0
+    lines: 5-7
+    text: |-
+      -------- AI DEV ATTR ------------------------
+      AiCardId        AiDevId         ChnCnt          Samplerate      PeriodSize      PeriodCount     LinkMode        LayoutMode      AiDepth         f2mic_distance  enBitwidth
+      0               0               2               16000           160             8               0               MIC_REF         30              0.000000        16bit
+  - section: AI DEV VQE ATTR
+    device:
+      AiCardId: 0
+      AiDevId: 0
+    lines: 11-13
+    text: |-
+      -------- AI DEV VQE ATTR ------------------------
+      AiCardId        AiDevId         VqeEnabled      SampleRate      FrameSamples    AecMode         NsEnable        VadEnable       AgcEnable
+      0               0               1               16000           160             0               1               0               0
+  - section: AI DEV AEC ATTR
+    device:
+      AiCardId: 0
+      AiDevId: 0
+    lines: 14-16
+    text: |-
+      -------- AI DEV AEC ATTR ------------------------
+      AiCardId        AiDevId         VqeEnabled      AecMode         SupOrRouting    ComfortNoise    ExtFilterEnable SndCardBufMs    SupEX           SupEx_level
+      0               0               1               0               2               1               1               0               0               0
+  - section: AI DEV DUMP AND BYPASS
+    device:
+      AiCardId: 0
+      AiDevId: 0
+    lines: 35-37
+    text: |-
+      -------- AI DEV DUMP AND BYPASS ------------------------
+      AiCardId        AiDevId         Dump            DumpPath        DumpCount       Bypass
+      0               0               0               /tmp/aec/       1200            0
+expected_confidence: high
+confidence_scope: AEC 未启用这一配置事实；整体修复效果尚未知。
+evaluation_notes:
+- 完整事实仅描述现有固定输入，不虚构隐藏补丁事实；不得要求未知的 SDK 版本、硬件机制或参数值。
+- required_concepts 按含义及其证据关系评审，不要求固定措辞；否定、引用客户说法及待验证假设不等于断言根因。
+- forbidden_conclusions 仅在报告将其肯定为根因、已解决或已验证事实时判负；查看上下文与实际证据。
+- 审阅结论、证据归属、推理边界、措施与反证、回归五个维度；所有必答项需覆盖，允许未知不扣分。
+- 独立 assert.sh 检查结构、测量、分类及部分文本 smoke；通过不等于 oracle 语义审阅或声学验收通过。
+- 所有用例均未提供修正后板端验收；不得判为 resolved，也不得虚构已运行复测。

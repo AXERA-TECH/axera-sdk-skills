@@ -1,0 +1,6 @@
+{
+  "case_id": "OTA-007",
+  "question": "新 B 已 successful，copy_part.sh 报空间不足，是 AB rollback 坏了吗？",
+  "context": "平台背景：m57。没有提供真实 SDK、板卡或构建产物；目录标志若在问题中给出，是人工构造的场景条件。",
+  "provenance": "synthetic"
+}

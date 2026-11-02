@@ -1,0 +1,18 @@
+{
+  "rollback_failure_proven": {
+    "question": "copy 空间不足是否证明选槽回退损坏",
+    "type": "boolean"
+  },
+  "rewrite_metadata_fixes_capacity": {
+    "question": "重写 AB metadata 能否解决容量问题",
+    "type": "boolean"
+  },
+  "opposite_capacity_check_required": {
+    "question": "是否需要检查对侧容量",
+    "type": "boolean"
+  },
+  "old_slot_integrity_proven": {
+    "question": "题目是否证明旧槽内容完整",
+    "type": "boolean"
+  }
+}

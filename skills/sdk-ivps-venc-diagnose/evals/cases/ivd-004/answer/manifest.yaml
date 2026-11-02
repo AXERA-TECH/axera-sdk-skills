@@ -1,0 +1,29 @@
+schema_version: 1
+id: ivd-004
+display_id: IVD-004
+title: 单次采样现场：静态判读受限，停滞只能标"疑似"并要求第二次采样
+category: ivps-venc/evidence-limits/single-sample
+analyzer:
+  skill: sdk-ivps-venc-diagnose
+platform:
+  soc: AX615
+  sdk_version: V3.13.0
+input:
+  type: proc_sampling
+  files:
+    - input/hsk_proc.txt
+  capture:
+    samples: 1
+    source: captured
+    notes:
+      - 来源：板端真实单次采样（原 tests/fixtures/hsk_proc_single_sample.txt），
+        含 link_table、syncagent（3 个 session）、ivps、venc、jenc，无 SAMPLE 标记。
+      - 缺 link_table_kernel、缺第二次采样；本 Case 专门考察单次采样下的克制判读。
+      - 现场包含两条 SW_Low_Mem HSK 链路与一条 SW_Offline 链路，具体计数状态以文件为准。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/hsk_proc.txt
+  evaluator_only:
+    - answer/manifest.yaml
+    - answer/oracle.yaml

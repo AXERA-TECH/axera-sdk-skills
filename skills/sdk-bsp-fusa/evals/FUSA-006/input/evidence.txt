@@ -1,0 +1,31 @@
+# FUSA-006 客户回填的原始证据（板端 + SDK 侧）
+
+$ cd /workspace/sdk/m57-linux
+$ test -d kernel/linux/linux-6.1.83/drivers/soc/axera/fusa && echo LINUX_HIT
+LINUX_HIT
+$ cat build/version/m57_version.mk
+SDK_VERSION=V2.10.0
+SDK_BRANCH=m57h_trunk
+
+# ---- 生成链路的产物：JSON 里已经是 200 ----
+$ rg -n "happen_max_snd_ms" msp/component/diag/config/diag_domain_main.json
+12:    "happen_max_snd_ms": 200,
+
+# ---- 服务在跑 ----
+$ ps -ef | grep '[a]x_diag_service'
+root  671  1  0 10:02 ?  00:00:03 /usr/bin/ax_diag_service
+
+# ---- 服务日志：没有任何报错 ----
+$ tail -5 /var/log/ax_diag_service.log
+[10:02:11] load config diag_domain_main.json ok
+[10:02:11] netlink handshake ok
+[10:02:12] apply domain0 strategy ok
+[10:02:12] apply module45 strategy ok
+[10:02:12] service ready
+
+# ---- 板端回读：还是 1000 ----
+$ ls /sys/devices/platform/axdiag/domain0/module45/error17/ | grep -i happen
+happen_max_snd_ms
+happen_max_ms
+$ cat /sys/devices/platform/axdiag/domain0/module45/error17/happen_max_snd_ms
+1000

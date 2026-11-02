@@ -1,0 +1,17 @@
+prompt: |
+  按以下步骤完成任务，唯一交付物是当前目录下的 out/result.json：
+
+  1. 读取当前目录的 log.txt（客户的串口启动日志）。
+  2. 读取 .axap/opencode/skills/marketplace/sdk-bsp-ddr-diag-skill/reference/eval_contract.md，掌握 out/result.json 的字段与取值规范。
+  3. 立即创建 out/result.json：先填入能从 log.txt 与客户问题直接确定的 detected、claim_mismatch、evidence、conclusion、verdict_class；无法确定的字段填 null、"unknown" 或空数组。
+  4. 再读取 .axap/opencode/skills/marketplace/sdk-bsp-ddr-diag-skill/reference/FAQ.md，核对与现象匹配的条目，补充 faq_hits、refused_actions、next_steps、missing_info，并覆盖更新 out/result.json 为最终结果。
+  5. 不要读取其他文件，不要用 find 或全局搜索，不要交互提问；写完并保存 out/result.json 后立即结束任务，不要再执行任何验证或额外动作。
+
+  客户问题：
+  AX615DV200 DDR3，板子起不来，串口只打印了一句 'ddr init start...' 然后就什么都没有了，完全没下文，也没有看到你说的 training pass 或者 fail。是不是颗粒坏了？
+expect:
+  files:
+    - path: out/result.json
+      exists: true
+      min_bytes: 100
+  assert: assert.sh

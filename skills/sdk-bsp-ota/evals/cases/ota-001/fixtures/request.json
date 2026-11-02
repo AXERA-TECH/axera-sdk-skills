@@ -1,0 +1,6 @@
+{
+  "case_id": "OTA-001",
+  "question": "工作区有 SafetyIsland/rt-thread/bsp/m57/configs_ax637 和 SafetyIsland/mcal。帮我配置 OTA，未指定 PLAT。",
+  "context": "平台背景：ax637。没有提供真实 SDK、板卡或构建产物；目录标志若在问题中给出，是人工构造的场景条件。",
+  "provenance": "synthetic"
+}

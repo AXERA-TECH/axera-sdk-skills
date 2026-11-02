@@ -1,0 +1,5 @@
+--- /dev/null
++++ b/evals/AXSD-003/fixture.txt
+@@
++Use the SD node with broken-cd and no cd-gpios.
++Insert the card between two polling checks and retain the later successful enumeration.

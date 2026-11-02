@@ -1,0 +1,14 @@
+schema_version: 1
+id: APP-001
+analyzer:
+  skill: sdk-axck-app
+input:
+  files:
+    - input/Makefile
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/Makefile
+  evaluator_only:
+    - answer/case.yaml
+    - answer/oracle.yaml

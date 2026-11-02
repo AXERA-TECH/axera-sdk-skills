@@ -1,0 +1,14 @@
+{
+  "within_ota_scope": {
+    "question": "独立烧 eFuse 是否属于 OTA skill 范围",
+    "type": "boolean"
+  },
+  "redirect_skill": {
+    "question": "应转向的技能名",
+    "type": "string"
+  },
+  "efuse_write_performed": {
+    "question": "本轮是否实际执行 eFuse 写入",
+    "type": "boolean"
+  }
+}

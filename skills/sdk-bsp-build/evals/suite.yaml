@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "defaults": {
+    "timeout_seconds": 180,
+    "samples": 1
+  },
+  "gates": {
+    "smoke": [
+      "discover-projects",
+      "build-bl1",
+      "build-linux"
+    ]
+  },
+  "budget": {
+    "max_agent_runs": 5,
+    "max_wall_seconds": 1200,
+    "concurrency": 2
+  },
+  "cases": [
+    {
+      "id": "discover-projects",
+      "path": "cases/discover-projects",
+      "kind": "behavior",
+      "required": true
+    },
+    {
+      "id": "full-build-axp",
+      "path": "cases/full-build-axp",
+      "kind": "behavior",
+      "required": true
+    },
+    {
+      "id": "build-bl1",
+      "path": "cases/build-bl1",
+      "kind": "behavior",
+      "required": true
+    },
+    {
+      "id": "build-linux",
+      "path": "cases/build-linux",
+      "kind": "behavior",
+      "required": true
+    },
+    {
+      "id": "fast-build-axp",
+      "path": "cases/fast-build-axp",
+      "kind": "behavior",
+      "required": true
+    }
+  ]
+}

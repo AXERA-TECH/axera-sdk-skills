@@ -1,0 +1,9 @@
+[  110.000000] PM: suspend entry (deep)
+[  110.000050] PM: Syncing filesystems ... done.
+[  110.015000] Freezing user space processes ... (elapsed 0.001 seconds) done.
+[  110.020000] Freezing remaining freezable tasks ... (elapsed 0.001 seconds) done.
+[  110.025000] Suspending console(s) (use no_console_suspend to debug)
+[  110.030000] ax_gpio_lp: wake_int triggered
+[  110.031000] PM: suspend exit
+[  110.050000] vin_mipi_wait_sof timeout
+[  110.060000] AX_VIN_GetDevFrame timeout, ret=0x80110180

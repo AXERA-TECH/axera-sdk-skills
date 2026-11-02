@@ -1,0 +1,22 @@
+{
+  "target_os": {
+    "question": "目标 OS（小写）",
+    "type": "string"
+  },
+  "slog2info_verified_for_target": {
+    "question": "slog2info 是否已核实为该目标工具",
+    "type": "boolean"
+  },
+  "ota_erase_verified_for_target": {
+    "question": "ota_erase 是否已核实为该目标工具",
+    "type": "boolean"
+  },
+  "manual_test_hook": {
+    "question": "AX637 使用说明记载的测试脚本名",
+    "type": "string"
+  },
+  "final_deployment_check_required": {
+    "question": "是否需要核对本版最终部署",
+    "type": "boolean"
+  }
+}

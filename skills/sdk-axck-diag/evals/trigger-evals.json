@@ -1,0 +1,27 @@
+[
+  {
+    "query": "诊断 AX615 板端启动日志中报 0x80050004 CMM pool 耗尽错误",
+    "should_trigger": true,
+    "notes": "Direct trigger for AXERA error code decoding and root-cause isolation"
+  },
+  {
+    "query": "分析 dmesg 中出现的 SIF FIFO overflow 硬件报错和 IVPS 级联崩溃",
+    "should_trigger": true,
+    "notes": "Hardware failure signature diagnosis"
+  },
+  {
+    "query": "对接真机平台日志，还原启动失败的第一根因时间线",
+    "should_trigger": true,
+    "notes": "Board platform log aggregation and first-root-cause timeline analysis"
+  },
+  {
+    "query": "把前后摄双路视频流编译成可执行程序",
+    "should_trigger": false,
+    "notes": "Build task belongs to sdk-axck-app"
+  },
+  {
+    "query": "执行 axck_test 的抓拍和录像自动化测试",
+    "should_trigger": false,
+    "notes": "Automated testing belongs to sdk-axck-test"
+  }
+]

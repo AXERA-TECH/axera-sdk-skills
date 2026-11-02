@@ -1,0 +1,6 @@
+{
+  "task": "AX615 打猎相机，Linux 的 4G 模组必须在交接前通过 I2C0 通信，Sensor 在 I2C1。附件报 busy。是不是把 Linux 驱动的 busy 检查删掉就能解决？请只分析并给验证建议，不操作板子。",
+  "attachments": [
+    "files/pre-handover-i2c.log"
+  ]
+}

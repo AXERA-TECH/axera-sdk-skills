@@ -1,0 +1,51 @@
+root_cause: VIN(0,0) 到 IVPS(0,0) 已按 LowMem 建链（dst engine GDC）后，TestSuite 在运行期把 sensor LDC 从 0 打开到 1。AX_SYS_Link_V2 建链不检查 LDC。本包 AX_ISP_IQ_SetLdcParam 下发成功，VIN WARP STATUS 的 LDC=1，IVPS GDC DewarpType=LDC 且 Fail1=0，主码流继续约 30fps 出流。文档里“LowMem 不支持 LDC”不能单独当成失败结论。
+required_concepts:
+  - AX_SYS_Link_V2
+  - AX_MOD_DATA_FLOW_SW_LOW_MEM
+  - 识别 VIN(0,0) 到 IVPS/GDC 的 LowMem link 在打开 LDC 前已经建立
+  - AX_SYS_Link_V2 建链阶段不因 LDC 返错
+  - TestSuite LDC enable 0 改为 1
+  - UpdateLDC 成功，没有 AX_ISP_IQ_SetLdcParam failed
+  - vin.proc WARP STATUS 的 LDC=1，VIN 几何仍为 1920x1080
+  - ivps.proc GDC DewarpType=LDC，Fail1=0 且持续出流
+  - VENC 通道 0 仍在收流，OutFps 约 30
+  - 不能仅凭文档“LowMem 不支持 LDC”判失败
+forbidden_conclusions:
+  - nRingLineCnt 非法导致建链失败
+  - VIN→IVPS 或 IVPS→VENC Linkage failed
+  - AX_ISP_IQ_SetLdcParam 失败
+  - GDC Fail1 累积或主码流断流
+  - 把 syslog 后期 IVPS info 刷屏当根因
+  - sensor 初始化失败
+  - VB/CMM/pool 内存不足
+  - 两路 JENC HSK 资源冲突
+evidence_signatures:
+  input/serial.log:
+    - 'APP Ver: V3.12.0, SDK Ver: V3.12.0'
+    - 'Linkage setup: (17, 0, 0) => (13, 0, 0)'
+    - 'LDC: [SnsID:0, sensor ldc enable:(0 ---> 1)]'
+    - 'UpdateLDC+++'
+    - 'UpdateLDC---'
+  input/logctl.proc:
+    - 'VENC     7     6'
+    - 'IVPS    13     6'
+    - 'VIN    17     6'
+  input/link.proc:
+    - 'SW_Low_Mem'
+    - 'Engine (0:None --> 5:GDC)'
+  input/vin.proc:
+    - 'LDC DIS Crop Rotation'
+    - '0    1   0   0    -'
+  input/ivps.proc:
+    - '0     -1    0     LDC'
+    - 'XRatio:50 YRatio:50'
+    - 'DRatio:2000'
+  input/venc.proc:
+    - 'VENC CHN ATTR'
+    - 'VENC CHN STATUS'
+expected_confidence: high
+evaluation_notes:
+  - 本 Case 是负例：LowMem VIN→IVPS 打开 LDC 后仍然出流。分析器应写建链不拦、SetLdcParam 成功、GDC LDC 生效且未断流。
+  - 不要把文档旧结论“LowMem 不支持 LDC”写成根因。本配置是 line_cnt=0、dst GDC、distor_ratio=2000、x/y_ratio=50。
+  - syslog 可能只有后期 IVPS info；首次 LDC 动作在 serial.log。缺少 syslog 启动行不能改判失败。
+  - 若分析器把 vin.proc LDC=1 或 DewarpType=LDC 当成故障，视为 forbidden。

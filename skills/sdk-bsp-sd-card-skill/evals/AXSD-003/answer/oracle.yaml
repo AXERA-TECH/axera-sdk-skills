@@ -1,0 +1,30 @@
+root_cause: 当前输入不显示故障；DTS 使用 broken-cd，表示 card detect 采用软件 polling，插卡后短时间没有日志属于检测周期内的正常延迟。随后出现 mmc0 卡枚举和 mmcblk0，说明 host、card detect、枚举链路最终成功。
+required_concepts:
+  - broken-cd 表示 polling 而非 GPIO 中断 detect
+  - 插卡到枚举之间可能存在检测延迟
+  - axera sdhci probe 和 host 注册已经成功
+  - mmc0 new card 与 mmcblk0 证明最终枚举正常
+  - t=2～3 秒无日志不能直接判定 detect 失效
+  - 应等待完整 polling 周期并连续抓取 dmesg
+  - 只有多个完整周期仍无枚举才进入 card detect、供电和 CMD 排查
+forbidden_conclusions:
+  - 将短时间无日志判定为 broken-cd 失效
+  - 建议仅为消除延迟而强行添加 cd-gpios
+  - 直接判定 SD 卡不兼容或物理损坏
+  - 将该正常延迟归因于供电或 PHY failure
+evidence_signatures:
+  input/dts.txt:
+    - 'broken-cd'
+  input/dmesg.log:
+    - 'axera sdhci probe'
+    - 'mmc0: SDHCI controller on platform'
+    - 'new ultra high speed SDR50 SDHC card'
+    - 'mmcblk0'
+  input/timeline.txt:
+    - 't=2.000s：用户插入 SD 卡'
+    - 't=5.012s：出现卡枚举日志'
+expected_confidence: high
+evaluation_notes:
+  - 该 Case 的正确分析是“无故障/正常 polling 延迟”，可使用已确认或高可信待验证，但不得制造故障根因。
+  - 如需测量 polling 周期，应多次插拔并记录完整 dmesg；不应立即修改 DTS 或供电。
+  - 若等待多个完整周期仍无枚举，才可将新证据带入后续 card detect、供电、CMD 和信号分析。

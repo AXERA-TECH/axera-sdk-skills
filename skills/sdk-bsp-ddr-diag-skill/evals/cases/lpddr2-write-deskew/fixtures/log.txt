@@ -1,0 +1,14 @@
+SDIFUSThe download form usb
+download to NOR
+enter download mode
+ddr init start...
+ddr freq=800Mbps
+dram type is LPDDR2
+.............LPDDR2 training start.............
+LPDDR2 write deskew training
+write deskew training fail!
+LPDDR2 write eye training
+write eye training fail !
+fdl usb init
+usb handshake success
+enter fw_load_and_exec

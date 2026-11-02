@@ -1,0 +1,4 @@
+{
+  "task": "SDK 根目录为 /work/sdk/ax615。前提：Case 1 的实际 make plist 输出已确认支持 AX615_fastnor。选择该有效工程，在 build 目录执行 make p=\"$PROJECT\" clean all install axp -j64，生成 AXP。 本次仅输出执行方案，不运行构建。",
+  "attachments": []
+}

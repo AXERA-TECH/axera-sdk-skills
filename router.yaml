@@ -1,0 +1,24 @@
+version: "1.0"
+package_name: "ax-skills-bundle"
+
+chip_definitions:
+  AX615:
+    family: "AX615"
+    aliases: ["AX615", "AX615A", "AX615D", "ax615", "ax615d", "ax615a"]
+    description: "AX615 系列视觉 SoC (全子型号与各频点通用)"
+  M57:
+    family: "M57"
+    aliases: ["M57", "M57A", "M57B", "M57-Pro", "m57"]
+    description: "M57 系列低功耗/车载/工业级芯片"
+  AX637:
+    family: "AX637"
+    aliases: ["AX637", "AX637R", "ax637", "ax637r"]
+    description: "AX637 / AX637R 系列；具体 SDK 与操作系统范围见技能说明"
+  AX620:
+    family: "AX620"
+    aliases: ["AX620", "AX620A", "AX620Q", "ax620"]
+    description: "AX620 系列 AI 视觉芯片"
+
+policy:
+  mode: "dynamic_metadata_match"
+  default_fallback: "common_only"

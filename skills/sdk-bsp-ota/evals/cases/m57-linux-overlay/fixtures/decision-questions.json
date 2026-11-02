@@ -1,0 +1,18 @@
+{
+  "base_board_is_final_authority": {
+    "question": "board fs-overlay 是否总是最终生效来源",
+    "type": "boolean"
+  },
+  "deployment_script": {
+    "question": "应检查的 rootfs 打包脚本名",
+    "type": "string"
+  },
+  "final_rootfs_check_required": {
+    "question": "是否需比较最终 rootfs 实际文件",
+    "type": "boolean"
+  },
+  "overlay_order": {
+    "question": "按文档从低到高排列覆盖层，使用 board、initd、common、init_platform、build_platform 五个标识",
+    "type": "array"
+  }
+}

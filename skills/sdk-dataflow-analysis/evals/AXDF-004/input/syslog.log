@@ -1,0 +1,220 @@
+1970-02-11 05:12:55 Kernel: [ 1758.915566]  [C1][BASE][E][45] ax_base_sync_agent.c(1321) wait chn 255 error
+1970-02-11 05:12:55 Kernel: [ 1758.915598]  [C1][IVPS][E][39] ax_ivps_sched_task.c(797) task status error
+1970-02-11 05:12:55 Kernel: [ 1758.915703]  [C1][IVPS][E][41] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 16803
+1970-02-11 05:12:55 Kernel: [ 1758.915716]  [C1][IVPS][E][41] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 16803
+1970-02-11 05:12:55 Kernel: [ 1758.915727]  [C1][IVPS][E][41] ax_ivps_sched_engine_mgr.c(467) grp 0 chn -1 filter 0 force trigger hsk, frame seqnum 16803 
+1970-02-11 05:12:55 Kernel: [ 1758.915839]  [C1][IVPS][E][41] ax_ivps_sched_engine_mgr.c(484) grp 0 chn -1 filter 0 hsk force clean, frame seqnum 16803
+1970-02-11 05:12:55 Kernel: [ 1758.915849]  [C1][IVPS][E][41] ax_ivps_sched_engine_mgr.c(489) grp 0 chn -1 filter 0 hsk force clean, force set reg to 45264
+1970-02-11 05:12:55 Kernel: [ 1758.915950]  [C1][BASE][E][41] ax_base_sync_agent.c(1321) wait chn 255 error
+1970-02-11 05:12:55 Kernel: [ 1758.916021]  [C1][IVPS][E][39] ax_ivps_sched_task.c(797) task status error
+1970-02-11 05:12:55 Kernel: [ 1758.916036]  [C1][IVPS][W][39] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+1970-02-11 05:12:55 Kernel: [ 1758.948607]  [C0][SYS][E][45] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 345600 in 'anonymous' partation
+1970-02-11 05:12:55 Kernel: [ 1758.948623]  [C0][IVPS][E][45] ax_ivps_sched_task.c(669) get block fail for out frame 2, size 345600
+1970-02-11 05:12:55 Kernel: [ 1758.948633]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+1970-02-11 05:12:55 Kernel: [ 1758.948645]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 16804
+1970-02-11 05:12:55 Kernel: [ 1758.948654]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 16804
+1970-02-11 05:12:55 Kernel: [ 1758.948666]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(484) grp 0 chn 0 filter 1 hsk force clean, frame seqnum 16804
+1970-02-11 05:12:55 Kernel: [ 1758.948684]  [C0][ENC][W][45] venc.c(4590) Chn0 AbortEncTask
+1970-02-11 05:12:55 Kernel: [ 1758.948697]  [C0][ENC][W][45] h26x_enc_cal.c(6731) Chn:0,frame not trigered,up reg.H:0
+1970-02-11 05:12:55 Kernel: [ 1758.948706]  [C0][ENC][E][45] ax_venc_sync_agent.c(449) Chn:0 EncPicHeight:0
+1970-02-11 05:12:55 Kernel: [ 1758.948716]  [C0][ENC][E][45] ax_venc_sync_agent.c(797) Chn:0 ret:0xffffffff,TrigerType:2,EncPicHeight:0,iniVal:1088
+1970-02-11 05:12:55 Kernel: [ 1758.948722]  [C0][ENC][E][45] h26x_enc_cal.c(6734) Chn:0,consume sync code fail
+1970-02-11 05:12:55 Kernel: [ 1758.948729]  [C0][ENC][E][45] venc.c(4594) Chn0 AbortEncTask fail
+1970-02-11 05:12:55 Kernel: [ 1758.948736]  [C0][ENC][E][45] venc.c(9483) Chn:0,AbortEncTask fail
+1970-02-11 05:12:55 Kernel: [ 1758.948746]  [C0][SYS][E][45] ax_sys_link.c(1513) msg notify callback failed!downstream module(7) returned unsupported msg notify -1,please check callback func!
+1970-02-11 05:12:55 Kernel: [ 1758.948754]  [C0][IVPS][E][45] ax_ivps_sched_hsk.c(717) clean merged chn 0 filter 1
+1970-02-11 05:12:55 Kernel: [ 1758.948840]  [C0][BASE][E][45] ax_base_sync_agent.c(1321) wait chn 255 error
+1970-02-11 05:12:55 Kernel: [ 1758.948875]  [C0][IVPS][E][39] ax_ivps_sched_task.c(797) task status error
+1970-02-11 05:12:55 Kernel: [ 1758.948948]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 16804
+1970-02-11 05:12:55 Kernel: [ 1758.948962]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 16804
+1970-02-11 05:12:55 Kernel: [ 1758.948972]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(467) grp 0 chn -1 filter 0 force trigger hsk, frame seqnum 16804 
+1970-02-11 05:12:55 Kernel: [ 1758.949065]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(484) grp 0 chn -1 filter 0 hsk force clean, frame seqnum 16804
+1970-02-11 05:12:55 Kernel: [ 1758.949075]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(489) grp 0 chn -1 filter 0 hsk force clean, force set reg to 46344
+1970-02-11 05:12:55 Kernel: [ 1758.949165]  [C0][BASE][E][41] ax_base_sync_agent.c(1321) wait chn 255 error
+1970-02-11 05:12:55 Kernel: [ 1758.949200]  [C0][IVPS][E][39] ax_ivps_sched_task.c(797) task status error
+1970-02-11 05:12:55 Kernel: [ 1758.949212]  [C0][IVPS][W][39] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+1970-02-11 05:12:55 App: [ 1758.952737] [IVPS][I][599] ivps_region.c(88) RGN[28] region_update+++
+1970-02-11 05:12:55 App: [ 1758.952907] [IVPS][I][599] ivps_region.c(95) RGN[28] region_update---
+1970-02-11 05:12:55 App: [ 1758.954434] [IVPS][I][599] ivps_region.c(88) RGN[22] region_update+++
+1970-02-11 05:12:55 App: [ 1758.954536] [IVPS][I][599] ivps_region.c(95) RGN[22] region_update---
+1970-02-11 05:12:55 Kernel: [ 1758.982162]  [C0][SYS][E][45] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 345600 in 'anonymous' partation
+1970-02-11 05:12:55 Kernel: [ 1758.982177]  [C0][IVPS][E][45] ax_ivps_sched_task.c(669) get block fail for out frame 2, size 345600
+1970-02-11 05:12:55 Kernel: [ 1758.982187]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+1970-02-11 05:12:55 Kernel: [ 1758.982254]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 16805
+1970-02-11 05:12:55 Kernel: [ 1758.982263]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 16805
+1970-02-11 05:12:55 Kernel: [ 1758.982275]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(484) grp 0 chn 0 filter 1 hsk force clean, frame seqnum 16805
+1970-02-11 05:12:55 Kernel: [ 1758.982293]  [C0][ENC][W][45] venc.c(4590) Chn0 AbortEncTask
+1970-02-11 05:12:55 Kernel: [ 1758.982307]  [C0][ENC][W][45] h26x_enc_cal.c(6731) Chn:0,frame not trigered,up reg.H:0
+1970-02-11 05:12:55 Kernel: [ 1758.982316]  [C0][ENC][E][45] ax_venc_sync_agent.c(449) Chn:0 EncPicHeight:0
+1970-02-11 05:12:55 Kernel: [ 1758.982326]  [C0][ENC][E][45] ax_venc_sync_agent.c(797) Chn:0 ret:0xffffffff,TrigerType:2,EncPicHeight:0,iniVal:1088
+1970-02-11 05:12:55 Kernel: [ 1758.982333]  [C0][ENC][E][45] h26x_enc_cal.c(6734) Chn:0,consume sync code fail
+1970-02-11 05:12:55 Kernel: [ 1758.982340]  [C0][ENC][E][45] venc.c(4594) Chn0 AbortEncTask fail
+1970-02-11 05:12:55 Kernel: [ 1758.982347]  [C0][ENC][E][45] venc.c(9483) Chn:0,AbortEncTask fail
+1970-02-11 05:12:55 Kernel: [ 1758.982358]  [C0][SYS][E][45] ax_sys_link.c(1513) msg notify callback failed!downstream module(7) returned unsupported msg notify -1,please check callback func!
+1970-02-11 05:12:55 Kernel: [ 1758.982366]  [C0][IVPS][E][45] ax_ivps_sched_hsk.c(717) clean merged chn 0 filter 1
+1970-02-11 05:12:55 Kernel: [ 1758.982465]  [C0][BASE][E][45] ax_base_sync_agent.c(1321) wait chn 255 error
+1970-02-11 05:12:55 Kernel: [ 1758.982515]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 16805
+1970-02-11 05:12:55 Kernel: [ 1758.982528]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 16805
+1970-02-11 05:12:55 Kernel: [ 1758.982538]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(467) grp 0 chn -1 filter 0 force trigger hsk, frame seqnum 16805 
+1970-02-11 05:12:55 Kernel: [ 1758.983146]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(484) grp 0 chn -1 filter 0 hsk force clean, frame seqnum 16805
+1970-02-11 05:12:55 Kernel: [ 1758.983156]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(489) grp 0 chn -1 filter 0 hsk force clean, force set reg to 47424
+1970-02-11 05:12:55 Kernel: [ 1758.983237]  [C0][BASE][E][41] ax_base_sync_agent.c(1321) wait chn 255 error
+1970-02-11 05:12:55 Kernel: [ 1758.983268]  [C0][IVPS][E][39] ax_ivps_sched_task.c(797) task status error
+1970-02-11 05:12:55 Kernel: [ 1758.983296]  [C0][IVPS][E][39] ax_ivps_sched_task.c(797) task status error
+1970-02-11 05:12:55 Kernel: [ 1758.983306]  [C0][IVPS][W][39] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+1970-02-11 05:12:55 Kernel: [ 1759.015302]  [C0][SYS][E][45] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 345600 in 'anonymous' partation
+1970-02-11 05:12:55 Kernel: [ 1759.015318]  [C0][IVPS][E][45] ax_ivps_sched_task.c(669) get block fail for out frame 2, size 345600
+1970-02-11 05:12:55 Kernel: [ 1759.015331]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+1970-02-11 05:12:55 Kernel: [ 1759.015344]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 16806
+1970-02-11 05:12:55 Kernel: [ 1759.015353]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 16806
+1970-02-11 05:12:55 Kernel: [ 1759.015366]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(484) grp 0 chn 0 filter 1 hsk force clean, frame seqnum 16806
+1970-02-11 05:12:55 Kernel: [ 1759.015383]  [C0][ENC][W][45] venc.c(4590) Chn0 AbortEncTask
+1970-02-11 05:12:55 Kernel: [ 1759.015397]  [C0][ENC][W][45] h26x_enc_cal.c(6731) Chn:0,frame not trigered,up reg.H:0
+1970-02-11 05:12:55 Kernel: [ 1759.015405]  [C0][ENC][E][45] ax_venc_sync_agent.c(449) Chn:0 EncPicHeight:0
+1970-02-11 05:12:55 Kernel: [ 1759.015415]  [C0][ENC][E][45] ax_venc_sync_agent.c(797) Chn:0 ret:0xffffffff,TrigerType:2,EncPicHeight:0,iniVal:1088
+1970-02-11 05:12:55 Kernel: [ 1759.015422]  [C0][ENC][E][45] h26x_enc_cal.c(6734) Chn:0,consume sync code fail
+1970-02-11 05:12:55 Kernel: [ 1759.015429]  [C0][ENC][E][45] venc.c(4594) Chn0 AbortEncTask fail
+1970-02-11 05:12:55 Kernel: [ 1759.015435]  [C0][ENC][E][45] venc.c(9483) Chn:0,AbortEncTask fail
+1970-02-11 05:12:55 Kernel: [ 1759.015446]  [C0][SYS][E][45] ax_sys_link.c(1513) msg notify callback failed!downstream module(7) returned unsupported msg notify -1,please check callback func!
+1970-02-11 05:12:55 Kernel: [ 1759.015453]  [C0][IVPS][E][45] ax_ivps_sched_hsk.c(717) clean merged chn 0 filter 1
+1970-02-11 05:12:55 Kernel: [ 1759.015541]  [C0][BASE][E][45] ax_base_sync_agent.c(1321) wait chn 255 error
+1970-02-11 05:12:55 Kernel: [ 1759.015586]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 16806
+1970-02-11 05:12:55 Kernel: [ 1759.015600]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 16806
+1970-02-11 05:12:55 Kernel: [ 1759.015610]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(467) grp 0 chn -1 filter 0 force trigger hsk, frame seqnum 16806 
+1970-02-11 05:12:55 Kernel: [ 1759.015702]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(484) grp 0 chn -1 filter 0 hsk force clean, frame seqnum 16806
+1970-02-11 05:12:55 Kernel: [ 1759.015712]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(489) grp 0 chn -1 filter 0 hsk force clean, force set reg to 48504
+1970-02-11 05:12:55 Kernel: [ 1759.015799]  [C0][BASE][E][41] ax_base_sync_agent.c(1321) wait chn 255 error
+1970-02-11 05:12:55 Kernel: [ 1759.015829]  [C0][IVPS][E][39] ax_ivps_sched_task.c(797) task status error
+1970-02-11 05:12:55 Kernel: [ 1759.015853]  [C0][IVPS][E][39] ax_ivps_sched_task.c(797) task status error
+1970-02-11 05:12:55 Kernel: [ 1759.015863]  [C0][IVPS][W][39] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+1970-02-11 05:12:55 Kernel: [ 1759.048574]  [C0][SYS][E][45] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 345600 in 'anonymous' partation
+1970-02-11 05:12:55 Kernel: [ 1759.048590]  [C0][IVPS][E][45] ax_ivps_sched_task.c(669) get block fail for out frame 2, size 345600
+1970-02-11 05:12:55 Kernel: [ 1759.048598]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+1970-02-11 05:12:55 Kernel: [ 1759.048611]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 16807
+1970-02-11 05:12:55 Kernel: [ 1759.048619]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 16807
+1970-02-11 05:12:55 Kernel: [ 1759.048631]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(484) grp 0 chn 0 filter 1 hsk force clean, frame seqnum 16807
+1970-02-11 05:12:55 Kernel: [ 1759.048648]  [C0][ENC][W][45] venc.c(4590) Chn0 AbortEncTask
+1970-02-11 05:12:55 Kernel: [ 1759.048662]  [C0][ENC][W][45] h26x_enc_cal.c(6731) Chn:0,frame not trigered,up reg.H:0
+1970-02-11 05:12:55 Kernel: [ 1759.048671]  [C0][ENC][E][45] ax_venc_sync_agent.c(449) Chn:0 EncPicHeight:0
+1970-02-11 05:12:55 Kernel: [ 1759.048681]  [C0][ENC][E][45] ax_venc_sync_agent.c(797) Chn:0 ret:0xffffffff,TrigerType:2,EncPicHeight:0,iniVal:1088
+1970-02-11 05:12:55 Kernel: [ 1759.048688]  [C0][ENC][E][45] h26x_enc_cal.c(6734) Chn:0,consume sync code fail
+1970-02-11 05:12:55 Kernel: [ 1759.048695]  [C0][ENC][E][45] venc.c(4594) Chn0 AbortEncTask fail
+1970-02-11 05:12:55 Kernel: [ 1759.048701]  [C0][ENC][E][45] venc.c(9483) Chn:0,AbortEncTask fail
+1970-02-11 05:12:55 Kernel: [ 1759.048712]  [C0][SYS][E][45] ax_sys_link.c(1513) msg notify callback failed!downstream module(7) returned unsupported msg notify -1,please check callback func!
+1970-02-11 05:12:55 Kernel: [ 1759.048719]  [C0][IVPS][E][45] ax_ivps_sched_hsk.c(717) clean merged chn 0 filter 1
+1970-02-11 05:12:55 Kernel: [ 1759.048805]  [C0][BASE][E][45] ax_base_sync_agent.c(1321) wait chn 255 error
+1970-02-11 05:12:55 Kernel: [ 1759.048862]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 16807
+1970-02-11 05:12:55 Kernel: [ 1759.048874]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 16807
+1970-02-11 05:12:55 Kernel: [ 1759.048884]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(467) grp 0 chn -1 filter 0 force trigger hsk, frame seqnum 16807 
+1970-02-11 05:12:55 Kernel: [ 1759.048983]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(484) grp 0 chn -1 filter 0 hsk force clean, frame seqnum 16807
+1970-02-11 05:12:55 Kernel: [ 1759.048993]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(489) grp 0 chn -1 filter 0 hsk force clean, force set reg to 49584
+1970-02-11 05:12:55 Kernel: [ 1759.049082]  [C0][BASE][E][41] ax_base_sync_agent.c(1321) wait chn 255 error
+1970-02-11 05:12:55 Kernel: [ 1759.049109]  [C0][IVPS][E][39] ax_ivps_sched_task.c(797) task status error
+1970-02-11 05:12:55 Kernel: [ 1759.049133]  [C0][IVPS][E][39] ax_ivps_sched_task.c(797) task status error
+1970-02-11 05:12:55 Kernel: [ 1759.049142]  [C0][IVPS][W][39] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+1970-02-11 05:12:55 Kernel: [ 1759.082007]  [C0][SYS][E][45] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 345600 in 'anonymous' partation
+1970-02-11 05:12:55 Kernel: [ 1759.082023]  [C0][IVPS][E][45] ax_ivps_sched_task.c(669) get block fail for out frame 2, size 345600
+1970-02-11 05:12:55 Kernel: [ 1759.082031]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+1970-02-11 05:12:55 Kernel: [ 1759.082044]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 16808
+1970-02-11 05:12:55 Kernel: [ 1759.082052]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 16808
+1970-02-11 05:12:55 Kernel: [ 1759.082064]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(484) grp 0 chn 0 filter 1 hsk force clean, frame seqnum 16808
+1970-02-11 05:12:55 Kernel: [ 1759.082080]  [C0][ENC][W][45] venc.c(4590) Chn0 AbortEncTask
+1970-02-11 05:12:55 Kernel: [ 1759.082094]  [C0][ENC][W][45] h26x_enc_cal.c(6731) Chn:0,frame not trigered,up reg.H:0
+1970-02-11 05:12:55 Kernel: [ 1759.082103]  [C0][ENC][E][45] ax_venc_sync_agent.c(449) Chn:0 EncPicHeight:0
+1970-02-11 05:12:55 Kernel: [ 1759.082113]  [C0][ENC][E][45] ax_venc_sync_agent.c(797) Chn:0 ret:0xffffffff,TrigerType:2,EncPicHeight:0,iniVal:1088
+1970-02-11 05:12:55 Kernel: [ 1759.082120]  [C0][ENC][E][45] h26x_enc_cal.c(6734) Chn:0,consume sync code fail
+1970-02-11 05:12:55 Kernel: [ 1759.082126]  [C0][ENC][E][45] venc.c(4594) Chn0 AbortEncTask fail
+1970-02-11 05:12:55 Kernel: [ 1759.082133]  [C0][ENC][E][45] venc.c(9483) Chn:0,AbortEncTask fail
+1970-02-11 05:12:55 Kernel: [ 1759.082143]  [C0][SYS][E][45] ax_sys_link.c(1513) msg notify callback failed!downstream module(7) returned unsupported msg notify -1,please check callback func!
+1970-02-11 05:12:55 Kernel: [ 1759.082151]  [C0][IVPS][E][45] ax_ivps_sched_hsk.c(717) clean merged chn 0 filter 1
+1970-02-11 05:12:55 Kernel: [ 1759.082288]  [C0][BASE][E][45] ax_base_sync_agent.c(1321) wait chn 255 error
+1970-02-11 05:12:55 Kernel: [ 1759.082332]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 16808
+1970-02-11 05:12:55 Kernel: [ 1759.082345]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 16808
+1970-02-11 05:12:55 Kernel: [ 1759.082355]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(467) grp 0 chn -1 filter 0 force trigger hsk, frame seqnum 16808 
+1970-02-11 05:12:55 Kernel: [ 1759.082469]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(484) grp 0 chn -1 filter 0 hsk force clean, frame seqnum 16808
+1970-02-11 05:12:55 Kernel: [ 1759.082480]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(489) grp 0 chn -1 filter 0 hsk force clean, force set reg to 50664
+1970-02-11 05:12:55 Kernel: [ 1759.083084]  [C0][BASE][E][41] ax_base_sync_agent.c(1321) wait chn 255 error
+1970-02-11 05:12:55 Kernel: [ 1759.083361]  [C1][IVPS][E][39] ax_ivps_sched_task.c(797) task status error
+1970-02-11 05:12:55 Kernel: [ 1759.083391]  [C1][IVPS][E][39] ax_ivps_sched_task.c(797) task status error
+1970-02-11 05:12:55 Kernel: [ 1759.083403]  [C1][IVPS][W][39] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+1970-02-11 05:12:55 Kernel: [ 1759.115288]  [C0][SYS][E][45] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 345600 in 'anonymous' partation
+1970-02-11 05:12:55 Kernel: [ 1759.115303]  [C0][IVPS][E][45] ax_ivps_sched_task.c(669) get block fail for out frame 2, size 345600
+1970-02-11 05:12:55 Kernel: [ 1759.115317]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+1970-02-11 05:12:55 Kernel: [ 1759.115330]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 16809
+1970-02-11 05:12:55 Kernel: [ 1759.115338]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 16809
+1970-02-11 05:12:55 Kernel: [ 1759.115350]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(484) grp 0 chn 0 filter 1 hsk force clean, frame seqnum 16809
+1970-02-11 05:12:55 Kernel: [ 1759.115368]  [C0][ENC][W][45] venc.c(4590) Chn0 AbortEncTask
+1970-02-11 05:12:55 Kernel: [ 1759.115382]  [C0][ENC][W][45] h26x_enc_cal.c(6731) Chn:0,frame not trigered,up reg.H:0
+1970-02-11 05:12:55 Kernel: [ 1759.115391]  [C0][ENC][E][45] ax_venc_sync_agent.c(449) Chn:0 EncPicHeight:0
+1970-02-11 05:12:55 Kernel: [ 1759.115400]  [C0][ENC][E][45] ax_venc_sync_agent.c(797) Chn:0 ret:0xffffffff,TrigerType:2,EncPicHeight:0,iniVal:1088
+1970-02-11 05:12:55 Kernel: [ 1759.115407]  [C0][ENC][E][45] h26x_enc_cal.c(6734) Chn:0,consume sync code fail
+1970-02-11 05:12:55 Kernel: [ 1759.115414]  [C0][ENC][E][45] venc.c(4594) Chn0 AbortEncTask fail
+1970-02-11 05:12:55 Kernel: [ 1759.115420]  [C0][ENC][E][45] venc.c(9483) Chn:0,AbortEncTask fail
+1970-02-11 05:12:55 Kernel: [ 1759.115430]  [C0][SYS][E][45] ax_sys_link.c(1513) msg notify callback failed!downstream module(7) returned unsupported msg notify -1,please check callback func!
+1970-02-11 05:12:55 Kernel: [ 1759.115438]  [C0][IVPS][E][45] ax_ivps_sched_hsk.c(717) clean merged chn 0 filter 1
+1970-02-11 05:12:55 Kernel: [ 1759.115524]  [C0][BASE][E][45] ax_base_sync_agent.c(1321) wait chn 255 error
+1970-02-11 05:12:55 Kernel: [ 1759.115570]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 16809
+1970-02-11 05:12:55 Kernel: [ 1759.115583]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 16809
+1970-02-11 05:12:55 Kernel: [ 1759.115592]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(467) grp 0 chn -1 filter 0 force trigger hsk, frame seqnum 16809 
+1970-02-11 05:12:55 Kernel: [ 1759.115684]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(484) grp 0 chn -1 filter 0 hsk force clean, frame seqnum 16809
+1970-02-11 05:12:55 Kernel: [ 1759.115694]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(489) grp 0 chn -1 filter 0 hsk force clean, force set reg to 51744
+1970-02-11 05:12:55 Kernel: [ 1759.115782]  [C0][BASE][E][41] ax_base_sync_agent.c(1321) wait chn 255 error
+1970-02-11 05:12:55 Kernel: [ 1759.115809]  [C0][IVPS][E][39] ax_ivps_sched_task.c(797) task status error
+1970-02-11 05:12:55 Kernel: [ 1759.115833]  [C0][IVPS][E][39] ax_ivps_sched_task.c(797) task status error
+1970-02-11 05:12:55 Kernel: [ 1759.115843]  [C0][IVPS][W][39] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+1970-02-11 05:12:55 Kernel: [ 1759.148607]  [C1][SYS][E][45] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 345600 in 'anonymous' partation
+1970-02-11 05:12:55 Kernel: [ 1759.148623]  [C1][IVPS][E][45] ax_ivps_sched_task.c(669) get block fail for out frame 2, size 345600
+1970-02-11 05:12:55 Kernel: [ 1759.148632]  [C1][IVPS][E][45] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+1970-02-11 05:12:55 Kernel: [ 1759.148645]  [C1][IVPS][E][45] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 16810
+1970-02-11 05:12:55 Kernel: [ 1759.148653]  [C1][IVPS][E][45] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 16810
+1970-02-11 05:12:55 Kernel: [ 1759.148674]  [C1][IVPS][E][45] ax_ivps_sched_engine_mgr.c(484) grp 0 chn 0 filter 1 hsk force clean, frame seqnum 16810
+1970-02-11 05:12:55 Kernel: [ 1759.148691]  [C1][ENC][W][45] venc.c(4590) Chn0 AbortEncTask
+1970-02-11 05:12:55 Kernel: [ 1759.148705]  [C1][ENC][W][45] h26x_enc_cal.c(6731) Chn:0,frame not trigered,up reg.H:0
+1970-02-11 05:12:55 Kernel: [ 1759.148713]  [C1][ENC][E][45] ax_venc_sync_agent.c(449) Chn:0 EncPicHeight:0
+1970-02-11 05:12:55 Kernel: [ 1759.148723]  [C1][ENC][E][45] ax_venc_sync_agent.c(797) Chn:0 ret:0xffffffff,TrigerType:2,EncPicHeight:0,iniVal:1088
+1970-02-11 05:12:55 Kernel: [ 1759.148729]  [C1][ENC][E][45] h26x_enc_cal.c(6734) Chn:0,consume sync code fail
+1970-02-11 05:12:55 Kernel: [ 1759.148736]  [C1][ENC][E][45] venc.c(4594) Chn0 AbortEncTask fail
+1970-02-11 05:12:55 Kernel: [ 1759.148743]  [C1][ENC][E][45] venc.c(9483) Chn:0,AbortEncTask fail
+1970-02-11 05:12:55 Kernel: [ 1759.148753]  [C1][SYS][E][45] ax_sys_link.c(1513) msg notify callback failed!downstream module(7) returned unsupported msg notify -1,please check callback func!
+1970-02-11 05:12:55 Kernel: [ 1759.148761]  [C1][IVPS][E][45] ax_ivps_sched_hsk.c(717) clean merged chn 0 filter 1
+1970-02-11 05:12:55 Kernel: [ 1759.148848]  [C1][BASE][E][45] ax_base_sync_agent.c(1321) wait chn 255 error
+1970-02-11 05:12:55 Kernel: [ 1759.148886]  [C1][IVPS][E][41] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 16810
+1970-02-11 05:12:55 Kernel: [ 1759.148899]  [C1][IVPS][E][41] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 16810
+1970-02-11 05:12:55 Kernel: [ 1759.148909]  [C1][IVPS][E][41] ax_ivps_sched_engine_mgr.c(467) grp 0 chn -1 filter 0 force trigger hsk, frame seqnum 16810 
+1970-02-11 05:12:55 Kernel: [ 1759.148999]  [C1][IVPS][E][41] ax_ivps_sched_engine_mgr.c(484) grp 0 chn -1 filter 0 hsk force clean, frame seqnum 16810
+1970-02-11 05:12:55 Kernel: [ 1759.149009]  [C1][IVPS][E][41] ax_ivps_sched_engine_mgr.c(489) grp 0 chn -1 filter 0 hsk force clean, force set reg to 52824
+1970-02-11 05:12:55 Kernel: [ 1759.149098]  [C1][BASE][E][41] ax_base_sync_agent.c(1321) wait chn 255 error
+1970-02-11 05:12:55 Kernel: [ 1759.149125]  [C1][IVPS][E][39] ax_ivps_sched_task.c(797) task status error
+1970-02-11 05:12:55 Kernel: [ 1759.149148]  [C1][IVPS][E][39] ax_ivps_sched_task.c(797) task status error
+1970-02-11 05:12:55 Kernel: [ 1759.149158]  [C1][IVPS][W][39] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+1970-02-11 05:12:55 Kernel: [ 1759.181928]  [C0][SYS][E][45] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 345600 in 'anonymous' partation
+1970-02-11 05:12:55 Kernel: [ 1759.181944]  [C0][IVPS][E][45] ax_ivps_sched_task.c(669) get block fail for out frame 2, size 345600
+1970-02-11 05:12:55 Kernel: [ 1759.181953]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+1970-02-11 05:12:55 Kernel: [ 1759.181966]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 16811
+1970-02-11 05:12:55 Kernel: [ 1759.181974]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 16811
+1970-02-11 05:12:55 Kernel: [ 1759.181986]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(484) grp 0 chn 0 filter 1 hsk force clean, frame seqnum 16811
+1970-02-11 05:12:55 Kernel: [ 1759.182003]  [C0][ENC][W][45] venc.c(4590) Chn0 AbortEncTask
+1970-02-11 05:12:55 Kernel: [ 1759.182016]  [C0][ENC][W][45] h26x_enc_cal.c(6731) Chn:0,frame not trigered,up reg.H:0
+1970-02-11 05:12:55 Kernel: [ 1759.182025]  [C0][ENC][E][45] ax_venc_sync_agent.c(449) Chn:0 EncPicHeight:0
+1970-02-11 05:12:55 Kernel: [ 1759.182035]  [C0][ENC][E][45] ax_venc_sync_agent.c(797) Chn:0 ret:0xffffffff,TrigerType:2,EncPicHeight:0,iniVal:1088
+1970-02-11 05:12:55 Kernel: [ 1759.182042]  [C0][ENC][E][45] h26x_enc_cal.c(6734) Chn:0,consume sync code fail
+1970-02-11 05:12:55 Kernel: [ 1759.182048]  [C0][ENC][E][45] venc.c(4594) Chn0 AbortEncTask fail
+1970-02-11 05:12:55 Kernel: [ 1759.182055]  [C0][ENC][E][45] venc.c(9483) Chn:0,AbortEncTask fail
+1970-02-11 05:12:55 Kernel: [ 1759.182065]  [C0][SYS][E][45] ax_sys_link.c(1513) msg notify callback failed!downstream module(7) returned unsupported msg notify -1,please check callback func!
+1970-02-11 05:12:55 Kernel: [ 1759.182073]  [C0][IVPS][E][45] ax_ivps_sched_hsk.c(717) clean merged chn 0 filter 1
+1970-02-11 05:12:55 Kernel: [ 1759.182160]  [C0][BASE][E][45] ax_base_sync_agent.c(1321) wait chn 255 error
+1970-02-11 05:12:55 Kernel: [ 1759.182239]  [C0][IVPS][E][39] ax_ivps_sched_task.c(797) task status error
+1970-02-11 05:12:55 Kernel: [ 1759.182315]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(335) engine gdc online dst input fail, task cancel, u64SeqNum 16811
+1970-02-11 05:12:55 Kernel: [ 1759.182329]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(424) grp 0 chn -1 filter 0 engine gdc process_async_trigger error, frame seqnum 16811
+1970-02-11 05:12:55 Kernel: [ 1759.182340]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(467) grp 0 chn -1 filter 0 force trigger hsk, frame seqnum 16811 
+1970-02-11 05:12:55 Kernel: [ 1759.182442]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(484) grp 0 chn -1 filter 0 hsk force clean, frame seqnum 16811
+1970-02-11 05:12:55 Kernel: [ 1759.182451]  [C0][IVPS][E][41] ax_ivps_sched_engine_mgr.c(489) grp 0 chn -1 filter 0 hsk force clean, force set reg to 53904
+1970-02-11 05:12:55 Kernel: [ 1759.183036]  [C0][BASE][E][41] ax_base_sync_agent.c(1321) wait chn 255 error
+1970-02-11 05:12:55 Kernel: [ 1759.183082]  [C0][IVPS][E][39] ax_ivps_sched_task.c(797) task status error
+1970-02-11 05:12:55 Kernel: [ 1759.183098]  [C0][IVPS][W][39] ax_ivps_sched_task.c(421) task status abnormal delete: 6
+1970-02-11 05:12:55 Kernel: [ 1759.215275]  [C0][SYS][E][45] ax_pool_drv.c(1558) [ModId:13]Get block fail!Can't find a block with size 345600 in 'anonymous' partation
+1970-02-11 05:12:55 Kernel: [ 1759.215290]  [C0][IVPS][E][45] ax_ivps_sched_task.c(669) get block fail for out frame 2, size 345600
+1970-02-11 05:12:55 Kernel: [ 1759.215304]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(316) grp 0 chn 0 task alloc out buf failed
+1970-02-11 05:12:55 Kernel: [ 1759.215317]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(424) grp 0 chn 0 filter 1 engine vpp1_online process_async_trigger error, frame seqnum 16812
+1970-02-11 05:12:55 Kernel: [ 1759.215325]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(448) engine vpp1_online online mode, input fail, task cancel, u64SeqNum 16812
+1970-02-11 05:12:55 Kernel: [ 1759.215337]  [C0][IVPS][E][45] ax_ivps_sched_engine_mgr.c(484) grp 0 chn 0 filter 1 hsk force clean, frame seqnum 16812

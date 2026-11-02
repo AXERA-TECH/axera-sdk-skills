@@ -1,0 +1,10 @@
+prompt: |
+  使用已安装的 sdk-bsp-sys-diag-skill 技能分析问题：
+  “AX615 上我用 AX_IVPS_GetChnFrame 拿帧做二维码识别，退出时偶发崩溃。我的调用是：AX_IVPS_GetChnFrame → AX_SYS_Mmap →(识别)→ AX_SYS_Munmap → AX_IVPS_ReleaseChnFrame → AX_SYS_MemFree。手上暂时没抓到日志。你看是哪里的问题？”
+  请依据技能内置流程和知识库完成诊断，将最终诊断报告生成到 out/diagnosis.md。
+expect:
+  files:
+    - path: out/diagnosis.md
+      exists: true
+      min_bytes: 100
+  assert: assert.sh

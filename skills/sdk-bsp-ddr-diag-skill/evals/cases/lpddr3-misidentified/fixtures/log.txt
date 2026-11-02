@@ -1,0 +1,20 @@
+SDIFUSThe download form usb
+download to NOR
+enter download mode
+ddr init start...
+ddr freq=2133Mbps
+dram type is DDR3
+.............DDR3 training start.............
+1.DDR3 gate training
+2.DDR3 read eye training
+read eye training fail!
+POS Result -> DS0: 0x000, DS1: 0x000
+read eye training fail!
+NEG Result -> DS0: 0x000, DS1: 0x000
+3.DDR3 write deskew training
+write deskew training fail!
+4.DDR3 write eye training
+write eye training fail !
+fdl usb init
+usb handshake success
+enter fw_load_and_exec

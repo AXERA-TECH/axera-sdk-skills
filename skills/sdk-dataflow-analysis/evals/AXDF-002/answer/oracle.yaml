@@ -1,0 +1,42 @@
+root_cause: FRTDemo scenario_8 的 IVPS 二对二分流会同时输出 chn0 和 chn1。chn1 已通过 VPP_VGP 到 JENC 的 LowMem HSK 输出 JPEG，又把主码流 chn0 配成 MJPEG，并通过 VPP 到 JENC 的 LowMem HSK 输出，形成同一硬件同时工作的两路 JENC HSK；AX615 不支持该组合，数据流在 VPP/IVPS 侧卡住。
+required_concepts:
+  - AX_SYS_Link_V2
+  - AX_MOD_DATA_FLOW_SW_LOW_MEM
+  - 识别 scenario_8 为 IVPS 二对二分流，chn0 与 chn1 同时输出
+  - 识别主码流 chn0 的 encoder 1002 为 MJPEG
+  - 识别 chn1 为 JPEG/JENC
+  - link_table_kernel 显示 VPP(0,0) 到 JENC(0,0) 与 VPP/VGP(0,1) 到 JENC(0,1) 两路 LowMem HSK 同时存在
+  - 同一硬件不支持两路 JENC HSK 同时工作
+  - VPP timeout 是硬件 HSK 资源冲突后的直接现象
+  - VIN/CMM Get block fail 是数据流堵塞后的传播结果，不是首次根因
+  - 修正方式是 chn1 JPEG HSK 存在时保持主码流为 H264/H265，或让其中一路改为非 HSK/非同时工作方案
+forbidden_conclusions:
+  - nRingLineCnt 非法
+  - sensor 初始化失败
+  - VB/CMM 内存配置不足是首要根因
+  - 单纯增大 pool 可以解决问题
+  - 只需 unlink 并切换编码类型即可支持该双 HSK 组合
+evidence_signatures:
+  input/serial.log:
+    - 'VENC attr: chn:0, encoder:1002'
+    - 'JENC attr: chn:1'
+    - 'VPP[2] timeout'
+  input/logctl.proc:
+    - 'VENC     7     6'
+    - 'IVPS    13     6'
+    - 'VIN    17     6'
+  input/link.proc:
+    - '(VPP'
+    - '(JENC'
+    - 'Engine (1:VPP --> 3:JENC)'
+    - 'Engine (2:VPPVGP --> 3:JENC)'
+  input/ivps.proc:
+    - 'engine_vpp1 task: count = 0'
+    - 'vpp1_online task: count = 2'
+  input/vin.proc:
+    - 'YUV_PST 2073600'
+expected_confidence: high
+evaluation_notes:
+  - encoder 1002 到 MJPEG 的映射由同一 serial.log 中 FRTDemo 配置语义和 SDK 编码日志共同确认；复现补丁仅供 evaluator 复核。
+  - syslog 的 pool 错误发生在 VPP timeout 之后，不能倒因为内存不足。
+  - 分析必须结合 link_table_kernel 的两路 JENC engine 拓扑，不能仅凭单条 timeout 下结论。

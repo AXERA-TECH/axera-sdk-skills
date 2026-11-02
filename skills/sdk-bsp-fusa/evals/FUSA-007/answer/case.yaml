@@ -1,0 +1,31 @@
+schema_version: 1
+id: FUSA-007
+title: 平台纠偏：客户拿另一平台的节点路径排查，且 FCU 进程已缺失
+category: platform-correction/qnx-process-silence
+source: synthetic
+analyzer:
+  skill: sdk-bsp-fusa
+  runtime_name: sdk-bsp-fusa
+platform: qnx
+platform_evidence: QNX 侧 diag_stl.c 命中；SDK_VERSION=QNX_V1.10.0 带前缀；板端 /proc/ax_diag/ 存在、uname 为 QNX 7.1
+expected_stage: S1
+input:
+  type: client_report
+  files:
+    - input/prompt.md
+    - input/sdk-check.txt
+  capture:
+    notes:
+      - 客户原文里同时出现两个平台的路径：那份手册的步骤是另一平台的，板端事实是本平台的。
+      - 进程表里 fcu_drv 缺失，且 /dev/fcu 不存在，这是本 Case 的第二考点。
+      - 客户把"节点不存在"直接推断成"FuSa 没编译进去"，需要纠偏。
+oracle: answer/oracle.yaml
+lint:
+  allow_cross_platform: true
+separation:
+  analyzer_visible:
+    - input/prompt.md
+    - input/sdk-check.txt
+  evaluator_only:
+    - answer/oracle.yaml
+    - answer/case.yaml

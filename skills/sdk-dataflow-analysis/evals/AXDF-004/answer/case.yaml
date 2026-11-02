@@ -1,0 +1,56 @@
+schema_version: 1
+id: AXDF-004
+title: LowMem VIN→IVPS 运行期旋转 90 度
+category: module-dataflow/ax-sys-link-v2/runtime-constraint
+analyzer:
+  skill: sdk-dataflow-analysis
+platform:
+  soc: AX615
+  project: AX615_nor
+  flash: spi_nor
+  ddr_mb: 64
+  sensor: mis20s1
+reproducer:
+  patch: answer/reproducer.patch
+  application: /opt/bin/FRTDemo/frtdemo
+  command: cd /opt/bin/FRTDemo && ./frtdemo -p 0 -s 16 -n 1
+input:
+  type: log_set
+  files:
+    - input/serial.log
+    - input/syslog.log
+    - input/logctl.proc
+    - input/vin.proc
+    - input/ivps.proc
+    - input/venc.proc
+    - input/link.proc
+  capture:
+    userlog_level: info
+    userlog_level_value: 6
+    userlog_modules:
+      VIN: 17
+      IVPS: 13
+      VENC: 7
+    syslog_source:
+      - /tmp/data/AXSyslog/syslog/（本轮 logserviced 切片）
+    notes:
+      - 本包 input 来自 SDK V3.13.0_20260909180121，ddr64/config_lite，VIN→IVPS 已是 LowMem（mode 1, src NONE, dst GDC）。
+      - serial.log 覆盖 FRTDemo 启动、TestSuite Rotation 0→1、VIN ioctl 失败、IVPS/VENC 仍改几何，以及之后 VENC fps 0.00 recv 0。
+      - proc 与 serial.log 属同一轮现场；vin.proc CHN Rotation 仍为 0，VIN 几何仍为 1920x1080。
+      - syslog.log 只覆盖采集时刻附近的 GDC HSK/IVPS Get block 连锁错误，不含 SetChnRotation 瞬间；首次失败点见 serial.log。
+      - 板端 C 核对于 V3.12.0 ddr128（AX615_nor_mis20s1_V3.12.0_20260908162155_uclibc.axp）上将默认 ppl VIN→IVPS 改为 LowMem，并加 -u 1 后复现同一 VIN ioctl 0x80110114 与 IVPS 改几何。ddr128 默认 config 的 VIN→IVPS 是 Offline，必须改成 LowMem 才能复现。
+      - V3.12.0 的 CIPCBuilder 仅当 isUTEnabled()（-u 1）为真才启动 TestSuite；V3.13.0 本包未加 -u 也能 ParseVINJson。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/serial.log
+    - input/syslog.log
+    - input/logctl.proc
+    - input/vin.proc
+    - input/ivps.proc
+    - input/venc.proc
+    - input/link.proc
+  evaluator_only:
+    - answer/oracle.yaml
+    - answer/reproducer.patch
+    - answer/case.yaml

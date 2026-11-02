@@ -1,0 +1,51 @@
+version: 1
+defaults:
+  timeout_seconds: 240
+  samples: 1
+gates:
+  smoke: [m57-boot-chain]
+budget:
+  max_agent_runs: 10
+  max_wall_seconds: 1800
+  concurrency: 2
+cases:
+  - id: m57-boot-chain
+    path: cases/m57-boot-chain
+    kind: behavior
+    required: true
+  - id: m57-scope-boundary
+    path: cases/m57-scope-boundary
+    kind: behavior
+    required: true
+  - id: m57-ab-faq-log-scenario-0
+    path: cases/m57-ab-faq-log-scenario-0
+    kind: behavior
+    required: true
+  - id: m57-bootcnt
+    path: cases/m57-bootcnt
+    kind: behavior
+    required: true
+  - id: m57-rtos-ocm-ddr
+    path: cases/m57-rtos-ocm-ddr
+    kind: behavior
+    required: true
+  - id: m57-reset-main
+    path: cases/m57-reset-main
+    kind: behavior
+    required: true
+  - id: ax637-ab-enable
+    path: cases/ax637-ab-enable
+    kind: behavior
+    required: true
+  - id: ax637-distro-boot
+    path: cases/ax637-distro-boot
+    kind: behavior
+    required: true
+  - id: ax637-simple-bootcmd-nonab
+    path: cases/ax637-simple-bootcmd-nonab
+    kind: behavior
+    required: true
+  - id: ax637-bootrom-diagnosis
+    path: cases/ax637-bootrom-diagnosis
+    kind: behavior
+    required: true

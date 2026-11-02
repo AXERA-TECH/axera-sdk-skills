@@ -1,0 +1,34 @@
+schema_version: 1
+id: ivd-003
+display_id: IVD-003
+title: 单支冻结：JENC chn1 支路（sess1）两轮停滞而 VENC chn0/chn2 与 IVPS 主链正常推进
+category: ivps-venc/partial-stall
+analyzer:
+  skill: sdk-ivps-venc-diagnose
+platform:
+  soc: AX615
+  sdk_version: V3.15.0
+input:
+  type: proc_sampling
+  files:
+    - input/hsk_proc.txt
+  capture:
+    samples: 2
+    sample_interval_seconds: 5
+    source: derived
+    notes:
+      - 以 ivd-002（captured 正常出流双轮采样）为基底做确定性差分派生。
+      - 派生规则：SAMPLE 2 中 JENC 支路整体替换为 SAMPLE 1 对应内容（syncagent 的
+        SessId 1 SESSION 块与 jenc proc 全块逐字复制），模拟该支路两轮完全冻结；
+        其余部分（venc chn0/chn2、ivps 各 filter、sess0、sess2/ISP）保持原始推进不变。
+      - 采样前已执行 echo 'priv on' > /proc/ax_proc/syncagent（随基底继承）。
+      - 拓扑：IVPS 0/0->VENC 0/0 为 SW_Low_Mem HSK（sess0）；IVPS 0/1->VENC 0/1 实为
+        JENC chn1（JPEG，经 VPP+VGP 二对一汇入 sess1）；IVPS 0/2->VENC 0/2 为 SW_Offline；
+        JENC chn15 已创建但未启用（bHsk=N，全 0）。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/hsk_proc.txt
+  evaluator_only:
+    - answer/manifest.yaml
+    - answer/oracle.yaml

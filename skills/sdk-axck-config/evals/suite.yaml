@@ -1,0 +1,24 @@
+version: 1
+defaults:
+  timeout_seconds: 240
+  samples: 1
+gates:
+  smoke:
+  - cfg-001
+budget:
+  max_agent_runs: 6
+  max_wall_seconds: 1200
+  concurrency: 2
+cases:
+- id: cfg-001
+  path: cases/cfg-001
+  kind: behavior
+  required: true
+- id: cfg-002
+  path: cases/cfg-002
+  kind: behavior
+  required: true
+- id: cfg-003
+  path: cases/cfg-003
+  kind: behavior
+  required: true

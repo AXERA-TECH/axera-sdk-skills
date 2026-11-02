@@ -1,0 +1,32 @@
+# 由 evals.json 自动迁移生成，请按需补全平台与复现信息
+{
+  "schema_version": 1,
+  "id": "AXVO-setting-002",
+  "title": "AX615Q BT1120 1080p30（表外推导 + RGB 源 CSC）",
+  "category": "generation/derived/1080p30-bt1120",
+  "analyzer": {
+    "skill": "sdk-vo-analysis"
+  },
+  "platform": {
+    "soc": "AX615",
+    "skill_baseline": "V3.14.0",
+    "interface": "BT1120",
+    "resolution": "1920x1080@30"
+  },
+  "input": {
+    "type": "scenario",
+    "files": [
+      "input/scenario.md"
+    ]
+  },
+  "oracle": "answer/oracle.yaml",
+  "separation": {
+    "analyzer_visible": [
+      "input/scenario.md"
+    ],
+    "evaluator_only": [
+      "answer/oracle.yaml",
+      "answer/case.yaml"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+# 由 evals.json 自动迁移生成
+{
+  "root_cause": "查表命中已验证时序表的 1920x1080@30f_bt656 条目（u32Pclk=148500, bDlbClk=0）；enIntfFmt=YUV422；CSC 矩阵建议有依据（YUV 源可 IDENTITY/BT601_TO_BT601）；标准调用序列含返回值检查；buffer 走池内存+物理地址；VSYNC 节拍送帧；给出 proc 验证步骤；引用表数据时带版本标注",
+  "required_concepts": [
+    "时序参数来自已验证时序表条目（1920x1080@30f_bt656：u32Pclk=148500、bDlbClk=0、bIop=1），并标注来源",
+    "代码骨架按 Init→SetPubAttr→(SetDataPinMap)→SetCSC→Enable→SendFrame2Disp 顺序，每步含返回值检查；退出顺序为 UnReg→Disable→Deinit",
+    "enIntfFmt=YUV422（BT656 只支持 YUV422）；CSC 矩阵选择与源色域一致且有依据，未配 RGB 源 IDENTITY 类非法组合",
+    "给出 buffer 来源建议（SDK 池内存/物理地址/block id 回填）、s32MS 取值与 VSYNC 节拍送帧建议",
+    "给出验证步骤（proc display_status 预期值 ScanType/Refresh/Pclk/InFifoSize + VSYNC 实测帧率）",
+    "引用时序表 / PCLK 表数据时带版本标注（「SDK V3.14.0 实现行为，需按版本核验」或等价声明）",
+    "输出不出现实现侧源码路径/文件名/内部符号名/源码行号（允许公开头文件名、官方 sample 文件名、skill 脚本名、客户 API 名与错误码名、proc 路径）"
+  ],
+  "forbidden_conclusions": [
+    "生成 u32Pclk=74250 且 bDlbClk=0 的 1080p30 bt656 配置",
+    "为 BT656 输出配置 RGB 格式"
+  ],
+  "evidence_signatures": {
+    "input/scenario.md": [
+      "AX615Q",
+      "BT656",
+      "1920x1080@30f"
+    ]
+  },
+  "expected_confidence": "high",
+  "evaluation_notes": [
+    "由 sdk-vo-analysis-all/evals/evals.json 原用例 id=0 迁移。",
+    "root_cause 字段在本 Case 表示期望分析结论/期望生成结果的核心内容（见 grading.md）。"
+  ]
+}

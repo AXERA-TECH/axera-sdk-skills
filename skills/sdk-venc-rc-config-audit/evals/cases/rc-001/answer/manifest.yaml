@@ -1,0 +1,26 @@
+schema_version: 1
+id: rc-001
+display_id: RC-001
+title: CBR 呼吸效应：MaxIQp=30 偏低叠加 IpropMax 拉满与 GOP=30 短周期
+category: venc-rc/cbr/breathing
+analyzer:
+  skill: sdk-venc-rc-config-audit
+platform:
+  soc: AX615
+  sdk_version: V3.15.0
+input:
+  type: proc_snapshot
+  files:
+    - input/venc_proc.txt
+  capture:
+    source: derived
+    notes:
+      - 真实双通道样本（2688x1520 主码流 + 720x576 子码流）为基底，chn0 改 MaxIQp=30/GOP=30 派生。
+      - 现场现象（呼吸效应）通过 case.yaml 的任务提示词提供，不在 proc 内。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/venc_proc.txt
+  evaluator_only:
+    - answer/manifest.yaml
+    - answer/oracle.yaml

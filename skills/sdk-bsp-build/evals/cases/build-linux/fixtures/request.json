@@ -1,0 +1,4 @@
+{
+  "task": "SDK 根目录为 /work/sdk/ax615。前提：AX615_fastnor 已由实际 make plist 确认为有效工程。只编译 Linux：进入 kernel/linux，执行 make p=\"$PROJECT\" clean all install -j64。不要编译其他模块或打包。 本次仅输出执行方案，不运行构建。",
+  "attachments": []
+}

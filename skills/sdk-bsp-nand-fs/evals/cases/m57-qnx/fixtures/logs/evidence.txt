@@ -1,0 +1,3 @@
+[00:00:02.041] ax_mtd: IPC request timed out while waiting for flash service
+[00:00:02.045] mtdpart: cannot obtain flash geometry from ax_mtd
+[00:00:02.051] etfs: filesystem startup failed; mount unavailable

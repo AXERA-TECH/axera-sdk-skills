@@ -1,0 +1,26 @@
+schema_version: 1
+id: rc-006
+display_id: RC-006
+title: 多通道次生干扰：chn1 QP 范围颠倒为唯一真错误，chn2 QVBR 占位符不作异常
+category: venc-rc/common/multi-channel-noise
+analyzer:
+  skill: sdk-venc-rc-config-audit
+platform:
+  soc: AX615
+  sdk_version: V3.15.0
+input:
+  type: proc_snapshot
+  files:
+    - input/venc_proc.txt
+  capture:
+    source: derived
+    notes:
+      - 真实双通道样本为基底，chn1 改 QP 颠倒，另增 chn2 QVBR 占位通道。
+      - chn1 的 MinQp/MaxQp 颠倒为注入的配置错误；chn2 QVBR 专属列按驱动实际行为打印 '-'。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/venc_proc.txt
+  evaluator_only:
+    - answer/manifest.yaml
+    - answer/oracle.yaml

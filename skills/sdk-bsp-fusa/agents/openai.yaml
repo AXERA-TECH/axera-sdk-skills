@@ -1,0 +1,6 @@
+interface:
+  display_name: "M57 FuSa 排查"
+  short_description: "排查 M57 Linux/QNX 功能安全诊断、心跳、错误归属和服务异常"
+  default_prompt: "使用 $sdk-bsp-fusa 排查 M57 FuSa 问题，先确认输入与平台，再依据日志和对应知识库收敛结论。"
+policy:
+  allow_implicit_invocation: false

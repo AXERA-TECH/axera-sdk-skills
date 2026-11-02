@@ -1,0 +1,18 @@
+{
+  "delivery_ready": {
+    "question": "仅凭网页写完是否可交付",
+    "type": "boolean"
+  },
+  "reboot_required": {
+    "question": "是否还需重启到目标槽",
+    "type": "boolean"
+  },
+  "business_validation_required": {
+    "question": "是否还需业务验证",
+    "type": "boolean"
+  },
+  "successful_proven": {
+    "question": "题目是否已证明 AB successful",
+    "type": "boolean"
+  }
+}

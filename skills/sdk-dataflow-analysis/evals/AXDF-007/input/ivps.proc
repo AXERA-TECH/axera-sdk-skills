@@ -1,0 +1,53 @@
+===== /proc/ax_proc/ivps =====
+---------------------------------------------- IVPS VERSION -------------------------------------------------------
+[SDK version]: ax_ivps V3.12.0 Sep  8 2026 16:03:42
+---------------------------------------------- INPUT FRAME --------------------------------------------------------
+GrpId W    H    StrideY StrideC Format   Fbc   Level Crop[X    Y    W    H]     BlkId       AddrY       AddrC       PTS                SeqNum      PrivData UserData 
+0     1920 1080 1920    1920    NV12     LOSSY 10         0    0    1920 1080   0x5e003000  0x42e66000  0x42fe1b00  0x7512f897         2214        0        0        
+---------------------------------------------- GRP INFO -----------------------------------------------------------
+GrpId Pool[Type Id] FRCMode Frc(src:dst)   InFps  OutFps InFifo DbgFifo ChnNum FilterNum Crop[En Mode  X    Y    W    H] Task UniqueTask
+0          COM  -1  RATIO     0.0 :  0.0   30.0   30.0   2      0       3      1              0  ABS   0    0    0    0  0    0         
+---------------------------------------------- CHN INFO -----------------------------------------------------------
+GrpId ChnId Priority OutDepth OutSts Pool[Type Id] OutputW OutputH FrcMode Frc(src:dst)   InFps  OutFps Task
+0     0     10       0        0           COM  -1  2688    1520    RATIO    30.0 : 30.0   30.0   30.0   0   
+0     1     10       1        0           COM  -1  1280    720     RATIO    30.0 : 10.0   30.0   10.0   0   
+0     2     10       0        0           COM  -1  720     576     RATIO    30.0 : 30.0   30.0   30.0   0   
+---------------------------------------------- FILTER INFO --------------------------------------------------------
+GrpId ChnId FltId Engine DstW DstH Stride Format   Fbc   Level Crop[En Mode  X    Y    W    H]    bInplace
+0     -1    0     GDC    1920 1080 1920   NV12     NONE  0          0  ABS   0    0    0    0     N       
+0     0     1     SCL    2688 1520 2688   NV12     LOSSY 10         0  ABS   0    0    0    0     N       
+0     1     2     SCL    1280 720  1280   NV12     NONE  0          0  ABS   0    0    0    0     N       
+0     2     3     SCL    720  576  768    NV12     LOSSY 4          0  ABS   0    0    0    0     N       
+0     2     4     VGP    720  576  768    NV12     LOSSY 4          0  ABS   0    0    0    0     Y       
+---------------------------------------------- FILTER STATE -------------------------------------------------------
+GrpId ChnId FltId En Engine TotalCnt   Fail1 Fail2 InCnt      OutCnt     TimeCur TimeAve TimeMin TimeMax Frc(Mode En   Src :  Dst)
+0     -1    0     1  GDC    2199       0     0     2199       2199       13111   13483   13093   16039      RATIO  0   0.0 :  0.0 
+0     0     1     1  SCL    2199       0     0     2199       2199       13817   14223   13436   16630      RATIO  0  30.0 : 30.0 
+0     1     2     1  SCL    2199       0     0     2199       733        13817   14223   13436   16630      RATIO  1  30.0 : 10.0 
+0     2     3     1  SCL    2199       0     0     2199       2199       13817   14223   13436   16630      RATIO  0  30.0 : 30.0 
+0     2     4     1  VGP    2199       0     0     2199       2199       439     557     364     1224       RATIO  0   0.0 :  0.0 
+---------------------------------------------- SCALE RANGE INFO ---------------------------------------------------
+Range[ < 8/64  >=8/64 >=12/64 >=16/64 >=20/64 >=24/64 >=28/64 >=32/64 >=36/64 >=40/64 >=44/64 >=48/64 >=52/64 >=56/64 >=60/64 >=64/64]
+Level     0       0       0       0       0       4       4       4       4       4       4       4       4       4       4       4       
+---------------------------------------------- VPP INFO --------------------------------------------------------
+GrpId ChnId FltId bMirror bFlip bCasc CascNum
+0     0     1     N       N     N     0      
+0     1     2     N       N     N     0      
+0     2     3     N       N     N     0      
+---------------------------------------------- VGP INFO --------------------------------------------------------
+GrpId ChnId FltId bMirror bFlip
+0     2     4     N       N    
+---------------------------------------------- GDC INFO --------------------------------------------------------
+GrpId ChnId FltId DewarpType Rotate bMirror bFlip
+0     -1    0     BYPASS     0      N       N    
+
+
+===== /proc/ax_proc/ivps_sched =====
+--------SDK VERSION--------
+[SDK version]: axdrv V3.12.0 Sep  8 2026 16:00:03
+-----IVPS SCHED DEBUG------
+gdc task: count = 27090 
+engine_vpp0 task: count = 0 
+engine_vpp1 task: count = 4189 
+vgp task: count = 12567 
+vpp1_online task: count = 27090

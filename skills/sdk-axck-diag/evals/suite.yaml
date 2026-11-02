@@ -1,0 +1,28 @@
+version: 1
+defaults:
+  timeout_seconds: 240
+  samples: 1
+gates:
+  smoke:
+  - diag-001
+budget:
+  max_agent_runs: 6
+  max_wall_seconds: 1200
+  concurrency: 2
+cases:
+- id: diag-001
+  path: cases/diag-001
+  kind: behavior
+  required: true
+- id: diag-002
+  path: cases/diag-002
+  kind: behavior
+  required: true
+- id: diag-003
+  path: cases/diag-003
+  kind: behavior
+  required: true
+- id: diag-004
+  path: cases/diag-004
+  kind: behavior
+  required: true

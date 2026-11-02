@@ -1,0 +1,20 @@
+schema_version: 1
+id: AXCK-003
+title: SIF FIFO Overflow 导致帧丢失与下游饥饿卡顿
+category: hardware/sensor/sif_overflow
+analyzer:
+  skill: sdk-axck-diag
+platform:
+  soc: AX615
+  project: AX615_dashcam_nor
+input:
+  type: log_set
+  files:
+    - input/serial.log
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/serial.log
+  evaluator_only:
+    - answer/oracle.yaml
+    - answer/case.yaml

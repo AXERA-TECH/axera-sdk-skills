@@ -1,0 +1,33 @@
+schema_version: 1
+id: ivd-006
+display_id: IVD-006
+title: HSK session State≠2 前置门禁：sess0 State=1 时先报 session 未工作，不判 VENC 硬件卡死
+category: ivps-venc/hsk-session-not-ready
+analyzer:
+  skill: sdk-ivps-venc-diagnose
+platform:
+  soc: AX615
+  sdk_version: V3.15.0
+input:
+  type: proc_sampling
+  files:
+    - input/hsk_proc.txt
+  capture:
+    samples: 2
+    sample_interval_seconds: 5
+    source: derived
+    notes:
+      - 以 ivd-002（captured 正常出流双轮采样）为基底做确定性差分派生。
+      - 派生规则 1：S2 的 syncagent SessId 0 SESSION 块替换为 S1 对应块（RegVal 冻结
+        在 8704），VENC proc 中 chn0 数据行替换为 S1 对应行（计数冻结），模拟该支路停滞。
+      - 派生规则 2：两轮中 SessId 0 的 SESSION 行 State 由 2 改为 1，其 CONNECT 行
+        State 同步改为 1，模拟 session 未进入正常工作态。
+      - 其余部分（venc chn2、jenc chn1、ivps、sess1、sess2/ISP）保持原始推进不变。
+      - 采样前已执行 echo 'priv on' > /proc/ax_proc/syncagent（随基底继承）。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/hsk_proc.txt
+  evaluator_only:
+    - answer/manifest.yaml
+    - answer/oracle.yaml

@@ -1,0 +1,18 @@
+{
+  "target_os": {
+    "question": "目标 OS（小写）",
+    "type": "string"
+  },
+  "linux_device_number_applicable": {
+    "question": "能否直接使用 Linux 的设备编号",
+    "type": "boolean"
+  },
+  "system_log_tool": {
+    "question": "目标 OS 的系统日志工具名",
+    "type": "string"
+  },
+  "partition_tool": {
+    "question": "文档中 QNX 分区表工具名",
+    "type": "string"
+  }
+}

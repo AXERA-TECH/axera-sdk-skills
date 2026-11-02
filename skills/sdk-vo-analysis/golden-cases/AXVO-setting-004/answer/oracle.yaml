@@ -1,0 +1,25 @@
+# 由 evals.json 自动迁移生成
+{
+  "root_cause": "指出公开 API 的 0x80038A80=AX_ERR_VO_DEV_OP_FAIL 是包装码，PCLK 不命中需结合 dmesg 的 unsupport clk 定位；说明 PCLK 必须精确命中离散档位表（80 槽位/62 可达值），非整除档位按截断取整：合法值是 2571（36000÷14），2572/2571.43 均非法；33300 不可达（最近 33000=198000÷6）；给出修正后的合法取值与实机验证步骤",
+  "required_concepts": [
+    "说明非整除档位按源频率截断取整，合法值 2571（36000÷14）；2572 与 2571.43 均不可用",
+    "指出 33300 不在离散档位表，最近可达 33000（198000÷6）",
+    "指出 0x80038A80 是包装错误码（AX_ERR_VO_DEV_OP_FAIL），须结合 dmesg 的 unsupport clk 与 proc 定位，不能只看 API 返回值",
+    "输出不出现实现侧源码路径/文件名/内部符号名/源码行号"
+  ],
+  "forbidden_conclusions": [
+    "生成 Pclk=2572 或 33300 的配置并声称有效"
+  ],
+  "evidence_signatures": {
+    "input/scenario.md": [
+      "2571.43",
+      "33300",
+      "0x80038A80"
+    ]
+  },
+  "expected_confidence": "high",
+  "evaluation_notes": [
+    "由 sdk-vo-analysis-all/evals/evals.json 原用例 id=4 迁移。",
+    "root_cause 字段在本 Case 表示期望分析结论/期望生成结果的核心内容（见 grading.md）。"
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "AX Dataflow Log Analysis"
+  short_description: "Diagnose AX615 module dataflow failures from logs"
+  default_prompt: "Check the AX615 dataflow input bundle first; if complete, identify the most likely root cause with evidence, otherwise report and collect the missing board logs."

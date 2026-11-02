@@ -1,0 +1,27 @@
+version: 1
+defaults:
+  timeout_seconds: 180
+  samples: 1
+gates:
+  smoke: [full-axp-build-m57]
+budget:
+  max_agent_runs: 4
+  max_wall_seconds: 600
+  concurrency: 2
+cases:
+  - id: full-axp-build-m57
+    path: cases/full-axp-build-m57
+    kind: behavior
+    required: true
+  - id: standalone-kernel-build-ax637
+    path: cases/standalone-kernel-build-ax637
+    kind: behavior
+    required: true
+  - id: disable-optee-build-ax637
+    path: cases/disable-optee-build-ax637
+    kind: behavior
+    required: true
+  - id: list-supported-platforms-m57
+    path: cases/list-supported-platforms-m57
+    kind: behavior
+    required: true

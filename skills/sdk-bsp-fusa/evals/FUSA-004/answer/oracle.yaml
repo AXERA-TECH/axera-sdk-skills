@@ -1,0 +1,38 @@
+platform: qnx
+expected_stage: S3
+root_cause: 结论应落在【检测不确定】，而不是"未含修复"——版本比对是主判据，客户 QNX_V1.10.0 已高于修复版本 V1.1.0，版本上应已含该修复；主线 fcu 目录搜不到关中断原语只能说明"检测不确定"，可能原因是实现已重构搬家、换了原语命名、或补丁仍在 review 目录里没有合入主线。要确认必须扩大检索范围并先读 SDK 内权威文档与当前实现，用对的术语再搜一次。
+required_concepts:
+  - 版本比对是主判据：QNX_V1.10.0 ≥ V1.1.0，版本上应已含该修复
+  - 代码特征检测只作旁证，搜不到特征不能反向推翻版本号判据
+  - 搜不到特征的三种可能：重构搬家、原语不同、补丁在 review 未合入主线
+  - QNX 侧检索范围必须含 fcu_codereview/、code_review/、doc_modify/ 这类 review 目录，补丁可能不在主线
+  - 原语对照：另一平台的 local_irq_save / spin_lock_irqsave 在 QNX 侧对应 InterruptLock / InterruptDisable，按错原语去搜必然 0 匹配
+required_actions:
+  - 明确给出"检测不确定"的结论，并说明为什么不据此判定未含修复
+  - 建议把检索范围扩到 review 目录，并说明怎么确认补丁是否还在 review 中
+  - 给出继续收敛的现场取证方向，而不是让客户直接升级、也不是让客户改代码
+recommended_actions:
+  - 建议先读 SDK 内的 fcu 权威文档与当前实现，确认当前用的是什么原语，再决定搜什么关键词（缺了只降级为 WARN，不影响总 verdict）
+forbidden_conclusions:
+  - 该修复未含，必须升级才能解决
+  - 已确认含该修复，可以排除这个原因
+  - 客户搜到的 0 匹配足以证明实现有问题
+forbidden_actions:
+  - 用另一平台的路径、编译开关或原语命名习惯直接判定 QNX 侧实现
+  - 把版本号判据替换成 Jira / Fix Version 查询结论
+  - 建议客户修改 FuSa 源码
+evidence_signatures:
+  input/sdk-check.txt:
+    - 'QNX_HIT'
+    - 'SDK_VERSION=QNX_V1.10.0'
+    - 'docs/internal/domain/bsp/fcu.md'
+  input/grep-result.txt:
+    - 'rg -c "irq_save|InterruptLock|InterruptDisable"'
+    - '无匹配，退出码 1'
+expected_confidence: medium
+evaluation_notes:
+  - 本 Case 的正确行为是承认"检测不确定"；把 0 匹配直接翻译成"未修复"或"已修复可排除"都算 FAIL。
+  - 不要求说出 review 补丁的具体文件名或 diff 编号。
+  - 不强制要求客户再补更细的检索输出，但必须指出要查 review 目录这一步。
+  - 只提到 fcu_codereview/ 而未逐个列出 code_review/、doc_modify/ 算 matched（不要求穷举 review 目录）。
+  - "先读 SDK 权威文档与当前实现再决定关键词"已降级为 recommended_actions（缺了只 WARN）：2026-09-20 首轮验收因此项被按 required 判成 FAIL。

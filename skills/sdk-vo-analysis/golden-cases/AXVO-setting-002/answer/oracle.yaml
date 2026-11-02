@@ -1,0 +1,27 @@
+# 由 evals.json 自动迁移生成
+{
+  "root_cause": "1080p30 bt1120 不在 54 组已验证表中（仅 12.5f/15f 1080p 条目），走推导模式并标注推导值须实机验证；或指出可复用 1920x1080@30f_bt656_db-edge 的 porch（bDlbClk=1 语义不同需谨慎）；CSC：RGB 源 + YUV422 输出不能配 IDENTITY；给出验证步骤",
+  "required_concepts": [
+    "如实说明 1080p30 bt1120 无已验证表条目（不冒充表命中）",
+    "推导/复用参数明确标注证据等级（推导值须实机验证），未标注为已验证",
+    "RGB 源 + YUV422 输出的 CSC 矩阵不配 IDENTITY，给出正确矩阵建议（如 RGB_TO_BT601_PC/TV 或 BT601_TO_BT601 依据说明）",
+    "输出不出现实现侧源码路径/文件名/内部符号名/源码行号"
+  ],
+  "forbidden_conclusions": [
+    "声称 1080p30 bt1120 是已验证表条目",
+    "为 RGB 源 + YUV422 输出配置 IDENTITY CSC"
+  ],
+  "evidence_signatures": {
+    "input/scenario.md": [
+      "AX615Q",
+      "BT1120",
+      "1080p30",
+      "RGB888"
+    ]
+  },
+  "expected_confidence": "high",
+  "evaluation_notes": [
+    "由 sdk-vo-analysis-all/evals/evals.json 原用例 id=2 迁移。",
+    "root_cause 字段在本 Case 表示期望分析结论/期望生成结果的核心内容（见 grading.md）。"
+  ]
+}

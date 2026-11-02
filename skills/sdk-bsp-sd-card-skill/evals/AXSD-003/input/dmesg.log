@@ -1,0 +1,5 @@
+[    1.100] axera sdhci probe
+[    1.180] sdhci-axera 1b40000.sdhci: mmc0: SDHCI controller on platform
+[    2.000] user inserted SD card
+[    5.012] mmc0: new ultra high speed SDR50 SDHC card at address 0001
+[    5.040] mmcblk0: mmc0:0001 SD32G 29.7 GiB

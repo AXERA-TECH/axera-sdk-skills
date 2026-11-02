@@ -1,0 +1,29 @@
+schema_version: 1
+id: FUSA-006
+title: Linux 改了 JSON 不生效：命中已知可疑点①，配置层可规避但要声明需原厂确认
+category: code-backtrace/known-suspicion/config-workaround
+source: synthetic
+analyzer:
+  skill: sdk-bsp-fusa
+  runtime_name: sdk-bsp-fusa
+platform: linux
+platform_evidence: fusa 目录命中；SDK_VERSION=V2.10.0 无前缀；取证用 sysfs 节点
+expected_stage: S5
+input:
+  type: client_report
+  files:
+    - input/prompt.md
+    - input/evidence.txt
+  capture:
+    notes:
+      - 客户已自行排除"没重跑 fusa_config"与"服务没起来"两项，证据在 evidence.txt。
+      - 客户观察到的现象是「JSON=200 而板端 sysfs=1000」，两者矛盾点即本 Case 的核心。
+      - 客户没有提供 SDK 里用户态下发代码的检索结果，需要排查者自己去查代码事实。
+oracle: answer/oracle.yaml
+separation:
+  analyzer_visible:
+    - input/prompt.md
+    - input/evidence.txt
+  evaluator_only:
+    - answer/oracle.yaml
+    - answer/case.yaml

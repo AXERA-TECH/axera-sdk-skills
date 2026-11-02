@@ -1,0 +1,11 @@
+sd: sdhci@1B40000 {
+    compatible = "axera,sdhc";
+    reg = <0x01B40000 0x1000>;
+    interrupts = <GIC_SPI 7 IRQ_TYPE_LEVEL_HIGH>;
+    status = "okay";
+    bus-width = <4>;
+    cd-gpios = <&gpio1 29 0>;
+    cd-inverted;
+    cd-debounce-delay-ms = <300>;
+    disable-wp;
+};

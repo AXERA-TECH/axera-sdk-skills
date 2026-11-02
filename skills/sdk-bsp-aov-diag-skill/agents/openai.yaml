@@ -1,0 +1,4 @@
+interface:
+  display_name: "AX615 wakeup_count/gpio_lp 诊断"
+  short_description: "基于日志、代码和 A/B 证据定位 AX615 低功耗 GPIO 唤醒问题"
+  default_prompt: "请使用 AX615 wakeup_count/gpio_lp 诊断流程分析下面的现象、日志和代码证据；区分硬件/Boot、kernel/driver、系统服务和应用层，给出已确认、高可信候选或待验证的结论，并列出反证条件和最小化下一步取证项。"

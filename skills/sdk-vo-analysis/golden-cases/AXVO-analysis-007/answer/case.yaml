@@ -1,0 +1,32 @@
+# 由 evals.json 自动迁移生成，请按需补全平台与复现信息
+{
+  "schema_version": 1,
+  "id": "AXVO-analysis-007",
+  "title": "60fps 送帧到 30Hz 输出导致 FIFO 积压",
+  "category": "diagnosis/framerate/fifo-overrun",
+  "analyzer": {
+    "skill": "sdk-vo-analysis"
+  },
+  "platform": {
+    "soc": "AX615",
+    "skill_baseline": "V3.14.0",
+    "interface": "BT656",
+    "resolution": "1920x1080@30"
+  },
+  "input": {
+    "type": "scenario",
+    "files": [
+      "input/scenario.md"
+    ]
+  },
+  "oracle": "answer/oracle.yaml",
+  "separation": {
+    "analyzer_visible": [
+      "input/scenario.md"
+    ],
+    "evaluator_only": [
+      "answer/oracle.yaml",
+      "answer/case.yaml"
+    ]
+  }
+}

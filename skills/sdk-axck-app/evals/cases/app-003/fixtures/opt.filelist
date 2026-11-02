@@ -1,0 +1,6 @@
+# Defective opt.filelist - missing bin/axck_service daemon
+@dir: camera-kit/out/$(MSP_OUT_DIR)
+lib/libaxck*.so lib/
+
+@dir: camera-kit/out/$(MSP_OUT_DIR)
+apps/test/axck_test bin/

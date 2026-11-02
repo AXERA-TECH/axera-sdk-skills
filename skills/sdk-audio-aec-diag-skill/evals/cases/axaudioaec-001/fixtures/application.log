@@ -1,0 +1,5 @@
+t=-0.080 AX_AI_SetUpTalkVqeAttr aiCard=0 aiDev=0 enAecMode=AX_AEC_MODE_DISABLE bNsEnable=1 ret=0
+t=-0.060 AX_AI_EnableDev aiCard=0 aiDev=0 ret=0
+t=-0.040 AX_AI_GetUpTalkVqeAttr aiCard=0 aiDev=0 enAecMode=AX_AEC_MODE_DISABLE bNsEnable=1 ret=0
+t=0.000 playback=start capture=start scene=far_only
+t=12.000 capture=complete frames=1200 overrun=0 underrun=0

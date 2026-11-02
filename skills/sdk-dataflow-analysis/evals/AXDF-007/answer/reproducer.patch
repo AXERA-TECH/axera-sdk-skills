@@ -1,0 +1,12 @@
+diff --git a/demo/FRTDemo/bin/config/ipc/encoder.json b/demo/FRTDemo/bin/config/ipc/encoder.json
+--- a/demo/FRTDemo/bin/config/ipc/encoder.json
++++ b/demo/FRTDemo/bin/config/ipc/encoder.json
+@@ -21,7 +21,7 @@
+                 "rc_type": 0,
+                 "//": "0: settings as system default, others: bitrate settings",
+                 "bitrate": [0, 0, 0, 0],
+-                "frame_rate": -1
++                "frame_rate": 60
+             },
+             {
+                 "//": "0: H264, 1: MJPEG, 2:H265, 3: JENC",

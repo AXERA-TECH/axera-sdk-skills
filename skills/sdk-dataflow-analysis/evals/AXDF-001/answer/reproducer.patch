@@ -1,0 +1,12 @@
+diff --git a/demo/FRTDemo/bin/config/ipc/ppl.json b/demo/FRTDemo/bin/config/ipc/ppl.json
+--- a/demo/FRTDemo/bin/config/ipc/ppl.json
++++ b/demo/FRTDemo/bin/config/ipc/ppl.json
+@@ -22,7 +22,7 @@
+             "dst_mod": "VENC",
+             "dst_grp": 0,
+             "dst_chn": 0,
+-            "link_attr" : {"mode": 1, "line_cnt": 128,"src_engine":"VPP","dst_engine":"VENC"},
++            "link_attr" : {"mode": 1, "line_cnt": 100,"src_engine":"VPP","dst_engine":"VENC"},
+             "link": 1
+         },
+         {

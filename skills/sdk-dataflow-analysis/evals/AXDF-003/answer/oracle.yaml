@@ -1,0 +1,48 @@
+root_cause: FRTDemo 在 IVPS(0,0) 到 VENC(0,0) 的 LowMem HSK link 已建立并正常出流后，于运行期只对 IVPS 侧完成了分辨率切换（AX_IVPS_DisableChn → AX_IVPS_SetPipelineAttr 将 2688x1520 改为 1280x720 → AX_IVPS_EnableChn，三步均返回 0x0），没有执行 HSK 模式要求的 VENC 侧协同步骤：既没有 AX_VENC_StopRecvFrame/DestroyChn，也没有更新 VENC 通道分辨率和重新 StartRecvFrame，更没有 AX_SYS_UnLink/AX_SYS_Link_V2 重建该 link。VENC 通道仍持有旧的 2688x1520 几何和旧的 HSK 行同步参数，与 IVPS 新输出几何不匹配，握手无法交付有效帧，VENC 进入持续丢帧，编码帧率归零、收帧计数停滞，而进程和 link 均未消失。
+required_concepts:
+  - AX_SYS_Link_V2
+  - AX_MOD_DATA_FLOW_SW_LOW_MEM
+  - 识别故障发生在 HSK link 建立且已正常出流之后，而非建链阶段
+  - 识别运行期发生了 IVPS(0,0) 分辨率切换 2688x1520 到 1280x720
+  - IVPS 侧 DisableChn/SetPipelineAttr/EnableChn 均返回成功，属静默失败
+  - 日志中不存在任何 VENC 侧的停流、通道重建或重新起流动作
+  - link_table_kernel 中 VPP 到 VENC 的 SW_Low_Mem 128 行 link 在切换后依然存在，说明未走 UnLink/Link_V2 重建
+  - venc proc 的 HSK STATUS 中 maxH/EncH/EncHPre 仍为 1520，未随 IVPS 新分辨率更新
+  - venc proc 的 VENC 通道属性仍为 2688x1520，VENC 不知晓 IVPS 已变更
+  - bFrmDrop 为 1，表示 VENC 处于持续丢帧状态
+  - VENC 帧率归零、recv 计数停滞是切换后的结果而非起流失败
+  - hskCnt 仍在增长说明握手线程仍在运行，问题是几何不匹配而非 link 断开
+  - 修正方式是按《53 - AX SDK典型场景使用说明》2.4 节时序，切换时先 disable IVPS 通道并停 VENC 收流，更新 VENC 分辨率后再重建并重新起流
+forbidden_conclusions:
+  - nRingLineCnt 非法
+  - 两路 JENC HSK 资源冲突
+  - AX_SYS_Link_V2 建链失败
+  - PPL build failed 导致无流
+  - AX_IVPS_SetPipelineAttr 返回错误码
+  - sensor 或 VIN 侧初始化失败
+  - VB/CMM/pool 内存不足是首要根因
+  - 进程崩溃或退出导致无流
+evidence_signatures:
+  input/serial.log:
+    - 'ChnFilter reset resolution for ivps (Grp: 0, Chn: 0): 2688x1520 -> 1280x720'
+    - 'AX_IVPS_DisableChn(0, 0) ret=0x0'
+    - 'AX_IVPS_EnableChn(0, 0) ret=0x0'
+    - 'fps 30.60, recv 306'
+    - 'fps  0.00, recv 317'
+  input/logctl.proc:
+    - 'VENC     7     6'
+    - 'IVPS    13     6'
+    - 'VIN    17     6'
+  input/link.proc:
+    - 'SW_Low_Mem'
+    - 'Engine (1:VPP --> 4:VENC)'
+  input/venc.proc:
+    - 'VENC CHN HSK STATUS'
+    - 'Y    1520 1520 1520'
+expected_confidence: high
+evaluation_notes:
+  - 判定核心是时间线：切换前 serial.log 有稳定 30fps 出流，切换动作后帧率降到 0 并保持，因此不能归类为起流失败或建链错误。
+  - 仅凭帧率归零不足以定性，必须结合 link_table_kernel 中 link 仍在、venc proc 几何仍为旧值这两条，才能证明是切换未协同而非 link 断开或上游停送。
+  - IVPS 侧三个调用全部返回 0x0，是本类问题的典型特征：代码对该时序没有任何校验，违规不会返错。
+  - syslog 中的 ENC 错误 token 是停流后的传播现象，不能倒因为编码器自身故障。
+  - 分析器若指出 VENC 未做 stop/update/start 协同即可判正确，不要求逐字复述九步时序。
