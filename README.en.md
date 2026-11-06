@@ -12,11 +12,14 @@
 
 <p align="center"><a href="#skills">Explore Skills</a> · <a href="#start">Quick Start</a> · <a href="#usage">Usage</a> · <a href="#develop">Contributing</a></p>
 
+<p align="center">
+  <video src="docs/assets/axera-sdk-skills-intro.en.mp4" poster="docs/assets/axera-sdk-skills-intro-poster.en.jpg" width="720" controls preload="metadata">
+    <a href="docs/assets/axera-sdk-skills-intro.en.mp4"><img src="docs/assets/axera-sdk-skills-intro-poster.en.jpg" width="720" alt="AXERA SDK Skills introduction video" /></a>
+    47-second introduction video. If it does not play, <a href="docs/assets/axera-sdk-skills-intro.en.mp4">open the video file</a>.
+  </video>
+</p>
 
-
-https://github.com/user-attachments/assets/28677435-6e98-4cfc-9d23-cc9a2c8797c1
-
-
+https://github.com/user-attachments/assets/c2d84b71-7032-4a40-9a88-9bf10bb4cd69
 
 ---
 
